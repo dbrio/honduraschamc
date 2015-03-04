@@ -22,8 +22,9 @@ Partial Class login
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.DataSetCreditos = New creditosHipotecarios.DataSetCreditos()
-        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource()
+        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UsuarioTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.UsuarioTableAdapter()
         Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
         Me.LabelUser = New System.Windows.Forms.Label()
@@ -62,7 +63,7 @@ Partial Class login
         Me.LabelUser.BackColor = System.Drawing.Color.Transparent
         Me.LabelUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelUser.ForeColor = System.Drawing.Color.White
-        Me.LabelUser.Location = New System.Drawing.Point(80, 163)
+        Me.LabelUser.Location = New System.Drawing.Point(71, 160)
         Me.LabelUser.Name = "LabelUser"
         Me.LabelUser.Size = New System.Drawing.Size(68, 20)
         Me.LabelUser.TabIndex = 0
@@ -70,11 +71,13 @@ Partial Class login
         '
         'txtUser
         '
+        Me.txtUser.BackColor = System.Drawing.Color.White
         Me.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUser.Location = New System.Drawing.Point(176, 163)
+        Me.txtUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUser.ForeColor = System.Drawing.Color.DimGray
+        Me.txtUser.Location = New System.Drawing.Point(145, 160)
         Me.txtUser.Name = "txtUser"
-        Me.txtUser.Size = New System.Drawing.Size(100, 22)
+        Me.txtUser.Size = New System.Drawing.Size(147, 29)
         Me.txtUser.TabIndex = 1
         '
         'btnEnter
@@ -84,11 +87,11 @@ Partial Class login
         Me.btnEnter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnEnter.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue
         Me.btnEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEnter.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEnter.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEnter.ForeColor = System.Drawing.Color.White
-        Me.btnEnter.Location = New System.Drawing.Point(176, 262)
+        Me.btnEnter.Location = New System.Drawing.Point(145, 259)
         Me.btnEnter.Name = "btnEnter"
-        Me.btnEnter.Size = New System.Drawing.Size(100, 26)
+        Me.btnEnter.Size = New System.Drawing.Size(147, 36)
         Me.btnEnter.TabIndex = 3
         Me.btnEnter.Text = "ENTRAR"
         Me.btnEnter.UseVisualStyleBackColor = False
@@ -96,11 +99,12 @@ Partial Class login
         'txtPass
         '
         Me.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPass.Location = New System.Drawing.Point(176, 210)
+        Me.txtPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPass.ForeColor = System.Drawing.Color.DimGray
+        Me.txtPass.Location = New System.Drawing.Point(145, 207)
         Me.txtPass.Name = "txtPass"
         Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPass.Size = New System.Drawing.Size(100, 22)
+        Me.txtPass.Size = New System.Drawing.Size(147, 29)
         Me.txtPass.TabIndex = 2
         '
         'LabelPass
@@ -109,7 +113,7 @@ Partial Class login
         Me.LabelPass.BackColor = System.Drawing.Color.Transparent
         Me.LabelPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelPass.ForeColor = System.Drawing.Color.White
-        Me.LabelPass.Location = New System.Drawing.Point(52, 210)
+        Me.LabelPass.Location = New System.Drawing.Point(43, 207)
         Me.LabelPass.Name = "LabelPass"
         Me.LabelPass.Size = New System.Drawing.Size(96, 20)
         Me.LabelPass.TabIndex = 3
@@ -124,9 +128,9 @@ Partial Class login
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(278, 438)
+        Me.Button1.Location = New System.Drawing.Point(289, 440)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(69, 23)
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "SALIR"
         Me.Button1.UseVisualStyleBackColor = False
@@ -137,7 +141,7 @@ Partial Class login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.creditosHipotecarios.My.Resources.Resources.login
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(360, 475)
+        Me.ClientSize = New System.Drawing.Size(361, 475)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.txtPass)
         Me.Controls.Add(Me.LabelPass)
