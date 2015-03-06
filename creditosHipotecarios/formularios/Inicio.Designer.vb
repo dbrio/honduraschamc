@@ -79,6 +79,7 @@ Partial Class Inicio
         '
         Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem1)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
+        Me.RibbonPageGroup1.ShowCaptionButton = False
         '
         'XtraTabbedMdiManager1
         '

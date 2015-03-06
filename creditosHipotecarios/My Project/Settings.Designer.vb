@@ -64,6 +64,17 @@ Namespace My
                 Return CType(Me("amcAppConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SQLSERVER;Initial Catalog=AMC_PRODUCCION_3004;Persist Security Info=T"& _ 
+            "rue;User ID=amc;Password=Choluteca1525")>  _
+        Public ReadOnly Property AMC_PRODUCCION_3004ConnectionString() As String
+            Get
+                Return CType(Me("AMC_PRODUCCION_3004ConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
