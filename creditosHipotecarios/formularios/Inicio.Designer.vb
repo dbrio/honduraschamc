@@ -25,12 +25,13 @@ Partial Class Inicio
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inicio))
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
-        Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
+        Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnAddHipoteca = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -39,14 +40,45 @@ Partial Class Inicio
         'RibbonControl1
         '
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.BarButtonItem1})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnAddHipoteca})
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl1.MaxItemId = 2
+        Me.RibbonControl1.MaxItemId = 3
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(799, 139)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1093, 139)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
+        '
+        'RibbonPage1
+        '
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
+        Me.RibbonPage1.Name = "RibbonPage1"
+        Me.RibbonPage1.Text = "INICIO"
+        '
+        'RibbonPageGroup1
+        '
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.btnAddHipoteca)
+        Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
+        Me.RibbonPageGroup1.ShowCaptionButton = False
+        '
+        'XtraTabbedMdiManager1
+        '
+        Me.XtraTabbedMdiManager1.MdiParent = Me
+        '
+        'PanelControl1
+        '
+        Me.PanelControl1.Appearance.BackColor = System.Drawing.Color.White
+        Me.PanelControl1.Appearance.Options.UseBackColor = True
+        Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
+        Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 139)
+        Me.PanelControl1.Name = "PanelControl1"
+        Me.PanelControl1.Size = New System.Drawing.Size(1093, 335)
+        Me.PanelControl1.TabIndex = 2
+        '
+        'DefaultLookAndFeel1
+        '
+        Me.DefaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013"
         '
         'BarButtonItem1
         '
@@ -69,41 +101,26 @@ Partial Class Inicio
         Me.BarButtonItem1.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.add
         Me.BarButtonItem1.Name = "BarButtonItem1"
         '
-        'RibbonPage1
+        'btnAddHipoteca
         '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
-        Me.RibbonPage1.Name = "RibbonPage1"
-        Me.RibbonPage1.Text = "INICIO"
-        '
-        'RibbonPageGroup1
-        '
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem1)
-        Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
-        Me.RibbonPageGroup1.ShowCaptionButton = False
-        '
-        'XtraTabbedMdiManager1
-        '
-        Me.XtraTabbedMdiManager1.MdiParent = Me
-        '
-        'PanelControl1
-        '
-        Me.PanelControl1.Appearance.BackColor = System.Drawing.Color.White
-        Me.PanelControl1.Appearance.Options.UseBackColor = True
-        Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControl1.Location = New System.Drawing.Point(0, 139)
-        Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(799, 335)
-        Me.PanelControl1.TabIndex = 2
-        '
-        'DefaultLookAndFeel1
-        '
-        Me.DefaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013"
+        Me.btnAddHipoteca.Caption = "Lista de Garantía"
+        Me.btnAddHipoteca.Id = 2
+        Me.btnAddHipoteca.ItemAppearance.Disabled.Options.UseTextOptions = True
+        Me.btnAddHipoteca.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        Me.btnAddHipoteca.ItemAppearance.Hovered.Options.UseTextOptions = True
+        Me.btnAddHipoteca.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        Me.btnAddHipoteca.ItemAppearance.Normal.Options.UseTextOptions = True
+        Me.btnAddHipoteca.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        Me.btnAddHipoteca.ItemAppearance.Pressed.Options.UseTextOptions = True
+        Me.btnAddHipoteca.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        Me.btnAddHipoteca.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.add
+        Me.btnAddHipoteca.Name = "btnAddHipoteca"
         '
         'Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(799, 474)
+        Me.ClientSize = New System.Drawing.Size(1093, 474)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -122,6 +139,7 @@ Partial Class Inicio
     Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents XtraTabbedMdiManager1 As DevExpress.XtraTabbedMdi.XtraTabbedMdiManager
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents DefaultLookAndFeel1 As DevExpress.LookAndFeel.DefaultLookAndFeel
+    Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnAddHipoteca As DevExpress.XtraBars.BarButtonItem
 End Class
