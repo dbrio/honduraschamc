@@ -68,7 +68,9 @@ Partial Class garantias
         '
         Me.GrantiaHipotecariaGridControl.DataSource = Me.GrantiaHipotecariaBindingSource
         Me.GrantiaHipotecariaGridControl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GrantiaHipotecariaGridControl.EmbeddedNavigator.ShowToolTips = False
         Me.GrantiaHipotecariaGridControl.Location = New System.Drawing.Point(0, 0)
+        Me.GrantiaHipotecariaGridControl.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GrantiaHipotecariaGridControl.MainView = Me.GridView1
         Me.GrantiaHipotecariaGridControl.Name = "GrantiaHipotecariaGridControl"
         Me.GrantiaHipotecariaGridControl.Size = New System.Drawing.Size(826, 477)
@@ -77,21 +79,28 @@ Partial Class garantias
         '
         'GridView1
         '
+        Me.GridView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colcod_garant, Me.colnumclien, Me.colnomdeudor, Me.colfecinsgar2, Me.coldescripcio, Me.colvalpericia, Me.colowngarant})
         Me.GridView1.GridControl = Me.GrantiaHipotecariaGridControl
+        Me.GridView1.GroupPanelText = "  "
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsBehavior.Editable = False
         Me.GridView1.OptionsBehavior.KeepGroupExpandedOnSorting = False
         Me.GridView1.OptionsCustomization.AllowFilter = False
         Me.GridView1.OptionsCustomization.AllowGroup = False
+        Me.GridView1.OptionsCustomization.AllowSort = False
         Me.GridView1.OptionsFilter.AllowColumnMRUFilterList = False
-        Me.GridView1.OptionsView.ShowGroupPanel = False
+        Me.GridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never
+        Me.GridView1.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.colnumclien, DevExpress.Data.ColumnSortOrder.Ascending)})
         '
         'colcod_garant
         '
         Me.colcod_garant.Caption = "Garantía"
         Me.colcod_garant.FieldName = "cod_garant"
         Me.colcod_garant.Name = "colcod_garant"
+        Me.colcod_garant.OptionsFilter.AllowAutoFilter = False
+        Me.colcod_garant.OptionsFilter.AllowFilter = False
+        Me.colcod_garant.OptionsFilter.ImmediateUpdateAutoFilter = False
         Me.colcod_garant.Visible = True
         Me.colcod_garant.VisibleIndex = 0
         Me.colcod_garant.Width = 35
@@ -101,6 +110,8 @@ Partial Class garantias
         Me.colnumclien.Caption = "Codigo del Cliente"
         Me.colnumclien.FieldName = "numclien"
         Me.colnumclien.Name = "colnumclien"
+        Me.colnumclien.OptionsFilter.AllowAutoFilter = False
+        Me.colnumclien.OptionsFilter.AllowFilter = False
         Me.colnumclien.Visible = True
         Me.colnumclien.VisibleIndex = 1
         Me.colnumclien.Width = 58
@@ -119,6 +130,8 @@ Partial Class garantias
         Me.colfecinsgar2.Caption = "Fecha de Ingreso"
         Me.colfecinsgar2.FieldName = "fecinsgar2"
         Me.colfecinsgar2.Name = "colfecinsgar2"
+        Me.colfecinsgar2.OptionsFilter.AllowAutoFilter = False
+        Me.colfecinsgar2.OptionsFilter.AllowFilter = False
         Me.colfecinsgar2.Visible = True
         Me.colfecinsgar2.VisibleIndex = 3
         Me.colfecinsgar2.Width = 55
