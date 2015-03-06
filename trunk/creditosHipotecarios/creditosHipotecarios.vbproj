@@ -131,6 +131,12 @@
     <Compile Include="dataSet\DataSetCreditos.vb">
       <DependentUpon>DataSetCreditos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="formularios\addHipoteca.Designer.vb">
+      <DependentUpon>addHipoteca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\addHipoteca.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formularios\garantias.Designer.vb">
       <DependentUpon>garantias.vb</DependentUpon>
     </Compile>
@@ -168,6 +174,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="formularios\addHipoteca.resx">
+      <DependentUpon>addHipoteca.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formularios\garantias.resx">
       <DependentUpon>garantias.vb</DependentUpon>
     </EmbeddedResource>

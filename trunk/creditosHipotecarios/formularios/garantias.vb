@@ -14,4 +14,13 @@
     End Sub
 
 
+    Private Sub GrantiaHipotecariaGridControl_DoubleClick(sender As Object, e As EventArgs) Handles GrantiaHipotecariaGridControl.DoubleClick
+        With addHipoteca
+            With addHipoteca
+                .MdiParent = MdiParent
+                .Show()
+                .Focus()
+            End With
+        End With
+    End Sub
 End Class

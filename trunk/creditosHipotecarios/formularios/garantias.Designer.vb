@@ -22,9 +22,8 @@ Partial Class garantias
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.DataSetAMCProduccion = New creditosHipotecarios.DataSetAMCProduccion()
-        Me.GrantiaHipotecariaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GrantiaHipotecariaBindingSource = New System.Windows.Forms.BindingSource()
         Me.GrantiaHipotecariaTableAdapter = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.GrantiaHipotecariaTableAdapter()
         Me.TableAdapterManager = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager()
         Me.GrantiaHipotecariaGridControl = New DevExpress.XtraGrid.GridControl()
@@ -151,7 +150,7 @@ Partial Class garantias
         Me.colowngarant.VisibleIndex = 6
         Me.colowngarant.Width = 82
         '
-        'addHipoteca
+        'garantias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -159,7 +158,7 @@ Partial Class garantias
         Me.ClientSize = New System.Drawing.Size(826, 477)
         Me.Controls.Add(Me.GrantiaHipotecariaGridControl)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Name = "addHipoteca"
+        Me.Name = "garantias"
         Me.Text = "Agregar Hipoteca"
         CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GrantiaHipotecariaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
