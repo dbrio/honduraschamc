@@ -110,6 +110,19 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dataSet\DataSetAMCProduccion.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetAMCProduccion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataSet\DataSetAMCProduccion.vb">
+      <DependentUpon>DataSetAMCProduccion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataSet\DataSetAMCProduccion1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetAMCProduccion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dataSet\DataSetCreditos.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -173,6 +186,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="dataSet\DataSetAMCProduccion.xsc">
+      <DependentUpon>DataSetAMCProduccion.xsd</DependentUpon>
+    </None>
+    <None Include="dataSet\DataSetAMCProduccion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetAMCProduccion1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dataSet\DataSetAMCProduccion.xss">
+      <DependentUpon>DataSetAMCProduccion.xsd</DependentUpon>
+    </None>
     <None Include="dataSet\DataSetCreditos.xsc">
       <DependentUpon>DataSetCreditos.xsd</DependentUpon>
     </None>
