@@ -39,13 +39,10 @@ Partial Class garantias
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.GastosTableAdapter1 = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.GastosTableAdapter()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.VerGrantiaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GrantiaHipotecariaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GrantiaHipotecariaGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataSetAMCProduccion
@@ -65,7 +62,6 @@ Partial Class garantias
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.ClienteTableAdapter = Nothing
         Me.TableAdapterManager.CreditoTableAdapter = Nothing
         Me.TableAdapterManager.GastosTableAdapter = Nothing
         Me.TableAdapterManager.GrantiaHipotecariaTableAdapter = Me.GrantiaHipotecariaTableAdapter
@@ -186,8 +182,10 @@ Partial Class garantias
         Me.GridView1.Appearance.Preview.Options.UseBackColor = True
         Me.GridView1.Appearance.Preview.Options.UseForeColor = True
         Me.GridView1.Appearance.Row.BackColor = System.Drawing.Color.White
+        Me.GridView1.Appearance.Row.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GridView1.Appearance.Row.ForeColor = System.Drawing.Color.Black
         Me.GridView1.Appearance.Row.Options.UseBackColor = True
+        Me.GridView1.Appearance.Row.Options.UseFont = True
         Me.GridView1.Appearance.Row.Options.UseForeColor = True
         Me.GridView1.Appearance.RowSeparator.BackColor = System.Drawing.Color.White
         Me.GridView1.Appearance.RowSeparator.Options.UseBackColor = True
@@ -226,25 +224,25 @@ Partial Class garantias
         Me.colcod_garant.OptionsFilter.AllowFilter = False
         Me.colcod_garant.Visible = True
         Me.colcod_garant.VisibleIndex = 0
-        Me.colcod_garant.Width = 30
+        Me.colcod_garant.Width = 40
         '
         'colnumclien
         '
-        Me.colnumclien.Caption = "DEUDOR"
+        Me.colnumclien.Caption = "CODIGO CLIENTE"
         Me.colnumclien.FieldName = "numclien"
         Me.colnumclien.Name = "colnumclien"
         Me.colnumclien.Visible = True
         Me.colnumclien.VisibleIndex = 1
-        Me.colnumclien.Width = 60
+        Me.colnumclien.Width = 59
         '
         'colnomdeudor
         '
-        Me.colnomdeudor.Caption = "DEUDOR"
+        Me.colnomdeudor.Caption = "NOMBRE"
         Me.colnomdeudor.FieldName = "nomdeudor"
         Me.colnomdeudor.Name = "colnomdeudor"
         Me.colnomdeudor.Visible = True
         Me.colnomdeudor.VisibleIndex = 2
-        Me.colnomdeudor.Width = 167
+        Me.colnomdeudor.Width = 165
         '
         'colfecinsgar2
         '
@@ -253,7 +251,7 @@ Partial Class garantias
         Me.colfecinsgar2.Name = "colfecinsgar2"
         Me.colfecinsgar2.Visible = True
         Me.colfecinsgar2.VisibleIndex = 3
-        Me.colfecinsgar2.Width = 45
+        Me.colfecinsgar2.Width = 44
         '
         'coldescripcio
         '
@@ -262,7 +260,7 @@ Partial Class garantias
         Me.coldescripcio.Name = "coldescripcio"
         Me.coldescripcio.Visible = True
         Me.coldescripcio.VisibleIndex = 4
-        Me.coldescripcio.Width = 414
+        Me.coldescripcio.Width = 409
         '
         'colvalpericia
         '
@@ -271,7 +269,7 @@ Partial Class garantias
         Me.colvalpericia.Name = "colvalpericia"
         Me.colvalpericia.Visible = True
         Me.colvalpericia.VisibleIndex = 5
-        Me.colvalpericia.Width = 45
+        Me.colvalpericia.Width = 44
         '
         'colowngarant
         '
@@ -284,20 +282,21 @@ Partial Class garantias
         '
         'txtBuscar
         '
+        Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(3, 18)
+        Me.txtBuscar.Location = New System.Drawing.Point(12, 20)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(336, 31)
+        Me.txtBuscar.Size = New System.Drawing.Size(344, 31)
         Me.txtBuscar.TabIndex = 1
         '
         'btnBuscar
         '
         Me.btnBuscar.BackColor = System.Drawing.Color.SlateGray
-        Me.btnBuscar.FlatAppearance.BorderSize = 0
+        Me.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscar.ForeColor = System.Drawing.Color.White
-        Me.btnBuscar.Location = New System.Drawing.Point(353, 18)
+        Me.btnBuscar.Location = New System.Drawing.Point(362, 18)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(118, 35)
         Me.btnBuscar.TabIndex = 3
@@ -308,25 +307,12 @@ Partial Class garantias
         '
         Me.GastosTableAdapter1.ClearBeforeFill = True
         '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VerGrantiaToolStripMenuItem})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(153, 48)
-        '
-        'VerGrantiaToolStripMenuItem
-        '
-        Me.VerGrantiaToolStripMenuItem.Name = "VerGrantiaToolStripMenuItem"
-        Me.VerGrantiaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.VerGrantiaToolStripMenuItem.Text = "ver grantia"
-        '
         'garantias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(902, 477)
-        Me.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.GrantiaHipotecariaGridControl)
@@ -337,7 +323,6 @@ Partial Class garantias
         CType(Me.GrantiaHipotecariaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GrantiaHipotecariaGridControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -358,6 +343,4 @@ Partial Class garantias
     Friend WithEvents txtBuscar As System.Windows.Forms.TextBox
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
     Friend WithEvents GastosTableAdapter1 As creditosHipotecarios.DataSetAMCProduccionTableAdapters.GastosTableAdapter
-    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
-    Friend WithEvents VerGrantiaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

@@ -137,6 +137,12 @@
     <Compile Include="formularios\addHipoteca.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="formularios\creditos.Designer.vb">
+      <DependentUpon>creditos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\creditos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formularios\garantias.Designer.vb">
       <DependentUpon>garantias.vb</DependentUpon>
     </Compile>
@@ -176,6 +182,9 @@
   <ItemGroup>
     <EmbeddedResource Include="formularios\addHipoteca.resx">
       <DependentUpon>addHipoteca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\creditos.resx">
+      <DependentUpon>creditos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\garantias.resx">
       <DependentUpon>garantias.vb</DependentUpon>
