@@ -131,10 +131,10 @@
     <Compile Include="dataSet\DataSetCreditos.vb">
       <DependentUpon>DataSetCreditos.xsd</DependentUpon>
     </Compile>
-    <Compile Include="formularios\addHipoteca.Designer.vb">
-      <DependentUpon>addHipoteca.vb</DependentUpon>
+    <Compile Include="formularios\addProtocolo.Designer.vb">
+      <DependentUpon>addProtocolo.vb</DependentUpon>
     </Compile>
-    <Compile Include="formularios\addHipoteca.vb">
+    <Compile Include="formularios\addProtocolo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formularios\creditos.Designer.vb">
@@ -180,8 +180,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="formularios\addHipoteca.resx">
-      <DependentUpon>addHipoteca.vb</DependentUpon>
+    <EmbeddedResource Include="formularios\addProtocolo.resx">
+      <DependentUpon>addProtocolo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\creditos.resx">
       <DependentUpon>creditos.vb</DependentUpon>
