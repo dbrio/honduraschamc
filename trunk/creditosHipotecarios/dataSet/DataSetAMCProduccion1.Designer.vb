@@ -9289,37 +9289,37 @@ Namespace DataSetAMCProduccionTableAdapters
                 " cliente.ccodcli =@codigoCliente AND credito.cestado ='C'" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ORDER BY credito.ccod" & _
                 "cta DESC"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@codigoCliente", Global.System.Data.SqlDbType.[Char], 12, Global.System.Data.ParameterDirection.Input, 0, 0, "ccodcli", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@codigoCliente", Global.System.Data.SqlDbType.[Char], 12, Global.System.Data.ParameterDirection.Input, 0, 0, "ccodcli", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetAMCProduccion.ClienteDataTable, ByVal codigoCliente As String) As Integer
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, True)> _
+        Public Overridable Overloads Function Fill(ByVal dataTable As DataSetAMCProduccion.ClienteDataTable, ByVal codigoCliente As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (codigoCliente Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("codigoCliente")
             Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(codigoCliente,String)
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(codigoCliente, String)
             End If
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
+            If (Me.ClearBeforeFill = True) Then
+                dataTable.Clear()
             End If
             Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
             Return returnValue
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal codigoCliente As String) As DataSetAMCProduccion.ClienteDataTable
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], True)> _
+        Public Overridable Overloads Function GetData(ByVal codigoCliente As String) As DataSetAMCProduccion.ClienteDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (codigoCliente Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("codigoCliente")
             Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(codigoCliente,String)
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(codigoCliente, String)
             End If
             Dim dataTable As DataSetAMCProduccion.ClienteDataTable = New DataSetAMCProduccion.ClienteDataTable()
             Me.Adapter.Fill(dataTable)

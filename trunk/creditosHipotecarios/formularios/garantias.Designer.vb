@@ -202,9 +202,11 @@ Partial Class garantias
         Me.GridView1.OptionsBehavior.AllowIncrementalSearch = True
         Me.GridView1.OptionsBehavior.AutoExpandAllGroups = True
         Me.GridView1.OptionsBehavior.Editable = False
+        Me.GridView1.OptionsBehavior.KeepGroupExpandedOnSorting = False
         Me.GridView1.OptionsCustomization.AllowFilter = False
         Me.GridView1.OptionsCustomization.AllowGroup = False
         Me.GridView1.OptionsCustomization.AllowRowSizing = True
+        Me.GridView1.OptionsCustomization.AllowSort = False
         Me.GridView1.OptionsFilter.AllowColumnMRUFilterList = False
         Me.GridView1.OptionsNavigation.AutoMoveRowFocus = False
         Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False

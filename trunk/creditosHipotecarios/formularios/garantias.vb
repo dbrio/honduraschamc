@@ -7,15 +7,13 @@
 
     End Sub
 
-    Private Sub addHipoteca_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-       
-    End Sub
+
 
     Private Function obtenerDatos() As Hashtable
         Dim diccionario As New Hashtable
 
         diccionario("codigoCliente") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "numclien")
-        diccionario("valor2") = 2015
+        diccionario("nombre") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "nomdeudor")
         Return diccionario
 
     End Function
@@ -33,6 +31,7 @@
             Me.GrantiaHipotecariaTableAdapter.bauscar(Me.DataSetAMCProduccion.GrantiaHipotecaria, buscar)
             txtBuscar.Text = ""
             txtBuscar.Focus()
+            GrantiaHipotecariaGridControl.Enabled = True
         End If
     End Sub
 
@@ -53,12 +52,19 @@
     Private Sub GrantiaHipotecariaGridControl_DoubleClick(sender As Object, e As EventArgs) Handles GrantiaHipotecariaGridControl.DoubleClick
         Dim dict As Hashtable = obtenerDatos()
         Dim codigoCliente As String = dict("codigoCliente")
-
+        Dim nombre As String = dict("nombre")
         With creditos
-            .MdiParent = MdiParent
+
             .clienteCodigo = codigoCliente
+            .nombre = nombre
             .Show()
+            .Focus()
 
         End With
+
+    End Sub
+
+    Private Sub garantias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        GrantiaHipotecariaGridControl.Enabled = False
     End Sub
 End Class
