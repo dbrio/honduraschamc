@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class creditos
+Partial Class creditoList
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,14 +22,14 @@ Partial Class creditos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.DataSetAMCProduccion = New creditosHipotecarios.DataSetAMCProduccion()
-        Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ClienteBindingSource = New System.Windows.Forms.BindingSource()
         Me.ClienteTableAdapter = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.ClienteTableAdapter()
         Me.TableAdapterManager = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager()
         Me.ClienteGridControl = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colccodofi = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colcnomcli = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colcnudoci = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colccodcta = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colnmonsug = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -38,6 +38,7 @@ Partial Class creditos
         Me.colnmoncuo = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colnMora_int = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coldfecsol = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colccodcli = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,7 +77,7 @@ Partial Class creditos
         Me.ClienteGridControl.Location = New System.Drawing.Point(0, 0)
         Me.ClienteGridControl.MainView = Me.GridView1
         Me.ClienteGridControl.Name = "ClienteGridControl"
-        Me.ClienteGridControl.Size = New System.Drawing.Size(1069, 418)
+        Me.ClienteGridControl.Size = New System.Drawing.Size(1118, 461)
         Me.ClienteGridControl.TabIndex = 0
         Me.ClienteGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -123,10 +124,8 @@ Partial Class creditos
         Me.GridView1.Appearance.FocusedCell.Options.UseBackColor = True
         Me.GridView1.Appearance.FocusedCell.Options.UseForeColor = True
         Me.GridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.GridView1.Appearance.FocusedRow.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GridView1.Appearance.FocusedRow.ForeColor = System.Drawing.Color.White
         Me.GridView1.Appearance.FocusedRow.Options.UseBackColor = True
-        Me.GridView1.Appearance.FocusedRow.Options.UseFont = True
         Me.GridView1.Appearance.FocusedRow.Options.UseForeColor = True
         Me.GridView1.Appearance.FooterPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(254, Byte), Integer))
         Me.GridView1.Appearance.FooterPanel.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(228, Byte), Integer))
@@ -148,8 +147,8 @@ Partial Class creditos
         Me.GridView1.Appearance.GroupFooter.Options.UseBackColor = True
         Me.GridView1.Appearance.GroupFooter.Options.UseBorderColor = True
         Me.GridView1.Appearance.GroupFooter.Options.UseForeColor = True
-        Me.GridView1.Appearance.GroupPanel.BackColor = System.Drawing.Color.SlateGray
-        Me.GridView1.Appearance.GroupPanel.Font = New System.Drawing.Font("Tahoma", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GridView1.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(62, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.GridView1.Appearance.GroupPanel.Font = New System.Drawing.Font("Tahoma", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GridView1.Appearance.GroupPanel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(254, Byte), Integer))
         Me.GridView1.Appearance.GroupPanel.Options.UseBackColor = True
         Me.GridView1.Appearance.GroupPanel.Options.UseFont = True
@@ -185,10 +184,8 @@ Partial Class creditos
         Me.GridView1.Appearance.Preview.Options.UseBackColor = True
         Me.GridView1.Appearance.Preview.Options.UseForeColor = True
         Me.GridView1.Appearance.Row.BackColor = System.Drawing.Color.White
-        Me.GridView1.Appearance.Row.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GridView1.Appearance.Row.ForeColor = System.Drawing.Color.Black
         Me.GridView1.Appearance.Row.Options.UseBackColor = True
-        Me.GridView1.Appearance.Row.Options.UseFont = True
         Me.GridView1.Appearance.Row.Options.UseForeColor = True
         Me.GridView1.Appearance.RowSeparator.BackColor = System.Drawing.Color.White
         Me.GridView1.Appearance.RowSeparator.Options.UseBackColor = True
@@ -198,14 +195,15 @@ Partial Class creditos
         Me.GridView1.Appearance.SelectedRow.Options.UseForeColor = True
         Me.GridView1.Appearance.VertLine.BackColor = System.Drawing.Color.FromArgb(CType(CType(99, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(196, Byte), Integer))
         Me.GridView1.Appearance.VertLine.Options.UseBackColor = True
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colccodofi, Me.colcnudoci, Me.colccodcta, Me.colnmonsug, Me.colncuosug, Me.colntasint, Me.colnmoncuo, Me.colnMora_int, Me.coldfecsol})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colccodofi, Me.colcnomcli, Me.colcnudoci, Me.colccodcta, Me.colnmonsug, Me.colncuosug, Me.colntasint, Me.colnmoncuo, Me.colnMora_int, Me.coldfecsol, Me.colccodcli})
         Me.GridView1.GridControl = Me.ClienteGridControl
         Me.GridView1.GroupPanelText = " "
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsBehavior.AutoSelectAllInEditor = False
         Me.GridView1.OptionsBehavior.Editable = False
-        Me.GridView1.OptionsBehavior.KeepGroupExpandedOnSorting = False
         Me.GridView1.OptionsCustomization.AllowFilter = False
         Me.GridView1.OptionsCustomization.AllowSort = False
+        Me.GridView1.OptionsMenu.EnableColumnMenu = False
         Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
         Me.GridView1.OptionsSelection.EnableAppearanceFocusedRow = False
         Me.GridView1.PaintStyleName = "WindowsXP"
@@ -217,7 +215,16 @@ Partial Class creditos
         Me.colccodofi.Name = "colccodofi"
         Me.colccodofi.Visible = True
         Me.colccodofi.VisibleIndex = 0
-        Me.colccodofi.Width = 53
+        Me.colccodofi.Width = 30
+        '
+        'colcnomcli
+        '
+        Me.colcnomcli.Caption = "NOMBRE"
+        Me.colcnomcli.FieldName = "cnomcli"
+        Me.colcnomcli.Name = "colcnomcli"
+        Me.colcnomcli.Visible = True
+        Me.colcnomcli.VisibleIndex = 1
+        Me.colcnomcli.Width = 180
         '
         'colcnudoci
         '
@@ -225,17 +232,17 @@ Partial Class creditos
         Me.colcnudoci.FieldName = "cnudoci"
         Me.colcnudoci.Name = "colcnudoci"
         Me.colcnudoci.Visible = True
-        Me.colcnudoci.VisibleIndex = 1
-        Me.colcnudoci.Width = 200
+        Me.colcnudoci.VisibleIndex = 2
+        Me.colcnudoci.Width = 79
         '
         'colccodcta
         '
-        Me.colccodcta.Caption = "NUMERO DE CREDITO"
+        Me.colccodcta.Caption = "NUMERO PRESTAMO"
         Me.colccodcta.FieldName = "ccodcta"
         Me.colccodcta.Name = "colccodcta"
         Me.colccodcta.Visible = True
-        Me.colccodcta.VisibleIndex = 2
-        Me.colccodcta.Width = 231
+        Me.colccodcta.VisibleIndex = 3
+        Me.colccodcta.Width = 79
         '
         'colnmonsug
         '
@@ -243,8 +250,8 @@ Partial Class creditos
         Me.colnmonsug.FieldName = "nmonsug"
         Me.colnmonsug.Name = "colnmonsug"
         Me.colnmonsug.Visible = True
-        Me.colnmonsug.VisibleIndex = 3
-        Me.colnmonsug.Width = 100
+        Me.colnmonsug.VisibleIndex = 4
+        Me.colnmonsug.Width = 79
         '
         'colncuosug
         '
@@ -252,17 +259,17 @@ Partial Class creditos
         Me.colncuosug.FieldName = "ncuosug"
         Me.colncuosug.Name = "colncuosug"
         Me.colncuosug.Visible = True
-        Me.colncuosug.VisibleIndex = 4
-        Me.colncuosug.Width = 70
+        Me.colncuosug.VisibleIndex = 5
+        Me.colncuosug.Width = 79
         '
         'colntasint
         '
-        Me.colntasint.Caption = "TAZAS DE INTERES"
+        Me.colntasint.Caption = "INTERES"
         Me.colntasint.FieldName = "ntasint"
         Me.colntasint.Name = "colntasint"
         Me.colntasint.Visible = True
-        Me.colntasint.VisibleIndex = 5
-        Me.colntasint.Width = 130
+        Me.colntasint.VisibleIndex = 6
+        Me.colntasint.Width = 79
         '
         'colnmoncuo
         '
@@ -270,26 +277,35 @@ Partial Class creditos
         Me.colnmoncuo.FieldName = "nmoncuo"
         Me.colnmoncuo.Name = "colnmoncuo"
         Me.colnmoncuo.Visible = True
-        Me.colnmoncuo.VisibleIndex = 6
-        Me.colnmoncuo.Width = 120
+        Me.colnmoncuo.VisibleIndex = 7
+        Me.colnmoncuo.Width = 79
         '
         'colnMora_int
         '
-        Me.colnMora_int.Caption = "INTERES MORATORIOS"
+        Me.colnMora_int.Caption = "INTRES MORATORIO"
         Me.colnMora_int.FieldName = "nMora_int"
         Me.colnMora_int.Name = "colnMora_int"
         Me.colnMora_int.Visible = True
-        Me.colnMora_int.VisibleIndex = 7
-        Me.colnMora_int.Width = 100
+        Me.colnMora_int.VisibleIndex = 8
+        Me.colnMora_int.Width = 79
         '
         'coldfecsol
         '
-        Me.coldfecsol.Caption = "FECHA"
+        Me.coldfecsol.Caption = "FECHA INGRESO"
         Me.coldfecsol.FieldName = "dfecsol"
         Me.coldfecsol.Name = "coldfecsol"
         Me.coldfecsol.Visible = True
-        Me.coldfecsol.VisibleIndex = 8
-        Me.coldfecsol.Width = 188
+        Me.coldfecsol.VisibleIndex = 9
+        Me.coldfecsol.Width = 79
+        '
+        'colccodcli
+        '
+        Me.colccodcli.Caption = "CODIGO CLIENTE"
+        Me.colccodcli.FieldName = "ccodcli"
+        Me.colccodcli.Name = "colccodcli"
+        Me.colccodcli.Visible = True
+        Me.colccodcli.VisibleIndex = 10
+        Me.colccodcli.Width = 95
         '
         'btnBuscar
         '
@@ -298,10 +314,10 @@ Partial Class creditos
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscar.ForeColor = System.Drawing.Color.White
-        Me.btnBuscar.Location = New System.Drawing.Point(362, 19)
+        Me.btnBuscar.Location = New System.Drawing.Point(362, 23)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(118, 35)
-        Me.btnBuscar.TabIndex = 5
+        Me.btnBuscar.TabIndex = 7
         Me.btnBuscar.Text = "BUSCAR"
         Me.btnBuscar.UseVisualStyleBackColor = False
         '
@@ -309,24 +325,21 @@ Partial Class creditos
         '
         Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(12, 21)
+        Me.txtBuscar.Location = New System.Drawing.Point(12, 25)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(344, 31)
-        Me.txtBuscar.TabIndex = 4
+        Me.txtBuscar.TabIndex = 6
         '
-        'creditos
+        'creditoList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1069, 418)
+        Me.ClientSize = New System.Drawing.Size(1118, 461)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.ClienteGridControl)
-        Me.ImeMode = System.Windows.Forms.ImeMode.Alpha
-        Me.IsMdiContainer = True
-        Me.Name = "creditos"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "CREDITOS | AMC"
+        Me.Name = "creditoList"
+        Me.Text = "creditoList"
         CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClienteGridControl, System.ComponentModel.ISupportInitialize).EndInit()
@@ -342,6 +355,7 @@ Partial Class creditos
     Friend WithEvents ClienteGridControl As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents colccodofi As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colcnomcli As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colcnudoci As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colccodcta As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colnmonsug As DevExpress.XtraGrid.Columns.GridColumn
@@ -350,6 +364,7 @@ Partial Class creditos
     Friend WithEvents colnmoncuo As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colnMora_int As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents coldfecsol As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colccodcli As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
     Friend WithEvents txtBuscar As System.Windows.Forms.TextBox
 End Class
