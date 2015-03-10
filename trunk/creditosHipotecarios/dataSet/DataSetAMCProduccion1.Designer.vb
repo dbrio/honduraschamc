@@ -950,12 +950,6 @@ Partial Public Class DataSetAMCProduccion
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindBycod_garantnumclien(ByVal cod_garant As String, ByVal numclien As String) As GrantiaHipotecariaRow
-            Return CType(Me.Rows.Find(New Object() {cod_garant, numclien}),GrantiaHipotecariaRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As GrantiaHipotecariaDataTable = CType(MyBase.Clone,GrantiaHipotecariaDataTable)
             cln.InitVars
@@ -997,7 +991,7 @@ Partial Public Class DataSetAMCProduccion
             MyBase.Columns.Add(Me.columnvalpericia)
             Me.columnowngarant = New Global.System.Data.DataColumn("owngarant", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnowngarant)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columncod_garant, Me.columnnumclien}, true))
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columncod_garant, Me.columnnumclien}, false))
             Me.columncod_garant.AllowDBNull = false
             Me.columncod_garant.MaxLength = 6
             Me.columnnumclien.AllowDBNull = false
@@ -9282,44 +9276,44 @@ Namespace DataSetAMCProduccionTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT TOP 2   credito.ccodcta, credito.ccodact,  cliente.cnomcli, cliente.cnudoc" & _
-                "i, cliente.ccodofi," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "credito.nmonsug, credito.ncuosug, credito.ntasint, credito." & _
-                "nmoncuo, credito.nMora_int, credito.cestado,credito.dfecsol" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM climide AS cli" & _
-                "ente" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN cremcre AS credito" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ON cliente.ccodcli = credito.ccodcli" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE" & _
-                " cliente.ccodcli =@codigoCliente AND credito.cestado ='C'" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ORDER BY credito.ccod" & _
+            Me._commandCollection(0).CommandText = "SELECT TOP 2   credito.ccodcta, credito.ccodact,  cliente.cnomcli, cliente.cnudoc"& _ 
+                "i, cliente.ccodofi,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"credito.nmonsug, credito.ncuosug, credito.ntasint, credito."& _ 
+                "nmoncuo, credito.nMora_int, credito.cestado,credito.dfecsol"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM climide AS cli"& _ 
+                "ente"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INNER JOIN cremcre AS credito"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON cliente.ccodcli = credito.ccodcli"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"& _ 
+                " cliente.ccodcli =@codigoCliente AND credito.cestado ='C'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY credito.ccod"& _ 
                 "cta DESC"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@codigoCliente", Global.System.Data.SqlDbType.[Char], 12, Global.System.Data.ParameterDirection.Input, 0, 0, "ccodcli", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@codigoCliente", Global.System.Data.SqlDbType.[Char], 12, Global.System.Data.ParameterDirection.Input, 0, 0, "ccodcli", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, True)> _
-        Public Overridable Overloads Function Fill(ByVal dataTable As DataSetAMCProduccion.ClienteDataTable, ByVal codigoCliente As String) As Integer
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetAMCProduccion.ClienteDataTable, ByVal codigoCliente As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (codigoCliente Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("codigoCliente")
             Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(codigoCliente, String)
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(codigoCliente,String)
             End If
-            If (Me.ClearBeforeFill = True) Then
-                dataTable.Clear()
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
             End If
             Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], True)> _
-        Public Overridable Overloads Function GetData(ByVal codigoCliente As String) As DataSetAMCProduccion.ClienteDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData(ByVal codigoCliente As String) As DataSetAMCProduccion.ClienteDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (codigoCliente Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("codigoCliente")
             Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(codigoCliente, String)
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(codigoCliente,String)
             End If
             Dim dataTable As DataSetAMCProduccion.ClienteDataTable = New DataSetAMCProduccion.ClienteDataTable()
             Me.Adapter.Fill(dataTable)
@@ -9778,14 +9772,6 @@ Namespace DataSetAMCProduccionTableAdapters
                     Me.Adapter.UpdateCommand.Connection.Close
                 End If
             End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal nomdeudor As String, ByVal owngarant As String, ByVal descripcio As String, ByVal valpericia As Global.System.Nullable(Of Decimal), ByVal fecinsgar2 As Global.System.Nullable(Of Date), ByVal Original_cod_garant As String, ByVal Original_numclien As String, ByVal Original_nomdeudor As String, ByVal Original_owngarant As String, ByVal Original_valpericia As Global.System.Nullable(Of Decimal), ByVal Original_fecinsgar2 As Global.System.Nullable(Of Date)) As Integer
-            Return Me.Update(Original_cod_garant, Original_numclien, nomdeudor, owngarant, descripcio, valpericia, fecinsgar2, Original_cod_garant, Original_numclien, Original_nomdeudor, Original_owngarant, Original_valpericia, Original_fecinsgar2)
         End Function
     End Class
     
