@@ -17,3 +17,7 @@ End Class
 
 Partial Public Class DataSetAMCProduccion
 End Class
+
+
+Partial Public Class DataSetAMCProduccion
+End Class

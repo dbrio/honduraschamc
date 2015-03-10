@@ -38,7 +38,8 @@ Partial Class creditos
         Me.colnmoncuo = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colnMora_int = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coldfecsol = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.LabelNombre = New System.Windows.Forms.Label()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
         CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClienteGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -290,27 +291,36 @@ Partial Class creditos
         Me.coldfecsol.VisibleIndex = 8
         Me.coldfecsol.Width = 188
         '
-        'LabelNombre
+        'btnBuscar
         '
-        Me.LabelNombre.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LabelNombre.AutoSize = True
-        Me.LabelNombre.BackColor = System.Drawing.Color.SlateGray
-        Me.LabelNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelNombre.ForeColor = System.Drawing.Color.White
-        Me.LabelNombre.Location = New System.Drawing.Point(223, 16)
-        Me.LabelNombre.Name = "LabelNombre"
-        Me.LabelNombre.Size = New System.Drawing.Size(156, 37)
-        Me.LabelNombre.TabIndex = 1
-        Me.LabelNombre.Text = "NOMBRE"
+        Me.btnBuscar.BackColor = System.Drawing.Color.SlateGray
+        Me.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.ForeColor = System.Drawing.Color.White
+        Me.btnBuscar.Location = New System.Drawing.Point(362, 19)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(118, 35)
+        Me.btnBuscar.TabIndex = 5
+        Me.btnBuscar.Text = "BUSCAR"
+        Me.btnBuscar.UseVisualStyleBackColor = False
+        '
+        'txtBuscar
+        '
+        Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.Location = New System.Drawing.Point(12, 21)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(344, 31)
+        Me.txtBuscar.TabIndex = 4
         '
         'creditos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1069, 418)
-        Me.Controls.Add(Me.LabelNombre)
+        Me.Controls.Add(Me.btnBuscar)
+        Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.ClienteGridControl)
         Me.ImeMode = System.Windows.Forms.ImeMode.Alpha
         Me.IsMdiContainer = True
@@ -340,5 +350,6 @@ Partial Class creditos
     Friend WithEvents colnmoncuo As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colnMora_int As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents coldfecsol As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents LabelNombre As System.Windows.Forms.Label
+    Friend WithEvents btnBuscar As System.Windows.Forms.Button
+    Friend WithEvents txtBuscar As System.Windows.Forms.TextBox
 End Class
