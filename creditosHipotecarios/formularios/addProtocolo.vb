@@ -1,20 +1,23 @@
 ﻿Public Class addProtocolo
-    Public codigoCliente As String
-    Public codigoAgencia As String
-    Public nombre As String
-    Public rnp As String
-    Public propietario As String
-    Public descripcion As String
-    Public monto As Decimal
-    Public plazo As Integer
-    Public tasa As Decimal
-    Public cuota As Decimal
-    Public interesMora As Decimal
-    Public valorRemate As Decimal
-
-
+    Public codigoClinteGarantiaAdd As String
+    Public nombreClienteGarantiaAdd As String
+    Public identidadGarantiaAdd As String
+    Public codigoAgenciaGarantiaAdd As String
+    Public montoGarantiaAdd As Decimal
+    Public plazoGaratniaAdd As Integer
+    Public tasaInteresGaratniaAdd As Decimal
+    Public cuotaAdd As Decimal
+    Public interesMoraGaratniaAdd As Decimal
+    Public propietarioAdd As String
+    Public descripcionAdd As String
+    Public valorRemateAdd As Decimal
 
     Private Sub addProtocolo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Label1.Text = tasa
+
+        LabelNombre.Text = propietarioAdd
+
     End Sub
+
+    
+   
 End Class

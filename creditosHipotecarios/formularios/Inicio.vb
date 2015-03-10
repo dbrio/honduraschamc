@@ -3,7 +3,7 @@
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GestionarPanel()
 
-        With garantias
+        With creditoList
             .MdiParent = Me
             .Show()
             .Focus()
@@ -31,7 +31,7 @@
     End Sub
 
     Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
-        With garantias
+        With creditoList
             .MdiParent = Me
             .Show()
             .Focus()
@@ -39,7 +39,7 @@
     End Sub
 
     Private Sub btnAddHipoteca_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnAddHipoteca.ItemClick
-        With garantias
+        With creditoList
             .MdiParent = Me
             .Show()
             .Focus()

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class garantias
+Partial Class garantiaList
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,23 +22,20 @@ Partial Class garantias
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.DataSetAMCProduccion = New creditosHipotecarios.DataSetAMCProduccion()
-        Me.GrantiaHipotecariaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GrantiaHipotecariaBindingSource = New System.Windows.Forms.BindingSource()
         Me.GrantiaHipotecariaTableAdapter = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.GrantiaHipotecariaTableAdapter()
         Me.TableAdapterManager = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager()
         Me.GrantiaHipotecariaGridControl = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colcod_garant = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colnumclien = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colnomdeudor = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colfecinsgar2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coldescripcio = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colvalpericia = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colowngarant = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
-        Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.GastosTableAdapter1 = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.GastosTableAdapter()
+        Me.LabelNombre = New System.Windows.Forms.Label()
+        Me.LabelCodigo = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GrantiaHipotecariaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GrantiaHipotecariaGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,12 +68,11 @@ Partial Class garantias
         '
         Me.GrantiaHipotecariaGridControl.DataSource = Me.GrantiaHipotecariaBindingSource
         Me.GrantiaHipotecariaGridControl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GrantiaHipotecariaGridControl.EmbeddedNavigator.ShowToolTips = False
         Me.GrantiaHipotecariaGridControl.Location = New System.Drawing.Point(0, 0)
         Me.GrantiaHipotecariaGridControl.MainView = Me.GridView1
         Me.GrantiaHipotecariaGridControl.Name = "GrantiaHipotecariaGridControl"
-        Me.GrantiaHipotecariaGridControl.Size = New System.Drawing.Size(902, 477)
-        Me.GrantiaHipotecariaGridControl.TabIndex = 0
+        Me.GrantiaHipotecariaGridControl.Size = New System.Drawing.Size(1128, 437)
+        Me.GrantiaHipotecariaGridControl.TabIndex = 2
         Me.GrantiaHipotecariaGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
         'GridView1
@@ -145,9 +141,9 @@ Partial Class garantias
         Me.GridView1.Appearance.GroupFooter.Options.UseBackColor = True
         Me.GridView1.Appearance.GroupFooter.Options.UseBorderColor = True
         Me.GridView1.Appearance.GroupFooter.Options.UseForeColor = True
-        Me.GridView1.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(62, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(185, Byte), Integer))
-        Me.GridView1.Appearance.GroupPanel.Font = New System.Drawing.Font("Tahoma", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GridView1.Appearance.GroupPanel.ForeColor = System.Drawing.Color.White
+        Me.GridView1.Appearance.GroupPanel.BackColor = System.Drawing.Color.SlateGray
+        Me.GridView1.Appearance.GroupPanel.Font = New System.Drawing.Font("Tahoma", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GridView1.Appearance.GroupPanel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(254, Byte), Integer))
         Me.GridView1.Appearance.GroupPanel.Options.UseBackColor = True
         Me.GridView1.Appearance.GroupPanel.Options.UseFont = True
         Me.GridView1.Appearance.GroupPanel.Options.UseForeColor = True
@@ -182,7 +178,7 @@ Partial Class garantias
         Me.GridView1.Appearance.Preview.Options.UseBackColor = True
         Me.GridView1.Appearance.Preview.Options.UseForeColor = True
         Me.GridView1.Appearance.Row.BackColor = System.Drawing.Color.White
-        Me.GridView1.Appearance.Row.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GridView1.Appearance.Row.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GridView1.Appearance.Row.ForeColor = System.Drawing.Color.Black
         Me.GridView1.Appearance.Row.Options.UseBackColor = True
         Me.GridView1.Appearance.Row.Options.UseFont = True
@@ -195,83 +191,51 @@ Partial Class garantias
         Me.GridView1.Appearance.SelectedRow.Options.UseForeColor = True
         Me.GridView1.Appearance.VertLine.BackColor = System.Drawing.Color.FromArgb(CType(CType(99, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(196, Byte), Integer))
         Me.GridView1.Appearance.VertLine.Options.UseBackColor = True
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colcod_garant, Me.colnumclien, Me.colnomdeudor, Me.colfecinsgar2, Me.coldescripcio, Me.colvalpericia, Me.colowngarant})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colcod_garant, Me.colfecinsgar2, Me.coldescripcio, Me.colvalpericia, Me.colowngarant})
         Me.GridView1.GridControl = Me.GrantiaHipotecariaGridControl
         Me.GridView1.GroupPanelText = " "
         Me.GridView1.Name = "GridView1"
-        Me.GridView1.OptionsBehavior.AllowIncrementalSearch = True
-        Me.GridView1.OptionsBehavior.AutoExpandAllGroups = True
         Me.GridView1.OptionsBehavior.Editable = False
-        Me.GridView1.OptionsBehavior.KeepGroupExpandedOnSorting = False
         Me.GridView1.OptionsCustomization.AllowFilter = False
-        Me.GridView1.OptionsCustomization.AllowGroup = False
-        Me.GridView1.OptionsCustomization.AllowRowSizing = True
         Me.GridView1.OptionsCustomization.AllowSort = False
-        Me.GridView1.OptionsFilter.AllowColumnMRUFilterList = False
-        Me.GridView1.OptionsNavigation.AutoMoveRowFocus = False
         Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
         Me.GridView1.OptionsSelection.EnableAppearanceFocusedRow = False
-        Me.GridView1.OptionsView.EnableAppearanceOddRow = True
-        Me.GridView1.OptionsView.RowAutoHeight = True
-        Me.GridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never
         Me.GridView1.PaintStyleName = "WindowsXP"
-        Me.GridView1.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.coldescripcio, DevExpress.Data.ColumnSortOrder.Ascending)})
         '
         'colcod_garant
         '
         Me.colcod_garant.Caption = "GARANTÍA"
         Me.colcod_garant.FieldName = "cod_garant"
         Me.colcod_garant.Name = "colcod_garant"
-        Me.colcod_garant.OptionsFilter.AllowAutoFilter = False
-        Me.colcod_garant.OptionsFilter.AllowFilter = False
         Me.colcod_garant.Visible = True
         Me.colcod_garant.VisibleIndex = 0
-        Me.colcod_garant.Width = 40
-        '
-        'colnumclien
-        '
-        Me.colnumclien.Caption = "CODIGO CLIENTE"
-        Me.colnumclien.FieldName = "numclien"
-        Me.colnumclien.Name = "colnumclien"
-        Me.colnumclien.Visible = True
-        Me.colnumclien.VisibleIndex = 1
-        Me.colnumclien.Width = 59
-        '
-        'colnomdeudor
-        '
-        Me.colnomdeudor.Caption = "NOMBRE"
-        Me.colnomdeudor.FieldName = "nomdeudor"
-        Me.colnomdeudor.Name = "colnomdeudor"
-        Me.colnomdeudor.Visible = True
-        Me.colnomdeudor.VisibleIndex = 2
-        Me.colnomdeudor.Width = 165
         '
         'colfecinsgar2
         '
-        Me.colfecinsgar2.Caption = "FECHA"
+        Me.colfecinsgar2.Caption = "FECHA INGRESO"
         Me.colfecinsgar2.FieldName = "fecinsgar2"
         Me.colfecinsgar2.Name = "colfecinsgar2"
         Me.colfecinsgar2.Visible = True
-        Me.colfecinsgar2.VisibleIndex = 3
-        Me.colfecinsgar2.Width = 44
+        Me.colfecinsgar2.VisibleIndex = 1
+        Me.colfecinsgar2.Width = 100
         '
         'coldescripcio
         '
-        Me.coldescripcio.Caption = "DESCRIPCION"
+        Me.coldescripcio.Caption = "DESCRIPCIÓN"
         Me.coldescripcio.FieldName = "descripcio"
         Me.coldescripcio.Name = "coldescripcio"
         Me.coldescripcio.Visible = True
-        Me.coldescripcio.VisibleIndex = 4
-        Me.coldescripcio.Width = 409
+        Me.coldescripcio.VisibleIndex = 2
+        Me.coldescripcio.Width = 650
         '
         'colvalpericia
         '
-        Me.colvalpericia.Caption = "RERMATE"
+        Me.colvalpericia.Caption = "VALOR REMATE"
         Me.colvalpericia.FieldName = "valpericia"
         Me.colvalpericia.Name = "colvalpericia"
         Me.colvalpericia.Visible = True
-        Me.colvalpericia.VisibleIndex = 5
-        Me.colvalpericia.Width = 44
+        Me.colvalpericia.VisibleIndex = 3
+        Me.colvalpericia.Width = 95
         '
         'colowngarant
         '
@@ -279,48 +243,60 @@ Partial Class garantias
         Me.colowngarant.FieldName = "owngarant"
         Me.colowngarant.Name = "colowngarant"
         Me.colowngarant.Visible = True
-        Me.colowngarant.VisibleIndex = 6
-        Me.colowngarant.Width = 122
+        Me.colowngarant.VisibleIndex = 4
+        Me.colowngarant.Width = 285
         '
-        'txtBuscar
+        'LabelNombre
         '
-        Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(12, 20)
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(344, 31)
-        Me.txtBuscar.TabIndex = 1
+        Me.LabelNombre.AutoSize = True
+        Me.LabelNombre.BackColor = System.Drawing.Color.SlateGray
+        Me.LabelNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelNombre.ForeColor = System.Drawing.Color.White
+        Me.LabelNombre.Location = New System.Drawing.Point(12, 24)
+        Me.LabelNombre.Name = "LabelNombre"
+        Me.LabelNombre.Size = New System.Drawing.Size(119, 29)
+        Me.LabelNombre.TabIndex = 3
+        Me.LabelNombre.Text = "NOMBRE"
         '
-        'btnBuscar
+        'LabelCodigo
         '
-        Me.btnBuscar.BackColor = System.Drawing.Color.SlateGray
-        Me.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue
-        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscar.ForeColor = System.Drawing.Color.White
-        Me.btnBuscar.Location = New System.Drawing.Point(362, 18)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(118, 35)
-        Me.btnBuscar.TabIndex = 3
-        Me.btnBuscar.Text = "BUSCAR"
-        Me.btnBuscar.UseVisualStyleBackColor = False
+        Me.LabelCodigo.AutoSize = True
+        Me.LabelCodigo.BackColor = System.Drawing.Color.SlateGray
+        Me.LabelCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelCodigo.ForeColor = System.Drawing.Color.White
+        Me.LabelCodigo.Location = New System.Drawing.Point(772, 24)
+        Me.LabelCodigo.Name = "LabelCodigo"
+        Me.LabelCodigo.Size = New System.Drawing.Size(109, 29)
+        Me.LabelCodigo.TabIndex = 4
+        Me.LabelCodigo.Text = "CODIGO"
         '
-        'GastosTableAdapter1
+        'Button1
         '
-        Me.GastosTableAdapter1.ClearBeforeFill = True
+        Me.Button1.BackColor = System.Drawing.Color.SlateGray
+        Me.Button1.BackgroundImage = Global.creditosHipotecarios.My.Resources.Resources.cross
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(1098, 5)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(22, 21)
+        Me.Button1.TabIndex = 5
+        Me.Button1.UseVisualStyleBackColor = False
         '
-        'garantias
+        'garantiaList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(902, 477)
-        Me.Controls.Add(Me.btnBuscar)
-        Me.Controls.Add(Me.txtBuscar)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.ClientSize = New System.Drawing.Size(1128, 437)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.LabelCodigo)
+        Me.Controls.Add(Me.LabelNombre)
         Me.Controls.Add(Me.GrantiaHipotecariaGridControl)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Name = "garantias"
-        Me.Text = "Agregar Hipoteca"
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Name = "garantiaList"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "AMC | CREDITOS"
         CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GrantiaHipotecariaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GrantiaHipotecariaGridControl, System.ComponentModel.ISupportInitialize).EndInit()
@@ -336,13 +312,11 @@ Partial Class garantias
     Friend WithEvents GrantiaHipotecariaGridControl As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents colcod_garant As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colnumclien As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colnomdeudor As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colfecinsgar2 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents coldescripcio As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colvalpericia As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colowngarant As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents txtBuscar As System.Windows.Forms.TextBox
-    Friend WithEvents btnBuscar As System.Windows.Forms.Button
-    Friend WithEvents GastosTableAdapter1 As creditosHipotecarios.DataSetAMCProduccionTableAdapters.GastosTableAdapter
+    Friend WithEvents LabelNombre As System.Windows.Forms.Label
+    Friend WithEvents LabelCodigo As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class
