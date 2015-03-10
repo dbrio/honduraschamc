@@ -2,7 +2,7 @@
     Public codigoCliente As String
     Public codigoAgencia As String
     Public nombre As String
-    Public rpn As String
+    Public rnp As String
     Public propietario As String
     Public descripcion As String
     Public monto As Decimal
@@ -14,4 +14,7 @@
 
 
 
+    Private Sub addProtocolo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Label1.Text = tasa
+    End Sub
 End Class

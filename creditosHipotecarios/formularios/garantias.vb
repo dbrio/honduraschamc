@@ -16,6 +16,7 @@
         diccionario("nombre") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "nomdeudor")
         diccionario("propietario") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "owngarant")
         diccionario("descripcion") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "descripcio")
+        diccionario("valorRemate") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "valpericia")
 
 
         Return diccionario
@@ -59,12 +60,14 @@
         Dim nombre As String = dict("nombre")
         Dim propietario As String = dict("propietario")
         Dim descripcion As String = dict("descripcion")
+        Dim valorRemate As String = dict("valpericia")
         With creditos
 
             .clienteCodigo = codigoCliente
             .nombre = nombre
             .propietario = propietario
             .descripcion = descripcion
+            .valorRemate = valorRemate
             .Show()
             .Focus()
 
