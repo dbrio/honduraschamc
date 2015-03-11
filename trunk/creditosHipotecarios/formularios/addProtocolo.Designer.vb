@@ -48,6 +48,8 @@ Partial Class addProtocolo
         Me.PrestamoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.prestamoTableAdapter()
         Me.HipotecaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.HipotecaTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.HipotecaTableAdapter()
+        Me.EventoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.EventoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.EventoTableAdapter()
         Me.Panel1.SuspendLayout()
         CType(Me.AbogadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,6 +57,7 @@ Partial Class addProtocolo
         Me.GroupBox1.SuspendLayout()
         CType(Me.PrestamoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HipotecaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EventoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelNombre
@@ -295,6 +298,15 @@ Partial Class addProtocolo
         '
         Me.HipotecaTableAdapter.ClearBeforeFill = True
         '
+        'EventoBindingSource
+        '
+        Me.EventoBindingSource.DataMember = "Evento"
+        Me.EventoBindingSource.DataSource = Me.DataSetCreditos
+        '
+        'EventoTableAdapter
+        '
+        Me.EventoTableAdapter.ClearBeforeFill = True
+        '
         'addProtocolo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -313,6 +325,7 @@ Partial Class addProtocolo
         Me.GroupBox1.PerformLayout()
         CType(Me.PrestamoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HipotecaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EventoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -341,4 +354,6 @@ Partial Class addProtocolo
     Friend WithEvents PrestamoTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.prestamoTableAdapter
     Friend WithEvents HipotecaBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents HipotecaTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.HipotecaTableAdapter
+    Friend WithEvents EventoBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents EventoTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.EventoTableAdapter
 End Class
