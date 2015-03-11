@@ -1,7 +1,7 @@
 ﻿Public Class creditoList
 
     Private Sub creditoList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ClienteGridControl.Enabled = true
+        ClienteGridControl.Enabled = False
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
@@ -46,17 +46,36 @@
     End Sub
 
     Private Sub ClienteGridControl_DoubleClick(sender As Object, e As EventArgs) Handles ClienteGridControl.DoubleClick
+
+        Dim dict As Hashtable = obtenerDatos()
+        Dim codigoCliente As String = dict("codigoCliente")
+        Dim nombre As String = dict("nombre")
+        Dim identidad As String = dict("identidad")
+        Dim codigoAgencia As String = dict("codigoAgencia")
+        Dim monto As Decimal = dict("monto")
+        Dim plazo As Decimal = dict("plazo")
+        Dim interes As Decimal = dict("interes")
+        Dim cuota As Decimal = dict("cuota")
+        Dim interesMora As Decimal = dict("interesMora")
+
+
         With garantiaList
-
-            Dim dict As Hashtable = obtenerDatos()
-            Dim codigoCliente As String = dict("codigoCliente")
-            Dim nombre As String = dict("nombre")
-
             .codigoClinteGarantia = codigoCliente
             .nombreClienteGarantia = nombre
+            .identidadGarantia = identidad
+            .montoGarantia = monto
+            .plazoGaratnia = plazo
+            .tasaInteresGaratnia = interes
+            .cuotaGaratnia = cuota
+            .interesMoraGaratnia = interesMora
+            .codigoAgenciaGarantia = codigoAgencia
+
             .Show()
             .Focus()
 
         End With
+
+
+
     End Sub
 End Class

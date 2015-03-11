@@ -22,8 +22,9 @@ Partial Class creditoList
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.DataSetAMCProduccion = New creditosHipotecarios.DataSetAMCProduccion()
-        Me.ClienteBindingSource = New System.Windows.Forms.BindingSource()
+        Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ClienteTableAdapter = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.ClienteTableAdapter()
         Me.TableAdapterManager = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager()
         Me.ClienteGridControl = New DevExpress.XtraGrid.GridControl()
@@ -314,9 +315,9 @@ Partial Class creditoList
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscar.ForeColor = System.Drawing.Color.White
-        Me.btnBuscar.Location = New System.Drawing.Point(362, 23)
+        Me.btnBuscar.Location = New System.Drawing.Point(362, 25)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(118, 35)
+        Me.btnBuscar.Size = New System.Drawing.Size(111, 33)
         Me.btnBuscar.TabIndex = 7
         Me.btnBuscar.Text = "BUSCAR"
         Me.btnBuscar.UseVisualStyleBackColor = False
@@ -339,7 +340,7 @@ Partial Class creditoList
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.ClienteGridControl)
         Me.Name = "creditoList"
-        Me.Text = "creditoList"
+        Me.Text = "Lista de Créditos"
         CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClienteGridControl, System.ComponentModel.ISupportInitialize).EndInit()
