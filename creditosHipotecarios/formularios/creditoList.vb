@@ -56,7 +56,7 @@
         Dim plazo As Decimal = dict("plazo")
         Dim interes As Decimal = dict("interes")
         Dim cuota As Decimal = dict("cuota")
-        Dim interesMora As Decimal = dict("interesMora")
+        Dim interesMora As Decimal = IsDBNull(dict("interesMora"))
 
 
         With garantiaList

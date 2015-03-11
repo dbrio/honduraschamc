@@ -18,7 +18,7 @@
         Try
             Me.PrestamoTableAdapter.Insert(codigoClinteGarantiaAdd, codigoAgenciaGarantiaAdd, nombreClienteGarantiaAdd, identidadGarantiaAdd, propietarioAdd, txtIdPropietario.Text, montoGarantiaAdd, plazoGaratniaAdd, tasaInteresGaratniaAdd, cuotaAdd, interesMoraGaratniaAdd, valorRemateAdd, descripcionAdd)
 
-
+            Me.HipotecaTableAdapter.sp_Hipoteca(NombresAbogado.SelectedValue)
 
             MessageBox.Show("Protocolo agregado exitosamente", "Protocolo agregado", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -42,6 +42,8 @@
     End Sub
 
     Private Sub addProtocolo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'DataSetCreditos.Hipoteca' Puede moverla o quitarla según sea necesario.
+        Me.HipotecaTableAdapter.Fill(Me.DataSetCreditos.Hipoteca)
         'TODO: esta línea de código carga datos en la tabla 'DataSetCreditos.prestamo' Puede moverla o quitarla según sea necesario.
         Me.PrestamoTableAdapter.Fill(Me.DataSetCreditos.prestamo)
 
