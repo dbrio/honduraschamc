@@ -180,6 +180,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="prueba.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>prueba.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="formularios\addProtocolo.resx">
@@ -240,6 +245,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="prueba.xsc">
+      <DependentUpon>prueba.xsd</DependentUpon>
+    </None>
+    <None Include="prueba.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>prueba.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="prueba.xss">
+      <DependentUpon>prueba.xsd</DependentUpon>
+    </None>
     <None Include="Resources\login.png" />
   </ItemGroup>
   <ItemGroup>

@@ -16,8 +16,6 @@ Public Class login
             txtUser.Text = MessageBox.Show("Es necesario un usuario", "Campo obligatorio", MessageBoxButtons.OK, MessageBoxIcon.Error)
             txtUser.Text = ""
             txtUser.Focus()
-
-
             Exit Sub
         End If
 

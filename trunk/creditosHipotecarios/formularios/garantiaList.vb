@@ -4,9 +4,9 @@
     Public identidadGarantia As String
     Public codigoAgenciaGarantia As String
     Public montoGarantia As Decimal
-    Public plazoGaratnia As Integer
+    Public plazoGaratnia As Decimal
     Public tasaInteresGaratnia As Decimal
-    Public cuota As Decimal
+    Public cuotaGaratnia As Decimal
     Public interesMoraGaratnia As Decimal
 
 
@@ -55,7 +55,8 @@
             Dim dict As Hashtable = obtenerDatos()
             Dim propietario As String = dict("propietario")
             Dim descripcion As String = dict("descripcion")
-            Dim valorRemate As String = dict("valpericia")
+            Dim valorRemate As Decimal = dict("valorRemate")
+
             Me.Close()
             .propietarioAdd = propietario
             .descripcionAdd = descripcion
@@ -67,7 +68,7 @@
             .montoGarantiaAdd = montoGarantia
             .plazoGaratniaAdd = plazoGaratnia
             .tasaInteresGaratniaAdd = tasaInteresGaratnia
-            .cuotaAdd = cuota
+            .cuotaAdd = cuotaGaratnia
             .interesMoraGaratniaAdd = interesMoraGaratnia
             .MdiParent = Inicio
             .Show()
