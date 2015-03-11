@@ -28,6 +28,9 @@ Partial Class addProtocolo
         Me.txtIdPropietario = New System.Windows.Forms.TextBox()
         Me.LabelIdentidadCliente = New System.Windows.Forms.Label()
         Me.NombresAbogado = New System.Windows.Forms.ComboBox()
+        Me.AbogadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetCreditos = New creditosHipotecarios.DataSetCreditos()
+        Me.AbogadoBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -39,19 +42,19 @@ Partial Class addProtocolo
         Me.LabelMonto = New System.Windows.Forms.Label()
         Me.LabelIdentidadProietario = New System.Windows.Forms.Label()
         Me.LabelPropietario = New System.Windows.Forms.Label()
-        Me.AbogadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSetCreditos = New creditosHipotecarios.DataSetCreditos()
-        Me.AbogadoBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.AbogadoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.AbogadoTableAdapter()
         Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
         Me.PrestamoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PrestamoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.prestamoTableAdapter()
+        Me.HipotecaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.HipotecaTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.HipotecaTableAdapter()
         Me.Panel1.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         CType(Me.AbogadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AbogadoBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         CType(Me.PrestamoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.HipotecaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelNombre
@@ -106,6 +109,8 @@ Partial Class addProtocolo
         Me.NombresAbogado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AbogadoBindingSource, "nombres", True))
         Me.NombresAbogado.DataBindings.Add(New System.Windows.Forms.Binding("SelectedItem", Me.AbogadoBindingSource1, "nombres", True))
         Me.NombresAbogado.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.AbogadoBindingSource1, "abogadoId", True))
+        Me.NombresAbogado.DataSource = Me.AbogadoBindingSource
+        Me.NombresAbogado.DisplayMember = "nombres"
         Me.NombresAbogado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NombresAbogado.ForeColor = System.Drawing.SystemColors.WindowFrame
         Me.NombresAbogado.FormattingEnabled = True
@@ -113,7 +118,22 @@ Partial Class addProtocolo
         Me.NombresAbogado.Name = "NombresAbogado"
         Me.NombresAbogado.Size = New System.Drawing.Size(179, 24)
         Me.NombresAbogado.TabIndex = 11
-        Me.NombresAbogado.Text = "  Seleccionar"
+        Me.NombresAbogado.ValueMember = "abogadoId"
+        '
+        'AbogadoBindingSource
+        '
+        Me.AbogadoBindingSource.DataMember = "Abogado"
+        Me.AbogadoBindingSource.DataSource = Me.DataSetCreditos
+        '
+        'DataSetCreditos
+        '
+        Me.DataSetCreditos.DataSetName = "DataSetCreditos"
+        Me.DataSetCreditos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'AbogadoBindingSource1
+        '
+        Me.AbogadoBindingSource1.DataMember = "Abogado"
+        Me.AbogadoBindingSource1.DataSource = Me.DataSetCreditos
         '
         'btnAgregar
         '
@@ -243,21 +263,6 @@ Partial Class addProtocolo
         Me.LabelPropietario.TabIndex = 1
         Me.LabelPropietario.Text = "Propietario"
         '
-        'AbogadoBindingSource
-        '
-        Me.AbogadoBindingSource.DataMember = "Abogado"
-        Me.AbogadoBindingSource.DataSource = Me.DataSetCreditos
-        '
-        'DataSetCreditos
-        '
-        Me.DataSetCreditos.DataSetName = "DataSetCreditos"
-        Me.DataSetCreditos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'AbogadoBindingSource1
-        '
-        Me.AbogadoBindingSource1.DataMember = "Abogado"
-        Me.AbogadoBindingSource1.DataSource = Me.DataSetCreditos
-        '
         'AbogadoTableAdapter
         '
         Me.AbogadoTableAdapter.ClearBeforeFill = True
@@ -281,6 +286,15 @@ Partial Class addProtocolo
         '
         Me.PrestamoTableAdapter.ClearBeforeFill = True
         '
+        'HipotecaBindingSource
+        '
+        Me.HipotecaBindingSource.DataMember = "Hipoteca"
+        Me.HipotecaBindingSource.DataSource = Me.DataSetCreditos
+        '
+        'HipotecaTableAdapter
+        '
+        Me.HipotecaTableAdapter.ClearBeforeFill = True
+        '
         'addProtocolo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -292,12 +306,13 @@ Partial Class addProtocolo
         Me.Text = "Autorización para Protocolo"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         CType(Me.AbogadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AbogadoBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         CType(Me.PrestamoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.HipotecaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -324,4 +339,6 @@ Partial Class addProtocolo
     Friend WithEvents txtIdPropietario As System.Windows.Forms.TextBox
     Friend WithEvents PrestamoBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents PrestamoTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.prestamoTableAdapter
+    Friend WithEvents HipotecaBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents HipotecaTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.HipotecaTableAdapter
 End Class
