@@ -29,12 +29,18 @@ Public Class login
             Exit Sub
         End If
 
+
+
         'comprovar si el usuario existe en la base de datos
 
         If login = 1 Then
             With Inicio
                 .Text = "Adel Microcréditos | Créditos Hipotecarios"
 
+            End With
+            Dim idUsuario As Integer = UsuarioTableAdapter.ScalarQuery(txtUser.Text, keyCryto)
+            With addProtocolo
+                .Usser = idUsuario
             End With
 
             Inicio.Show()
