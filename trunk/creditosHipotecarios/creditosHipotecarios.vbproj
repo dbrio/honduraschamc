@@ -139,12 +139,19 @@
     <Compile Include="formularios\addProtocolo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="formularios\Agencia\enProtocolo.Designer.vb">
+      <DependentUpon>enProtocolo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\Agencia\enProtocolo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formularios\creditoList.Designer.vb">
       <DependentUpon>creditoList.vb</DependentUpon>
     </Compile>
     <Compile Include="formularios\creditoList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="formularios\Datos.vb" />
     <Compile Include="formularios\garantiaList.Designer.vb">
       <DependentUpon>garantiaList.vb</DependentUpon>
     </Compile>
@@ -189,6 +196,9 @@
   <ItemGroup>
     <EmbeddedResource Include="formularios\addProtocolo.resx">
       <DependentUpon>addProtocolo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Agencia\enProtocolo.resx">
+      <DependentUpon>enProtocolo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\creditoList.resx">
       <DependentUpon>creditoList.vb</DependentUpon>

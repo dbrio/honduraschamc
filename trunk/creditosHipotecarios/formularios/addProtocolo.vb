@@ -20,6 +20,8 @@
             Me.PrestamoTableAdapter.Insert(codigoClinteGarantiaAdd, codigoAgenciaGarantiaAdd, nombreClienteGarantiaAdd, identidadGarantiaAdd, propietarioAdd, txtIdPropietario.Text, montoGarantiaAdd, plazoGaratniaAdd, tasaInteresGaratniaAdd, cuotaAdd, interesMoraGaratniaAdd, valorRemateAdd, descripcionAdd)
 
             Me.HipotecaTableAdapter.sp_Hipoteca(NombresAbogado.SelectedValue)
+
+
             Me.EventoTableAdapter.sp_Evento(Usser)
 
 

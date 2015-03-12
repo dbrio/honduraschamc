@@ -38,7 +38,12 @@ Public Class login
                 .Text = "Adel Microcréditos | Créditos Hipotecarios"
 
             End With
+
+
+
             Dim idUsuario As Integer = UsuarioTableAdapter.ScalarQuery(txtUser.Text, keyCryto)
+
+
             With addProtocolo
                 .Usser = idUsuario
             End With
