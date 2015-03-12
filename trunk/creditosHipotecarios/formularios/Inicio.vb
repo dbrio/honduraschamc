@@ -48,9 +48,11 @@
 
     Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
         With enProtocolo
-            .MdiParent = MdiParent
+            .MdiParent = Me
             .Show()
             .Focus()
         End With
     End Sub
+
+
 End Class

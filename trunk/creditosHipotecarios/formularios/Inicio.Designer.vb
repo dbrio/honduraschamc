@@ -31,6 +31,10 @@ Partial Class Inicio
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.PageAgencia = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.PageProveeduria = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.PageGerente = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.PageGerenteRegional = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.PageAdmin = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
@@ -47,9 +51,9 @@ Partial Class Inicio
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonControl1.MaxItemId = 10
         Me.RibbonControl1.Name = "RibbonControl1"
-        Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.PageAgencia})
+        Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.PageAgencia, Me.PageProveeduria, Me.PageGerente, Me.PageGerenteRegional, Me.PageAdmin})
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(1093, 139)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1093, 142)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         '
         'btnAddHipoteca
@@ -75,18 +79,23 @@ Partial Class Inicio
         '
         'RibbonPage1
         '
+        Me.RibbonPage1.Appearance.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RibbonPage1.Appearance.Options.UseFont = True
         Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "INICIO"
         '
         'RibbonPageGroup1
         '
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.btnAddHipoteca)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         Me.RibbonPageGroup1.ShowCaptionButton = False
         '
         'PageAgencia
         '
+        Me.PageAgencia.Appearance.BorderColor = System.Drawing.Color.RoyalBlue
+        Me.PageAgencia.Appearance.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PageAgencia.Appearance.Options.UseBorderColor = True
+        Me.PageAgencia.Appearance.Options.UseFont = True
         Me.PageAgencia.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup2})
         Me.PageAgencia.Name = "PageAgencia"
         Me.PageAgencia.Text = "AGENCIA"
@@ -95,6 +104,35 @@ Partial Class Inicio
         '
         Me.RibbonPageGroup2.ItemLinks.Add(Me.BarButtonItem2)
         Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
+        Me.RibbonPageGroup2.ShowCaptionButton = False
+        '
+        'PageProveeduria
+        '
+        Me.PageProveeduria.Appearance.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PageProveeduria.Appearance.Options.UseFont = True
+        Me.PageProveeduria.Name = "PageProveeduria"
+        Me.PageProveeduria.Text = "PROVEEDURIA"
+        '
+        'PageGerente
+        '
+        Me.PageGerente.Appearance.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PageGerente.Appearance.Options.UseFont = True
+        Me.PageGerente.Name = "PageGerente"
+        Me.PageGerente.Text = "GERENTE"
+        '
+        'PageGerenteRegional
+        '
+        Me.PageGerenteRegional.Appearance.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PageGerenteRegional.Appearance.Options.UseFont = True
+        Me.PageGerenteRegional.Name = "PageGerenteRegional"
+        Me.PageGerenteRegional.Text = "GERENTE REGIONAL"
+        '
+        'PageAdmin
+        '
+        Me.PageAdmin.Appearance.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PageAdmin.Appearance.Options.UseFont = True
+        Me.PageAdmin.Name = "PageAdmin"
+        Me.PageAdmin.Text = "ADMIN"
         '
         'XtraTabbedMdiManager1
         '
@@ -103,12 +141,15 @@ Partial Class Inicio
         'PanelControl1
         '
         Me.PanelControl1.Appearance.BackColor = System.Drawing.Color.White
+        Me.PanelControl1.Appearance.BorderColor = System.Drawing.Color.White
         Me.PanelControl1.Appearance.Options.UseBackColor = True
+        Me.PanelControl1.Appearance.Options.UseBorderColor = True
+        Me.PanelControl1.Appearance.Options.UseForeColor = True
         Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControl1.Location = New System.Drawing.Point(0, 139)
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 142)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(1093, 335)
+        Me.PanelControl1.Size = New System.Drawing.Size(1093, 332)
         Me.PanelControl1.TabIndex = 2
         '
         'DefaultLookAndFeel1
@@ -165,4 +206,8 @@ Partial Class Inicio
     Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents PageAgencia As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents RibbonPageGroup2 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents PageProveeduria As DevExpress.XtraBars.Ribbon.RibbonPage
+    Friend WithEvents PageGerente As DevExpress.XtraBars.Ribbon.RibbonPage
+    Friend WithEvents PageGerenteRegional As DevExpress.XtraBars.Ribbon.RibbonPage
+    Friend WithEvents PageAdmin As DevExpress.XtraBars.Ribbon.RibbonPage
 End Class

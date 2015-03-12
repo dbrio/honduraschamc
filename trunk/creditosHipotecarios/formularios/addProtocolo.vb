@@ -25,6 +25,14 @@
 
             MessageBox.Show("Protocolo agregado exitosamente", "Protocolo agregado", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+            With enProtocolo
+
+                .MdiParent = Inicio
+                .Show()
+                .Focus()
+
+            End With
+            Me.Close()
 
         Catch ex As Exception
             MsgBox(ex.Message)
