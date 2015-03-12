@@ -21,9 +21,7 @@
 
             Me.HipotecaTableAdapter.sp_Hipoteca(NombresAbogado.SelectedValue)
 
-
-            Me.EventoTableAdapter.sp_Evento(Usser)
-
+            Me.EventoTableAdapter.sp_Evento(UsuarioActivo.usuario)
 
             MessageBox.Show("Protocolo agregado exitosamente", "Protocolo agregado", MessageBoxButtons.OK, MessageBoxIcon.Information)
 

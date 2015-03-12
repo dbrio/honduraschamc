@@ -1,7 +1,9 @@
-﻿Public Class Datos
+﻿Public Module Datos
 
-    Public id As Integer
+    Public Structure SesionUser
+        Public usuario As Integer
+    End Structure
 
+    Public UsuarioActivo As SesionUser
 
-
-End Class
+End Module
