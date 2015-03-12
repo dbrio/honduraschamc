@@ -58,7 +58,7 @@ SELECT usuarioId, usuario, contrasena FROM Usuario WHERE (usuarioId = @usuarioId
               <Mapping SourceColumn="contrasena" DataSetColumn="contrasena" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="amcAppConnectionString (MySettings)" DbObjectName="amcApp.dbo.Usuario" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ScalarQuery" Modifier="Public" Name="ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ScalarQuery">
+              <DbSource ConnectionRef="amcAppConnectionString (MySettings)" DbObjectName="amcApp.dbo.Usuario" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ScalarQuery" Modifier="Public" Name="ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        usuarioId
@@ -71,7 +71,7 @@ WHERE        (usuario = @Usuario) AND (contrasena = @Contrasena)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="amcAppConnectionString (MySettings)" DbObjectName="amcApp.dbo.sp_Login" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_Login" Modifier="Public" Name="sp_Login" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="sp_Login">
+              <DbSource ConnectionRef="amcAppConnectionString (MySettings)" DbObjectName="amcApp.dbo.sp_Login" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_Login" Modifier="Public" Name="sp_Login" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="sp_Login">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.sp_Login</CommandText>
@@ -257,7 +257,22 @@ SELECT prestamoId, codigoCliente, codigoAgencia, nombreCliente, rnpCliente, nomb
               <Mapping SourceColumn="valorRemate" DataSetColumn="valorRemate" />
               <Mapping SourceColumn="descripcion" DataSetColumn="descripcion" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="amcAppConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="protocolo" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="protocolo" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="protocolo">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT p.nombreCliente, p.rnpCliente, p.monto, p.tasaInteres, p.descripcion, e.fecha FROM prestamo AS p
+INNER JOIN Hipoteca AS h
+ON p.prestamoId = h.prestamoId
+INNER JOIN Evento AS e
+ON h.hipotecaId = e.hipotecaId
+WHERE e.estadoId = 1
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HipotecaTableAdapter" GeneratorDataComponentClassName="HipotecaTableAdapter" Name="Hipoteca" UserDataComponentName="HipotecaTableAdapter">
             <MainSource>
@@ -433,7 +448,7 @@ SELECT eventoId, hipotecaId, estadoId, fecha, usuarioId FROM Evento WHERE (event
   <xs:element name="DataSetCreditos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetCreditos" msprop:Generator_UserDSName="DataSetCreditos">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Usuario" msprop:Generator_TableClassName="UsuarioDataTable" msprop:Generator_TableVarName="tableUsuario" msprop:Generator_TablePropName="Usuario" msprop:Generator_RowDeletingName="UsuarioRowDeleting" msprop:Generator_RowChangingName="UsuarioRowChanging" msprop:Generator_RowEvHandlerName="UsuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="UsuarioRowDeleted" msprop:Generator_UserTableName="Usuario" msprop:Generator_RowChangedName="UsuarioRowChanged" msprop:Generator_RowEvArgName="UsuarioRowChangeEvent" msprop:Generator_RowClassName="UsuarioRow">
+        <xs:element name="Usuario" msprop:Generator_TableClassName="UsuarioDataTable" msprop:Generator_TableVarName="tableUsuario" msprop:Generator_RowChangedName="UsuarioRowChanged" msprop:Generator_TablePropName="Usuario" msprop:Generator_RowDeletingName="UsuarioRowDeleting" msprop:Generator_RowChangingName="UsuarioRowChanging" msprop:Generator_RowEvHandlerName="UsuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="UsuarioRowDeleted" msprop:Generator_RowClassName="UsuarioRow" msprop:Generator_UserTableName="Usuario" msprop:Generator_RowEvArgName="UsuarioRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="usuarioId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnusuarioId" msprop:Generator_ColumnPropNameInRow="usuarioId" msprop:Generator_ColumnPropNameInTable="usuarioIdColumn" msprop:Generator_UserColumnName="usuarioId" type="xs:int" />
@@ -454,7 +469,7 @@ SELECT eventoId, hipotecaId, estadoId, fecha, usuarioId FROM Evento WHERE (event
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Abogado" msprop:Generator_TableClassName="AbogadoDataTable" msprop:Generator_TableVarName="tableAbogado" msprop:Generator_TablePropName="Abogado" msprop:Generator_RowDeletingName="AbogadoRowDeleting" msprop:Generator_RowChangingName="AbogadoRowChanging" msprop:Generator_RowEvHandlerName="AbogadoRowChangeEventHandler" msprop:Generator_RowDeletedName="AbogadoRowDeleted" msprop:Generator_UserTableName="Abogado" msprop:Generator_RowChangedName="AbogadoRowChanged" msprop:Generator_RowEvArgName="AbogadoRowChangeEvent" msprop:Generator_RowClassName="AbogadoRow">
+        <xs:element name="Abogado" msprop:Generator_TableClassName="AbogadoDataTable" msprop:Generator_TableVarName="tableAbogado" msprop:Generator_RowChangedName="AbogadoRowChanged" msprop:Generator_TablePropName="Abogado" msprop:Generator_RowDeletingName="AbogadoRowDeleting" msprop:Generator_RowChangingName="AbogadoRowChanging" msprop:Generator_RowEvHandlerName="AbogadoRowChangeEventHandler" msprop:Generator_RowDeletedName="AbogadoRowDeleted" msprop:Generator_RowClassName="AbogadoRow" msprop:Generator_UserTableName="Abogado" msprop:Generator_RowEvArgName="AbogadoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="abogadoId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnabogadoId" msprop:Generator_ColumnPropNameInRow="abogadoId" msprop:Generator_ColumnPropNameInTable="abogadoIdColumn" msprop:Generator_UserColumnName="abogadoId" type="xs:int" />
@@ -496,7 +511,7 @@ SELECT eventoId, hipotecaId, estadoId, fecha, usuarioId FROM Evento WHERE (event
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="prestamo" msprop:Generator_TableClassName="prestamoDataTable" msprop:Generator_TableVarName="tableprestamo" msprop:Generator_RowChangedName="prestamoRowChanged" msprop:Generator_TablePropName="prestamo" msprop:Generator_RowDeletingName="prestamoRowDeleting" msprop:Generator_RowChangingName="prestamoRowChanging" msprop:Generator_RowEvHandlerName="prestamoRowChangeEventHandler" msprop:Generator_RowDeletedName="prestamoRowDeleted" msprop:Generator_RowClassName="prestamoRow" msprop:Generator_UserTableName="prestamo" msprop:Generator_RowEvArgName="prestamoRowChangeEvent">
+        <xs:element name="prestamo" msprop:Generator_TableClassName="prestamoDataTable" msprop:Generator_TableVarName="tableprestamo" msprop:Generator_TablePropName="prestamo" msprop:Generator_RowDeletingName="prestamoRowDeleting" msprop:Generator_RowChangingName="prestamoRowChanging" msprop:Generator_RowEvHandlerName="prestamoRowChangeEventHandler" msprop:Generator_RowDeletedName="prestamoRowDeleted" msprop:Generator_UserTableName="prestamo" msprop:Generator_RowChangedName="prestamoRowChanged" msprop:Generator_RowEvArgName="prestamoRowChangeEvent" msprop:Generator_RowClassName="prestamoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="prestamoId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnprestamoId" msprop:Generator_ColumnPropNameInRow="prestamoId" msprop:Generator_ColumnPropNameInTable="prestamoIdColumn" msprop:Generator_UserColumnName="prestamoId" type="xs:int" />
@@ -558,7 +573,7 @@ SELECT eventoId, hipotecaId, estadoId, fecha, usuarioId FROM Evento WHERE (event
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Hipoteca" msprop:Generator_TableClassName="HipotecaDataTable" msprop:Generator_TableVarName="tableHipoteca" msprop:Generator_RowChangedName="HipotecaRowChanged" msprop:Generator_TablePropName="Hipoteca" msprop:Generator_RowDeletingName="HipotecaRowDeleting" msprop:Generator_RowChangingName="HipotecaRowChanging" msprop:Generator_RowEvHandlerName="HipotecaRowChangeEventHandler" msprop:Generator_RowDeletedName="HipotecaRowDeleted" msprop:Generator_RowClassName="HipotecaRow" msprop:Generator_UserTableName="Hipoteca" msprop:Generator_RowEvArgName="HipotecaRowChangeEvent">
+        <xs:element name="Hipoteca" msprop:Generator_TableClassName="HipotecaDataTable" msprop:Generator_TableVarName="tableHipoteca" msprop:Generator_TablePropName="Hipoteca" msprop:Generator_RowDeletingName="HipotecaRowDeleting" msprop:Generator_RowChangingName="HipotecaRowChanging" msprop:Generator_RowEvHandlerName="HipotecaRowChangeEventHandler" msprop:Generator_RowDeletedName="HipotecaRowDeleted" msprop:Generator_UserTableName="Hipoteca" msprop:Generator_RowChangedName="HipotecaRowChanged" msprop:Generator_RowEvArgName="HipotecaRowChangeEvent" msprop:Generator_RowClassName="HipotecaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="hipotecaId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnhipotecaId" msprop:Generator_ColumnPropNameInRow="hipotecaId" msprop:Generator_ColumnPropNameInTable="hipotecaIdColumn" msprop:Generator_UserColumnName="hipotecaId" type="xs:int" />
@@ -595,7 +610,7 @@ SELECT eventoId, hipotecaId, estadoId, fecha, usuarioId FROM Evento WHERE (event
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Evento" msprop:Generator_TableClassName="EventoDataTable" msprop:Generator_TableVarName="tableEvento" msprop:Generator_RowChangedName="EventoRowChanged" msprop:Generator_TablePropName="Evento" msprop:Generator_RowDeletingName="EventoRowDeleting" msprop:Generator_RowChangingName="EventoRowChanging" msprop:Generator_RowEvHandlerName="EventoRowChangeEventHandler" msprop:Generator_RowDeletedName="EventoRowDeleted" msprop:Generator_RowClassName="EventoRow" msprop:Generator_UserTableName="Evento" msprop:Generator_RowEvArgName="EventoRowChangeEvent">
+        <xs:element name="Evento" msprop:Generator_TableClassName="EventoDataTable" msprop:Generator_TableVarName="tableEvento" msprop:Generator_TablePropName="Evento" msprop:Generator_RowDeletingName="EventoRowDeleting" msprop:Generator_RowChangingName="EventoRowChanging" msprop:Generator_RowEvHandlerName="EventoRowChangeEventHandler" msprop:Generator_RowDeletedName="EventoRowDeleted" msprop:Generator_UserTableName="Evento" msprop:Generator_RowChangedName="EventoRowChanged" msprop:Generator_RowEvArgName="EventoRowChangeEvent" msprop:Generator_RowClassName="EventoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="eventoId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columneventoId" msprop:Generator_ColumnPropNameInRow="eventoId" msprop:Generator_ColumnPropNameInTable="eventoIdColumn" msprop:Generator_UserColumnName="eventoId" type="xs:int" />
@@ -631,10 +646,10 @@ SELECT eventoId, hipotecaId, estadoId, fecha, usuarioId FROM Evento WHERE (event
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_CreditosHipotecario_Abogado" msdata:parent="Abogado" msdata:child="Hipoteca" msdata:parentkey="abogadoId" msdata:childkey="abogadoId" msprop:Generator_UserChildTable="Hipoteca" msprop:Generator_ChildPropName="GetHipotecaRows" msprop:Generator_UserRelationName="FK_CreditosHipotecario_Abogado" msprop:Generator_RelationVarName="relationFK_CreditosHipotecario_Abogado" msprop:Generator_UserParentTable="Abogado" msprop:Generator_ParentPropName="AbogadoRow" />
-      <msdata:Relationship name="FK_Hipoteca_prestamo" msdata:parent="prestamo" msdata:child="Hipoteca" msdata:parentkey="prestamoId" msdata:childkey="prestamoId" msprop:Generator_UserChildTable="Hipoteca" msprop:Generator_ChildPropName="GetHipotecaRows" msprop:Generator_UserRelationName="FK_Hipoteca_prestamo" msprop:Generator_RelationVarName="relationFK_Hipoteca_prestamo" msprop:Generator_UserParentTable="prestamo" msprop:Generator_ParentPropName="prestamoRow" />
-      <msdata:Relationship name="FK_Evento_CreditosHipotecario" msdata:parent="Hipoteca" msdata:child="Evento" msdata:parentkey="hipotecaId" msdata:childkey="hipotecaId" msprop:Generator_UserChildTable="Evento" msprop:Generator_ChildPropName="GetEventoRows" msprop:Generator_UserRelationName="FK_Evento_CreditosHipotecario" msprop:Generator_RelationVarName="relationFK_Evento_CreditosHipotecario" msprop:Generator_UserParentTable="Hipoteca" msprop:Generator_ParentPropName="HipotecaRow" />
-      <msdata:Relationship name="FK_Evento_Usuario" msdata:parent="Usuario" msdata:child="Evento" msdata:parentkey="usuarioId" msdata:childkey="usuarioId" msprop:Generator_UserChildTable="Evento" msprop:Generator_ChildPropName="GetEventoRows" msprop:Generator_UserRelationName="FK_Evento_Usuario" msprop:Generator_RelationVarName="relationFK_Evento_Usuario" msprop:Generator_UserParentTable="Usuario" msprop:Generator_ParentPropName="UsuarioRow" />
+      <msdata:Relationship name="FK_CreditosHipotecario_Abogado" msdata:parent="Abogado" msdata:child="Hipoteca" msdata:parentkey="abogadoId" msdata:childkey="abogadoId" msprop:Generator_UserChildTable="Hipoteca" msprop:Generator_ChildPropName="GetHipotecaRows" msprop:Generator_UserRelationName="FK_CreditosHipotecario_Abogado" msprop:Generator_ParentPropName="AbogadoRow" msprop:Generator_RelationVarName="relationFK_CreditosHipotecario_Abogado" msprop:Generator_UserParentTable="Abogado" />
+      <msdata:Relationship name="FK_Hipoteca_prestamo" msdata:parent="prestamo" msdata:child="Hipoteca" msdata:parentkey="prestamoId" msdata:childkey="prestamoId" msprop:Generator_UserChildTable="Hipoteca" msprop:Generator_ChildPropName="GetHipotecaRows" msprop:Generator_UserRelationName="FK_Hipoteca_prestamo" msprop:Generator_ParentPropName="prestamoRow" msprop:Generator_RelationVarName="relationFK_Hipoteca_prestamo" msprop:Generator_UserParentTable="prestamo" />
+      <msdata:Relationship name="FK_Evento_CreditosHipotecario" msdata:parent="Hipoteca" msdata:child="Evento" msdata:parentkey="hipotecaId" msdata:childkey="hipotecaId" msprop:Generator_UserChildTable="Evento" msprop:Generator_ChildPropName="GetEventoRows" msprop:Generator_UserRelationName="FK_Evento_CreditosHipotecario" msprop:Generator_ParentPropName="HipotecaRow" msprop:Generator_RelationVarName="relationFK_Evento_CreditosHipotecario" msprop:Generator_UserParentTable="Hipoteca" />
+      <msdata:Relationship name="FK_Evento_Usuario" msdata:parent="Usuario" msdata:child="Evento" msdata:parentkey="usuarioId" msdata:childkey="usuarioId" msprop:Generator_UserChildTable="Evento" msprop:Generator_ChildPropName="GetEventoRows" msprop:Generator_UserRelationName="FK_Evento_Usuario" msprop:Generator_ParentPropName="UsuarioRow" msprop:Generator_RelationVarName="relationFK_Evento_Usuario" msprop:Generator_UserParentTable="Usuario" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
