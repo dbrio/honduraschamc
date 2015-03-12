@@ -60,6 +60,7 @@ Partial Class enProtocolo
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.EventoTableAdapter = Nothing
+        Me.TableAdapterManager.hipotecaEstadoTableAdapter = Nothing
         Me.TableAdapterManager.HipotecaTableAdapter = Nothing
         Me.TableAdapterManager.prestamoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
@@ -78,44 +79,71 @@ Partial Class enProtocolo
         '
         'GridView1
         '
+        Me.GridView1.Appearance.FocusedRow.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GridView1.Appearance.FocusedRow.Options.UseFont = True
+        Me.GridView1.Appearance.GroupRow.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GridView1.Appearance.GroupRow.Options.UseFont = True
+        Me.GridView1.Appearance.Row.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GridView1.Appearance.Row.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.GridView1.Appearance.Row.Options.UseFont = True
+        Me.GridView1.Appearance.Row.Options.UseForeColor = True
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colnombreCliente, Me.colrnpCliente, Me.colmonto, Me.coltasaInteres, Me.coldescripcion})
         Me.GridView1.GridControl = Me.HipotecaEestadoGridControl
+        Me.GridView1.GroupPanelText = "  "
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsBehavior.Editable = False
+        Me.GridView1.OptionsCustomization.AllowFilter = False
+        Me.GridView1.OptionsCustomization.AllowGroup = False
+        Me.GridView1.OptionsCustomization.AllowSort = False
+        Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.GridView1.OptionsSelection.EnableAppearanceFocusedRow = False
+        Me.GridView1.OptionsView.ShowGroupPanel = False
+        Me.GridView1.PaintStyleName = "WindowsXP"
         '
         'colnombreCliente
         '
+        Me.colnombreCliente.Caption = "NOMBRE DEL CLIENTE"
         Me.colnombreCliente.FieldName = "nombreCliente"
         Me.colnombreCliente.Name = "colnombreCliente"
         Me.colnombreCliente.Visible = True
         Me.colnombreCliente.VisibleIndex = 0
+        Me.colnombreCliente.Width = 160
         '
         'colrnpCliente
         '
+        Me.colrnpCliente.Caption = "IDENTIDAD"
         Me.colrnpCliente.FieldName = "rnpCliente"
         Me.colrnpCliente.Name = "colrnpCliente"
         Me.colrnpCliente.Visible = True
         Me.colrnpCliente.VisibleIndex = 1
+        Me.colrnpCliente.Width = 100
         '
         'colmonto
         '
+        Me.colmonto.Caption = "MONTO"
         Me.colmonto.FieldName = "monto"
         Me.colmonto.Name = "colmonto"
         Me.colmonto.Visible = True
         Me.colmonto.VisibleIndex = 2
+        Me.colmonto.Width = 50
         '
         'coltasaInteres
         '
+        Me.coltasaInteres.Caption = "TASA DE INTERES"
         Me.coltasaInteres.FieldName = "tasaInteres"
         Me.coltasaInteres.Name = "coltasaInteres"
         Me.coltasaInteres.Visible = True
         Me.coltasaInteres.VisibleIndex = 3
+        Me.coltasaInteres.Width = 70
         '
         'coldescripcion
         '
+        Me.coldescripcion.Caption = "DESCRIPCION"
         Me.coldescripcion.FieldName = "descripcion"
         Me.coldescripcion.Name = "coldescripcion"
         Me.coldescripcion.Visible = True
         Me.coldescripcion.VisibleIndex = 4
+        Me.coldescripcion.Width = 462
         '
         'enProtocolo
         '
@@ -124,7 +152,7 @@ Partial Class enProtocolo
         Me.ClientSize = New System.Drawing.Size(861, 489)
         Me.Controls.Add(Me.HipotecaEestadoGridControl)
         Me.Name = "enProtocolo"
-        Me.Text = "enProtocolo"
+        Me.Text = "Protocolo"
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HipotecaEestadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HipotecaEestadoGridControl, System.ComponentModel.ISupportInitialize).EndInit()
