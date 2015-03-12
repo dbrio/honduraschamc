@@ -53,7 +53,11 @@ Partial Class login
         '
         'TableAdapterManager
         '
+        Me.TableAdapterManager.AbogadoTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.EventoTableAdapter = Nothing
+        Me.TableAdapterManager.HipotecaTableAdapter = Nothing
+        Me.TableAdapterManager.prestamoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuarioTableAdapter = Me.UsuarioTableAdapter
         '

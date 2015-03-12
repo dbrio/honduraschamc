@@ -39,14 +39,9 @@ Public Class login
 
             End With
 
-
-
             Dim idUsuario As Integer = UsuarioTableAdapter.ScalarQuery(txtUser.Text, keyCryto)
 
-
-            With addProtocolo
-                .Usser = idUsuario
-            End With
+            UsuarioActivo.usuario = idUsuario
 
             Inicio.Show()
             Me.Close()
@@ -66,4 +61,5 @@ Public Class login
     End Sub
 
  
+
 End Class
