@@ -292,6 +292,27 @@
   <ItemGroup>
     <None Include="Resources\cliente2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\custodia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\solicitudPago.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pagar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manager-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\custodia-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1426298110_Tag-128.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
