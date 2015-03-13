@@ -46,13 +46,42 @@
         End With
     End Sub
 
-    Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
+    Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs)
+
         With enProtocolo
             .MdiParent = Me
+            .idCargar = 1
             .Show()
             .Focus()
+            .cargarDatos()
         End With
     End Sub
 
 
+    Private Sub BarButtonItem3_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem3.ItemClick
+        With enProtocolo
+
+            .MdiParent = Me
+            .idCargar = 2
+            .Show()
+            .Focus()
+            .cargarDatos()
+
+        End With
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        With enProtocolo
+
+            .MdiParent = Me
+            .idCargar = 2
+            .Show()
+            .Focus()
+            .cargarDatos()
+
+        End With
+    End Sub
+
+   
 End Class
