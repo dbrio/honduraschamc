@@ -84,4 +84,28 @@
     End Sub
 
    
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
+        With enProtocolo
+
+            .MdiParent = Me
+            .idCargar = 2
+            .Show()
+            .Focus()
+            .cargarDatos()
+
+        End With
+    End Sub
+
+ 
+    Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles Button1.Click
+        With enProtocolo
+
+            .MdiParent = Me
+            .idCargar = 2
+            .Show()
+            .Focus()
+            .cargarDatos()
+
+        End With
+    End Sub
 End Class

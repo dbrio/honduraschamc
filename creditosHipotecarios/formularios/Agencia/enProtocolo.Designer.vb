@@ -88,8 +88,10 @@ Partial Class enProtocolo
         Me.GridView1.Appearance.Row.Options.UseFont = True
         Me.GridView1.Appearance.Row.Options.UseForeColor = True
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colnombreCliente, Me.colrnpCliente, Me.colmonto, Me.coltasaInteres, Me.coldescripcion})
+        Me.GridView1.FixedLineWidth = 1
         Me.GridView1.GridControl = Me.HipotecaEestadoGridControl
         Me.GridView1.GroupPanelText = "  "
+        Me.GridView1.GroupRowHeight = 2
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsBehavior.Editable = False
         Me.GridView1.OptionsCustomization.AllowFilter = False
@@ -99,6 +101,7 @@ Partial Class enProtocolo
         Me.GridView1.OptionsSelection.EnableAppearanceFocusedRow = False
         Me.GridView1.OptionsView.ShowGroupPanel = False
         Me.GridView1.PaintStyleName = "WindowsXP"
+        Me.GridView1.RowHeight = 40
         '
         'colnombreCliente
         '
