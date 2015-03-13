@@ -1,13 +1,18 @@
 ﻿Public Class enProtocolo
 
+    Public idCargar As Integer
 
- 
   
     Private Sub enProtocolo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Me.HipotecaEestadoTableAdapter.Fill(Me.DataSetCreditos.hipotecaEestado, 1)
+        cargarDatos()
 
     End Sub
+
+    Sub cargarDatos()
+        Me.HipotecaEestadoTableAdapter.Fill(Me.DataSetCreditos.hipotecaEestado, idCargar)
+    End Sub
+
 
    
    

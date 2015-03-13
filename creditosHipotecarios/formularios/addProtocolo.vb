@@ -26,11 +26,11 @@
             MessageBox.Show("Protocolo agregado exitosamente", "Protocolo agregado", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             With enProtocolo
-
                 .MdiParent = Inicio
+                .idCargar = 1
                 .Show()
                 .Focus()
-
+                .cargarDatos()
             End With
             Me.Close()
 
