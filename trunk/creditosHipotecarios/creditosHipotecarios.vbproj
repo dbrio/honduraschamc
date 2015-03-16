@@ -313,6 +313,12 @@
   <ItemGroup>
     <None Include="Resources\1426298110_Tag-128.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1426294964_pencil-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1426294923_document.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
