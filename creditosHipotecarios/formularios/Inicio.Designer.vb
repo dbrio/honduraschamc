@@ -33,7 +33,11 @@ Partial Class Inicio
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
+        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.MODIFICARUSUARIOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ESTADOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnListo = New System.Windows.Forms.Button()
         Me.btnSolicitudPago = New System.Windows.Forms.Button()
         Me.btnProtocolo = New System.Windows.Forms.Button()
@@ -41,17 +45,13 @@ Partial Class Inicio
         Me.btnFirmaCliente = New System.Windows.Forms.Button()
         Me.btnCustodio = New System.Windows.Forms.Button()
         Me.btnPresentacion = New System.Windows.Forms.Button()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ESTADOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.MODIFICARUSUARIOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
-        Me.ContextMenuStrip1.SuspendLayout()
         Me.ContextMenuStrip2.SuspendLayout()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'XtraTabbedMdiManager1
@@ -158,10 +158,23 @@ Partial Class Inicio
         Me.PanelControl2.Size = New System.Drawing.Size(1435, 153)
         Me.PanelControl2.TabIndex = 4
         '
+        'ContextMenuStrip2
+        '
+        Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MODIFICARUSUARIOSToolStripMenuItem})
+        Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
+        Me.ContextMenuStrip2.Size = New System.Drawing.Size(196, 26)
+        '
+        'MODIFICARUSUARIOSToolStripMenuItem
+        '
+        Me.MODIFICARUSUARIOSToolStripMenuItem.Name = "MODIFICARUSUARIOSToolStripMenuItem"
+        Me.MODIFICARUSUARIOSToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
+        Me.MODIFICARUSUARIOSToolStripMenuItem.Text = "MODIFICAR USUARIOS"
+        '
         'btnBuscar
         '
         Me.btnBuscar.BackColor = System.Drawing.Color.White
         Me.btnBuscar.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnBuscar.FlatAppearance.BorderSize = 0
         Me.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
         Me.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
@@ -175,9 +188,22 @@ Partial Class Inicio
         Me.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnBuscar.UseVisualStyleBackColor = False
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ESTADOToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(119, 26)
+        '
+        'ESTADOToolStripMenuItem
+        '
+        Me.ESTADOToolStripMenuItem.Name = "ESTADOToolStripMenuItem"
+        Me.ESTADOToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
+        Me.ESTADOToolStripMenuItem.Text = "ESTADO"
+        '
         'btnListo
         '
         Me.btnListo.BackColor = System.Drawing.Color.White
+        Me.btnListo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnListo.FlatAppearance.BorderSize = 0
         Me.btnListo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
         Me.btnListo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
@@ -194,6 +220,7 @@ Partial Class Inicio
         'btnSolicitudPago
         '
         Me.btnSolicitudPago.BackColor = System.Drawing.Color.White
+        Me.btnSolicitudPago.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSolicitudPago.FlatAppearance.BorderSize = 0
         Me.btnSolicitudPago.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
         Me.btnSolicitudPago.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
@@ -210,6 +237,7 @@ Partial Class Inicio
         'btnProtocolo
         '
         Me.btnProtocolo.BackColor = System.Drawing.Color.White
+        Me.btnProtocolo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnProtocolo.FlatAppearance.BorderSize = 0
         Me.btnProtocolo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
         Me.btnProtocolo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
@@ -226,6 +254,7 @@ Partial Class Inicio
         'btnFirmaGerencia
         '
         Me.btnFirmaGerencia.BackColor = System.Drawing.Color.White
+        Me.btnFirmaGerencia.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnFirmaGerencia.FlatAppearance.BorderSize = 0
         Me.btnFirmaGerencia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
         Me.btnFirmaGerencia.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
@@ -242,6 +271,7 @@ Partial Class Inicio
         'btnFirmaCliente
         '
         Me.btnFirmaCliente.BackColor = System.Drawing.Color.White
+        Me.btnFirmaCliente.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnFirmaCliente.FlatAppearance.BorderSize = 0
         Me.btnFirmaCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
         Me.btnFirmaCliente.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
@@ -258,6 +288,7 @@ Partial Class Inicio
         'btnCustodio
         '
         Me.btnCustodio.BackColor = System.Drawing.Color.White
+        Me.btnCustodio.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCustodio.FlatAppearance.BorderSize = 0
         Me.btnCustodio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
         Me.btnCustodio.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
@@ -274,6 +305,7 @@ Partial Class Inicio
         'btnPresentacion
         '
         Me.btnPresentacion.BackColor = System.Drawing.Color.White
+        Me.btnPresentacion.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnPresentacion.FlatAppearance.BorderSize = 0
         Me.btnPresentacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
         Me.btnPresentacion.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
@@ -286,30 +318,6 @@ Partial Class Inicio
         Me.btnPresentacion.Text = "EVIAR A CUSTODIA"
         Me.btnPresentacion.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnPresentacion.UseVisualStyleBackColor = False
-        '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ESTADOToolStripMenuItem})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(119, 26)
-        '
-        'ESTADOToolStripMenuItem
-        '
-        Me.ESTADOToolStripMenuItem.Name = "ESTADOToolStripMenuItem"
-        Me.ESTADOToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
-        Me.ESTADOToolStripMenuItem.Text = "ESTADO"
-        '
-        'ContextMenuStrip2
-        '
-        Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MODIFICARUSUARIOSToolStripMenuItem})
-        Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
-        Me.ContextMenuStrip2.Size = New System.Drawing.Size(196, 26)
-        '
-        'MODIFICARUSUARIOSToolStripMenuItem
-        '
-        Me.MODIFICARUSUARIOSToolStripMenuItem.Name = "MODIFICARUSUARIOSToolStripMenuItem"
-        Me.MODIFICARUSUARIOSToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
-        Me.MODIFICARUSUARIOSToolStripMenuItem.Text = "MODIFICAR USUARIOS"
         '
         'Inicio
         '
@@ -331,8 +339,8 @@ Partial Class Inicio
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
-        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ContextMenuStrip2.ResumeLayout(False)
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

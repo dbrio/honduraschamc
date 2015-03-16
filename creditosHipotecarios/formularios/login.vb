@@ -64,6 +64,12 @@ Public Class login
         Me.Close()
     End Sub
 
+
  
 
+    Private Sub txtPass_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPass.KeyPress
+        If e.KeyChar = ChrW(13) Then
+            btnEnter_Click(sender, e)
+        End If
+    End Sub
 End Class

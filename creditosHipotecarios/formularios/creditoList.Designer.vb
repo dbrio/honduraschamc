@@ -343,9 +343,9 @@ Partial Class creditoList
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.ClienteGridControl)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "creditoList"
-        Me.Text = "Lista de Créditos"
+        Me.Text = "BUSCAR"
         CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClienteGridControl, System.ComponentModel.ISupportInitialize).EndInit()
