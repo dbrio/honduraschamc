@@ -3,11 +3,11 @@
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GestionarPanel()
 
-        With creditoList
-            .MdiParent = Me
-            .Show()
-            .Focus()
-        End With
+        'With creditoList
+        '    .MdiParent = Me
+        '    .Show()
+        '    .Focus()
+        'End With
 
     End Sub
 
@@ -30,47 +30,6 @@
         GestionarPanel()
     End Sub
 
-    Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
-        With creditoList
-            .MdiParent = Me
-            .Show()
-            .Focus()
-        End With
-    End Sub
-
-    Private Sub btnAddHipoteca_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnAddHipoteca.ItemClick
-        With creditoList
-            .MdiParent = Me
-            .Show()
-            .Focus()
-        End With
-    End Sub
-
-    Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs)
-
-        With enProtocolo
-            .MdiParent = Me
-            .idCargar = 1
-            .Show()
-            .Focus()
-            .cargarDatos()
-        End With
-    End Sub
-
-
-    Private Sub BarButtonItem3_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem3.ItemClick
-        With enProtocolo
-
-            .MdiParent = Me
-            .idCargar = 2
-            .Show()
-            .Focus()
-            .cargarDatos()
-
-        End With
-
-    End Sub
-
   
     Private Sub btnListo_Click(sender As Object, e As EventArgs) Handles btnListo.Click
         Try
@@ -80,7 +39,9 @@
                 .idCargar = 1
                 .Show()
                 .Focus()
+                .titulo = btnListo.Text
                 .cargarDatos()
+
 
             End With
         Catch ex As Exception
@@ -100,6 +61,7 @@
                 .idCargar = 2
                 .Show()
                 .Focus()
+                .titulo = btnProtocolo.Text
                 .cargarDatos()
 
             End With
@@ -116,6 +78,7 @@
                 .idCargar = 3
                 .Show()
                 .Focus()
+                .titulo = btnFirmaCliente.Text
                 .cargarDatos()
 
             End With
@@ -132,6 +95,7 @@
                 .idCargar = 4
                 .Show()
                 .Focus()
+                .titulo = btnFirmaGerencia.Text
                 .cargarDatos()
 
             End With
@@ -148,6 +112,7 @@
                 .idCargar = 5
                 .Show()
                 .Focus()
+                .titulo = btnPresentacion.Text
                 .cargarDatos()
 
             End With
@@ -164,6 +129,7 @@
                 .idCargar = 6
                 .Show()
                 .Focus()
+                .titulo = btnCustodio.Text
                 .cargarDatos()
 
             End With
@@ -180,6 +146,7 @@
                 .idCargar = 7
                 .Show()
                 .Focus()
+                .titulo = btnSolicitudPago.Text
                 .cargarDatos()
 
             End With
