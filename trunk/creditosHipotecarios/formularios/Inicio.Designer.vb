@@ -33,17 +33,25 @@ Partial Class Inicio
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
-        Me.btnProtocolo = New System.Windows.Forms.Button()
-        Me.btnFirmaCliente = New System.Windows.Forms.Button()
-        Me.btnPresentacion = New System.Windows.Forms.Button()
-        Me.btnCustodio = New System.Windows.Forms.Button()
-        Me.btnFirmaGerencia = New System.Windows.Forms.Button()
-        Me.btnSolicitudPago = New System.Windows.Forms.Button()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnListo = New System.Windows.Forms.Button()
+        Me.btnSolicitudPago = New System.Windows.Forms.Button()
+        Me.btnProtocolo = New System.Windows.Forms.Button()
+        Me.btnFirmaGerencia = New System.Windows.Forms.Button()
+        Me.btnFirmaCliente = New System.Windows.Forms.Button()
+        Me.btnCustodio = New System.Windows.Forms.Button()
+        Me.btnPresentacion = New System.Windows.Forms.Button()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ESTADOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.MODIFICARUSUARIOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl2.SuspendLayout()
+        Me.ContextMenuStrip1.SuspendLayout()
+        Me.ContextMenuStrip2.SuspendLayout()
         Me.SuspendLayout()
         '
         'XtraTabbedMdiManager1
@@ -57,16 +65,15 @@ Partial Class Inicio
         Me.PanelControl1.Appearance.Options.UseBackColor = True
         Me.PanelControl1.Appearance.Options.UseBorderColor = True
         Me.PanelControl1.Appearance.Options.UseForeColor = True
-        Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
+        Me.PanelControl1.AutoSize = True
+        Me.PanelControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControl1.ContentImage = Global.creditosHipotecarios.My.Resources.Resources.AMC_Logo_sin_fondo
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControl1.Location = New System.Drawing.Point(0, 139)
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 142)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(1151, 335)
+        Me.PanelControl1.Size = New System.Drawing.Size(1151, 332)
         Me.PanelControl1.TabIndex = 2
-        '
-        'DefaultLookAndFeel1
-        '
-        Me.DefaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013"
         '
         'BarButtonItem1
         '
@@ -117,19 +124,19 @@ Partial Class Inicio
         '
         'RibbonControl1
         '
+        Me.RibbonControl1.BackColor = System.Drawing.Color.White
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
         Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnAddHipoteca, Me.BarButtonItem3})
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonControl1.MaxItemId = 13
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010
         Me.RibbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl1.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.ShowOnMultiplePages
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(1151, 139)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1151, 142)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         '
         'PanelControl2
@@ -137,106 +144,36 @@ Partial Class Inicio
         Me.PanelControl2.Appearance.BackColor = System.Drawing.Color.White
         Me.PanelControl2.Appearance.Options.UseBackColor = True
         Me.PanelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControl2.Location = New System.Drawing.Point(0, 32)
+        Me.PanelControl2.ContextMenuStrip = Me.ContextMenuStrip2
+        Me.PanelControl2.Controls.Add(Me.btnBuscar)
+        Me.PanelControl2.Controls.Add(Me.btnListo)
+        Me.PanelControl2.Controls.Add(Me.btnSolicitudPago)
+        Me.PanelControl2.Controls.Add(Me.btnProtocolo)
+        Me.PanelControl2.Controls.Add(Me.btnFirmaGerencia)
+        Me.PanelControl2.Controls.Add(Me.btnFirmaCliente)
+        Me.PanelControl2.Controls.Add(Me.btnCustodio)
+        Me.PanelControl2.Controls.Add(Me.btnPresentacion)
+        Me.PanelControl2.Location = New System.Drawing.Point(0, -11)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(1435, 34)
+        Me.PanelControl2.Size = New System.Drawing.Size(1435, 153)
         Me.PanelControl2.TabIndex = 4
         '
-        'btnProtocolo
+        'btnBuscar
         '
-        Me.btnProtocolo.BackColor = System.Drawing.Color.White
-        Me.btnProtocolo.FlatAppearance.BorderSize = 0
-        Me.btnProtocolo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.btnProtocolo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnProtocolo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnProtocolo.Image = Global.creditosHipotecarios.My.Resources.Resources._1426295057_man
-        Me.btnProtocolo.Location = New System.Drawing.Point(146, -63)
-        Me.btnProtocolo.Name = "btnProtocolo"
-        Me.btnProtocolo.Size = New System.Drawing.Size(81, 196)
-        Me.btnProtocolo.TabIndex = 5
-        Me.btnProtocolo.Text = "PARA FIRMA CLIENTES"
-        Me.btnProtocolo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnProtocolo.UseVisualStyleBackColor = False
-        '
-        'btnFirmaCliente
-        '
-        Me.btnFirmaCliente.BackColor = System.Drawing.Color.White
-        Me.btnFirmaCliente.FlatAppearance.BorderSize = 0
-        Me.btnFirmaCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.btnFirmaCliente.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnFirmaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnFirmaCliente.Image = Global.creditosHipotecarios.My.Resources.Resources.manager_01
-        Me.btnFirmaCliente.Location = New System.Drawing.Point(275, -62)
-        Me.btnFirmaCliente.Name = "btnFirmaCliente"
-        Me.btnFirmaCliente.Size = New System.Drawing.Size(81, 195)
-        Me.btnFirmaCliente.TabIndex = 7
-        Me.btnFirmaCliente.Text = "PARA FIRMA GERENCIA"
-        Me.btnFirmaCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnFirmaCliente.UseVisualStyleBackColor = False
-        '
-        'btnPresentacion
-        '
-        Me.btnPresentacion.BackColor = System.Drawing.Color.White
-        Me.btnPresentacion.FlatAppearance.BorderSize = 0
-        Me.btnPresentacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.btnPresentacion.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnPresentacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPresentacion.Image = Global.creditosHipotecarios.My.Resources.Resources.custodia_01
-        Me.btnPresentacion.Location = New System.Drawing.Point(527, -67)
-        Me.btnPresentacion.Name = "btnPresentacion"
-        Me.btnPresentacion.Size = New System.Drawing.Size(81, 199)
-        Me.btnPresentacion.TabIndex = 9
-        Me.btnPresentacion.Text = "EVIAR A CUSTODIA"
-        Me.btnPresentacion.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnPresentacion.UseVisualStyleBackColor = False
-        '
-        'btnCustodio
-        '
-        Me.btnCustodio.BackColor = System.Drawing.Color.White
-        Me.btnCustodio.FlatAppearance.BorderSize = 0
-        Me.btnCustodio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.btnCustodio.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnCustodio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCustodio.Image = Global.creditosHipotecarios.My.Resources.Resources._1426298110_Tag_128
-        Me.btnCustodio.Location = New System.Drawing.Point(654, -57)
-        Me.btnCustodio.Name = "btnCustodio"
-        Me.btnCustodio.Size = New System.Drawing.Size(81, 189)
-        Me.btnCustodio.TabIndex = 11
-        Me.btnCustodio.Text = "SOLICITAR PAGO"
-        Me.btnCustodio.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnCustodio.UseVisualStyleBackColor = False
-        '
-        'btnFirmaGerencia
-        '
-        Me.btnFirmaGerencia.BackColor = System.Drawing.Color.White
-        Me.btnFirmaGerencia.FlatAppearance.BorderSize = 0
-        Me.btnFirmaGerencia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.btnFirmaGerencia.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnFirmaGerencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnFirmaGerencia.Image = Global.creditosHipotecarios.My.Resources.Resources._1426294964_pencil_128
-        Me.btnFirmaGerencia.Location = New System.Drawing.Point(401, -62)
-        Me.btnFirmaGerencia.Name = "btnFirmaGerencia"
-        Me.btnFirmaGerencia.Size = New System.Drawing.Size(81, 195)
-        Me.btnFirmaGerencia.TabIndex = 16
-        Me.btnFirmaGerencia.Text = "ESCRITURA AL IP"
-        Me.btnFirmaGerencia.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnFirmaGerencia.UseVisualStyleBackColor = False
-        '
-        'btnSolicitudPago
-        '
-        Me.btnSolicitudPago.BackColor = System.Drawing.Color.White
-        Me.btnSolicitudPago.FlatAppearance.BorderSize = 0
-        Me.btnSolicitudPago.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.btnSolicitudPago.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnSolicitudPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSolicitudPago.Image = Global.creditosHipotecarios.My.Resources.Resources.pagar
-        Me.btnSolicitudPago.Location = New System.Drawing.Point(776, -56)
-        Me.btnSolicitudPago.Name = "btnSolicitudPago"
-        Me.btnSolicitudPago.Size = New System.Drawing.Size(81, 189)
-        Me.btnSolicitudPago.TabIndex = 18
-        Me.btnSolicitudPago.Text = "EFECTURAR PAGO"
-        Me.btnSolicitudPago.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnSolicitudPago.UseVisualStyleBackColor = False
+        Me.btnBuscar.BackColor = System.Drawing.Color.White
+        Me.btnBuscar.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.btnBuscar.FlatAppearance.BorderSize = 0
+        Me.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Image = Global.creditosHipotecarios.My.Resources.Resources.buscar
+        Me.btnBuscar.Location = New System.Drawing.Point(4, -31)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(79, 174)
+        Me.btnBuscar.TabIndex = 21
+        Me.btnBuscar.Text = "BUSCAR"
+        Me.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'btnListo
         '
@@ -246,7 +183,7 @@ Partial Class Inicio
         Me.btnListo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
         Me.btnListo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnListo.Image = Global.creditosHipotecarios.My.Resources.Resources._1426294923_document
-        Me.btnListo.Location = New System.Drawing.Point(26, -63)
+        Me.btnListo.Location = New System.Drawing.Point(92, -51)
         Me.btnListo.Name = "btnListo"
         Me.btnListo.Size = New System.Drawing.Size(82, 196)
         Me.btnListo.TabIndex = 20
@@ -254,25 +191,138 @@ Partial Class Inicio
         Me.btnListo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnListo.UseVisualStyleBackColor = False
         '
+        'btnSolicitudPago
+        '
+        Me.btnSolicitudPago.BackColor = System.Drawing.Color.White
+        Me.btnSolicitudPago.FlatAppearance.BorderSize = 0
+        Me.btnSolicitudPago.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.btnSolicitudPago.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnSolicitudPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSolicitudPago.Image = Global.creditosHipotecarios.My.Resources.Resources.pagar
+        Me.btnSolicitudPago.Location = New System.Drawing.Point(664, -50)
+        Me.btnSolicitudPago.Name = "btnSolicitudPago"
+        Me.btnSolicitudPago.Size = New System.Drawing.Size(82, 195)
+        Me.btnSolicitudPago.TabIndex = 18
+        Me.btnSolicitudPago.Text = "EFECTURAR PAGO"
+        Me.btnSolicitudPago.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSolicitudPago.UseVisualStyleBackColor = False
+        '
+        'btnProtocolo
+        '
+        Me.btnProtocolo.BackColor = System.Drawing.Color.White
+        Me.btnProtocolo.FlatAppearance.BorderSize = 0
+        Me.btnProtocolo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.btnProtocolo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnProtocolo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnProtocolo.Image = Global.creditosHipotecarios.My.Resources.Resources._1426295057_man
+        Me.btnProtocolo.Location = New System.Drawing.Point(187, -50)
+        Me.btnProtocolo.Name = "btnProtocolo"
+        Me.btnProtocolo.Size = New System.Drawing.Size(81, 196)
+        Me.btnProtocolo.TabIndex = 5
+        Me.btnProtocolo.Text = "PARA FIRMA CLIENTES"
+        Me.btnProtocolo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnProtocolo.UseVisualStyleBackColor = False
+        '
+        'btnFirmaGerencia
+        '
+        Me.btnFirmaGerencia.BackColor = System.Drawing.Color.White
+        Me.btnFirmaGerencia.FlatAppearance.BorderSize = 0
+        Me.btnFirmaGerencia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.btnFirmaGerencia.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnFirmaGerencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnFirmaGerencia.Image = Global.creditosHipotecarios.My.Resources.Resources._1426294964_pencil_128
+        Me.btnFirmaGerencia.Location = New System.Drawing.Point(376, -48)
+        Me.btnFirmaGerencia.Name = "btnFirmaGerencia"
+        Me.btnFirmaGerencia.Size = New System.Drawing.Size(81, 195)
+        Me.btnFirmaGerencia.TabIndex = 16
+        Me.btnFirmaGerencia.Text = "ESCRITURA AL IP"
+        Me.btnFirmaGerencia.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnFirmaGerencia.UseVisualStyleBackColor = False
+        '
+        'btnFirmaCliente
+        '
+        Me.btnFirmaCliente.BackColor = System.Drawing.Color.White
+        Me.btnFirmaCliente.FlatAppearance.BorderSize = 0
+        Me.btnFirmaCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.btnFirmaCliente.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnFirmaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnFirmaCliente.Image = Global.creditosHipotecarios.My.Resources.Resources.manager_01
+        Me.btnFirmaCliente.Location = New System.Drawing.Point(282, -48)
+        Me.btnFirmaCliente.Name = "btnFirmaCliente"
+        Me.btnFirmaCliente.Size = New System.Drawing.Size(80, 195)
+        Me.btnFirmaCliente.TabIndex = 7
+        Me.btnFirmaCliente.Text = "PARA FIRMA GERENCIA"
+        Me.btnFirmaCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnFirmaCliente.UseVisualStyleBackColor = False
+        '
+        'btnCustodio
+        '
+        Me.btnCustodio.BackColor = System.Drawing.Color.White
+        Me.btnCustodio.FlatAppearance.BorderSize = 0
+        Me.btnCustodio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.btnCustodio.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnCustodio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCustodio.Image = Global.creditosHipotecarios.My.Resources.Resources._1426298110_Tag_128
+        Me.btnCustodio.Location = New System.Drawing.Point(567, -44)
+        Me.btnCustodio.Name = "btnCustodio"
+        Me.btnCustodio.Size = New System.Drawing.Size(81, 189)
+        Me.btnCustodio.TabIndex = 11
+        Me.btnCustodio.Text = "SOLICITAR PAGO"
+        Me.btnCustodio.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnCustodio.UseVisualStyleBackColor = False
+        '
+        'btnPresentacion
+        '
+        Me.btnPresentacion.BackColor = System.Drawing.Color.White
+        Me.btnPresentacion.FlatAppearance.BorderSize = 0
+        Me.btnPresentacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.btnPresentacion.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnPresentacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPresentacion.Image = Global.creditosHipotecarios.My.Resources.Resources.custodia_01
+        Me.btnPresentacion.Location = New System.Drawing.Point(471, -52)
+        Me.btnPresentacion.Name = "btnPresentacion"
+        Me.btnPresentacion.Size = New System.Drawing.Size(81, 199)
+        Me.btnPresentacion.TabIndex = 9
+        Me.btnPresentacion.Text = "EVIAR A CUSTODIA"
+        Me.btnPresentacion.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnPresentacion.UseVisualStyleBackColor = False
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ESTADOToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(119, 26)
+        '
+        'ESTADOToolStripMenuItem
+        '
+        Me.ESTADOToolStripMenuItem.Name = "ESTADOToolStripMenuItem"
+        Me.ESTADOToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
+        Me.ESTADOToolStripMenuItem.Text = "ESTADO"
+        '
+        'ContextMenuStrip2
+        '
+        Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MODIFICARUSUARIOSToolStripMenuItem})
+        Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
+        Me.ContextMenuStrip2.Size = New System.Drawing.Size(196, 26)
+        '
+        'MODIFICARUSUARIOSToolStripMenuItem
+        '
+        Me.MODIFICARUSUARIOSToolStripMenuItem.Name = "MODIFICARUSUARIOSToolStripMenuItem"
+        Me.MODIFICARUSUARIOSToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
+        Me.MODIFICARUSUARIOSToolStripMenuItem.Text = "MODIFICAR USUARIOS"
+        '
         'Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1151, 474)
-        Me.Controls.Add(Me.btnListo)
-        Me.Controls.Add(Me.btnSolicitudPago)
-        Me.Controls.Add(Me.btnFirmaGerencia)
-        Me.Controls.Add(Me.btnCustodio)
-        Me.Controls.Add(Me.btnPresentacion)
-        Me.Controls.Add(Me.btnFirmaCliente)
-        Me.Controls.Add(Me.btnProtocolo)
         Me.Controls.Add(Me.PanelControl2)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.RibbonControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
-        Me.MaximizeBox = False
         Me.Name = "Inicio"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -280,7 +330,11 @@ Partial Class Inicio
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl2.ResumeLayout(False)
+        Me.ContextMenuStrip1.ResumeLayout(False)
+        Me.ContextMenuStrip2.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents XtraTabbedMdiManager1 As DevExpress.XtraTabbedMdi.XtraTabbedMdiManager
@@ -299,4 +353,9 @@ Partial Class Inicio
     Friend WithEvents btnFirmaGerencia As System.Windows.Forms.Button
     Friend WithEvents btnSolicitudPago As System.Windows.Forms.Button
     Friend WithEvents btnListo As System.Windows.Forms.Button
+    Friend WithEvents btnBuscar As System.Windows.Forms.Button
+    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents ESTADOToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ContextMenuStrip2 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents MODIFICARUSUARIOSToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

@@ -101,7 +101,7 @@ Partial Class enProtocolo
         Me.GridView1.OptionsSelection.EnableAppearanceFocusedRow = False
         Me.GridView1.OptionsView.ShowGroupPanel = False
         Me.GridView1.PaintStyleName = "WindowsXP"
-        Me.GridView1.RowHeight = 40
+        Me.GridView1.RowHeight = 30
         '
         'colnombreCliente
         '

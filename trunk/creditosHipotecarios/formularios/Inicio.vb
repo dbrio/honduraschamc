@@ -190,4 +190,16 @@
 
 
  
+  
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+
+        With creditoList
+            .MdiParent = Me
+            .Show()
+            .Focus()
+        End With
+
+    End Sub
+
+    
 End Class

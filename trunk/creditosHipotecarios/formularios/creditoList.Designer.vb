@@ -148,7 +148,7 @@ Partial Class creditoList
         Me.GridView1.Appearance.GroupFooter.Options.UseBackColor = True
         Me.GridView1.Appearance.GroupFooter.Options.UseBorderColor = True
         Me.GridView1.Appearance.GroupFooter.Options.UseForeColor = True
-        Me.GridView1.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(62, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.GridView1.Appearance.GroupPanel.BackColor = System.Drawing.Color.SteelBlue
         Me.GridView1.Appearance.GroupPanel.BorderColor = System.Drawing.Color.Silver
         Me.GridView1.Appearance.GroupPanel.Font = New System.Drawing.Font("Tahoma", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GridView1.Appearance.GroupPanel.ForeColor = System.Drawing.Color.White
