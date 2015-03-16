@@ -11,9 +11,9 @@
     <Shape ID="DesignTable:prestamo" ZOrder="12" X="485" Y="136" Height="364" Width="199" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="294" />
     <Shape ID="DesignTable:Hipoteca" ZOrder="11" X="249" Y="338" Height="210" Width="197" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
     <Shape ID="DesignTable:Evento" ZOrder="8" X="61" Y="-35" Height="90" Width="240" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
-    <Shape ID="DesignTable:MostrarEevento" ZOrder="4" X="694" Y="100" Height="90" Width="218" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
-    <Shape ID="DesignTable:hipotecaEestado" ZOrder="3" X="663" Y="-13" Height="172" Width="240" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
-    <Shape ID="DesignTable:hipotecaEstado" ZOrder="2" X="354" Y="-36" Height="90" Width="270" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
+    <Shape ID="DesignTable:MostrarEevento" ZOrder="2" X="694" Y="227" Height="90" Width="218" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
+    <Shape ID="DesignTable:hipotecaEestado" ZOrder="1" X="607" Y="-39" Height="229" Width="240" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:hipotecaEstado" ZOrder="3" X="354" Y="-36" Height="90" Width="270" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK_CreditosHipotecario_Abogado" ZOrder="10" LineWidth="11">
@@ -68,7 +68,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_hipotecaEstado_Hipoteca" ZOrder="1" LineWidth="11">
+    <Connector ID="DesignRelation:FK_hipotecaEstado_Hipoteca" ZOrder="4" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>346</X>

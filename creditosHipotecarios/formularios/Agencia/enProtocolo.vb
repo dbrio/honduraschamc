@@ -16,4 +16,7 @@
 
    
    
+    Private Sub HipotecaEestadoGridControl_DoubleClick(sender As Object, e As EventArgs) Handles HipotecaEestadoGridControl.DoubleClick
+
+    End Sub
 End Class
