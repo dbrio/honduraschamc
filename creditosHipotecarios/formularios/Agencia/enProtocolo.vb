@@ -5,6 +5,10 @@
 
   
     Private Sub enProtocolo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'DataSetCreditos.hipotecaEstado' Puede moverla o quitarla según sea necesario.
+        Me.HipotecaEstadoTableAdapter.Fill(Me.DataSetCreditos.hipotecaEstado)
+       
+
 
         cargarDatos()
 
@@ -13,8 +17,9 @@
     Private Function obtenerDatos() As Hashtable
         Dim diccionario As New Hashtable
 
-        diccionario("hipotecaId") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "hipotecaId")
-        
+        diccionario("hipotecaEstadoId") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "hipotecaEstadoId")
+
+
         Return diccionario
 
     End Function
@@ -30,13 +35,25 @@
     End Sub
    
    
+    Private Sub HipotecaEestadoGridControl_DoubleClick(sender As Object, e As EventArgs) Handles HipotecaEestadoGridControl.DoubleClick
 
 
-    Private Sub HipotecaEestadoGridControl_Click(sender As Object, e As EventArgs) Handles HipotecaEestadoGridControl.Click
-        Dim dict As Hashtable = obtenerDatos()
-        Dim hipotecaId As String = dict("hipotecaId")
 
 
-        MsgBox(hipotecaId)
+        'Try
+        '    If HipotecaEestadoGridControl.TabIndex = -1 Then
+        '        MsgBox("pendejo")
+        '    Else
+        '        Dim dict As Hashtable = obtenerDatos()
+        '        Dim hipotecaId As String = dict("hipotecaEstadoId")
+        '        Dim estadoId As Integer = idCargar + 1
+        '        HipotecaEstadoTableAdapter.UpdateQuery(estadoId, hipotecaId)
+        '        MessageBox.Show("El estado fue actualizado ", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        '        cargarDatos()
+        '    End If
+
+        'Catch ex As Exception
+        '    MsgBox(ex.Message)
+        'End Try
     End Sub
 End Class
