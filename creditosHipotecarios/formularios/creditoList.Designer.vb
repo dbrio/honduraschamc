@@ -149,9 +149,11 @@ Partial Class creditoList
         Me.GridView1.Appearance.GroupFooter.Options.UseBorderColor = True
         Me.GridView1.Appearance.GroupFooter.Options.UseForeColor = True
         Me.GridView1.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(62, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.GridView1.Appearance.GroupPanel.BorderColor = System.Drawing.Color.Silver
         Me.GridView1.Appearance.GroupPanel.Font = New System.Drawing.Font("Tahoma", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GridView1.Appearance.GroupPanel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(254, Byte), Integer))
+        Me.GridView1.Appearance.GroupPanel.ForeColor = System.Drawing.Color.White
         Me.GridView1.Appearance.GroupPanel.Options.UseBackColor = True
+        Me.GridView1.Appearance.GroupPanel.Options.UseBorderColor = True
         Me.GridView1.Appearance.GroupPanel.Options.UseFont = True
         Me.GridView1.Appearance.GroupPanel.Options.UseForeColor = True
         Me.GridView1.Appearance.GroupRow.BackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(247, Byte), Integer))
@@ -184,7 +186,7 @@ Partial Class creditoList
         Me.GridView1.Appearance.Preview.ForeColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(185, Byte), Integer))
         Me.GridView1.Appearance.Preview.Options.UseBackColor = True
         Me.GridView1.Appearance.Preview.Options.UseForeColor = True
-        Me.GridView1.Appearance.Row.BackColor = System.Drawing.Color.White
+        Me.GridView1.Appearance.Row.BackColor = System.Drawing.Color.WhiteSmoke
         Me.GridView1.Appearance.Row.ForeColor = System.Drawing.Color.Black
         Me.GridView1.Appearance.Row.Options.UseBackColor = True
         Me.GridView1.Appearance.Row.Options.UseForeColor = True
@@ -207,7 +209,9 @@ Partial Class creditoList
         Me.GridView1.OptionsMenu.EnableColumnMenu = False
         Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
         Me.GridView1.OptionsSelection.EnableAppearanceFocusedRow = False
+        Me.GridView1.OptionsView.EnableAppearanceOddRow = True
         Me.GridView1.PaintStyleName = "WindowsXP"
+        Me.GridView1.RowHeight = 25
         '
         'colccodofi
         '
@@ -315,7 +319,7 @@ Partial Class creditoList
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscar.ForeColor = System.Drawing.Color.White
-        Me.btnBuscar.Location = New System.Drawing.Point(362, 25)
+        Me.btnBuscar.Location = New System.Drawing.Point(362, 24)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(111, 33)
         Me.btnBuscar.TabIndex = 7
@@ -339,6 +343,7 @@ Partial Class creditoList
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.ClienteGridControl)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "creditoList"
         Me.Text = "Lista de Créditos"
         CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).EndInit()

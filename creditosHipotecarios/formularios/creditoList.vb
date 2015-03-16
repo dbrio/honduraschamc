@@ -2,21 +2,26 @@
 
     Private Sub creditoList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ClienteGridControl.Enabled = False
+
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        If txtBuscar.Text.Trim = "" Then
-            MessageBox.Show("Escriba un nombre nombre para buscar", "No hay resultados", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Try
+            If txtBuscar.Text.Trim = "" Then
+                MessageBox.Show("Escriba un nombre nombre para buscar", "No hay resultados", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
-            txtBuscar.Focus()
-        Else
-            Dim texto As String = txtBuscar.Text
-            Dim buscar As String = "%" + texto + "%"
-            ClienteTableAdapter.Buscar(Me.DataSetAMCProduccion.Cliente, buscar)
-            txtBuscar.Text = ""
-            txtBuscar.Focus()
-            ClienteGridControl.Enabled = True
-        End If
+                txtBuscar.Focus()
+            Else
+                Dim texto As String = txtBuscar.Text
+                Dim buscar As String = "%" + texto + "%"
+                ClienteTableAdapter.Buscar(Me.DataSetAMCProduccion.Cliente, buscar)
+                txtBuscar.Text = ""
+                txtBuscar.Focus()
+                ClienteGridControl.Enabled = True
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Function obtenerDatos() As Hashtable

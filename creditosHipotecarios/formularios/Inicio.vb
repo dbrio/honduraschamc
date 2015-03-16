@@ -71,41 +71,123 @@
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        With enProtocolo
+  
+    Private Sub btnListo_Click(sender As Object, e As EventArgs) Handles btnListo.Click
+        Try
+            With enProtocolo
 
-            .MdiParent = Me
-            .idCargar = 2
-            .Show()
-            .Focus()
-            .cargarDatos()
+                .MdiParent = Me
+                .idCargar = 1
+                .Show()
+                .Focus()
+                .cargarDatos()
 
-        End With
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
-
-   
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
-        With enProtocolo
-
-            .MdiParent = Me
-            .idCargar = 2
-            .Show()
-            .Focus()
-            .cargarDatos()
-
-        End With
-    End Sub
+    
 
  
-    Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles Button1.Click
-        With enProtocolo
+   
+    Private Sub btnProtocolo_Click(sender As Object, e As EventArgs) Handles btnProtocolo.Click
+        Try
+            With enProtocolo
 
-            .MdiParent = Me
-            .idCargar = 2
-            .Show()
-            .Focus()
-            .cargarDatos()
+                .MdiParent = Me
+                .idCargar = 2
+                .Show()
+                .Focus()
+                .cargarDatos()
 
-        End With
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
+
+    Private Sub btnFirmaCliente_Click(sender As Object, e As EventArgs) Handles btnFirmaCliente.Click
+        Try
+            With enProtocolo
+
+                .MdiParent = Me
+                .idCargar = 3
+                .Show()
+                .Focus()
+                .cargarDatos()
+
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnFirmaGerencia_Click(sender As Object, e As EventArgs) Handles btnFirmaGerencia.Click
+        Try
+            With enProtocolo
+
+                .MdiParent = Me
+                .idCargar = 4
+                .Show()
+                .Focus()
+                .cargarDatos()
+
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnPresentacion_Click(sender As Object, e As EventArgs) Handles btnPresentacion.Click
+        Try
+            With enProtocolo
+
+                .MdiParent = Me
+                .idCargar = 5
+                .Show()
+                .Focus()
+                .cargarDatos()
+
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnCustodio_Click(sender As Object, e As EventArgs) Handles btnCustodio.Click
+        Try
+            With enProtocolo
+
+                .MdiParent = Me
+                .idCargar = 6
+                .Show()
+                .Focus()
+                .cargarDatos()
+
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnSolicitudPago_Click(sender As Object, e As EventArgs) Handles btnSolicitudPago.Click
+        Try
+            With enProtocolo
+
+                .MdiParent = Me
+                .idCargar = 7
+                .Show()
+                .Focus()
+                .cargarDatos()
+
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+
+ 
 End Class
