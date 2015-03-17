@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class estadoHipoteca
+Partial Class buscarHipoteca
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -122,7 +122,7 @@ Partial Class estadoHipoteca
         Me.GridView1.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black
         Me.GridView1.Appearance.FocusedCell.Options.UseBackColor = True
         Me.GridView1.Appearance.FocusedCell.Options.UseForeColor = True
-        Me.GridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.GridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.CadetBlue
         Me.GridView1.Appearance.FocusedRow.ForeColor = System.Drawing.Color.White
         Me.GridView1.Appearance.FocusedRow.Options.UseBackColor = True
         Me.GridView1.Appearance.FocusedRow.Options.UseForeColor = True
@@ -280,7 +280,7 @@ Partial Class estadoHipoteca
         Me.txtBuscar.Size = New System.Drawing.Size(344, 31)
         Me.txtBuscar.TabIndex = 8
         '
-        'estadoHipoteca
+        'buscarHipoteca
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -289,7 +289,7 @@ Partial Class estadoHipoteca
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.MostrarEstadoGridControl)
-        Me.Name = "estadoHipoteca"
+        Me.Name = "buscarHipoteca"
         Me.Text = "estadoHipoteca"
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MostrarEstadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -313,6 +313,6 @@ Partial Class estadoHipoteca
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
     Friend WithEvents txtBuscar As System.Windows.Forms.TextBox
 
- 
+
 
 End Class

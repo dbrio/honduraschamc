@@ -51,34 +51,54 @@
     End Sub
 
     Private Sub ClienteGridControl_DoubleClick(sender As Object, e As EventArgs) Handles ClienteGridControl.DoubleClick
+        
+        Dim i As Integer = GridView1.DataRowCount - 1
 
-        Dim dict As Hashtable = obtenerDatos()
-        Dim codigoCliente As String = dict("codigoCliente")
-        Dim nombre As String = dict("nombre")
-        Dim identidad As String = dict("identidad")
-        Dim codigoAgencia As String = dict("codigoAgencia")
-        Dim monto As Decimal = dict("monto")
-        Dim plazo As Decimal = dict("plazo")
-        Dim interes As Decimal = dict("interes")
-        Dim cuota As Decimal = dict("cuota")
-        Dim interesMora As Decimal = IsDBNull(dict("interesMora"))
+        If i = 0 Then
+            MsgBox(i)
+        Else
+            MsgBox("hola")
+        End If
 
 
-        With garantiaList
-            .codigoClinteGarantia = codigoCliente
-            .nombreClienteGarantia = nombre
-            .identidadGarantia = identidad
-            .montoGarantia = monto
-            .plazoGaratnia = plazo
-            .tasaInteresGaratnia = interes
-            .cuotaGaratnia = cuota
-            .interesMoraGaratnia = interesMora
-            .codigoAgenciaGarantia = codigoAgencia
 
-            .Show()
-            .Focus()
+        'For i As Integer = 0 To Me.GridView1.DataRowCount - 1
+        '    Dim loco As Integer = GridView1.SelectRow(i)
+        '    MsgBox(i)
+        'Next i
 
-        End With
+
+
+
+
+
+        'Dim dict As Hashtable = obtenerDatos()
+        'Dim codigoCliente As String = dict("codigoCliente")
+        'Dim nombre As String = dict("nombre")
+        'Dim identidad As String = dict("identidad")
+        'Dim codigoAgencia As String = dict("codigoAgencia")
+        'Dim monto As Decimal = dict("monto")
+        'Dim plazo As Decimal = dict("plazo")
+        'Dim interes As Decimal = dict("interes")
+        'Dim cuota As Decimal = dict("cuota")
+        'Dim interesMora As Decimal = IsDBNull(dict("interesMora"))
+
+
+        'With garantiaList
+        '    .codigoClinteGarantia = codigoCliente
+        '    .nombreClienteGarantia = nombre
+        '    .identidadGarantia = identidad
+        '    .montoGarantia = monto
+        '    .plazoGaratnia = plazo
+        '    .tasaInteresGaratnia = interes
+        '    .cuotaGaratnia = cuota
+        '    .interesMoraGaratnia = interesMora
+        '    .codigoAgenciaGarantia = codigoAgencia
+
+        '    .Show()
+        '    .Focus()
+
+        'End With
 
 
 

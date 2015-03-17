@@ -170,7 +170,7 @@
 
     
     Private Sub ESTADOToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ESTADOToolStripMenuItem.Click
-        With estadoHipoteca
+        With buscarHipoteca
             .MdiParent = Me
             .Show()
             .Focus()
