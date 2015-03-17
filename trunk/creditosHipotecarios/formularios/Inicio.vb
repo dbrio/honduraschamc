@@ -1,5 +1,5 @@
 ﻿Public Class Inicio
-
+   
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GestionarPanel()
 
@@ -169,4 +169,11 @@
     End Sub
 
     
+    Private Sub ESTADOToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ESTADOToolStripMenuItem.Click
+        With estadoHipoteca
+            .MdiParent = Me
+            .Show()
+            .Focus()
+        End With
+    End Sub
 End Class

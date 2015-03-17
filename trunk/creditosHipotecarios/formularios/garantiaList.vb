@@ -9,6 +9,8 @@
     Public cuotaGaratnia As Decimal
     Public interesMoraGaratnia As Decimal
 
+   
+
 
 
     Private Sub GrantiaHipotecariaBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
@@ -35,6 +37,8 @@
   
 
     Private Sub garantiaList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
         Inicio.Enabled = False
         Try
             Me.GrantiaHipotecariaTableAdapter.Fill(Me.DataSetAMCProduccion.GrantiaHipotecaria, codigoClinteGarantia)
@@ -45,7 +49,7 @@
         End Try
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
