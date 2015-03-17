@@ -38,22 +38,20 @@
     Private Sub HipotecaEestadoGridControl_DoubleClick(sender As Object, e As EventArgs) Handles HipotecaEestadoGridControl.DoubleClick
 
 
+        Try
+            If HipotecaEestadoGridControl.TabIndex = -1 Then
+                MsgBox("pendejo")
+            Else
+                Dim dict As Hashtable = obtenerDatos()
+                Dim hipotecaId As String = dict("hipotecaEstadoId")
+                Dim estadoId As Integer = idCargar + 1
+                HipotecaEstadoTableAdapter.UpdateQuery(estadoId, hipotecaId)
+                MessageBox.Show("El estado fue actualizado ", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                cargarDatos()
+            End If
 
-
-        'Try
-        '    If HipotecaEestadoGridControl.TabIndex = -1 Then
-        '        MsgBox("pendejo")
-        '    Else
-        '        Dim dict As Hashtable = obtenerDatos()
-        '        Dim hipotecaId As String = dict("hipotecaEstadoId")
-        '        Dim estadoId As Integer = idCargar + 1
-        '        HipotecaEstadoTableAdapter.UpdateQuery(estadoId, hipotecaId)
-        '        MessageBox.Show("El estado fue actualizado ", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        '        cargarDatos()
-        '    End If
-
-        'Catch ex As Exception
-        '    MsgBox(ex.Message)
-        'End Try
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

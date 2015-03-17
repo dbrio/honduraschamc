@@ -22,9 +22,8 @@ Partial Class creditoList
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.DataSetAMCProduccion = New creditosHipotecarios.DataSetAMCProduccion()
-        Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ClienteBindingSource = New System.Windows.Forms.BindingSource()
         Me.ClienteTableAdapter = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.ClienteTableAdapter()
         Me.TableAdapterManager = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager()
         Me.ClienteGridControl = New DevExpress.XtraGrid.GridControl()
@@ -75,18 +74,20 @@ Partial Class creditoList
         '
         Me.ClienteGridControl.DataSource = Me.ClienteBindingSource
         Me.ClienteGridControl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ClienteGridControl.EmbeddedNavigator.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.[End]
         Me.ClienteGridControl.Location = New System.Drawing.Point(0, 0)
         Me.ClienteGridControl.MainView = Me.GridView1
         Me.ClienteGridControl.Name = "ClienteGridControl"
         Me.ClienteGridControl.Size = New System.Drawing.Size(1118, 461)
         Me.ClienteGridControl.TabIndex = 0
+        Me.ClienteGridControl.UseEmbeddedNavigator = True
         Me.ClienteGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
         'GridView1
         '
         Me.GridView1.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(254, Byte), Integer))
         Me.GridView1.Appearance.ColumnFilterButton.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(228, Byte), Integer))
-        Me.GridView1.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(254, Byte), Integer))
+        Me.GridView1.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.PowderBlue
         Me.GridView1.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.Black
         Me.GridView1.Appearance.ColumnFilterButton.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical
         Me.GridView1.Appearance.ColumnFilterButton.Options.UseBackColor = True
@@ -199,6 +200,7 @@ Partial Class creditoList
         Me.GridView1.Appearance.VertLine.BackColor = System.Drawing.Color.FromArgb(CType(CType(99, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(196, Byte), Integer))
         Me.GridView1.Appearance.VertLine.Options.UseBackColor = True
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colccodofi, Me.colcnomcli, Me.colcnudoci, Me.colccodcta, Me.colnmonsug, Me.colncuosug, Me.colntasint, Me.colnmoncuo, Me.colnMora_int, Me.coldfecsol, Me.colccodcli})
+        Me.GridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None
         Me.GridView1.GridControl = Me.ClienteGridControl
         Me.GridView1.GroupPanelText = " "
         Me.GridView1.Name = "GridView1"
@@ -207,11 +209,14 @@ Partial Class creditoList
         Me.GridView1.OptionsCustomization.AllowFilter = False
         Me.GridView1.OptionsCustomization.AllowSort = False
         Me.GridView1.OptionsMenu.EnableColumnMenu = False
+        Me.GridView1.OptionsNavigation.AutoFocusNewRow = True
+        Me.GridView1.OptionsNavigation.EnterMoveNextColumn = True
         Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.GridView1.OptionsSelection.EnableAppearanceFocusedRow = False
+        Me.GridView1.OptionsSelection.UseIndicatorForSelection = False
         Me.GridView1.OptionsView.EnableAppearanceOddRow = True
         Me.GridView1.PaintStyleName = "WindowsXP"
         Me.GridView1.RowHeight = 25
+        Me.GridView1.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never
         '
         'colccodofi
         '
