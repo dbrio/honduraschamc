@@ -22,8 +22,9 @@ Partial Class buscarHipoteca
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.DataSetCreditos = New creditosHipotecarios.DataSetCreditos()
-        Me.MostrarEstadoBindingSource = New System.Windows.Forms.BindingSource()
+        Me.MostrarEstadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MostrarEstadoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.MostrarEstadoTableAdapter()
         Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
         Me.MostrarEstadoGridControl = New DevExpress.XtraGrid.GridControl()
@@ -290,7 +291,7 @@ Partial Class buscarHipoteca
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.MostrarEstadoGridControl)
         Me.Name = "buscarHipoteca"
-        Me.Text = "estadoHipoteca"
+        Me.Text = "SEGUIMIENTO"
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MostrarEstadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MostrarEstadoGridControl, System.ComponentModel.ISupportInitialize).EndInit()

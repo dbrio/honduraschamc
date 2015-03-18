@@ -1,7 +1,6 @@
 ﻿Public Class creditoList
 
     Private Sub creditoList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ClienteGridControl.Enabled = False
 
     End Sub
 
@@ -50,57 +49,38 @@
         End If
     End Sub
 
-    Private Sub ClienteGridControl_DoubleClick(sender As Object, e As EventArgs) Handles ClienteGridControl.DoubleClick
-        
-        Dim i As Integer = GridView1.DataRowCount - 1
-
-        If i = 0 Then
-            MsgBox(i)
-        Else
-            MsgBox("hola")
-        End If
-
-
-
-        'For i As Integer = 0 To Me.GridView1.DataRowCount - 1
-        '    Dim loco As Integer = GridView1.SelectRow(i)
-        '    MsgBox(i)
-        'Next i
+   
+    Private Sub GridView1_RowCellClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs) Handles GridView1.RowCellClick
+        Dim dict As Hashtable = obtenerDatos()
+        Dim codigoCliente As String = dict("codigoCliente")
+        Dim nombre As String = dict("nombre")
+        Dim identidad As String = dict("identidad")
+        Dim codigoAgencia As String = dict("codigoAgencia")
+        Dim monto As Decimal = dict("monto")
+        Dim plazo As Decimal = dict("plazo")
+        Dim interes As Decimal = dict("interes")
+        Dim cuota As Decimal = dict("cuota")
+        Dim interesMora As Decimal = IsDBNull(dict("interesMora"))
 
 
+        With garantiaList
+            .codigoClinteGarantia = codigoCliente
+            .nombreClienteGarantia = nombre
+            .identidadGarantia = identidad
+            .montoGarantia = monto
+            .plazoGaratnia = plazo
+            .tasaInteresGaratnia = interes
+            .cuotaGaratnia = cuota
+            .interesMoraGaratnia = interesMora
+            .codigoAgenciaGarantia = codigoAgencia
 
+            .Show()
+            .Focus()
 
-
-
-        'Dim dict As Hashtable = obtenerDatos()
-        'Dim codigoCliente As String = dict("codigoCliente")
-        'Dim nombre As String = dict("nombre")
-        'Dim identidad As String = dict("identidad")
-        'Dim codigoAgencia As String = dict("codigoAgencia")
-        'Dim monto As Decimal = dict("monto")
-        'Dim plazo As Decimal = dict("plazo")
-        'Dim interes As Decimal = dict("interes")
-        'Dim cuota As Decimal = dict("cuota")
-        'Dim interesMora As Decimal = IsDBNull(dict("interesMora"))
-
-
-        'With garantiaList
-        '    .codigoClinteGarantia = codigoCliente
-        '    .nombreClienteGarantia = nombre
-        '    .identidadGarantia = identidad
-        '    .montoGarantia = monto
-        '    .plazoGaratnia = plazo
-        '    .tasaInteresGaratnia = interes
-        '    .cuotaGaratnia = cuota
-        '    .interesMoraGaratnia = interesMora
-        '    .codigoAgenciaGarantia = codigoAgencia
-
-        '    .Show()
-        '    .Focus()
-
-        'End With
+        End With
 
 
 
     End Sub
+
 End Class

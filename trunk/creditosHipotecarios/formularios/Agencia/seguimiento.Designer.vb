@@ -1,7 +1,7 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class seguimiento
-    Inherits System.Windows.Forms.Form
-
+    'Inherits System.Windows.Forms.Form
+    Inherits JaarForm.JForm
     'Form reemplaza a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
@@ -13,6 +13,17 @@ Partial Class seguimiento
             MyBase.Dispose(disposing)
         End Try
     End Sub
+    'Form reemplaza a Dispose para limpiar la lista de componentes.
+    '<System.Diagnostics.DebuggerNonUserCode()> _
+    'Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+    '    Try
+    '        If disposing AndAlso components IsNot Nothing Then
+    '            components.Dispose()
+    '        End If
+    '    Finally
+    '        MyBase.Dispose(disposing)
+    '    End Try
+    'End Sub
 
     'Requerido por el Diseñador de Windows Forms
     Private components As System.ComponentModel.IContainer
@@ -22,12 +33,9 @@ Partial Class seguimiento
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(seguimiento))
-        Dim PrestamoIdLabel As System.Windows.Forms.Label
-        Dim EstadoIdLabel As System.Windows.Forms.Label
+        Me.components = New System.ComponentModel.Container()
         Dim NombreAgenciaLabel As System.Windows.Forms.Label
         Dim NombreClienteLabel As System.Windows.Forms.Label
-        Dim RnpClienteLabel As System.Windows.Forms.Label
         Dim NombrePropietarioLabel As System.Windows.Forms.Label
         Dim RnpPropietarioLabel As System.Windows.Forms.Label
         Dim MontoLabel As System.Windows.Forms.Label
@@ -36,59 +44,48 @@ Partial Class seguimiento
         Dim CuotaPagarLabel As System.Windows.Forms.Label
         Dim InteresMoraLabel As System.Windows.Forms.Label
         Dim ValorRemateLabel As System.Windows.Forms.Label
-        Dim DescripcionLabel As System.Windows.Forms.Label
+        Dim Label1 As System.Windows.Forms.Label
+        Dim NumeroIpLabel As System.Windows.Forms.Label
         Dim NombresLabel As System.Windows.Forms.Label
-        Dim ApellidosLabel As System.Windows.Forms.Label
         Dim AsientoLabel As System.Windows.Forms.Label
         Dim MatriculaLabel As System.Windows.Forms.Label
-        Dim NumeroIpLabel As System.Windows.Forms.Label
         Dim TomoLabel As System.Windows.Forms.Label
+        Dim Label2 As System.Windows.Forms.Label
+        Dim Label3 As System.Windows.Forms.Label
+        Dim Label4 As System.Windows.Forms.Label
+        Dim Label5 As System.Windows.Forms.Label
+        Dim Label6 As System.Windows.Forms.Label
+        Dim Label7 As System.Windows.Forms.Label
+        Dim Label8 As System.Windows.Forms.Label
         Me.DataSetCreditos = New creditosHipotecarios.DataSetCreditos()
-        Me.SeguimientoBindingSource = New System.Windows.Forms.BindingSource()
+        Me.SeguimientoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SeguimientoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.seguimientoTableAdapter()
         Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
-        Me.SeguimientoBindingNavigator = New System.Windows.Forms.BindingNavigator()
-        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
-        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
-        Me.SeguimientoBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
-        Me.FillToolStrip = New System.Windows.Forms.ToolStrip()
-        Me.IdPrestamoToolStripLabel = New System.Windows.Forms.ToolStripLabel()
-        Me.IdPrestamoToolStripTextBox = New System.Windows.Forms.ToolStripTextBox()
-        Me.FillToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.PrestamoIdSpinEdit = New DevExpress.XtraEditors.SpinEdit()
-        Me.EstadoIdSpinEdit = New DevExpress.XtraEditors.SpinEdit()
-        Me.NombreAgenciaTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.NombreClienteTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.RnpClienteTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.NombrePropietarioTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.RnpPropietarioTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.MontoSpinEdit = New DevExpress.XtraEditors.SpinEdit()
-        Me.PlazoSpinEdit = New DevExpress.XtraEditors.SpinEdit()
-        Me.TasaInteresSpinEdit = New DevExpress.XtraEditors.SpinEdit()
-        Me.CuotaPagarSpinEdit = New DevExpress.XtraEditors.SpinEdit()
-        Me.InteresMoraSpinEdit = New DevExpress.XtraEditors.SpinEdit()
-        Me.ValorRemateSpinEdit = New DevExpress.XtraEditors.SpinEdit()
-        Me.DescripcionTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.NombresTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.ApellidosTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.AsientoTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.MatriculaTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.NumeroIpTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.TomoTextEdit = New DevExpress.XtraEditors.TextEdit()
-        PrestamoIdLabel = New System.Windows.Forms.Label()
-        EstadoIdLabel = New System.Windows.Forms.Label()
+        Me.EstadoIdLabel1 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.NombreAgenciaLabel1 = New System.Windows.Forms.Label()
+        Me.NombreClienteLabel1 = New System.Windows.Forms.Label()
+        Me.RnpClienteLabel1 = New System.Windows.Forms.Label()
+        Me.NombrePropietarioLabel1 = New System.Windows.Forms.Label()
+        Me.RnpPropietarioLabel1 = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.DescripcionMemoEdit = New DevExpress.XtraEditors.MemoEdit()
+        Me.MontoLabel1 = New System.Windows.Forms.Label()
+        Me.PlazoLabel1 = New System.Windows.Forms.Label()
+        Me.TasaInteresLabel1 = New System.Windows.Forms.Label()
+        Me.CuotaPagarLabel1 = New System.Windows.Forms.Label()
+        Me.InteresMoraLabel1 = New System.Windows.Forms.Label()
+        Me.ValorRemateLabel1 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.NombresLabel1 = New System.Windows.Forms.Label()
+        Me.ApellidosLabel1 = New System.Windows.Forms.Label()
+        Me.AsientoLabel1 = New System.Windows.Forms.Label()
+        Me.MatriculaLabel1 = New System.Windows.Forms.Label()
+        Me.NumeroIpLabel1 = New System.Windows.Forms.Label()
+        Me.TomoLabel1 = New System.Windows.Forms.Label()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         NombreAgenciaLabel = New System.Windows.Forms.Label()
         NombreClienteLabel = New System.Windows.Forms.Label()
-        RnpClienteLabel = New System.Windows.Forms.Label()
         NombrePropietarioLabel = New System.Windows.Forms.Label()
         RnpPropietarioLabel = New System.Windows.Forms.Label()
         MontoLabel = New System.Windows.Forms.Label()
@@ -97,39 +94,270 @@ Partial Class seguimiento
         CuotaPagarLabel = New System.Windows.Forms.Label()
         InteresMoraLabel = New System.Windows.Forms.Label()
         ValorRemateLabel = New System.Windows.Forms.Label()
-        DescripcionLabel = New System.Windows.Forms.Label()
+        Label1 = New System.Windows.Forms.Label()
+        NumeroIpLabel = New System.Windows.Forms.Label()
         NombresLabel = New System.Windows.Forms.Label()
-        ApellidosLabel = New System.Windows.Forms.Label()
         AsientoLabel = New System.Windows.Forms.Label()
         MatriculaLabel = New System.Windows.Forms.Label()
-        NumeroIpLabel = New System.Windows.Forms.Label()
         TomoLabel = New System.Windows.Forms.Label()
+        Label2 = New System.Windows.Forms.Label()
+        Label3 = New System.Windows.Forms.Label()
+        Label4 = New System.Windows.Forms.Label()
+        Label5 = New System.Windows.Forms.Label()
+        Label6 = New System.Windows.Forms.Label()
+        Label7 = New System.Windows.Forms.Label()
+        Label8 = New System.Windows.Forms.Label()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SeguimientoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SeguimientoBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SeguimientoBindingNavigator.SuspendLayout()
-        Me.FillToolStrip.SuspendLayout()
-        CType(Me.PrestamoIdSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EstadoIdSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NombreAgenciaTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NombreClienteTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RnpClienteTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NombrePropietarioTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RnpPropietarioTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MontoSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PlazoSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TasaInteresSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CuotaPagarSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.InteresMoraSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ValorRemateSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DescripcionTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NombresTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ApellidosTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AsientoTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MatriculaTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumeroIpTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TomoTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        CType(Me.DescripcionMemoEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'NombreAgenciaLabel
+        '
+        NombreAgenciaLabel.AutoSize = True
+        NombreAgenciaLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        NombreAgenciaLabel.Location = New System.Drawing.Point(23, 32)
+        NombreAgenciaLabel.Name = "NombreAgenciaLabel"
+        NombreAgenciaLabel.Size = New System.Drawing.Size(58, 16)
+        NombreAgenciaLabel.TabIndex = 52
+        NombreAgenciaLabel.Text = "Agencia"
+        '
+        'NombreClienteLabel
+        '
+        NombreClienteLabel.AutoSize = True
+        NombreClienteLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        NombreClienteLabel.Location = New System.Drawing.Point(23, 106)
+        NombreClienteLabel.Name = "NombreClienteLabel"
+        NombreClienteLabel.Size = New System.Drawing.Size(104, 16)
+        NombreClienteLabel.TabIndex = 54
+        NombreClienteLabel.Text = "Nombre Cliente:"
+        '
+        'NombrePropietarioLabel
+        '
+        NombrePropietarioLabel.AutoSize = True
+        NombrePropietarioLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        NombrePropietarioLabel.Location = New System.Drawing.Point(23, 168)
+        NombrePropietarioLabel.Name = "NombrePropietarioLabel"
+        NombrePropietarioLabel.Size = New System.Drawing.Size(129, 16)
+        NombrePropietarioLabel.TabIndex = 58
+        NombrePropietarioLabel.Text = "Nombre Propietario:"
+        '
+        'RnpPropietarioLabel
+        '
+        RnpPropietarioLabel.AutoSize = True
+        RnpPropietarioLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        RnpPropietarioLabel.Location = New System.Drawing.Point(475, 168)
+        RnpPropietarioLabel.Name = "RnpPropietarioLabel"
+        RnpPropietarioLabel.Size = New System.Drawing.Size(24, 16)
+        RnpPropietarioLabel.TabIndex = 60
+        RnpPropietarioLabel.Text = "ID:"
+        '
+        'MontoLabel
+        '
+        MontoLabel.AutoSize = True
+        MontoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        MontoLabel.Location = New System.Drawing.Point(32, 37)
+        MontoLabel.Name = "MontoLabel"
+        MontoLabel.Size = New System.Drawing.Size(48, 16)
+        MontoLabel.TabIndex = 80
+        MontoLabel.Text = "Monto:"
+        '
+        'PlazoLabel
+        '
+        PlazoLabel.AutoSize = True
+        PlazoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        PlazoLabel.Location = New System.Drawing.Point(310, 29)
+        PlazoLabel.Name = "PlazoLabel"
+        PlazoLabel.Size = New System.Drawing.Size(45, 16)
+        PlazoLabel.TabIndex = 82
+        PlazoLabel.Text = "Plazo:"
+        '
+        'TasaInteresLabel
+        '
+        TasaInteresLabel.AutoSize = True
+        TasaInteresLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        TasaInteresLabel.Location = New System.Drawing.Point(31, 89)
+        TasaInteresLabel.Name = "TasaInteresLabel"
+        TasaInteresLabel.Size = New System.Drawing.Size(86, 16)
+        TasaInteresLabel.TabIndex = 84
+        TasaInteresLabel.Text = "Tasa Interes:"
+        '
+        'CuotaPagarLabel
+        '
+        CuotaPagarLabel.AutoSize = True
+        CuotaPagarLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CuotaPagarLabel.Location = New System.Drawing.Point(310, 86)
+        CuotaPagarLabel.Name = "CuotaPagarLabel"
+        CuotaPagarLabel.Size = New System.Drawing.Size(86, 16)
+        CuotaPagarLabel.TabIndex = 86
+        CuotaPagarLabel.Text = "Cuota Pagar:"
+        '
+        'InteresMoraLabel
+        '
+        InteresMoraLabel.AutoSize = True
+        InteresMoraLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        InteresMoraLabel.Location = New System.Drawing.Point(32, 139)
+        InteresMoraLabel.Name = "InteresMoraLabel"
+        InteresMoraLabel.Size = New System.Drawing.Size(85, 16)
+        InteresMoraLabel.TabIndex = 88
+        InteresMoraLabel.Text = "Interes Mora:"
+        '
+        'ValorRemateLabel
+        '
+        ValorRemateLabel.AutoSize = True
+        ValorRemateLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ValorRemateLabel.Location = New System.Drawing.Point(310, 139)
+        ValorRemateLabel.Name = "ValorRemateLabel"
+        ValorRemateLabel.Size = New System.Drawing.Size(94, 16)
+        ValorRemateLabel.TabIndex = 90
+        ValorRemateLabel.Text = "Valor Remate:"
+        '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label1.Location = New System.Drawing.Point(475, 110)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(24, 16)
+        Label1.TabIndex = 62
+        Label1.Text = "ID:"
+        '
+        'NumeroIpLabel
+        '
+        NumeroIpLabel.AutoSize = True
+        NumeroIpLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        NumeroIpLabel.Location = New System.Drawing.Point(25, 165)
+        NumeroIpLabel.Name = "NumeroIpLabel"
+        NumeroIpLabel.Size = New System.Drawing.Size(74, 16)
+        NumeroIpLabel.TabIndex = 85
+        NumeroIpLabel.Text = "Número IP:"
+        '
+        'NombresLabel
+        '
+        NombresLabel.AutoSize = True
+        NombresLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        NombresLabel.Location = New System.Drawing.Point(25, 10)
+        NombresLabel.Name = "NombresLabel"
+        NombresLabel.Size = New System.Drawing.Size(68, 16)
+        NombresLabel.TabIndex = 78
+        NombresLabel.Text = "Abogado:"
+        '
+        'AsientoLabel
+        '
+        AsientoLabel.AutoSize = True
+        AsientoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        AsientoLabel.Location = New System.Drawing.Point(25, 66)
+        AsientoLabel.Name = "AsientoLabel"
+        AsientoLabel.Size = New System.Drawing.Size(56, 16)
+        AsientoLabel.TabIndex = 81
+        AsientoLabel.Text = "Asiento:"
+        '
+        'MatriculaLabel
+        '
+        MatriculaLabel.AutoSize = True
+        MatriculaLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        MatriculaLabel.Location = New System.Drawing.Point(25, 114)
+        MatriculaLabel.Name = "MatriculaLabel"
+        MatriculaLabel.Size = New System.Drawing.Size(65, 16)
+        MatriculaLabel.TabIndex = 83
+        MatriculaLabel.Text = "Matricula:"
+        '
+        'TomoLabel
+        '
+        TomoLabel.AutoSize = True
+        TomoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        TomoLabel.Location = New System.Drawing.Point(25, 207)
+        TomoLabel.Name = "TomoLabel"
+        TomoLabel.Size = New System.Drawing.Size(47, 16)
+        TomoLabel.TabIndex = 87
+        TomoLabel.Text = "Tomo:"
+        '
+        'Label2
+        '
+        Label2.AutoSize = True
+        Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label2.ForeColor = System.Drawing.Color.White
+        Label2.Location = New System.Drawing.Point(44, 105)
+        Label2.Name = "Label2"
+        Label2.Size = New System.Drawing.Size(39, 13)
+        Label2.TabIndex = 63
+        Label2.Text = "INICIO"
+        '
+        'Label3
+        '
+        Label3.AutoSize = True
+        Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label3.ForeColor = System.Drawing.Color.White
+        Label3.Location = New System.Drawing.Point(154, 105)
+        Label3.Name = "Label3"
+        Label3.Size = New System.Drawing.Size(74, 13)
+        Label3.TabIndex = 85
+        Label3.Text = "PROTOCOLO"
+        '
+        'Label4
+        '
+        Label4.AutoSize = True
+        Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label4.ForeColor = System.Drawing.Color.White
+        Label4.Location = New System.Drawing.Point(279, 105)
+        Label4.Name = "Label4"
+        Label4.Size = New System.Drawing.Size(88, 13)
+        Label4.TabIndex = 86
+        Label4.Text = "FIRMA CLIENTE"
+        '
+        'Label5
+        '
+        Label5.AutoSize = True
+        Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label5.ForeColor = System.Drawing.Color.White
+        Label5.Location = New System.Drawing.Point(422, 105)
+        Label5.Name = "Label5"
+        Label5.Size = New System.Drawing.Size(95, 13)
+        Label5.TabIndex = 87
+        Label5.Text = "FIRMA GERENTE"
+        '
+        'Label6
+        '
+        Label6.AutoSize = True
+        Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label6.ForeColor = System.Drawing.Color.White
+        Label6.Location = New System.Drawing.Point(543, 105)
+        Label6.Name = "Label6"
+        Label6.Size = New System.Drawing.Size(104, 13)
+        Label6.TabIndex = 88
+        Label6.Text = "PRESENTACION IP"
+        '
+        'Label7
+        '
+        Label7.AutoSize = True
+        Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label7.ForeColor = System.Drawing.Color.White
+        Label7.Location = New System.Drawing.Point(703, 105)
+        Label7.Name = "Label7"
+        Label7.Size = New System.Drawing.Size(62, 13)
+        Label7.TabIndex = 89
+        Label7.Text = "CUSTODIA"
+        '
+        'Label8
+        '
+        Label8.AutoSize = True
+        Label8.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label8.ForeColor = System.Drawing.Color.White
+        Label8.Location = New System.Drawing.Point(802, 105)
+        Label8.Name = "Label8"
+        Label8.Size = New System.Drawing.Size(115, 13)
+        Label8.TabIndex = 90
+        Label8.Text = "SOLICITUD DE PAGO"
         '
         'DataSetCreditos
         '
@@ -157,578 +385,319 @@ Partial Class seguimiento
         Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuarioTableAdapter = Nothing
         '
-        'SeguimientoBindingNavigator
-        '
-        Me.SeguimientoBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
-        Me.SeguimientoBindingNavigator.BindingSource = Me.SeguimientoBindingSource
-        Me.SeguimientoBindingNavigator.CountItem = Me.BindingNavigatorCountItem
-        Me.SeguimientoBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.SeguimientoBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.SeguimientoBindingNavigatorSaveItem})
-        Me.SeguimientoBindingNavigator.Location = New System.Drawing.Point(0, 0)
-        Me.SeguimientoBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
-        Me.SeguimientoBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
-        Me.SeguimientoBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
-        Me.SeguimientoBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
-        Me.SeguimientoBindingNavigator.Name = "SeguimientoBindingNavigator"
-        Me.SeguimientoBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.SeguimientoBindingNavigator.Size = New System.Drawing.Size(953, 25)
-        Me.SeguimientoBindingNavigator.TabIndex = 0
-        Me.SeguimientoBindingNavigator.Text = "BindingNavigator1"
-        '
-        'BindingNavigatorMoveFirstItem
-        '
-        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
-        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveFirstItem.Text = "Mover primero"
-        '
-        'BindingNavigatorMovePreviousItem
-        '
-        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
-        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMovePreviousItem.Text = "Mover anterior"
-        '
-        'BindingNavigatorSeparator
-        '
-        Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorPositionItem
-        '
-        Me.BindingNavigatorPositionItem.AccessibleName = "Posición"
-        Me.BindingNavigatorPositionItem.AutoSize = False
-        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
-        Me.BindingNavigatorPositionItem.Text = "0"
-        Me.BindingNavigatorPositionItem.ToolTipText = "Posición actual"
-        '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 15)
-        Me.BindingNavigatorCountItem.Text = "de {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Número total de elementos"
-        '
-        'BindingNavigatorSeparator1
-        '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 6)
-        '
-        'BindingNavigatorMoveNextItem
-        '
-        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
-        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 20)
-        Me.BindingNavigatorMoveNextItem.Text = "Mover siguiente"
-        '
-        'BindingNavigatorMoveLastItem
-        '
-        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
-        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 20)
-        Me.BindingNavigatorMoveLastItem.Text = "Mover último"
-        '
-        'BindingNavigatorSeparator2
-        '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 6)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 20)
-        Me.BindingNavigatorDeleteItem.Text = "Eliminar"
-        '
-        'SeguimientoBindingNavigatorSaveItem
-        '
-        Me.SeguimientoBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.SeguimientoBindingNavigatorSaveItem.Enabled = False
-        Me.SeguimientoBindingNavigatorSaveItem.Image = CType(resources.GetObject("SeguimientoBindingNavigatorSaveItem.Image"), System.Drawing.Image)
-        Me.SeguimientoBindingNavigatorSaveItem.Name = "SeguimientoBindingNavigatorSaveItem"
-        Me.SeguimientoBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 20)
-        Me.SeguimientoBindingNavigatorSaveItem.Text = "Guardar datos"
-        '
-        'FillToolStrip
-        '
-        Me.FillToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IdPrestamoToolStripLabel, Me.IdPrestamoToolStripTextBox, Me.FillToolStripButton})
-        Me.FillToolStrip.Location = New System.Drawing.Point(0, 25)
-        Me.FillToolStrip.Name = "FillToolStrip"
-        Me.FillToolStrip.Size = New System.Drawing.Size(953, 25)
-        Me.FillToolStrip.TabIndex = 1
-        Me.FillToolStrip.Text = "FillToolStrip"
-        '
-        'IdPrestamoToolStripLabel
-        '
-        Me.IdPrestamoToolStripLabel.Name = "IdPrestamoToolStripLabel"
-        Me.IdPrestamoToolStripLabel.Size = New System.Drawing.Size(70, 22)
-        Me.IdPrestamoToolStripLabel.Text = "idPrestamo:"
-        '
-        'IdPrestamoToolStripTextBox
-        '
-        Me.IdPrestamoToolStripTextBox.Name = "IdPrestamoToolStripTextBox"
-        Me.IdPrestamoToolStripTextBox.Size = New System.Drawing.Size(100, 23)
-        '
-        'FillToolStripButton
-        '
-        Me.FillToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.FillToolStripButton.Name = "FillToolStripButton"
-        Me.FillToolStripButton.Size = New System.Drawing.Size(26, 19)
-        Me.FillToolStripButton.Text = "Fill"
-        '
-        'PrestamoIdLabel
-        '
-        PrestamoIdLabel.AutoSize = True
-        PrestamoIdLabel.Location = New System.Drawing.Point(297, 101)
-        PrestamoIdLabel.Name = "PrestamoIdLabel"
-        PrestamoIdLabel.Size = New System.Drawing.Size(65, 13)
-        PrestamoIdLabel.TabIndex = 2
-        PrestamoIdLabel.Text = "prestamo Id:"
-        '
-        'PrestamoIdSpinEdit
-        '
-        Me.PrestamoIdSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "prestamoId", True))
-        Me.PrestamoIdSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.PrestamoIdSpinEdit.Location = New System.Drawing.Point(401, 98)
-        Me.PrestamoIdSpinEdit.Name = "PrestamoIdSpinEdit"
-        Me.PrestamoIdSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.PrestamoIdSpinEdit.Size = New System.Drawing.Size(100, 20)
-        Me.PrestamoIdSpinEdit.TabIndex = 3
-        '
-        'EstadoIdLabel
-        '
-        EstadoIdLabel.AutoSize = True
-        EstadoIdLabel.Location = New System.Drawing.Point(297, 127)
-        EstadoIdLabel.Name = "EstadoIdLabel"
-        EstadoIdLabel.Size = New System.Drawing.Size(54, 13)
-        EstadoIdLabel.TabIndex = 4
-        EstadoIdLabel.Text = "estado Id:"
-        '
-        'EstadoIdSpinEdit
-        '
-        Me.EstadoIdSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "estadoId", True))
-        Me.EstadoIdSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.EstadoIdSpinEdit.Location = New System.Drawing.Point(401, 124)
-        Me.EstadoIdSpinEdit.Name = "EstadoIdSpinEdit"
-        Me.EstadoIdSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.EstadoIdSpinEdit.Size = New System.Drawing.Size(100, 20)
-        Me.EstadoIdSpinEdit.TabIndex = 5
-        '
-        'NombreAgenciaLabel
-        '
-        NombreAgenciaLabel.AutoSize = True
-        NombreAgenciaLabel.Location = New System.Drawing.Point(297, 153)
-        NombreAgenciaLabel.Name = "NombreAgenciaLabel"
-        NombreAgenciaLabel.Size = New System.Drawing.Size(87, 13)
-        NombreAgenciaLabel.TabIndex = 6
-        NombreAgenciaLabel.Text = "nombre Agencia:"
-        '
-        'NombreAgenciaTextEdit
-        '
-        Me.NombreAgenciaTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "nombreAgencia", True))
-        Me.NombreAgenciaTextEdit.Location = New System.Drawing.Point(401, 150)
-        Me.NombreAgenciaTextEdit.Name = "NombreAgenciaTextEdit"
-        Me.NombreAgenciaTextEdit.Size = New System.Drawing.Size(100, 20)
-        Me.NombreAgenciaTextEdit.TabIndex = 7
-        '
-        'NombreClienteLabel
-        '
-        NombreClienteLabel.AutoSize = True
-        NombreClienteLabel.Location = New System.Drawing.Point(297, 179)
-        NombreClienteLabel.Name = "NombreClienteLabel"
-        NombreClienteLabel.Size = New System.Drawing.Size(80, 13)
-        NombreClienteLabel.TabIndex = 8
-        NombreClienteLabel.Text = "nombre Cliente:"
-        '
-        'NombreClienteTextEdit
-        '
-        Me.NombreClienteTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "nombreCliente", True))
-        Me.NombreClienteTextEdit.Location = New System.Drawing.Point(401, 176)
-        Me.NombreClienteTextEdit.Name = "NombreClienteTextEdit"
-        Me.NombreClienteTextEdit.Size = New System.Drawing.Size(100, 20)
-        Me.NombreClienteTextEdit.TabIndex = 9
-        '
-        'RnpClienteLabel
-        '
-        RnpClienteLabel.AutoSize = True
-        RnpClienteLabel.Location = New System.Drawing.Point(297, 205)
-        RnpClienteLabel.Name = "RnpClienteLabel"
-        RnpClienteLabel.Size = New System.Drawing.Size(60, 13)
-        RnpClienteLabel.TabIndex = 10
-        RnpClienteLabel.Text = "rnp Cliente:"
-        '
-        'RnpClienteTextEdit
-        '
-        Me.RnpClienteTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "rnpCliente", True))
-        Me.RnpClienteTextEdit.Location = New System.Drawing.Point(401, 202)
-        Me.RnpClienteTextEdit.Name = "RnpClienteTextEdit"
-        Me.RnpClienteTextEdit.Size = New System.Drawing.Size(100, 20)
-        Me.RnpClienteTextEdit.TabIndex = 11
-        '
-        'NombrePropietarioLabel
-        '
-        NombrePropietarioLabel.AutoSize = True
-        NombrePropietarioLabel.Location = New System.Drawing.Point(297, 231)
-        NombrePropietarioLabel.Name = "NombrePropietarioLabel"
-        NombrePropietarioLabel.Size = New System.Drawing.Size(98, 13)
-        NombrePropietarioLabel.TabIndex = 12
-        NombrePropietarioLabel.Text = "nombre Propietario:"
-        '
-        'NombrePropietarioTextEdit
-        '
-        Me.NombrePropietarioTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "nombrePropietario", True))
-        Me.NombrePropietarioTextEdit.Location = New System.Drawing.Point(401, 228)
-        Me.NombrePropietarioTextEdit.Name = "NombrePropietarioTextEdit"
-        Me.NombrePropietarioTextEdit.Size = New System.Drawing.Size(100, 20)
-        Me.NombrePropietarioTextEdit.TabIndex = 13
-        '
-        'RnpPropietarioLabel
-        '
-        RnpPropietarioLabel.AutoSize = True
-        RnpPropietarioLabel.Location = New System.Drawing.Point(297, 257)
-        RnpPropietarioLabel.Name = "RnpPropietarioLabel"
-        RnpPropietarioLabel.Size = New System.Drawing.Size(78, 13)
-        RnpPropietarioLabel.TabIndex = 14
-        RnpPropietarioLabel.Text = "rnp Propietario:"
-        '
-        'RnpPropietarioTextEdit
-        '
-        Me.RnpPropietarioTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "rnpPropietario", True))
-        Me.RnpPropietarioTextEdit.Location = New System.Drawing.Point(401, 254)
-        Me.RnpPropietarioTextEdit.Name = "RnpPropietarioTextEdit"
-        Me.RnpPropietarioTextEdit.Size = New System.Drawing.Size(100, 20)
-        Me.RnpPropietarioTextEdit.TabIndex = 15
-        '
-        'MontoLabel
-        '
-        MontoLabel.AutoSize = True
-        MontoLabel.Location = New System.Drawing.Point(297, 283)
-        MontoLabel.Name = "MontoLabel"
-        MontoLabel.Size = New System.Drawing.Size(39, 13)
-        MontoLabel.TabIndex = 16
-        MontoLabel.Text = "monto:"
-        '
-        'MontoSpinEdit
-        '
-        Me.MontoSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "monto", True))
-        Me.MontoSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.MontoSpinEdit.Location = New System.Drawing.Point(401, 280)
-        Me.MontoSpinEdit.Name = "MontoSpinEdit"
-        Me.MontoSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.MontoSpinEdit.Size = New System.Drawing.Size(100, 20)
-        Me.MontoSpinEdit.TabIndex = 17
-        '
-        'PlazoLabel
-        '
-        PlazoLabel.AutoSize = True
-        PlazoLabel.Location = New System.Drawing.Point(297, 309)
-        PlazoLabel.Name = "PlazoLabel"
-        PlazoLabel.Size = New System.Drawing.Size(35, 13)
-        PlazoLabel.TabIndex = 18
-        PlazoLabel.Text = "plazo:"
-        '
-        'PlazoSpinEdit
-        '
-        Me.PlazoSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "plazo", True))
-        Me.PlazoSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.PlazoSpinEdit.Location = New System.Drawing.Point(401, 306)
-        Me.PlazoSpinEdit.Name = "PlazoSpinEdit"
-        Me.PlazoSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.PlazoSpinEdit.Size = New System.Drawing.Size(100, 20)
-        Me.PlazoSpinEdit.TabIndex = 19
-        '
-        'TasaInteresLabel
-        '
-        TasaInteresLabel.AutoSize = True
-        TasaInteresLabel.Location = New System.Drawing.Point(297, 335)
-        TasaInteresLabel.Name = "TasaInteresLabel"
-        TasaInteresLabel.Size = New System.Drawing.Size(65, 13)
-        TasaInteresLabel.TabIndex = 20
-        TasaInteresLabel.Text = "tasa Interes:"
-        '
-        'TasaInteresSpinEdit
-        '
-        Me.TasaInteresSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "tasaInteres", True))
-        Me.TasaInteresSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.TasaInteresSpinEdit.Location = New System.Drawing.Point(401, 332)
-        Me.TasaInteresSpinEdit.Name = "TasaInteresSpinEdit"
-        Me.TasaInteresSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.TasaInteresSpinEdit.Size = New System.Drawing.Size(100, 20)
-        Me.TasaInteresSpinEdit.TabIndex = 21
-        '
-        'CuotaPagarLabel
-        '
-        CuotaPagarLabel.AutoSize = True
-        CuotaPagarLabel.Location = New System.Drawing.Point(297, 361)
-        CuotaPagarLabel.Name = "CuotaPagarLabel"
-        CuotaPagarLabel.Size = New System.Drawing.Size(68, 13)
-        CuotaPagarLabel.TabIndex = 22
-        CuotaPagarLabel.Text = "cuota Pagar:"
-        '
-        'CuotaPagarSpinEdit
-        '
-        Me.CuotaPagarSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "cuotaPagar", True))
-        Me.CuotaPagarSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.CuotaPagarSpinEdit.Location = New System.Drawing.Point(401, 358)
-        Me.CuotaPagarSpinEdit.Name = "CuotaPagarSpinEdit"
-        Me.CuotaPagarSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.CuotaPagarSpinEdit.Size = New System.Drawing.Size(100, 20)
-        Me.CuotaPagarSpinEdit.TabIndex = 23
-        '
-        'InteresMoraLabel
-        '
-        InteresMoraLabel.AutoSize = True
-        InteresMoraLabel.Location = New System.Drawing.Point(297, 387)
-        InteresMoraLabel.Name = "InteresMoraLabel"
-        InteresMoraLabel.Size = New System.Drawing.Size(68, 13)
-        InteresMoraLabel.TabIndex = 24
-        InteresMoraLabel.Text = "interes Mora:"
-        '
-        'InteresMoraSpinEdit
-        '
-        Me.InteresMoraSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "interesMora", True))
-        Me.InteresMoraSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.InteresMoraSpinEdit.Location = New System.Drawing.Point(401, 384)
-        Me.InteresMoraSpinEdit.Name = "InteresMoraSpinEdit"
-        Me.InteresMoraSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.InteresMoraSpinEdit.Size = New System.Drawing.Size(100, 20)
-        Me.InteresMoraSpinEdit.TabIndex = 25
-        '
-        'ValorRemateLabel
-        '
-        ValorRemateLabel.AutoSize = True
-        ValorRemateLabel.Location = New System.Drawing.Point(297, 413)
-        ValorRemateLabel.Name = "ValorRemateLabel"
-        ValorRemateLabel.Size = New System.Drawing.Size(73, 13)
-        ValorRemateLabel.TabIndex = 26
-        ValorRemateLabel.Text = "valor Remate:"
-        '
-        'ValorRemateSpinEdit
-        '
-        Me.ValorRemateSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "valorRemate", True))
-        Me.ValorRemateSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.ValorRemateSpinEdit.Location = New System.Drawing.Point(401, 410)
-        Me.ValorRemateSpinEdit.Name = "ValorRemateSpinEdit"
-        Me.ValorRemateSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.ValorRemateSpinEdit.Size = New System.Drawing.Size(100, 20)
-        Me.ValorRemateSpinEdit.TabIndex = 27
-        '
-        'DescripcionLabel
-        '
-        DescripcionLabel.AutoSize = True
-        DescripcionLabel.Location = New System.Drawing.Point(297, 439)
-        DescripcionLabel.Name = "DescripcionLabel"
-        DescripcionLabel.Size = New System.Drawing.Size(64, 13)
-        DescripcionLabel.TabIndex = 28
-        DescripcionLabel.Text = "descripcion:"
-        '
-        'DescripcionTextEdit
-        '
-        Me.DescripcionTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "descripcion", True))
-        Me.DescripcionTextEdit.Location = New System.Drawing.Point(401, 436)
-        Me.DescripcionTextEdit.Name = "DescripcionTextEdit"
-        Me.DescripcionTextEdit.Size = New System.Drawing.Size(100, 20)
-        Me.DescripcionTextEdit.TabIndex = 29
-        '
-        'NombresLabel
-        '
-        NombresLabel.AutoSize = True
-        NombresLabel.Location = New System.Drawing.Point(297, 465)
-        NombresLabel.Name = "NombresLabel"
-        NombresLabel.Size = New System.Drawing.Size(50, 13)
-        NombresLabel.TabIndex = 30
-        NombresLabel.Text = "nombres:"
-        '
-        'NombresTextEdit
-        '
-        Me.NombresTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "nombres", True))
-        Me.NombresTextEdit.Location = New System.Drawing.Point(401, 462)
-        Me.NombresTextEdit.Name = "NombresTextEdit"
-        Me.NombresTextEdit.Size = New System.Drawing.Size(100, 20)
-        Me.NombresTextEdit.TabIndex = 31
-        '
-        'ApellidosLabel
-        '
-        ApellidosLabel.AutoSize = True
-        ApellidosLabel.Location = New System.Drawing.Point(297, 491)
-        ApellidosLabel.Name = "ApellidosLabel"
-        ApellidosLabel.Size = New System.Drawing.Size(51, 13)
-        ApellidosLabel.TabIndex = 32
-        ApellidosLabel.Text = "apellidos:"
-        '
-        'ApellidosTextEdit
-        '
-        Me.ApellidosTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "apellidos", True))
-        Me.ApellidosTextEdit.Location = New System.Drawing.Point(401, 488)
-        Me.ApellidosTextEdit.Name = "ApellidosTextEdit"
-        Me.ApellidosTextEdit.Size = New System.Drawing.Size(100, 20)
-        Me.ApellidosTextEdit.TabIndex = 33
-        '
-        'AsientoLabel
-        '
-        AsientoLabel.AutoSize = True
-        AsientoLabel.Location = New System.Drawing.Point(297, 517)
-        AsientoLabel.Name = "AsientoLabel"
-        AsientoLabel.Size = New System.Drawing.Size(44, 13)
-        AsientoLabel.TabIndex = 34
-        AsientoLabel.Text = "asiento:"
-        '
-        'AsientoTextEdit
-        '
-        Me.AsientoTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "asiento", True))
-        Me.AsientoTextEdit.Location = New System.Drawing.Point(401, 514)
-        Me.AsientoTextEdit.Name = "AsientoTextEdit"
-        Me.AsientoTextEdit.Size = New System.Drawing.Size(100, 20)
-        Me.AsientoTextEdit.TabIndex = 35
-        '
-        'MatriculaLabel
-        '
-        MatriculaLabel.AutoSize = True
-        MatriculaLabel.Location = New System.Drawing.Point(297, 543)
-        MatriculaLabel.Name = "MatriculaLabel"
-        MatriculaLabel.Size = New System.Drawing.Size(52, 13)
-        MatriculaLabel.TabIndex = 36
-        MatriculaLabel.Text = "matricula:"
-        '
-        'MatriculaTextEdit
-        '
-        Me.MatriculaTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "matricula", True))
-        Me.MatriculaTextEdit.Location = New System.Drawing.Point(401, 540)
-        Me.MatriculaTextEdit.Name = "MatriculaTextEdit"
-        Me.MatriculaTextEdit.Size = New System.Drawing.Size(100, 20)
-        Me.MatriculaTextEdit.TabIndex = 37
-        '
-        'NumeroIpLabel
-        '
-        NumeroIpLabel.AutoSize = True
-        NumeroIpLabel.Location = New System.Drawing.Point(297, 569)
-        NumeroIpLabel.Name = "NumeroIpLabel"
-        NumeroIpLabel.Size = New System.Drawing.Size(57, 13)
-        NumeroIpLabel.TabIndex = 38
-        NumeroIpLabel.Text = "numero Ip:"
-        '
-        'NumeroIpTextEdit
-        '
-        Me.NumeroIpTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "numeroIp", True))
-        Me.NumeroIpTextEdit.Location = New System.Drawing.Point(401, 566)
-        Me.NumeroIpTextEdit.Name = "NumeroIpTextEdit"
-        Me.NumeroIpTextEdit.Size = New System.Drawing.Size(100, 20)
-        Me.NumeroIpTextEdit.TabIndex = 39
-        '
-        'TomoLabel
-        '
-        TomoLabel.AutoSize = True
-        TomoLabel.Location = New System.Drawing.Point(297, 595)
-        TomoLabel.Name = "TomoLabel"
-        TomoLabel.Size = New System.Drawing.Size(33, 13)
-        TomoLabel.TabIndex = 40
-        TomoLabel.Text = "tomo:"
-        '
-        'TomoTextEdit
-        '
-        Me.TomoTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "tomo", True))
-        Me.TomoTextEdit.Location = New System.Drawing.Point(401, 592)
-        Me.TomoTextEdit.Name = "TomoTextEdit"
-        Me.TomoTextEdit.Size = New System.Drawing.Size(100, 20)
-        Me.TomoTextEdit.TabIndex = 41
+        'EstadoIdLabel1
+        '
+        Me.EstadoIdLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "estadoId", True))
+        Me.EstadoIdLabel1.ForeColor = System.Drawing.Color.White
+        Me.EstadoIdLabel1.Location = New System.Drawing.Point(979, 686)
+        Me.EstadoIdLabel1.Name = "EstadoIdLabel1"
+        Me.EstadoIdLabel1.Size = New System.Drawing.Size(100, 25)
+        Me.EstadoIdLabel1.TabIndex = 3
+        Me.EstadoIdLabel1.Text = "Label1"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Label1)
+        Me.GroupBox1.Controls.Add(NombreAgenciaLabel)
+        Me.GroupBox1.Controls.Add(Me.NombreAgenciaLabel1)
+        Me.GroupBox1.Controls.Add(NombreClienteLabel)
+        Me.GroupBox1.Controls.Add(Me.NombreClienteLabel1)
+        Me.GroupBox1.Controls.Add(Me.RnpClienteLabel1)
+        Me.GroupBox1.Controls.Add(NombrePropietarioLabel)
+        Me.GroupBox1.Controls.Add(Me.NombrePropietarioLabel1)
+        Me.GroupBox1.Controls.Add(RnpPropietarioLabel)
+        Me.GroupBox1.Controls.Add(Me.RnpPropietarioLabel1)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 142)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(669, 255)
+        Me.GroupBox1.TabIndex = 80
+        Me.GroupBox1.TabStop = False
+        '
+        'NombreAgenciaLabel1
+        '
+        Me.NombreAgenciaLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "nombreAgencia", True))
+        Me.NombreAgenciaLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NombreAgenciaLabel1.ForeColor = System.Drawing.Color.DimGray
+        Me.NombreAgenciaLabel1.Location = New System.Drawing.Point(102, 32)
+        Me.NombreAgenciaLabel1.Name = "NombreAgenciaLabel1"
+        Me.NombreAgenciaLabel1.Size = New System.Drawing.Size(263, 25)
+        Me.NombreAgenciaLabel1.TabIndex = 53
+        Me.NombreAgenciaLabel1.Text = "Label1"
+        '
+        'NombreClienteLabel1
+        '
+        Me.NombreClienteLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "nombreCliente", True))
+        Me.NombreClienteLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NombreClienteLabel1.ForeColor = System.Drawing.Color.DimGray
+        Me.NombreClienteLabel1.Location = New System.Drawing.Point(163, 106)
+        Me.NombreClienteLabel1.Name = "NombreClienteLabel1"
+        Me.NombreClienteLabel1.Size = New System.Drawing.Size(306, 20)
+        Me.NombreClienteLabel1.TabIndex = 55
+        Me.NombreClienteLabel1.Text = "Label1"
+        '
+        'RnpClienteLabel1
+        '
+        Me.RnpClienteLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "rnpCliente", True))
+        Me.RnpClienteLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RnpClienteLabel1.ForeColor = System.Drawing.Color.DimGray
+        Me.RnpClienteLabel1.Location = New System.Drawing.Point(503, 110)
+        Me.RnpClienteLabel1.Name = "RnpClienteLabel1"
+        Me.RnpClienteLabel1.Size = New System.Drawing.Size(143, 19)
+        Me.RnpClienteLabel1.TabIndex = 57
+        Me.RnpClienteLabel1.Text = "Label1"
+        '
+        'NombrePropietarioLabel1
+        '
+        Me.NombrePropietarioLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "nombrePropietario", True))
+        Me.NombrePropietarioLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NombrePropietarioLabel1.ForeColor = System.Drawing.Color.DimGray
+        Me.NombrePropietarioLabel1.Location = New System.Drawing.Point(163, 168)
+        Me.NombrePropietarioLabel1.Name = "NombrePropietarioLabel1"
+        Me.NombrePropietarioLabel1.Size = New System.Drawing.Size(306, 20)
+        Me.NombrePropietarioLabel1.TabIndex = 59
+        Me.NombrePropietarioLabel1.Text = "Label1"
+        '
+        'RnpPropietarioLabel1
+        '
+        Me.RnpPropietarioLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "rnpPropietario", True))
+        Me.RnpPropietarioLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RnpPropietarioLabel1.ForeColor = System.Drawing.Color.DimGray
+        Me.RnpPropietarioLabel1.Location = New System.Drawing.Point(503, 166)
+        Me.RnpPropietarioLabel1.Name = "RnpPropietarioLabel1"
+        Me.RnpPropietarioLabel1.Size = New System.Drawing.Size(143, 19)
+        Me.RnpPropietarioLabel1.TabIndex = 61
+        Me.RnpPropietarioLabel1.Text = "Label1"
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.DescripcionMemoEdit)
+        Me.GroupBox3.Controls.Add(MontoLabel)
+        Me.GroupBox3.Controls.Add(Me.MontoLabel1)
+        Me.GroupBox3.Controls.Add(PlazoLabel)
+        Me.GroupBox3.Controls.Add(Me.PlazoLabel1)
+        Me.GroupBox3.Controls.Add(TasaInteresLabel)
+        Me.GroupBox3.Controls.Add(Me.TasaInteresLabel1)
+        Me.GroupBox3.Controls.Add(CuotaPagarLabel)
+        Me.GroupBox3.Controls.Add(Me.CuotaPagarLabel1)
+        Me.GroupBox3.Controls.Add(InteresMoraLabel)
+        Me.GroupBox3.Controls.Add(Me.InteresMoraLabel1)
+        Me.GroupBox3.Controls.Add(ValorRemateLabel)
+        Me.GroupBox3.Controls.Add(Me.ValorRemateLabel1)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 411)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(1035, 335)
+        Me.GroupBox3.TabIndex = 82
+        Me.GroupBox3.TabStop = False
+        '
+        'DescripcionMemoEdit
+        '
+        Me.DescripcionMemoEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "descripcion", True))
+        Me.DescripcionMemoEdit.Enabled = False
+        Me.DescripcionMemoEdit.Location = New System.Drawing.Point(35, 190)
+        Me.DescripcionMemoEdit.Name = "DescripcionMemoEdit"
+        Me.DescripcionMemoEdit.Size = New System.Drawing.Size(976, 127)
+        Me.DescripcionMemoEdit.TabIndex = 92
+        '
+        'MontoLabel1
+        '
+        Me.MontoLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "monto", True))
+        Me.MontoLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MontoLabel1.ForeColor = System.Drawing.Color.DimGray
+        Me.MontoLabel1.Location = New System.Drawing.Point(171, 29)
+        Me.MontoLabel1.Name = "MontoLabel1"
+        Me.MontoLabel1.Size = New System.Drawing.Size(100, 25)
+        Me.MontoLabel1.TabIndex = 81
+        Me.MontoLabel1.Text = "Label1"
+        '
+        'PlazoLabel1
+        '
+        Me.PlazoLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "plazo", True))
+        Me.PlazoLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PlazoLabel1.ForeColor = System.Drawing.Color.DimGray
+        Me.PlazoLabel1.Location = New System.Drawing.Point(474, 29)
+        Me.PlazoLabel1.Name = "PlazoLabel1"
+        Me.PlazoLabel1.Size = New System.Drawing.Size(100, 25)
+        Me.PlazoLabel1.TabIndex = 83
+        Me.PlazoLabel1.Text = "Label1"
+        '
+        'TasaInteresLabel1
+        '
+        Me.TasaInteresLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "tasaInteres", True))
+        Me.TasaInteresLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TasaInteresLabel1.ForeColor = System.Drawing.Color.DimGray
+        Me.TasaInteresLabel1.Location = New System.Drawing.Point(171, 89)
+        Me.TasaInteresLabel1.Name = "TasaInteresLabel1"
+        Me.TasaInteresLabel1.Size = New System.Drawing.Size(100, 25)
+        Me.TasaInteresLabel1.TabIndex = 85
+        Me.TasaInteresLabel1.Text = "Label1"
+        '
+        'CuotaPagarLabel1
+        '
+        Me.CuotaPagarLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "cuotaPagar", True))
+        Me.CuotaPagarLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CuotaPagarLabel1.ForeColor = System.Drawing.Color.DimGray
+        Me.CuotaPagarLabel1.Location = New System.Drawing.Point(474, 86)
+        Me.CuotaPagarLabel1.Name = "CuotaPagarLabel1"
+        Me.CuotaPagarLabel1.Size = New System.Drawing.Size(100, 25)
+        Me.CuotaPagarLabel1.TabIndex = 87
+        Me.CuotaPagarLabel1.Text = "Label1"
+        '
+        'InteresMoraLabel1
+        '
+        Me.InteresMoraLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "interesMora", True))
+        Me.InteresMoraLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InteresMoraLabel1.ForeColor = System.Drawing.Color.DimGray
+        Me.InteresMoraLabel1.Location = New System.Drawing.Point(171, 139)
+        Me.InteresMoraLabel1.Name = "InteresMoraLabel1"
+        Me.InteresMoraLabel1.Size = New System.Drawing.Size(100, 25)
+        Me.InteresMoraLabel1.TabIndex = 89
+        Me.InteresMoraLabel1.Text = "Label1"
+        '
+        'ValorRemateLabel1
+        '
+        Me.ValorRemateLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "valorRemate", True))
+        Me.ValorRemateLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ValorRemateLabel1.ForeColor = System.Drawing.Color.DimGray
+        Me.ValorRemateLabel1.Location = New System.Drawing.Point(474, 139)
+        Me.ValorRemateLabel1.Name = "ValorRemateLabel1"
+        Me.ValorRemateLabel1.Size = New System.Drawing.Size(100, 25)
+        Me.ValorRemateLabel1.TabIndex = 91
+        Me.ValorRemateLabel1.Text = "Label1"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel1.Controls.Add(NumeroIpLabel)
+        Me.Panel1.Controls.Add(NombresLabel)
+        Me.Panel1.Controls.Add(Me.NombresLabel1)
+        Me.Panel1.Controls.Add(Me.ApellidosLabel1)
+        Me.Panel1.Controls.Add(AsientoLabel)
+        Me.Panel1.Controls.Add(Me.AsientoLabel1)
+        Me.Panel1.Controls.Add(MatriculaLabel)
+        Me.Panel1.Controls.Add(Me.MatriculaLabel1)
+        Me.Panel1.Controls.Add(Me.NumeroIpLabel1)
+        Me.Panel1.Controls.Add(TomoLabel)
+        Me.Panel1.Controls.Add(Me.TomoLabel1)
+        Me.Panel1.Location = New System.Drawing.Point(715, 142)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(332, 252)
+        Me.Panel1.TabIndex = 83
+        '
+        'NombresLabel1
+        '
+        Me.NombresLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "nombres", True))
+        Me.NombresLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NombresLabel1.ForeColor = System.Drawing.Color.DimGray
+        Me.NombresLabel1.Location = New System.Drawing.Point(119, 10)
+        Me.NombresLabel1.Name = "NombresLabel1"
+        Me.NombresLabel1.Size = New System.Drawing.Size(83, 25)
+        Me.NombresLabel1.TabIndex = 79
+        Me.NombresLabel1.Text = "Label1"
+        '
+        'ApellidosLabel1
+        '
+        Me.ApellidosLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "apellidos", True))
+        Me.ApellidosLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ApellidosLabel1.ForeColor = System.Drawing.Color.DimGray
+        Me.ApellidosLabel1.Location = New System.Drawing.Point(208, 10)
+        Me.ApellidosLabel1.Name = "ApellidosLabel1"
+        Me.ApellidosLabel1.Size = New System.Drawing.Size(100, 25)
+        Me.ApellidosLabel1.TabIndex = 80
+        Me.ApellidosLabel1.Text = "Label1"
+        '
+        'AsientoLabel1
+        '
+        Me.AsientoLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "asiento", True))
+        Me.AsientoLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AsientoLabel1.ForeColor = System.Drawing.Color.Black
+        Me.AsientoLabel1.Location = New System.Drawing.Point(119, 66)
+        Me.AsientoLabel1.Name = "AsientoLabel1"
+        Me.AsientoLabel1.Size = New System.Drawing.Size(100, 25)
+        Me.AsientoLabel1.TabIndex = 82
+        Me.AsientoLabel1.Text = "Label1"
+        '
+        'MatriculaLabel1
+        '
+        Me.MatriculaLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "matricula", True))
+        Me.MatriculaLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MatriculaLabel1.ForeColor = System.Drawing.Color.Black
+        Me.MatriculaLabel1.Location = New System.Drawing.Point(119, 114)
+        Me.MatriculaLabel1.Name = "MatriculaLabel1"
+        Me.MatriculaLabel1.Size = New System.Drawing.Size(100, 25)
+        Me.MatriculaLabel1.TabIndex = 84
+        Me.MatriculaLabel1.Text = "Label1"
+        '
+        'NumeroIpLabel1
+        '
+        Me.NumeroIpLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "numeroIp", True))
+        Me.NumeroIpLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NumeroIpLabel1.ForeColor = System.Drawing.Color.Black
+        Me.NumeroIpLabel1.Location = New System.Drawing.Point(119, 160)
+        Me.NumeroIpLabel1.Name = "NumeroIpLabel1"
+        Me.NumeroIpLabel1.Size = New System.Drawing.Size(100, 25)
+        Me.NumeroIpLabel1.TabIndex = 86
+        Me.NumeroIpLabel1.Text = "Label1"
+        '
+        'TomoLabel1
+        '
+        Me.TomoLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "tomo", True))
+        Me.TomoLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TomoLabel1.ForeColor = System.Drawing.Color.Black
+        Me.TomoLabel1.Location = New System.Drawing.Point(119, 207)
+        Me.TomoLabel1.Name = "TomoLabel1"
+        Me.TomoLabel1.Size = New System.Drawing.Size(100, 25)
+        Me.TomoLabel1.TabIndex = 88
+        Me.TomoLabel1.Text = "Label1"
+        '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.ForeColor = System.Drawing.Color.Green
+        Me.ProgressBar1.Location = New System.Drawing.Point(18, 56)
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(1029, 52)
+        Me.ProgressBar1.TabIndex = 84
         '
         'seguimiento
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(953, 712)
-        Me.Controls.Add(PrestamoIdLabel)
-        Me.Controls.Add(Me.PrestamoIdSpinEdit)
-        Me.Controls.Add(EstadoIdLabel)
-        Me.Controls.Add(Me.EstadoIdSpinEdit)
-        Me.Controls.Add(NombreAgenciaLabel)
-        Me.Controls.Add(Me.NombreAgenciaTextEdit)
-        Me.Controls.Add(NombreClienteLabel)
-        Me.Controls.Add(Me.NombreClienteTextEdit)
-        Me.Controls.Add(RnpClienteLabel)
-        Me.Controls.Add(Me.RnpClienteTextEdit)
-        Me.Controls.Add(NombrePropietarioLabel)
-        Me.Controls.Add(Me.NombrePropietarioTextEdit)
-        Me.Controls.Add(RnpPropietarioLabel)
-        Me.Controls.Add(Me.RnpPropietarioTextEdit)
-        Me.Controls.Add(MontoLabel)
-        Me.Controls.Add(Me.MontoSpinEdit)
-        Me.Controls.Add(PlazoLabel)
-        Me.Controls.Add(Me.PlazoSpinEdit)
-        Me.Controls.Add(TasaInteresLabel)
-        Me.Controls.Add(Me.TasaInteresSpinEdit)
-        Me.Controls.Add(CuotaPagarLabel)
-        Me.Controls.Add(Me.CuotaPagarSpinEdit)
-        Me.Controls.Add(InteresMoraLabel)
-        Me.Controls.Add(Me.InteresMoraSpinEdit)
-        Me.Controls.Add(ValorRemateLabel)
-        Me.Controls.Add(Me.ValorRemateSpinEdit)
-        Me.Controls.Add(DescripcionLabel)
-        Me.Controls.Add(Me.DescripcionTextEdit)
-        Me.Controls.Add(NombresLabel)
-        Me.Controls.Add(Me.NombresTextEdit)
-        Me.Controls.Add(ApellidosLabel)
-        Me.Controls.Add(Me.ApellidosTextEdit)
-        Me.Controls.Add(AsientoLabel)
-        Me.Controls.Add(Me.AsientoTextEdit)
-        Me.Controls.Add(MatriculaLabel)
-        Me.Controls.Add(Me.MatriculaTextEdit)
-        Me.Controls.Add(NumeroIpLabel)
-        Me.Controls.Add(Me.NumeroIpTextEdit)
-        Me.Controls.Add(TomoLabel)
-        Me.Controls.Add(Me.TomoTextEdit)
-        Me.Controls.Add(Me.FillToolStrip)
-        Me.Controls.Add(Me.SeguimientoBindingNavigator)
+        Me.ClientSize = New System.Drawing.Size(1080, 758)
+        Me.Controls.Add(Label8)
+        Me.Controls.Add(Label7)
+        Me.Controls.Add(Label6)
+        Me.Controls.Add(Label5)
+        Me.Controls.Add(Label4)
+        Me.Controls.Add(Label3)
+        Me.Controls.Add(Label2)
+        Me.Controls.Add(Me.ProgressBar1)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.EstadoIdLabel1)
         Me.Name = "seguimiento"
         Me.Text = "estado"
+        Me.Controls.SetChildIndex(Me.EstadoIdLabel1, 0)
+        Me.Controls.SetChildIndex(Me.GroupBox1, 0)
+        Me.Controls.SetChildIndex(Me.GroupBox3, 0)
+        Me.Controls.SetChildIndex(Me.Panel1, 0)
+        Me.Controls.SetChildIndex(Me.ProgressBar1, 0)
+        Me.Controls.SetChildIndex(Label2, 0)
+        Me.Controls.SetChildIndex(Label3, 0)
+        Me.Controls.SetChildIndex(Label4, 0)
+        Me.Controls.SetChildIndex(Label5, 0)
+        Me.Controls.SetChildIndex(Label6, 0)
+        Me.Controls.SetChildIndex(Label7, 0)
+        Me.Controls.SetChildIndex(Label8, 0)
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SeguimientoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SeguimientoBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SeguimientoBindingNavigator.ResumeLayout(False)
-        Me.SeguimientoBindingNavigator.PerformLayout()
-        Me.FillToolStrip.ResumeLayout(False)
-        Me.FillToolStrip.PerformLayout()
-        CType(Me.PrestamoIdSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EstadoIdSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NombreAgenciaTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NombreClienteTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RnpClienteTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NombrePropietarioTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RnpPropietarioTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MontoSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PlazoSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TasaInteresSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CuotaPagarSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.InteresMoraSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ValorRemateSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DescripcionTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NombresTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ApellidosTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AsientoTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MatriculaTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumeroIpTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TomoTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        CType(Me.DescripcionMemoEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -737,41 +706,27 @@ Partial Class seguimiento
     Friend WithEvents SeguimientoBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents SeguimientoTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.seguimientoTableAdapter
     Friend WithEvents TableAdapterManager As creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager
-    Friend WithEvents SeguimientoBindingNavigator As System.Windows.Forms.BindingNavigator
-    Friend WithEvents BindingNavigatorAddNewItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorCountItem As System.Windows.Forms.ToolStripLabel
-    Friend WithEvents BindingNavigatorDeleteItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorMoveFirstItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorMovePreviousItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents BindingNavigatorPositionItem As System.Windows.Forms.ToolStripTextBox
-    Friend WithEvents BindingNavigatorSeparator1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents BindingNavigatorMoveNextItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorMoveLastItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator2 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents SeguimientoBindingNavigatorSaveItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents FillToolStrip As System.Windows.Forms.ToolStrip
-    Friend WithEvents IdPrestamoToolStripLabel As System.Windows.Forms.ToolStripLabel
-    Friend WithEvents IdPrestamoToolStripTextBox As System.Windows.Forms.ToolStripTextBox
-    Friend WithEvents FillToolStripButton As System.Windows.Forms.ToolStripButton
-    Friend WithEvents PrestamoIdSpinEdit As DevExpress.XtraEditors.SpinEdit
-    Friend WithEvents EstadoIdSpinEdit As DevExpress.XtraEditors.SpinEdit
-    Friend WithEvents NombreAgenciaTextEdit As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents NombreClienteTextEdit As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents RnpClienteTextEdit As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents NombrePropietarioTextEdit As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents RnpPropietarioTextEdit As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents MontoSpinEdit As DevExpress.XtraEditors.SpinEdit
-    Friend WithEvents PlazoSpinEdit As DevExpress.XtraEditors.SpinEdit
-    Friend WithEvents TasaInteresSpinEdit As DevExpress.XtraEditors.SpinEdit
-    Friend WithEvents CuotaPagarSpinEdit As DevExpress.XtraEditors.SpinEdit
-    Friend WithEvents InteresMoraSpinEdit As DevExpress.XtraEditors.SpinEdit
-    Friend WithEvents ValorRemateSpinEdit As DevExpress.XtraEditors.SpinEdit
-    Friend WithEvents DescripcionTextEdit As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents NombresTextEdit As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents ApellidosTextEdit As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents AsientoTextEdit As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents MatriculaTextEdit As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents NumeroIpTextEdit As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TomoTextEdit As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents EstadoIdLabel1 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents NombreAgenciaLabel1 As System.Windows.Forms.Label
+    Friend WithEvents NombreClienteLabel1 As System.Windows.Forms.Label
+    Friend WithEvents RnpClienteLabel1 As System.Windows.Forms.Label
+    Friend WithEvents NombrePropietarioLabel1 As System.Windows.Forms.Label
+    Friend WithEvents RnpPropietarioLabel1 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents MontoLabel1 As System.Windows.Forms.Label
+    Friend WithEvents PlazoLabel1 As System.Windows.Forms.Label
+    Friend WithEvents TasaInteresLabel1 As System.Windows.Forms.Label
+    Friend WithEvents CuotaPagarLabel1 As System.Windows.Forms.Label
+    Friend WithEvents InteresMoraLabel1 As System.Windows.Forms.Label
+    Friend WithEvents ValorRemateLabel1 As System.Windows.Forms.Label
+    Friend WithEvents DescripcionMemoEdit As DevExpress.XtraEditors.MemoEdit
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents NombresLabel1 As System.Windows.Forms.Label
+    Friend WithEvents ApellidosLabel1 As System.Windows.Forms.Label
+    Friend WithEvents AsientoLabel1 As System.Windows.Forms.Label
+    Friend WithEvents MatriculaLabel1 As System.Windows.Forms.Label
+    Friend WithEvents NumeroIpLabel1 As System.Windows.Forms.Label
+    Friend WithEvents TomoLabel1 As System.Windows.Forms.Label
+    Friend WithEvents ProgressBar1 As System.Windows.Forms.ProgressBar
 End Class

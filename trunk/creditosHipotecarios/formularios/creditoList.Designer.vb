@@ -22,8 +22,9 @@ Partial Class creditoList
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.DataSetAMCProduccion = New creditosHipotecarios.DataSetAMCProduccion()
-        Me.ClienteBindingSource = New System.Windows.Forms.BindingSource()
+        Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ClienteTableAdapter = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.ClienteTableAdapter()
         Me.TableAdapterManager = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager()
         Me.ClienteGridControl = New DevExpress.XtraGrid.GridControl()
@@ -212,6 +213,7 @@ Partial Class creditoList
         Me.GridView1.OptionsNavigation.AutoFocusNewRow = True
         Me.GridView1.OptionsNavigation.EnterMoveNextColumn = True
         Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.GridView1.OptionsSelection.EnableAppearanceFocusedRow = False
         Me.GridView1.OptionsSelection.UseIndicatorForSelection = False
         Me.GridView1.OptionsView.EnableAppearanceOddRow = True
         Me.GridView1.PaintStyleName = "WindowsXP"

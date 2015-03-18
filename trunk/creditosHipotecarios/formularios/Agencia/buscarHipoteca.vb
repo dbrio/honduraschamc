@@ -25,10 +25,9 @@
     End Function
 
 
-    
 
-    Private Sub MostrarEstadoGridControl_DoubleClick(sender As Object, e As EventArgs) Handles MostrarEstadoGridControl.DoubleClick
 
+    Private Sub GridView1_RowCellClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs) Handles GridView1.RowCellClick
         Dim dict As Hashtable = obtenerDatos()
         Dim id As String = dict("id")
 
@@ -37,6 +36,9 @@
             .Show()
 
         End With
+    End Sub
+
+    Private Sub buscarHipoteca_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

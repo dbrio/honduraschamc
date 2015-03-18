@@ -53,7 +53,8 @@
         Me.Close()
     End Sub
 
-    Private Sub GrantiaHipotecariaGridControl_DoubleClick(sender As Object, e As EventArgs) Handles GrantiaHipotecariaGridControl.DoubleClick
+  
+    Private Sub GridView1_RowCellClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs) Handles GridView1.RowCellClick
         With addProtocolo
 
             Dim dict As Hashtable = obtenerDatos()
