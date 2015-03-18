@@ -35,20 +35,19 @@
     End Sub
    
    
-    Private Sub HipotecaEestadoGridControl_DoubleClick(sender As Object, e As EventArgs) Handles HipotecaEestadoGridControl.DoubleClick
+  
 
-
+    Private Sub GridView1_RowCellClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs) Handles GridView1.RowCellClick
         Try
-            If HipotecaEestadoGridControl.TabIndex = -1 Then
-                MsgBox("pendejo")
-            Else
+           
+
                 Dim dict As Hashtable = obtenerDatos()
                 Dim hipotecaId As String = dict("hipotecaEstadoId")
                 Dim estadoId As Integer = idCargar + 1
                 HipotecaEstadoTableAdapter.UpdateQuery(estadoId, hipotecaId)
                 MessageBox.Show("El estado fue actualizado ", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 cargarDatos()
-            End If
+
 
         Catch ex As Exception
             MsgBox(ex.Message)

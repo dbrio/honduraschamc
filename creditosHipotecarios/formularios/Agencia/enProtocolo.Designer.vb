@@ -28,7 +28,6 @@ Partial Class enProtocolo
         Me.HipotecaEestadoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEestadoTableAdapter()
         Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
         Me.HipotecaEestadoGridControl = New DevExpress.XtraGrid.GridControl()
-        Me.HipotecaEstadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colhipotecaEstadoId = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colnombreCliente = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -36,14 +35,15 @@ Partial Class enProtocolo
         Me.colmonto = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coltasaInteres = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coldescripcion = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.HipotecaEstadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.HipotecaEestadoBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetCreditosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.HipotecaEstadoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEstadoTableAdapter()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HipotecaEestadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HipotecaEestadoGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.HipotecaEstadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.HipotecaEstadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HipotecaEestadoBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetCreditosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -84,11 +84,6 @@ Partial Class enProtocolo
         Me.HipotecaEestadoGridControl.Size = New System.Drawing.Size(861, 489)
         Me.HipotecaEestadoGridControl.TabIndex = 2
         Me.HipotecaEestadoGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
-        '
-        'HipotecaEstadoBindingSource
-        '
-        Me.HipotecaEstadoBindingSource.DataMember = "hipotecaEstado"
-        Me.HipotecaEstadoBindingSource.DataSource = Me.DataSetCreditos
         '
         'GridView1
         '
@@ -170,6 +165,11 @@ Partial Class enProtocolo
         Me.coldescripcion.VisibleIndex = 4
         Me.coldescripcion.Width = 424
         '
+        'HipotecaEstadoBindingSource
+        '
+        Me.HipotecaEstadoBindingSource.DataMember = "hipotecaEstado"
+        Me.HipotecaEstadoBindingSource.DataSource = Me.DataSetCreditos
+        '
         'HipotecaEestadoBindingSource1
         '
         Me.HipotecaEestadoBindingSource1.DataMember = "hipotecaEestado"
@@ -195,8 +195,8 @@ Partial Class enProtocolo
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HipotecaEestadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HipotecaEestadoGridControl, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.HipotecaEstadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.HipotecaEstadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HipotecaEestadoBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSetCreditosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

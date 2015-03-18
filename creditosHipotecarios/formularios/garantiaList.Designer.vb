@@ -22,8 +22,9 @@ Partial Class garantiaList
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.DataSetAMCProduccion = New creditosHipotecarios.DataSetAMCProduccion()
-        Me.GrantiaHipotecariaBindingSource = New System.Windows.Forms.BindingSource()
+        Me.GrantiaHipotecariaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GrantiaHipotecariaTableAdapter = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.GrantiaHipotecariaTableAdapter()
         Me.TableAdapterManager = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager()
         Me.GrantiaHipotecariaGridControl = New DevExpress.XtraGrid.GridControl()
@@ -70,7 +71,7 @@ Partial Class garantiaList
         Me.GrantiaHipotecariaGridControl.Location = New System.Drawing.Point(0, 0)
         Me.GrantiaHipotecariaGridControl.MainView = Me.GridView1
         Me.GrantiaHipotecariaGridControl.Name = "GrantiaHipotecariaGridControl"
-        Me.GrantiaHipotecariaGridControl.Size = New System.Drawing.Size(1128, 437)
+        Me.GrantiaHipotecariaGridControl.Size = New System.Drawing.Size(1128, 471)
         Me.GrantiaHipotecariaGridControl.TabIndex = 2
         Me.GrantiaHipotecariaGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -251,7 +252,7 @@ Partial Class garantiaList
         Me.LabelNombre.BackColor = System.Drawing.Color.SlateGray
         Me.LabelNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelNombre.ForeColor = System.Drawing.Color.White
-        Me.LabelNombre.Location = New System.Drawing.Point(12, 53)
+        Me.LabelNombre.Location = New System.Drawing.Point(12, 57)
         Me.LabelNombre.Name = "LabelNombre"
         Me.LabelNombre.Size = New System.Drawing.Size(119, 29)
         Me.LabelNombre.TabIndex = 3
@@ -263,7 +264,7 @@ Partial Class garantiaList
         Me.LabelCodigo.BackColor = System.Drawing.Color.SlateGray
         Me.LabelCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelCodigo.ForeColor = System.Drawing.Color.White
-        Me.LabelCodigo.Location = New System.Drawing.Point(772, 53)
+        Me.LabelCodigo.Location = New System.Drawing.Point(772, 57)
         Me.LabelCodigo.Name = "LabelCodigo"
         Me.LabelCodigo.Size = New System.Drawing.Size(109, 29)
         Me.LabelCodigo.TabIndex = 4
@@ -271,15 +272,18 @@ Partial Class garantiaList
         '
         'garantiaList
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.ClientSize = New System.Drawing.Size(1128, 437)
+        Me.ClientSize = New System.Drawing.Size(1128, 471)
         Me.Controls.Add(Me.LabelCodigo)
         Me.Controls.Add(Me.LabelNombre)
         Me.Controls.Add(Me.GrantiaHipotecariaGridControl)
         Me.Name = "garantiaList"
         Me.Text = "AMC | CREDITOS"
+        Me.Controls.SetChildIndex(Me.GrantiaHipotecariaGridControl, 0)
+        Me.Controls.SetChildIndex(Me.LabelNombre, 0)
+        Me.Controls.SetChildIndex(Me.LabelCodigo, 0)
         CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GrantiaHipotecariaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GrantiaHipotecariaGridControl, System.ComponentModel.ISupportInitialize).EndInit()
