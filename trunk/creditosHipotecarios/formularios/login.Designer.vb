@@ -23,44 +23,19 @@ Partial Class login
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.DataSetCreditos = New creditosHipotecarios.DataSetCreditos()
-        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.UsuarioTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.UsuarioTableAdapter()
-        Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
         Me.LabelUser = New System.Windows.Forms.Label()
         Me.txtUser = New System.Windows.Forms.TextBox()
         Me.btnEnter = New System.Windows.Forms.Button()
         Me.txtPass = New System.Windows.Forms.TextBox()
         Me.LabelPass = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.DataSetCreditos = New creditosHipotecarios.DataSetCreditos()
+        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.UsuarioTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.UsuarioTableAdapter()
+        Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'DataSetCreditos
-        '
-        Me.DataSetCreditos.DataSetName = "DataSetCreditos"
-        Me.DataSetCreditos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'UsuarioBindingSource
-        '
-        Me.UsuarioBindingSource.DataMember = "Usuario"
-        Me.UsuarioBindingSource.DataSource = Me.DataSetCreditos
-        '
-        'UsuarioTableAdapter
-        '
-        Me.UsuarioTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.AbogadoTableAdapter = Nothing
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.EventoTableAdapter = Nothing
-        Me.TableAdapterManager.hipotecaEstadoTableAdapter = Nothing
-        Me.TableAdapterManager.HipotecaTableAdapter = Nothing
-        Me.TableAdapterManager.prestamoTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.UsuarioTableAdapter = Me.UsuarioTableAdapter
         '
         'LabelUser
         '
@@ -140,13 +115,38 @@ Partial Class login
         Me.Button1.Text = "SALIR"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'DataSetCreditos
+        '
+        Me.DataSetCreditos.DataSetName = "DataSetCreditos"
+        Me.DataSetCreditos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'UsuarioBindingSource
+        '
+        Me.UsuarioBindingSource.DataMember = "Usuario"
+        Me.UsuarioBindingSource.DataSource = Me.DataSetCreditos
+        '
+        'UsuarioTableAdapter
+        '
+        Me.UsuarioTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.AbogadoTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.EventoTableAdapter = Nothing
+        Me.TableAdapterManager.hipotecaEstadoTableAdapter = Nothing
+        Me.TableAdapterManager.HipotecaTableAdapter = Nothing
+        Me.TableAdapterManager.prestamoTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UsuarioTableAdapter = Me.UsuarioTableAdapter
+        '
         'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.creditosHipotecarios.My.Resources.Resources.login
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(361, 475)
+        Me.ClientSize = New System.Drawing.Size(368, 476)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.txtPass)
         Me.Controls.Add(Me.LabelPass)

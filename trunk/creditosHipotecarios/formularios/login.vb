@@ -43,6 +43,11 @@ Public Class login
 
                 UsuarioActivo.usuario = idUsuario
 
+                Dim cargo As String = UsuarioTableAdapter.ObtenerCargo(idUsuario)
+
+                UsuarioActivo.cargo = cargo
+
+
                 Inicio.Show()
                 Me.Close()
 
@@ -72,4 +77,6 @@ Public Class login
             btnEnter_Click(sender, e)
         End If
     End Sub
+
+
 End Class

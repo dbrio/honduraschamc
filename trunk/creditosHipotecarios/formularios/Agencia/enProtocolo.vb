@@ -41,12 +41,15 @@
         Try
            
 
-                Dim dict As Hashtable = obtenerDatos()
-                Dim hipotecaId As String = dict("hipotecaEstadoId")
-                Dim estadoId As Integer = idCargar + 1
+            Dim dict As Hashtable = obtenerDatos()
+            Dim hipotecaId As String = dict("hipotecaEstadoId")
+            Dim estadoId As Integer = idCargar + 1
+            If MsgBox("¿Actualizar el estado?", MsgBoxStyle.Question + vbYesNo) = vbYes Then
                 HipotecaEstadoTableAdapter.UpdateQuery(estadoId, hipotecaId)
-                MessageBox.Show("El estado fue actualizado ", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                cargarDatos()
+            End If
+
+
+            cargarDatos()
 
 
         Catch ex As Exception

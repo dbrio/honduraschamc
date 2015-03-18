@@ -29,6 +29,7 @@ Partial Class enProtocolo
         Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
         Me.HipotecaEestadoGridControl = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colAgencia = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colhipotecaEstadoId = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colnombreCliente = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colrnpCliente = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -95,7 +96,7 @@ Partial Class enProtocolo
         Me.GridView1.Appearance.Row.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.GridView1.Appearance.Row.Options.UseFont = True
         Me.GridView1.Appearance.Row.Options.UseForeColor = True
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colhipotecaEstadoId, Me.colnombreCliente, Me.colrnpCliente, Me.colmonto, Me.coltasaInteres, Me.coldescripcion})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colAgencia, Me.colhipotecaEstadoId, Me.colnombreCliente, Me.colrnpCliente, Me.colmonto, Me.coltasaInteres, Me.coldescripcion})
         Me.GridView1.FixedLineWidth = 1
         Me.GridView1.GridControl = Me.HipotecaEestadoGridControl
         Me.GridView1.GroupPanelText = "  "
@@ -111,14 +112,23 @@ Partial Class enProtocolo
         Me.GridView1.PaintStyleName = "WindowsXP"
         Me.GridView1.RowHeight = 30
         '
+        'colAgencia
+        '
+        Me.colAgencia.Caption = "AGE"
+        Me.colAgencia.FieldName = "codigoAgencia"
+        Me.colAgencia.Name = "colAgencia"
+        Me.colAgencia.Visible = True
+        Me.colAgencia.VisibleIndex = 0
+        Me.colAgencia.Width = 20
+        '
         'colhipotecaEstadoId
         '
         Me.colhipotecaEstadoId.Caption = "Id"
         Me.colhipotecaEstadoId.MinWidth = 10
         Me.colhipotecaEstadoId.Name = "colhipotecaEstadoId"
         Me.colhipotecaEstadoId.Visible = True
-        Me.colhipotecaEstadoId.VisibleIndex = 5
-        Me.colhipotecaEstadoId.Width = 10
+        Me.colhipotecaEstadoId.VisibleIndex = 6
+        Me.colhipotecaEstadoId.Width = 16
         '
         'colnombreCliente
         '
@@ -126,8 +136,8 @@ Partial Class enProtocolo
         Me.colnombreCliente.FieldName = "nombreCliente"
         Me.colnombreCliente.Name = "colnombreCliente"
         Me.colnombreCliente.Visible = True
-        Me.colnombreCliente.VisibleIndex = 0
-        Me.colnombreCliente.Width = 146
+        Me.colnombreCliente.VisibleIndex = 1
+        Me.colnombreCliente.Width = 176
         '
         'colrnpCliente
         '
@@ -135,7 +145,7 @@ Partial Class enProtocolo
         Me.colrnpCliente.FieldName = "rnpCliente"
         Me.colrnpCliente.Name = "colrnpCliente"
         Me.colrnpCliente.Visible = True
-        Me.colrnpCliente.VisibleIndex = 1
+        Me.colrnpCliente.VisibleIndex = 2
         Me.colrnpCliente.Width = 91
         '
         'colmonto
@@ -144,7 +154,7 @@ Partial Class enProtocolo
         Me.colmonto.FieldName = "monto"
         Me.colmonto.Name = "colmonto"
         Me.colmonto.Visible = True
-        Me.colmonto.VisibleIndex = 2
+        Me.colmonto.VisibleIndex = 3
         Me.colmonto.Width = 45
         '
         'coltasaInteres
@@ -153,7 +163,7 @@ Partial Class enProtocolo
         Me.coltasaInteres.FieldName = "tasaInteres"
         Me.coltasaInteres.Name = "coltasaInteres"
         Me.coltasaInteres.Visible = True
-        Me.coltasaInteres.VisibleIndex = 3
+        Me.coltasaInteres.VisibleIndex = 4
         Me.coltasaInteres.Width = 64
         '
         'coldescripcion
@@ -162,8 +172,8 @@ Partial Class enProtocolo
         Me.coldescripcion.FieldName = "descripcion"
         Me.coldescripcion.Name = "coldescripcion"
         Me.coldescripcion.Visible = True
-        Me.coldescripcion.VisibleIndex = 4
-        Me.coldescripcion.Width = 424
+        Me.coldescripcion.VisibleIndex = 5
+        Me.coldescripcion.Width = 430
         '
         'HipotecaEstadoBindingSource
         '
@@ -218,4 +228,5 @@ Partial Class enProtocolo
     Friend WithEvents HipotecaEestadoBindingSource1 As System.Windows.Forms.BindingSource
     Friend WithEvents HipotecaEstadoBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents HipotecaEstadoTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEstadoTableAdapter
+    Friend WithEvents colAgencia As DevExpress.XtraGrid.Columns.GridColumn
 End Class

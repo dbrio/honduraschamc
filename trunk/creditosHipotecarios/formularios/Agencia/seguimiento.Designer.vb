@@ -228,10 +228,10 @@ Partial Class seguimiento
         'NumeroIpLabel
         '
         NumeroIpLabel.AutoSize = True
-        NumeroIpLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        NumeroIpLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         NumeroIpLabel.Location = New System.Drawing.Point(25, 165)
         NumeroIpLabel.Name = "NumeroIpLabel"
-        NumeroIpLabel.Size = New System.Drawing.Size(74, 16)
+        NumeroIpLabel.Size = New System.Drawing.Size(88, 20)
         NumeroIpLabel.TabIndex = 85
         NumeroIpLabel.Text = "Número IP:"
         '
@@ -248,30 +248,30 @@ Partial Class seguimiento
         'AsientoLabel
         '
         AsientoLabel.AutoSize = True
-        AsientoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        AsientoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         AsientoLabel.Location = New System.Drawing.Point(25, 66)
         AsientoLabel.Name = "AsientoLabel"
-        AsientoLabel.Size = New System.Drawing.Size(56, 16)
+        AsientoLabel.Size = New System.Drawing.Size(67, 20)
         AsientoLabel.TabIndex = 81
         AsientoLabel.Text = "Asiento:"
         '
         'MatriculaLabel
         '
         MatriculaLabel.AutoSize = True
-        MatriculaLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        MatriculaLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         MatriculaLabel.Location = New System.Drawing.Point(25, 114)
         MatriculaLabel.Name = "MatriculaLabel"
-        MatriculaLabel.Size = New System.Drawing.Size(65, 16)
+        MatriculaLabel.Size = New System.Drawing.Size(77, 20)
         MatriculaLabel.TabIndex = 83
         MatriculaLabel.Text = "Matricula:"
         '
         'TomoLabel
         '
         TomoLabel.AutoSize = True
-        TomoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        TomoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         TomoLabel.Location = New System.Drawing.Point(25, 207)
         TomoLabel.Name = "TomoLabel"
-        TomoLabel.Size = New System.Drawing.Size(47, 16)
+        TomoLabel.Size = New System.Drawing.Size(53, 20)
         TomoLabel.TabIndex = 87
         TomoLabel.Text = "Tomo:"
         '
@@ -608,7 +608,7 @@ Partial Class seguimiento
         'AsientoLabel1
         '
         Me.AsientoLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "asiento", True))
-        Me.AsientoLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AsientoLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AsientoLabel1.ForeColor = System.Drawing.Color.Black
         Me.AsientoLabel1.Location = New System.Drawing.Point(119, 66)
         Me.AsientoLabel1.Name = "AsientoLabel1"
@@ -619,7 +619,7 @@ Partial Class seguimiento
         'MatriculaLabel1
         '
         Me.MatriculaLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "matricula", True))
-        Me.MatriculaLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MatriculaLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MatriculaLabel1.ForeColor = System.Drawing.Color.Black
         Me.MatriculaLabel1.Location = New System.Drawing.Point(119, 114)
         Me.MatriculaLabel1.Name = "MatriculaLabel1"
@@ -630,7 +630,7 @@ Partial Class seguimiento
         'NumeroIpLabel1
         '
         Me.NumeroIpLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "numeroIp", True))
-        Me.NumeroIpLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NumeroIpLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NumeroIpLabel1.ForeColor = System.Drawing.Color.Black
         Me.NumeroIpLabel1.Location = New System.Drawing.Point(119, 160)
         Me.NumeroIpLabel1.Name = "NumeroIpLabel1"
@@ -641,7 +641,7 @@ Partial Class seguimiento
         'TomoLabel1
         '
         Me.TomoLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "tomo", True))
-        Me.TomoLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TomoLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TomoLabel1.ForeColor = System.Drawing.Color.Black
         Me.TomoLabel1.Location = New System.Drawing.Point(119, 207)
         Me.TomoLabel1.Name = "TomoLabel1"
@@ -676,6 +676,7 @@ Partial Class seguimiento
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.EstadoIdLabel1)
         Me.Name = "seguimiento"
+        Me.Opacity = 1.0R
         Me.Text = "estado"
         Me.Controls.SetChildIndex(Me.EstadoIdLabel1, 0)
         Me.Controls.SetChildIndex(Me.GroupBox1, 0)
