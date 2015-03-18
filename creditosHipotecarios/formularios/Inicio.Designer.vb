@@ -11,20 +11,21 @@ Partial Class Inicio
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inicio))
-        Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager()
+        Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel()
+        Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.btnAddHipoteca = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
-        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip()
+        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.MODIFICARUSUARIOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ESTADOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnListo = New System.Windows.Forms.Button()
         Me.btnSolicitudPago = New System.Windows.Forms.Button()
@@ -180,12 +181,12 @@ Partial Class Inicio
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ESTADOToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(153, 48)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(119, 26)
         '
         'ESTADOToolStripMenuItem
         '
         Me.ESTADOToolStripMenuItem.Name = "ESTADOToolStripMenuItem"
-        Me.ESTADOToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ESTADOToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
         Me.ESTADOToolStripMenuItem.Text = "ESTADO"
         '
         'btnListo

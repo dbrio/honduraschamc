@@ -3,11 +3,10 @@
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GestionarPanel()
 
-        'With creditoList
-        '    .MdiParent = Me
-        '    .Show()
-        '    .Focus()
-        'End With
+
+        If UsuarioActivo.cargo = "Operativo" Then
+            btnFirmaCliente.Enabled = False
+        End If
 
     End Sub
 
@@ -176,4 +175,6 @@
             .Focus()
         End With
     End Sub
+
+    
 End Class
