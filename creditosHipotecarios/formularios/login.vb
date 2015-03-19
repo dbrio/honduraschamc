@@ -45,9 +45,15 @@ Public Class login
 
                 Dim cargo As String = UsuarioTableAdapter.ObtenerCargo(idUsuario)
 
+                Dim codigoAgencia As String = UsuarioTableAdapter.obtenerAgencia(idUsuario)
+
+                UsuarioActivo.codigoAgencia = codigoAgencia
+
+
+
                 UsuarioActivo.cargo = cargo
 
-
+                MsgBox(codigoAgencia)
                 Inicio.Show()
                 Me.Close()
 
