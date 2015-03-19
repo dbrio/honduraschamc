@@ -63,7 +63,7 @@
 
         Me.AbogadoTableAdapter.Fill(Me.DataSetCreditos.Abogado)
 
-        LabelNombre.Text = "NOMBRE:   " + Convert.ToString(propietarioAdd)
+        LabelNombre.Text = "NOMBRE:   " + Convert.ToString(nombreClienteGarantiaAdd)
         LabelIdentidadCliente.Text = "IDENTIDAD:    " + Convert.ToString(identidadGarantiaAdd)
         LabelPropietario.Text = "PROPIETARIO:    " + Convert.ToString(propietarioAdd)
         LabelMonto.Text = "MONTO:   " + Convert.ToString(montoGarantiaAdd)

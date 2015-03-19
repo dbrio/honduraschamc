@@ -13,7 +13,12 @@
             Else
                 Dim texto As String = txtBuscar.Text
                 Dim buscar As String = "%" + texto + "%"
-                ClienteTableAdapter.Buscar(Me.DataSetAMCProduccion.Cliente, buscar)
+                If UsuarioActivo.cargo = "INFORMATICA" Then
+                    ClienteTableAdapter.BuscarInformatica(Me.DataSetAMCProduccion.Cliente, buscar)
+
+                Else
+                    ClienteTableAdapter.Buscar(Me.DataSetAMCProduccion.Cliente, buscar, UsuarioActivo.codigoAgencia)
+                End If
                 txtBuscar.Text = ""
                 txtBuscar.Focus()
                 ClienteGridControl.Enabled = True

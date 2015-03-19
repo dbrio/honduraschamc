@@ -49,11 +49,7 @@ Public Class login
 
                 UsuarioActivo.codigoAgencia = codigoAgencia
 
-
-
                 UsuarioActivo.cargo = cargo
-
-                MsgBox(codigoAgencia)
                 Inicio.Show()
                 Me.Close()
 

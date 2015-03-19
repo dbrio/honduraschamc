@@ -1,12 +1,28 @@
 ﻿Public Class Inicio
    
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'DataSetCreditos.Usuario' Puede moverla o quitarla según sea necesario.
+        'Me.UsuarioTableAdapter.Fill(Me.DataSetCreditos.Usuario)
         GestionarPanel()
 
+        LabelDeparamento.Text = UsuarioActivo.cargo
 
-        If UsuarioActivo.cargo = "Operativo" Then
+
+        If UsuarioActivo.cargo = "OPERATIVO" Then
             btnFirmaCliente.Enabled = False
+            btnPresentacion.Enabled = False
+            btnFirmaGerencia.Enabled = False
+            btnCustodio.Enabled = False
+            btnSolicitudPago.Enabled = False
+
         End If
+        If UsuarioActivo.cargo = "PROVEEDURIA" Then
+            btnProtocolo.Enabled = False
+            btnListo.Enabled = False
+            ESTADOToolStripMenuItem.Visible = False
+            btnCustodio.Enabled = False
+        End If
+
 
     End Sub
 
@@ -159,11 +175,20 @@
   
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
 
-        With creditoList
-            .MdiParent = Me
-            .Show()
-            .Focus()
-        End With
+        If UsuarioActivo.cargo = "PROVEEDURIA" Or UsuarioActivo.cargo = "INFORMATICA" Then
+            With buscarHipoteca
+                .MdiParent = Me
+                .Show()
+                .Focus()
+            End With
+
+        Else
+            With creditoList
+                .MdiParent = Me
+                .Show()
+                .Focus()
+            End With
+        End If
 
     End Sub
 
@@ -177,4 +202,13 @@
     End Sub
 
     
+    Private Sub UsuarioBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
+        Me.Validate()
+        Me.UsuarioBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.DataSetCreditos)
+
+    End Sub
+
+
+  
 End Class
