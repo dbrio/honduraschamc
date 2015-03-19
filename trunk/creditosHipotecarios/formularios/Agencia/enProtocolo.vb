@@ -6,7 +6,7 @@
   
     Private Sub enProtocolo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'DataSetCreditos.hipotecaEstado' Puede moverla o quitarla según sea necesario.
-        Me.HipotecaEstadoTableAdapter.Fill(Me.DataSetCreditos.hipotecaEstado)
+        'Me.HipotecaEstadoTableAdapter.Fill(Me.DataSetCreditos.hipotecaEstado)
        
         cargarDatos()
 
@@ -25,7 +25,14 @@
     Sub cargarDatos()
         Try
             Me.Text = titulo
-            Me.HipotecaEestadoTableAdapter.Fill(Me.DataSetCreditos.hipotecaEestado, idCargar)
+            If UsuarioActivo.cargo = "Iformatica" Then
+                Me.HipotecaEestadoTableAdapter.FillInformatica(Me.DataSetCreditos.hipotecaEestado, idCargar)
+
+            Else
+                Me.HipotecaEestadoTableAdapter.Fill(Me.DataSetCreditos.hipotecaEestado, idCargar, UsuarioActivo.codigoAgencia)
+
+            End If
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
