@@ -30,6 +30,7 @@
         diccionario("descripcion") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "descripcio")
         diccionario("valorRemate") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "valpericia")
 
+
         Return diccionario
 
     End Function
@@ -61,6 +62,7 @@
             Dim propietario As String = dict("propietario")
             Dim descripcion As String = dict("descripcion")
             Dim valorRemate As Decimal = dict("valorRemate")
+
 
             Me.Close()
             .propietarioAdd = propietario
