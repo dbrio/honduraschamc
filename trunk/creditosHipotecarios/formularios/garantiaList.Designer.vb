@@ -68,10 +68,10 @@ Partial Class garantiaList
         '
         Me.GrantiaHipotecariaGridControl.DataSource = Me.GrantiaHipotecariaBindingSource
         Me.GrantiaHipotecariaGridControl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GrantiaHipotecariaGridControl.Location = New System.Drawing.Point(0, 0)
+        Me.GrantiaHipotecariaGridControl.Location = New System.Drawing.Point(0, 40)
         Me.GrantiaHipotecariaGridControl.MainView = Me.GridView1
         Me.GrantiaHipotecariaGridControl.Name = "GrantiaHipotecariaGridControl"
-        Me.GrantiaHipotecariaGridControl.Size = New System.Drawing.Size(1128, 471)
+        Me.GrantiaHipotecariaGridControl.Size = New System.Drawing.Size(1128, 431)
         Me.GrantiaHipotecariaGridControl.TabIndex = 2
         Me.GrantiaHipotecariaGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '

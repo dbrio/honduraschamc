@@ -24,6 +24,8 @@ Partial Class Inicio
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.MODIFICARUSUARIOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.LabelDeparamento = New System.Windows.Forms.Label()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ESTADOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -38,19 +40,16 @@ Partial Class Inicio
         Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UsuarioTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.UsuarioTableAdapter()
         Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.LabelDeparamento = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
         Me.ContextMenuStrip2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'XtraTabbedMdiManager1
@@ -71,7 +70,7 @@ Partial Class Inicio
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControl1.Location = New System.Drawing.Point(0, 121)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(1435, 404)
+        Me.PanelControl1.Size = New System.Drawing.Size(1435, 421)
         Me.PanelControl1.TabIndex = 2
         '
         'BarButtonItem1
@@ -169,6 +168,29 @@ Partial Class Inicio
         Me.MODIFICARUSUARIOSToolStripMenuItem.Name = "MODIFICARUSUARIOSToolStripMenuItem"
         Me.MODIFICARUSUARIOSToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
         Me.MODIFICARUSUARIOSToolStripMenuItem.Text = "MODIFICAR USUARIOS"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.LabelDeparamento)
+        Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.GroupBox1.ForeColor = System.Drawing.Color.Gray
+        Me.GroupBox1.Location = New System.Drawing.Point(820, 21)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(431, 75)
+        Me.GroupBox1.TabIndex = 22
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "DEPARTAMENTO DE:"
+        '
+        'LabelDeparamento
+        '
+        Me.LabelDeparamento.AutoSize = True
+        Me.LabelDeparamento.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelDeparamento.ForeColor = System.Drawing.Color.DarkSeaGreen
+        Me.LabelDeparamento.Location = New System.Drawing.Point(6, 20)
+        Me.LabelDeparamento.Name = "LabelDeparamento"
+        Me.LabelDeparamento.Size = New System.Drawing.Size(111, 37)
+        Me.LabelDeparamento.TabIndex = 23
+        Me.LabelDeparamento.Text = "Label1"
         '
         'btnBuscar
         '
@@ -344,45 +366,13 @@ Partial Class Inicio
         Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuarioTableAdapter = Me.UsuarioTableAdapter
         '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.Panel1)
-        Me.GroupBox1.Controls.Add(Me.LabelDeparamento)
-        Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.GroupBox1.ForeColor = System.Drawing.Color.Gray
-        Me.GroupBox1.Location = New System.Drawing.Point(820, 21)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(431, 75)
-        Me.GroupBox1.TabIndex = 22
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "DEPARTAMENTO DE:"
-        '
-        'LabelDeparamento
-        '
-        Me.LabelDeparamento.AutoSize = True
-        Me.LabelDeparamento.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelDeparamento.ForeColor = System.Drawing.Color.DarkSeaGreen
-        Me.LabelDeparamento.Location = New System.Drawing.Point(6, 20)
-        Me.LabelDeparamento.Name = "LabelDeparamento"
-        Me.LabelDeparamento.Size = New System.Drawing.Size(111, 37)
-        Me.LabelDeparamento.TabIndex = 23
-        Me.LabelDeparamento.Text = "Label1"
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.DarkSeaGreen
-        Me.Panel1.Location = New System.Drawing.Point(268, 38)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(163, 2)
-        Me.Panel1.TabIndex = 24
-        '
         'Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1268, 542)
+        Me.ClientSize = New System.Drawing.Size(1268, 559)
         Me.Controls.Add(Me.PanelControl2)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.RibbonControl1)
@@ -397,11 +387,11 @@ Partial Class Inicio
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         Me.ContextMenuStrip2.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -433,5 +423,4 @@ Partial Class Inicio
     Friend WithEvents TableAdapterManager As creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents LabelDeparamento As System.Windows.Forms.Label
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
 End Class
