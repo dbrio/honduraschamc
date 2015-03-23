@@ -141,12 +141,13 @@
             'ENVIO
             _SMTP.Send(_Message)
 
-            'INSERTAR GARANTIA AL SISTEMA
+            'INSERTAR PRESTAMO AL SISTEMA
             Me.PrestamoTableAdapter.Insert(codigoClinteGarantiaAdd, codigoAgenciaGarantiaAdd, nombreClienteGarantiaAdd, identidadGarantiaAdd, propietarioAdd, txtIdPropietario.Text, montoGarantiaAdd, plazoGaratniaAdd, tasaInteresGaratniaAdd, cuotaAdd, interesMoraGaratniaAdd, valorRemateAdd, descripcionAdd)
 
             Me.HipotecaTableAdapter.sp_Hipoteca(NombresAbogado.SelectedValue)
 
             Me.EventoTableAdapter.sp_Evento(UsuarioActivo.usuario)
+
             MessageBox.Show("Protocolo agregado exitosamente", "Protocolo agregado", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             With enProtocolo

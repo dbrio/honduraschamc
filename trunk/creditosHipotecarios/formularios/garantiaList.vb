@@ -40,14 +40,14 @@
     Private Sub garantiaList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
-        Inicio.Enabled = False
-        Try
-            Me.GrantiaHipotecariaTableAdapter.Fill(Me.DataSetAMCProduccion.GrantiaHipotecaria, codigoClinteGarantia)
-            LabelNombre.Text = "NOMBRE: " + nombreClienteGarantia
-            LabelCodigo.Text = "CODIGO: " + codigoClinteGarantia
-        Catch ex As Exception
-            MsgBox("Debe de seleccionar un valor")
-        End Try
+        'Inicio.Enabled = False
+        'Try
+        '    Me.GrantiaHipotecariaTableAdapter.Fill(Me.DataSetAMCProduccion.GrantiaHipotecaria, codigoClinteGarantia)
+        '    LabelNombre.Text = "NOMBRE: " + nombreClienteGarantia
+        '    LabelCodigo.Text = "CODIGO: " + codigoClinteGarantia
+        'Catch ex As Exception
+        '    MsgBox("Debe de seleccionar un valor")
+        'End Try
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
@@ -83,4 +83,6 @@
 
         End With
     End Sub
+
+    
 End Class
