@@ -48,6 +48,7 @@ Public Class enProtocolo
             Dim dict As Hashtable = obtenerDatos()
             Dim hipotecaId As String = dict("hipotecaEstadoId")
             Dim estadoId As Integer = idCargar + 1
+
             If MsgBox("¿Actualizar el estado?", MsgBoxStyle.Question + vbYesNo) = vbYes Then
                 HipotecaEstadoTableAdapter.UpdateQuery(estadoId, hipotecaId)
             End If

@@ -32,4 +32,6 @@
         Me.ProgressBar1.ForeColor = Color.AliceBlue
         Me.ProgressBar1.BackColor = Color.Aqua
     End Sub
+
+ 
 End Class
