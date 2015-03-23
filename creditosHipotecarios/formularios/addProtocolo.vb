@@ -45,33 +45,6 @@
                         "<meta name='viewport' content='width=device-width, initial-scale=1'>" +
                         "<meta name='viewport' content=width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>" +
                         "<meta charset='UTF-8'>" +
-                                "<style type='text/css'>" +
-                                 "body{" +
-                                            "font-family: helvetica;" +
-                                           " font-weight: 200;" +
-                                                "}" +
-                                        ".col-xs-1{" +
-                                            "padding: 20px;" +
-                                            "font-size: 1.1em;" +
-                                        "}" +
-                                       " .col-xs-4{" +
-                                            "padding-right: 20px;" +
-                                        "}" +
-                                       " body{" +
-                                            "background: #fff;" +
-                                       "}" +
-                                        ".img-responsive{" +
-                                           " max-width: 400px;" +
-                                        "}" +
-                                        ".table{" +
-                                           " width: 100%;" +
-                                           " background: #FAFAFA;" +
-                                        "}" +
-                                        "header{" +
-                                            "background: red;" +
-                                            "border-radius: 10px;" +
-                                            "}" +
-                                    "</style>" +
                     "</head>" +
                     "<body>" +
                     "<div class='container-fluid'>" +
@@ -79,44 +52,45 @@
                             "<div class='col-xs-12'>" +
                            " </div>" +
                             "<div class='col-xs-12'>" +
+                            "<img class='img-responsive' src='http://dbriones.com/amclogo.png'>" +
                                " <br><h4>AUTORIZACION PARA PROTOCOLO</h4>" +
                                "<h2>PROTOCOLO NUMERO: " & ultimoPrestamo & "</h2>" +
                                 "<br> <h4>FECHA Y HORA: " & DateTime.Now().ToString("dd/MM/yyyy hh:mm:ss tt") & "</h4><br>" +
                          "</header>" +
                                " <br> ABOGADO ASIGNADO: " & NombresAbogado.Text & "<br>" +
-                               " <table class='table'>" +
+                              " <table border='1px' cellpadding='10' width='auto'>" +
                                     "<tr>" +
-                                       " <td class='col-xs-1'><h5>Propietario : </h5</td>" +
+                                       " <td class='col-xs-1'>Propietario : </td>" +
                                         "<td class='col-xs-4'>" & propietarioAdd & "</td>" +
-                                          "<td class='col-xs-1'><h5>Identidad: </h5> </td>" +
+                                          "<td class='col-xs-1'>Identidad: </td>" +
                                        " <td class='col-xs-4'>" & txtIdPropietario.Text & "</td>" +
                                     "</tr>" +
                                     "<tr>" +
-                                        "<td class='col-xs-1'><h5>Prestatario: </h5></td>" +
+                                        "<td class='col-xs-1'>Prestatario: </td>" +
                                        " <td class='col-xs-4'> " & nombreClienteGarantiaAdd & "</td>" +
-                                        "<td class='col-xs-1'><h5>Identidad: </h5> </td>" +
+                                        "<td class='col-xs-1'>Identidad: </td>" +
                                         "<td class='col-xs-4'>" & identidadGarantiaAdd & "</td>" +
                                     "</tr>" +
                                "</table>" +
                                " <h3>DATOS PARA PROTOCOLO</h3>" +
                                " <div class='jumbotron'>" +
-                                   " <table class='table'>" +
+                                   " <table border='1px' cellpadding='10' width='auto'>" +
                                        " <tr>" +
-                                           " <td class='col-xs-4'><h5>Monto prestamo: </h5></td>" +
+                                           " <td class='col-xs-4'>Monto prestamo: </td>" +
                                            " <td class='col-xs-4'>" & montoGarantiaAdd & "</td>" +
-                                           " <td class='col-xs-4'><h5>Cuota a pagar: </h5> </td>" +
+                                           " <td class='col-xs-4'>Cuota a pagar: </td>" +
                                            " <td class='col-xs-4'>" & cuotaAdd & "</td>" +
                                         "</tr>" +
                                        " <tr>" +
-                                            "<td class='col-xs-2'><h5>Plazo cuotas: </h5></td>" +
+                                            "<td class='col-xs-2'>Plazo cuotas: </td>" +
                                            " <td class='col-xs-4'>" & plazoGaratniaAdd & "</td>" +
-                                           " <td class='col-xs-2'><h5>Interes Moratorio: </h5</td>" +
-                                            "<td class='col-xs-4'>" & interesMoraGaratniaAdd & "</td>" +
+                                           " <td class='col-xs-2'>Interes Moratorio: </td>" +
+                                            "<td class='col-xs-4'>" & Convert.ToString(interesMoraGaratniaAdd) & "</td>" +
                                         "</tr>" +
                                        " <tr>" +
-                                           " <td class='col-xs-4'><h5>Tasa Interes: </h5> </td>" +
+                                           " <td class='col-xs-4'>Tasa Interes:  </td>" +
                                            " <td class='col-xs-4'>" & tasaInteresGaratniaAdd & "</td>" +
-                                            "<td class='col-xs-4'><h5>Valor de remate: </h5></td>" +
+                                            "<td class='col-xs-4'>Valor de remate: </td>" +
                                             "<td class='col-xs-4'>" & valorRemateAdd & "</td>" +
                                        " </tr>" +
                                " </table> " +
@@ -128,7 +102,6 @@
                            " </div>" +
                            " </div>" +
                        " <footer>" +
-                        "<img class='img-responsive' src='http://dbriones.com/amclogo.png'>" +
                         "</footer>" +
                    " </div>" +
                    " <script src='http://code.jquery.com/jquery-2.1.3.min.js'></script'>" +
@@ -140,6 +113,11 @@
 
             'ENVIO
             _SMTP.Send(_Message)
+
+            If txtIdPropietario.Text.Trim = "" Then
+                MsgBox("Debe de introducir la identidad del propietario", MsgBoxStyle.Critical)
+                Exit Sub
+            End If
 
             'INSERTAR PRESTAMO AL SISTEMA
             Me.PrestamoTableAdapter.Insert(codigoClinteGarantiaAdd, codigoAgenciaGarantiaAdd, nombreClienteGarantiaAdd, identidadGarantiaAdd, propietarioAdd, txtIdPropietario.Text, montoGarantiaAdd, plazoGaratniaAdd, tasaInteresGaratniaAdd, cuotaAdd, interesMoraGaratniaAdd, valorRemateAdd, descripcionAdd)
@@ -162,22 +140,6 @@
         Catch ex As System.Net.Mail.SmtpException
             MessageBox.Show(ex.ToString, "Error!", MessageBoxButtons.OK)
         End Try
-
-
-
-
-
-
-        'If LabelPropietario.Text.Trim = "" Or nombreClienteGarantiaAdd = propietarioAdd Then
-
-        'Else
-        '    MessageBox.Show("Identidad del Propietario es obligatoria", "Campo Obligatorio", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    txtIdPropietario.Focus()
-        '    Exit Sub
-
-        'End If
-
-
     End Sub
 
     Private Sub addProtocolo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -199,8 +161,12 @@
         LabelInteres.Text = "TASA DE INTERES:   " + Convert.ToString(tasaInteresGaratniaAdd)
         LabelCuota.Text = "CUOTA A PAGAR:   " + Convert.ToString(cuotaAdd)
         LabelInteresMora.Text = "INTERES POR MORA:   " + Convert.ToString(interesMoraGaratniaAdd)
-        LabelValorRemate.Text = "VALOR REMATE:   " + Convert.ToString(valorRemateAdd)
+        LabelValorRemate.Text = "VALOR REMATE:   " + CStr(valorRemateAdd)
 
+
+        If nombreClienteGarantiaAdd = propietarioAdd Then
+            txtIdPropietario.Text = identidadGarantiaAdd
+        End If
 
 
     End Sub

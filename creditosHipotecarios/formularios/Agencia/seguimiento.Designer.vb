@@ -57,6 +57,8 @@ Partial Class seguimiento
         Dim Label6 As System.Windows.Forms.Label
         Dim Label7 As System.Windows.Forms.Label
         Dim Label8 As System.Windows.Forms.Label
+        Dim UsuarioLabel As System.Windows.Forms.Label
+        Dim FechaLabel As System.Windows.Forms.Label
         Me.DataSetCreditos = New creditosHipotecarios.DataSetCreditos()
         Me.SeguimientoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SeguimientoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.seguimientoTableAdapter()
@@ -84,6 +86,8 @@ Partial Class seguimiento
         Me.NumeroIpLabel1 = New System.Windows.Forms.Label()
         Me.TomoLabel1 = New System.Windows.Forms.Label()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.FechaLabel1 = New System.Windows.Forms.Label()
+        Me.UsuarioLabel1 = New System.Windows.Forms.Label()
         NombreAgenciaLabel = New System.Windows.Forms.Label()
         NombreClienteLabel = New System.Windows.Forms.Label()
         NombrePropietarioLabel = New System.Windows.Forms.Label()
@@ -107,6 +111,8 @@ Partial Class seguimiento
         Label6 = New System.Windows.Forms.Label()
         Label7 = New System.Windows.Forms.Label()
         Label8 = New System.Windows.Forms.Label()
+        UsuarioLabel = New System.Windows.Forms.Label()
+        FechaLabel = New System.Windows.Forms.Label()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SeguimientoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -281,7 +287,7 @@ Partial Class seguimiento
         Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label2.ForeColor = System.Drawing.Color.White
-        Label2.Location = New System.Drawing.Point(44, 105)
+        Label2.Location = New System.Drawing.Point(44, 119)
         Label2.Name = "Label2"
         Label2.Size = New System.Drawing.Size(39, 13)
         Label2.TabIndex = 63
@@ -293,7 +299,7 @@ Partial Class seguimiento
         Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label3.ForeColor = System.Drawing.Color.White
-        Label3.Location = New System.Drawing.Point(154, 105)
+        Label3.Location = New System.Drawing.Point(154, 119)
         Label3.Name = "Label3"
         Label3.Size = New System.Drawing.Size(74, 13)
         Label3.TabIndex = 85
@@ -305,7 +311,7 @@ Partial Class seguimiento
         Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label4.ForeColor = System.Drawing.Color.White
-        Label4.Location = New System.Drawing.Point(279, 105)
+        Label4.Location = New System.Drawing.Point(279, 119)
         Label4.Name = "Label4"
         Label4.Size = New System.Drawing.Size(88, 13)
         Label4.TabIndex = 86
@@ -317,7 +323,7 @@ Partial Class seguimiento
         Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label5.ForeColor = System.Drawing.Color.White
-        Label5.Location = New System.Drawing.Point(422, 105)
+        Label5.Location = New System.Drawing.Point(422, 119)
         Label5.Name = "Label5"
         Label5.Size = New System.Drawing.Size(95, 13)
         Label5.TabIndex = 87
@@ -329,7 +335,7 @@ Partial Class seguimiento
         Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label6.ForeColor = System.Drawing.Color.White
-        Label6.Location = New System.Drawing.Point(543, 105)
+        Label6.Location = New System.Drawing.Point(543, 119)
         Label6.Name = "Label6"
         Label6.Size = New System.Drawing.Size(104, 13)
         Label6.TabIndex = 88
@@ -341,7 +347,7 @@ Partial Class seguimiento
         Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label7.ForeColor = System.Drawing.Color.White
-        Label7.Location = New System.Drawing.Point(703, 105)
+        Label7.Location = New System.Drawing.Point(703, 119)
         Label7.Name = "Label7"
         Label7.Size = New System.Drawing.Size(62, 13)
         Label7.TabIndex = 89
@@ -353,11 +359,33 @@ Partial Class seguimiento
         Label8.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label8.ForeColor = System.Drawing.Color.White
-        Label8.Location = New System.Drawing.Point(802, 105)
+        Label8.Location = New System.Drawing.Point(802, 119)
         Label8.Name = "Label8"
         Label8.Size = New System.Drawing.Size(115, 13)
         Label8.TabIndex = 90
         Label8.Text = "SOLICITUD DE PAGO"
+        '
+        'UsuarioLabel
+        '
+        UsuarioLabel.AutoSize = True
+        UsuarioLabel.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        UsuarioLabel.ForeColor = System.Drawing.Color.SteelBlue
+        UsuarioLabel.Location = New System.Drawing.Point(239, 53)
+        UsuarioLabel.Name = "UsuarioLabel"
+        UsuarioLabel.Size = New System.Drawing.Size(22, 16)
+        UsuarioLabel.TabIndex = 95
+        UsuarioLabel.Text = "el:"
+        '
+        'FechaLabel
+        '
+        FechaLabel.AutoSize = True
+        FechaLabel.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        FechaLabel.ForeColor = System.Drawing.Color.SteelBlue
+        FechaLabel.Location = New System.Drawing.Point(16, 53)
+        FechaLabel.Name = "FechaLabel"
+        FechaLabel.Size = New System.Drawing.Size(152, 16)
+        FechaLabel.TabIndex = 94
+        FechaLabel.Text = "Ultima Actualización por:"
         '
         'DataSetCreditos
         '
@@ -407,7 +435,7 @@ Partial Class seguimiento
         Me.GroupBox1.Controls.Add(Me.NombrePropietarioLabel1)
         Me.GroupBox1.Controls.Add(RnpPropietarioLabel)
         Me.GroupBox1.Controls.Add(Me.RnpPropietarioLabel1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 142)
+        Me.GroupBox1.Location = New System.Drawing.Point(18, 156)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(669, 255)
         Me.GroupBox1.TabIndex = 80
@@ -483,9 +511,9 @@ Partial Class seguimiento
         Me.GroupBox3.Controls.Add(Me.InteresMoraLabel1)
         Me.GroupBox3.Controls.Add(ValorRemateLabel)
         Me.GroupBox3.Controls.Add(Me.ValorRemateLabel1)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 411)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 429)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(1035, 335)
+        Me.GroupBox3.Size = New System.Drawing.Size(1035, 317)
         Me.GroupBox3.TabIndex = 82
         Me.GroupBox3.TabStop = False
         '
@@ -493,7 +521,7 @@ Partial Class seguimiento
         '
         Me.DescripcionMemoEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "descripcion", True))
         Me.DescripcionMemoEdit.Enabled = False
-        Me.DescripcionMemoEdit.Location = New System.Drawing.Point(35, 190)
+        Me.DescripcionMemoEdit.Location = New System.Drawing.Point(35, 173)
         Me.DescripcionMemoEdit.Name = "DescripcionMemoEdit"
         Me.DescripcionMemoEdit.Size = New System.Drawing.Size(976, 127)
         Me.DescripcionMemoEdit.TabIndex = 92
@@ -578,7 +606,7 @@ Partial Class seguimiento
         Me.Panel1.Controls.Add(Me.NumeroIpLabel1)
         Me.Panel1.Controls.Add(TomoLabel)
         Me.Panel1.Controls.Add(Me.TomoLabel1)
-        Me.Panel1.Location = New System.Drawing.Point(715, 142)
+        Me.Panel1.Location = New System.Drawing.Point(715, 159)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(332, 252)
         Me.Panel1.TabIndex = 83
@@ -652,10 +680,32 @@ Partial Class seguimiento
         'ProgressBar1
         '
         Me.ProgressBar1.ForeColor = System.Drawing.Color.Green
-        Me.ProgressBar1.Location = New System.Drawing.Point(18, 56)
+        Me.ProgressBar1.Location = New System.Drawing.Point(18, 70)
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(1029, 52)
         Me.ProgressBar1.TabIndex = 84
+        '
+        'FechaLabel1
+        '
+        Me.FechaLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "fecha", True))
+        Me.FechaLabel1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FechaLabel1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.FechaLabel1.Location = New System.Drawing.Point(280, 54)
+        Me.FechaLabel1.Name = "FechaLabel1"
+        Me.FechaLabel1.Size = New System.Drawing.Size(106, 15)
+        Me.FechaLabel1.TabIndex = 97
+        Me.FechaLabel1.Text = "Label9"
+        '
+        'UsuarioLabel1
+        '
+        Me.UsuarioLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "usuario", True))
+        Me.UsuarioLabel1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UsuarioLabel1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.UsuarioLabel1.Location = New System.Drawing.Point(174, 53)
+        Me.UsuarioLabel1.Name = "UsuarioLabel1"
+        Me.UsuarioLabel1.Size = New System.Drawing.Size(100, 16)
+        Me.UsuarioLabel1.TabIndex = 96
+        Me.UsuarioLabel1.Text = "Label9"
         '
         'seguimiento
         '
@@ -663,6 +713,10 @@ Partial Class seguimiento
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1080, 758)
+        Me.Controls.Add(Me.FechaLabel1)
+        Me.Controls.Add(UsuarioLabel)
+        Me.Controls.Add(Me.UsuarioLabel1)
+        Me.Controls.Add(FechaLabel)
         Me.Controls.Add(Label8)
         Me.Controls.Add(Label7)
         Me.Controls.Add(Label6)
@@ -690,6 +744,10 @@ Partial Class seguimiento
         Me.Controls.SetChildIndex(Label6, 0)
         Me.Controls.SetChildIndex(Label7, 0)
         Me.Controls.SetChildIndex(Label8, 0)
+        Me.Controls.SetChildIndex(FechaLabel, 0)
+        Me.Controls.SetChildIndex(Me.UsuarioLabel1, 0)
+        Me.Controls.SetChildIndex(UsuarioLabel, 0)
+        Me.Controls.SetChildIndex(Me.FechaLabel1, 0)
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SeguimientoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
@@ -730,4 +788,6 @@ Partial Class seguimiento
     Friend WithEvents NumeroIpLabel1 As System.Windows.Forms.Label
     Friend WithEvents TomoLabel1 As System.Windows.Forms.Label
     Friend WithEvents ProgressBar1 As System.Windows.Forms.ProgressBar
+    Friend WithEvents FechaLabel1 As System.Windows.Forms.Label
+    Friend WithEvents UsuarioLabel1 As System.Windows.Forms.Label
 End Class
