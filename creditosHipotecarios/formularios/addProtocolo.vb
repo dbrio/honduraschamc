@@ -45,6 +45,7 @@
                     "<head>" +
                         "<title>AMC HONDURAS</title>" +
                         "<meta name='viewport' content='width=device-width, initial-scale=1'>" +
+                        "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>" +
                         "<meta name='viewport' content=width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>" +
                         "<meta charset='UTF-8'>" +
                     "</head>" +
@@ -138,6 +139,7 @@
                 .Focus()
                 .cargarDatos()
             End With
+
             Me.Close()
 
         Catch ex As System.Net.Mail.SmtpException

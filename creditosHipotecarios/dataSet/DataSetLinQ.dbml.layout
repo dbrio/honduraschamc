@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataSetLinQ">
+  <DataContextMoniker Name="/DataSetLinQDataContext" />
+  <nestedChildShapes>
+    <classShape Id="1c5c8371-f27b-4d8c-ae61-fdabfc10b779" absoluteBounds="3, 2.125, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataSetLinQDataContext/hipotecaEstado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="26a26976-2297-48eb-b4a3-045731f15402" absoluteBounds="3.015, 2.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e8d66881-fc9a-4ce4-94ad-6d8576665164" absoluteBounds="0.5, 0.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataSetLinQDataContext/Hipoteca" />
+      <nestedChildShapes>
+        <elementListCompartment Id="38428601-a638-456f-9208-16617ac90621" absoluteBounds="0.51500000000000012, 1.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 2.45274983723958); (3 : 2.45274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataSetLinQDataContext/Hipoteca/Hipoteca_hipotecaEstado" />
+      <nodes>
+        <classShapeMoniker Id="e8d66881-fc9a-4ce4-94ad-6d8576665164" />
+        <classShapeMoniker Id="1c5c8371-f27b-4d8c-ae61-fdabfc10b779" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="18eb8ae1-3e88-477d-8d8f-af8a64627982" absoluteBounds="5.875, 0.625, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/DataSetLinQDataContext/prestamo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8f7c632b-4c8b-4503-8523-79be72c589d5" absoluteBounds="5.89, 1.085, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.875 : 1.34375); (2.5 : 1.34375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataSetLinQDataContext/prestamo/prestamo_Hipoteca" />
+      <nodes>
+        <classShapeMoniker Id="18eb8ae1-3e88-477d-8d8f-af8a64627982" />
+        <classShapeMoniker Id="e8d66881-fc9a-4ce4-94ad-6d8576665164" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

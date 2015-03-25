@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="amcApp" Class="DataSetLinQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SQLSERVER;Initial Catalog=amcApp;Persist Security Info=True;User ID=amc" SettingsObjectName="creditosHipotecarios.My.MySettings" SettingsPropertyName="amcAppConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.hipotecaEstado" Member="hipotecaEstado">
+    <Type Name="hipotecaEstado">
+      <Column Name="hipotecaEstadoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="hipotecaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estadoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="usuarioId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Hipoteca_hipotecaEstado" Member="Hipoteca" ThisKey="hipotecaId" OtherKey="hipotecaId" Type="Hipoteca" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Hipoteca" Member="Hipoteca">
+    <Type Name="Hipoteca">
+      <Column Name="hipotecaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="abogadoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="numeroIp" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="matricula" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="asiento" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="tomo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="prestamoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Hipoteca_hipotecaEstado" Member="hipotecaEstado" ThisKey="hipotecaId" OtherKey="hipotecaId" Type="hipotecaEstado" />
+      <Association Name="prestamo_Hipoteca" Member="prestamo" ThisKey="prestamoId" OtherKey="prestamoId" Type="prestamo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.prestamo" Member="prestamo">
+    <Type Name="prestamo">
+      <Column Name="prestamoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="codigoCliente" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="codigoAgencia" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="nombreCliente" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="rnpCliente" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="nombrePropietario" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="rnpPropietario" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="monto" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="plazo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tasaInteres" Type="System.Decimal" DbType="Decimal(5,3) NOT NULL" CanBeNull="false" />
+      <Column Name="cuotaPagar" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="interesMora" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="valorRemate" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="prestamo_Hipoteca" Member="Hipoteca" ThisKey="prestamoId" OtherKey="prestamoId" Type="Hipoteca" />
+    </Type>
+  </Table>
+</Database>

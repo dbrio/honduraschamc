@@ -1,6 +1,7 @@
 ﻿
 Public Class enProtocolo
-  
+
+
     Public idCargar As Integer
     Public titulo As String
 
@@ -45,16 +46,52 @@ Public Class enProtocolo
     Private Sub GridView1_RowCellClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs) Handles GridView1.RowCellClick
         Try
 
-            Dim dict As Hashtable = obtenerDatos()
-            Dim hipotecaEstadoId As String = dict("hipotecaEstadoId")
-            Dim estadoId As Integer = idCargar + 1
+           
+            'SI SE VA ACTUALIZAR EL ESTADO DE IP DEBERA PERDIR UN NUMERO DE IP EN EL FORMULARIO IP
 
-            If MsgBox("¿Actualizar el estado?", MsgBoxStyle.Question + vbYesNo) = vbYes Then
-                HipotecaEstadoTableAdapter.UpdateQuery(estadoId, DateTime.Now(), UsuarioActivo.usuario, hipotecaEstadoId)
+            If Me.Text = "ESCRITURA AL IP" Then
+
+                Dim dict As Hashtable = obtenerDatos()
+                Dim hipotecaEstadoId As String = dict("hipotecaEstadoId")
+                Dim estadoId As Integer = idCargar + 1
+
+                With IP
+                    .Show()
+                    .hipotecaEstadoId = hipotecaEstadoId
+                    .estadoId = estadoId
+                End With
+
+
+            ElseIf Me.Text = "EVIAR A CUSTODIA" Then
+                Dim dict As Hashtable = obtenerDatos()
+                Dim hipotecaEstadoId As String = dict("hipotecaEstadoId")
+                Dim estadoId As Integer = idCargar + 1
+
+                With custodia
+                    .Show()
+                    .hipotecaEstadoId = hipotecaEstadoId
+                    .estadoId = estadoId
+                End With
+
+            Else
+
+                Dim dict As Hashtable = obtenerDatos()
+                Dim hipotecaEstadoId As String = dict("hipotecaEstadoId")
+                Dim estadoId As Integer = idCargar + 1
+
+
+                If MsgBox("¿Actualizar el estado?", MsgBoxStyle.Question + vbYesNo) = vbYes Then
+                    HipotecaEstadoTableAdapter.UpdateQuery(estadoId, DateTime.Now(), UsuarioActivo.usuario, hipotecaEstadoId)
+                End If
+
+                'CARGAR DATOS
+                cargarDatos()
+
+                With buscarHipoteca
+                    .cargarDaos()
+                End With
+
             End If
-
-            'CARGAR DATOS
-            cargarDatos()
 
 
         Catch ex As Exception
@@ -62,5 +99,5 @@ Public Class enProtocolo
         End Try
     End Sub
 
-   
+
 End Class
