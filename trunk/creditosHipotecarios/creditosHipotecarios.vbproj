@@ -88,6 +88,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Design" />
@@ -136,6 +137,11 @@
     <Compile Include="dataSet\DataSetCreditos.vb">
       <DependentUpon>DataSetCreditos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dataSet\DataSetLinQ.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetLinQ.dbml</DependentUpon>
+    </Compile>
     <Compile Include="formularios\addProtocolo.Designer.vb">
       <DependentUpon>addProtocolo.vb</DependentUpon>
     </Compile>
@@ -166,6 +172,12 @@
     <Compile Include="formularios\creditoList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="formularios\Agencia\custodia.Designer.vb">
+      <DependentUpon>custodia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\Agencia\custodia.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formularios\Datos.vb" />
     <Compile Include="formularios\garantiaList.Designer.vb">
       <DependentUpon>garantiaList.vb</DependentUpon>
@@ -178,6 +190,12 @@
       <DependentUpon>Inicio.vb</DependentUpon>
     </Compile>
     <Compile Include="formularios\Inicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Agencia\IP.Designer.vb">
+      <DependentUpon>IP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\Agencia\IP.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formularios\login.vb">
@@ -209,6 +227,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="dataSet\DataSetLinQ.dbml.layout">
+      <DependentUpon>DataSetLinQ.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="formularios\addProtocolo.resx">
       <DependentUpon>addProtocolo.vb</DependentUpon>
     </EmbeddedResource>
@@ -224,11 +245,17 @@
     <EmbeddedResource Include="formularios\creditoList.resx">
       <DependentUpon>creditoList.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Agencia\custodia.resx">
+      <DependentUpon>custodia.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formularios\garantiaList.resx">
       <DependentUpon>garantiaList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Agencia\IP.resx">
+      <DependentUpon>IP.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\login.resx">
       <DependentUpon>login.vb</DependentUpon>
@@ -263,6 +290,11 @@
     </None>
     <None Include="dataSet\DataSetCreditos.xss">
       <DependentUpon>DataSetCreditos.xsd</DependentUpon>
+    </None>
+    <None Include="dataSet\DataSetLinQ.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataSetLinQ.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -342,6 +374,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

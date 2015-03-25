@@ -39,6 +39,14 @@
     End Sub
 
     Private Sub buscarHipoteca_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.MostrarEstadoTableAdapter.FillBy(DataSetCreditos.MostrarEstado)
+
+        cargarDaos()
+
     End Sub
+
+    Sub cargarDaos()
+        Me.MostrarEstadoTableAdapter.FillBy(DataSetCreditos.MostrarEstado)
+
+    End Sub
+
 End Class

@@ -155,7 +155,7 @@ Partial Class enProtocolo
         Me.colmonto.Name = "colmonto"
         Me.colmonto.Visible = True
         Me.colmonto.VisibleIndex = 3
-        Me.colmonto.Width = 45
+        Me.colmonto.Width = 60
         '
         'coltasaInteres
         '
@@ -164,7 +164,7 @@ Partial Class enProtocolo
         Me.coltasaInteres.Name = "coltasaInteres"
         Me.coltasaInteres.Visible = True
         Me.coltasaInteres.VisibleIndex = 4
-        Me.coltasaInteres.Width = 64
+        Me.coltasaInteres.Width = 62
         '
         'coldescripcion
         '
@@ -173,7 +173,7 @@ Partial Class enProtocolo
         Me.coldescripcion.Name = "coldescripcion"
         Me.coldescripcion.Visible = True
         Me.coldescripcion.VisibleIndex = 5
-        Me.coldescripcion.Width = 430
+        Me.coldescripcion.Width = 417
         '
         'HipotecaEstadoBindingSource
         '

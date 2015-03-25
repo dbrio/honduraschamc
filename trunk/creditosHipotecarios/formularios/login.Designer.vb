@@ -41,37 +41,36 @@ Partial Class login
         '
         Me.LabelUser.AutoSize = True
         Me.LabelUser.BackColor = System.Drawing.Color.Transparent
-        Me.LabelUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelUser.ForeColor = System.Drawing.Color.White
-        Me.LabelUser.Location = New System.Drawing.Point(71, 160)
+        Me.LabelUser.Location = New System.Drawing.Point(71, 141)
         Me.LabelUser.Name = "LabelUser"
-        Me.LabelUser.Size = New System.Drawing.Size(68, 20)
+        Me.LabelUser.Size = New System.Drawing.Size(72, 16)
         Me.LabelUser.TabIndex = 0
-        Me.LabelUser.Text = "Usuario:"
+        Me.LabelUser.Text = "USUARIO:"
         '
         'txtUser
         '
         Me.txtUser.BackColor = System.Drawing.Color.White
         Me.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUser.ForeColor = System.Drawing.Color.DimGray
-        Me.txtUser.Location = New System.Drawing.Point(145, 160)
+        Me.txtUser.Location = New System.Drawing.Point(74, 160)
         Me.txtUser.Name = "txtUser"
-        Me.txtUser.Size = New System.Drawing.Size(147, 29)
+        Me.txtUser.Size = New System.Drawing.Size(231, 38)
         Me.txtUser.TabIndex = 1
         '
         'btnEnter
         '
-        Me.btnEnter.BackColor = System.Drawing.Color.Transparent
-        Me.btnEnter.BackgroundImage = Global.creditosHipotecarios.My.Resources.Resources.login
+        Me.btnEnter.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnEnter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnEnter.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue
         Me.btnEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEnter.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEnter.ForeColor = System.Drawing.Color.White
-        Me.btnEnter.Location = New System.Drawing.Point(145, 259)
+        Me.btnEnter.Location = New System.Drawing.Point(74, 310)
         Me.btnEnter.Name = "btnEnter"
-        Me.btnEnter.Size = New System.Drawing.Size(147, 36)
+        Me.btnEnter.Size = New System.Drawing.Size(231, 43)
         Me.btnEnter.TabIndex = 3
         Me.btnEnter.Text = "ENTRAR"
         Me.btnEnter.UseVisualStyleBackColor = False
@@ -79,30 +78,29 @@ Partial Class login
         'txtPass
         '
         Me.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPass.ForeColor = System.Drawing.Color.DimGray
-        Me.txtPass.Location = New System.Drawing.Point(145, 207)
+        Me.txtPass.Location = New System.Drawing.Point(74, 239)
         Me.txtPass.Name = "txtPass"
         Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPass.Size = New System.Drawing.Size(147, 29)
+        Me.txtPass.Size = New System.Drawing.Size(231, 38)
         Me.txtPass.TabIndex = 2
         '
         'LabelPass
         '
         Me.LabelPass.AutoSize = True
         Me.LabelPass.BackColor = System.Drawing.Color.Transparent
-        Me.LabelPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelPass.ForeColor = System.Drawing.Color.White
-        Me.LabelPass.Location = New System.Drawing.Point(43, 207)
+        Me.LabelPass.Location = New System.Drawing.Point(71, 220)
         Me.LabelPass.Name = "LabelPass"
-        Me.LabelPass.Size = New System.Drawing.Size(96, 20)
+        Me.LabelPass.Size = New System.Drawing.Size(105, 16)
         Me.LabelPass.TabIndex = 3
-        Me.LabelPass.Text = "Contraseña:"
+        Me.LabelPass.Text = "CONTRASEÑA:"
         '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.BackgroundImage = Global.creditosHipotecarios.My.Resources.Resources.login
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -146,13 +144,14 @@ Partial Class login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.creditosHipotecarios.My.Resources.Resources.login
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(368, 476)
+        Me.ClientSize = New System.Drawing.Size(362, 476)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.txtPass)
         Me.Controls.Add(Me.LabelPass)
         Me.Controls.Add(Me.btnEnter)
         Me.Controls.Add(Me.txtUser)
         Me.Controls.Add(Me.LabelUser)
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
