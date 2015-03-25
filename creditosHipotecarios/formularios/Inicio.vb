@@ -34,6 +34,7 @@
         Else
             PanelControl1.Visible = False
         End If
+
     End Sub
 
     Private Sub XtraTabbedMdiManager1_PageAdded(ByVal sender As Object, ByVal e As DevExpress.XtraTabbedMdi.MdiTabPageEventArgs) Handles XtraTabbedMdiManager1.PageAdded

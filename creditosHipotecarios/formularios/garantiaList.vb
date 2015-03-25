@@ -79,7 +79,9 @@
             .interesMoraGaratniaAdd = interesMoraGaratnia
             .MdiParent = Inicio
             .Show()
+            .cargarDatos()
             .Focus()
+
 
         End With
     End Sub
