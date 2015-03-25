@@ -67,6 +67,11 @@
         Dim cuota As Decimal = dict("cuota")
         Dim interesMora As Decimal = IsDBNull(dict("interesMora"))
 
+        If interesMora = -1 Or interesMora = Nothing Then
+            interesMora = 0.0
+        Else
+            interesMora = interesMora
+        End If
 
         With garantiaList
             .codigoClinteGarantia = codigoCliente

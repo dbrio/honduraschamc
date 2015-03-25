@@ -20,6 +20,8 @@
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
 
         Try
+            
+
             'OBTENER EL ID DEL ABOGADO
             Dim abogadoId As Integer = NombresAbogado.SelectedValue
             'OBTENER EL CORREO DEL ABOGAD
@@ -111,13 +113,14 @@
             _Message.Priority = System.Net.Mail.MailPriority.Normal
             _Message.IsBodyHtml = True
 
-            'ENVIO
-            _SMTP.Send(_Message)
-
             If txtIdPropietario.Text.Trim = "" Then
                 MsgBox("Debe de introducir la identidad del propietario", MsgBoxStyle.Critical)
                 Exit Sub
             End If
+
+            'ENVIO
+            _SMTP.Send(_Message)
+
 
             'INSERTAR PRESTAMO AL SISTEMA
             Me.PrestamoTableAdapter.Insert(codigoClinteGarantiaAdd, codigoAgenciaGarantiaAdd, nombreClienteGarantiaAdd, identidadGarantiaAdd, propietarioAdd, txtIdPropietario.Text, montoGarantiaAdd, plazoGaratniaAdd, tasaInteresGaratniaAdd, cuotaAdd, interesMoraGaratniaAdd, valorRemateAdd, descripcionAdd)
@@ -143,6 +146,10 @@
     End Sub
 
     Private Sub addProtocolo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cargarDatos()
+    End Sub
+
+    Sub cargarDatos()
         'TODO: esta línea de código carga datos en la tabla 'DataSetCreditos.Evento' Puede moverla o quitarla según sea necesario.
         Me.EventoTableAdapter.Fill(Me.DataSetCreditos.Evento)
         'TODO: esta línea de código carga datos en la tabla 'DataSetCreditos.Hipoteca' Puede moverla o quitarla según sea necesario.
@@ -167,7 +174,6 @@
         If nombreClienteGarantiaAdd = propietarioAdd Then
             txtIdPropietario.Text = identidadGarantiaAdd
         End If
-
 
     End Sub
 

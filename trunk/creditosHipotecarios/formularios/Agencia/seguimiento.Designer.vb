@@ -370,7 +370,7 @@ Partial Class seguimiento
         UsuarioLabel.AutoSize = True
         UsuarioLabel.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         UsuarioLabel.ForeColor = System.Drawing.Color.SteelBlue
-        UsuarioLabel.Location = New System.Drawing.Point(239, 53)
+        UsuarioLabel.Location = New System.Drawing.Point(228, 54)
         UsuarioLabel.Name = "UsuarioLabel"
         UsuarioLabel.Size = New System.Drawing.Size(22, 16)
         UsuarioLabel.TabIndex = 95
@@ -690,7 +690,7 @@ Partial Class seguimiento
         Me.FechaLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "fecha", True))
         Me.FechaLabel1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FechaLabel1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.FechaLabel1.Location = New System.Drawing.Point(280, 54)
+        Me.FechaLabel1.Location = New System.Drawing.Point(252, 55)
         Me.FechaLabel1.Name = "FechaLabel1"
         Me.FechaLabel1.Size = New System.Drawing.Size(106, 15)
         Me.FechaLabel1.TabIndex = 97
@@ -701,7 +701,7 @@ Partial Class seguimiento
         Me.UsuarioLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "usuario", True))
         Me.UsuarioLabel1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UsuarioLabel1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.UsuarioLabel1.Location = New System.Drawing.Point(174, 53)
+        Me.UsuarioLabel1.Location = New System.Drawing.Point(168, 54)
         Me.UsuarioLabel1.Name = "UsuarioLabel1"
         Me.UsuarioLabel1.Size = New System.Drawing.Size(100, 16)
         Me.UsuarioLabel1.TabIndex = 96
