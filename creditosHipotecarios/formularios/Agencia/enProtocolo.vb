@@ -73,6 +73,19 @@ Public Class enProtocolo
                     .estadoId = estadoId
                 End With
 
+            ElseIf Me.Text = "SOLICITAR PAGO" Then
+                Dim dict As Hashtable = obtenerDatos()
+                Dim estadoId As Integer = idCargar + 1
+
+                Dim hipotecaEstadoId As String = dict("hipotecaEstadoId")
+
+                With SolicitudPago
+                    .Show()
+                    .hipotecaEstadoId = hipotecaEstadoId
+                    .estadioId = estadoId
+                End With
+
+
             Else
 
                 Dim dict As Hashtable = obtenerDatos()

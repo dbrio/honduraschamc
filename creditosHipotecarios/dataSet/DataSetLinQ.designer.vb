@@ -49,6 +49,12 @@ Partial Public Class DataSetLinQDataContext
     End Sub
   Partial Private Sub Deleteprestamo(instance As prestamo)
     End Sub
+  Partial Private Sub InsertMemo(instance As Memo)
+    End Sub
+  Partial Private Sub UpdateMemo(instance As Memo)
+    End Sub
+  Partial Private Sub DeleteMemo(instance As Memo)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -91,6 +97,12 @@ Partial Public Class DataSetLinQDataContext
 	Public ReadOnly Property prestamo() As System.Data.Linq.Table(Of prestamo)
 		Get
 			Return Me.GetTable(Of prestamo)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Memo() As System.Data.Linq.Table(Of Memo)
+		Get
+			Return Me.GetTable(Of Memo)
 		End Get
 	End Property
 End Class
@@ -305,6 +317,8 @@ Partial Public Class Hipoteca
 	
 	Private _hipotecaEstado As EntitySet(Of hipotecaEstado)
 	
+	Private _Memo As EntitySet(Of Memo)
+	
 	Private _prestamo As EntityRef(Of prestamo)
 	
     #Region "Definiciones de métodos de extensibilidad"
@@ -347,6 +361,7 @@ Partial Public Class Hipoteca
 	Public Sub New()
 		MyBase.New
 		Me._hipotecaEstado = New EntitySet(Of hipotecaEstado)(AddressOf Me.attach_hipotecaEstado, AddressOf Me.detach_hipotecaEstado)
+		Me._Memo = New EntitySet(Of Memo)(AddressOf Me.attach_Memo, AddressOf Me.detach_Memo)
 		Me._prestamo = CType(Nothing, EntityRef(Of prestamo))
 		OnCreated
 	End Sub
@@ -479,6 +494,16 @@ Partial Public Class Hipoteca
 		End Set
 	End Property
 	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Hipoteca_Memo", Storage:="_Memo", ThisKey:="hipotecaId", OtherKey:="hipotecaId")>  _
+	Public Property Memo() As EntitySet(Of Memo)
+		Get
+			Return Me._Memo
+		End Get
+		Set
+			Me._Memo.Assign(value)
+		End Set
+	End Property
+	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="prestamo_Hipoteca", Storage:="_prestamo", ThisKey:="prestamoId", OtherKey:="prestamoId", IsForeignKey:=true)>  _
 	Public Property prestamo() As prestamo
 		Get
@@ -531,6 +556,16 @@ Partial Public Class Hipoteca
 	End Sub
 	
 	Private Sub detach_hipotecaEstado(ByVal entity As hipotecaEstado)
+		Me.SendPropertyChanging
+		entity.Hipoteca = Nothing
+	End Sub
+	
+	Private Sub attach_Memo(ByVal entity As Memo)
+		Me.SendPropertyChanging
+		entity.Hipoteca = Me
+	End Sub
+	
+	Private Sub detach_Memo(ByVal entity As Memo)
 		Me.SendPropertyChanging
 		entity.Hipoteca = Nothing
 	End Sub
@@ -909,5 +944,193 @@ Partial Public Class prestamo
 	Private Sub detach_Hipoteca(ByVal entity As Hipoteca)
 		Me.SendPropertyChanging
 		entity.prestamo = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Memo")>  _
+Partial Public Class Memo
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _memoId As Integer
+	
+	Private _gastos As Decimal
+	
+	Private _honorarios As Decimal
+	
+	Private _valorComisionAmc As Decimal
+	
+	Private _hipotecaId As Integer
+	
+	Private _Hipoteca As EntityRef(Of Hipoteca)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnmemoIdChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnmemoIdChanged()
+    End Sub
+    Partial Private Sub OngastosChanging(value As Decimal)
+    End Sub
+    Partial Private Sub OngastosChanged()
+    End Sub
+    Partial Private Sub OnhonorariosChanging(value As Decimal)
+    End Sub
+    Partial Private Sub OnhonorariosChanged()
+    End Sub
+    Partial Private Sub OnvalorComisionAmcChanging(value As Decimal)
+    End Sub
+    Partial Private Sub OnvalorComisionAmcChanged()
+    End Sub
+    Partial Private Sub OnhipotecaIdChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnhipotecaIdChanged()
+    End Sub
+    #End Region
+	
+    'Public Sub New()
+    '	MyBase.New
+    '	Me._Hipoteca = CType(Nothing, EntityRef(Of Hipoteca))
+    '	OnCreated
+    'End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_memoId", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property memoId() As Integer
+		Get
+			Return Me._memoId
+		End Get
+		Set
+			If ((Me._memoId = value)  _
+						= false) Then
+				Me.OnmemoIdChanging(value)
+				Me.SendPropertyChanging
+				Me._memoId = value
+				Me.SendPropertyChanged("memoId")
+				Me.OnmemoIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_gastos", DbType:="Decimal(18,2) NOT NULL")>  _
+	Public Property gastos() As Decimal
+		Get
+			Return Me._gastos
+		End Get
+		Set
+			If ((Me._gastos = value)  _
+						= false) Then
+				Me.OngastosChanging(value)
+				Me.SendPropertyChanging
+				Me._gastos = value
+				Me.SendPropertyChanged("gastos")
+				Me.OngastosChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_honorarios", DbType:="Decimal(18,2) NOT NULL")>  _
+	Public Property honorarios() As Decimal
+		Get
+			Return Me._honorarios
+		End Get
+		Set
+			If ((Me._honorarios = value)  _
+						= false) Then
+				Me.OnhonorariosChanging(value)
+				Me.SendPropertyChanging
+				Me._honorarios = value
+				Me.SendPropertyChanged("honorarios")
+				Me.OnhonorariosChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_valorComisionAmc", DbType:="Decimal(18,2) NOT NULL")>  _
+	Public Property valorComisionAmc() As Decimal
+		Get
+			Return Me._valorComisionAmc
+		End Get
+		Set
+			If ((Me._valorComisionAmc = value)  _
+						= false) Then
+				Me.OnvalorComisionAmcChanging(value)
+				Me.SendPropertyChanging
+				Me._valorComisionAmc = value
+				Me.SendPropertyChanged("valorComisionAmc")
+				Me.OnvalorComisionAmcChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_hipotecaId", DbType:="Int NOT NULL")>  _
+	Public Property hipotecaId() As Integer
+		Get
+			Return Me._hipotecaId
+		End Get
+		Set
+			If ((Me._hipotecaId = value)  _
+						= false) Then
+				If Me._Hipoteca.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnhipotecaIdChanging(value)
+				Me.SendPropertyChanging
+				Me._hipotecaId = value
+				Me.SendPropertyChanged("hipotecaId")
+				Me.OnhipotecaIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Hipoteca_Memo", Storage:="_Hipoteca", ThisKey:="hipotecaId", OtherKey:="hipotecaId", IsForeignKey:=true)>  _
+	Public Property Hipoteca() As Hipoteca
+		Get
+			Return Me._Hipoteca.Entity
+		End Get
+		Set
+			Dim previousValue As Hipoteca = Me._Hipoteca.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._Hipoteca.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._Hipoteca.Entity = Nothing
+					previousValue.Memo.Remove(Me)
+				End If
+				Me._Hipoteca.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.Memo.Add(Me)
+					Me._hipotecaId = value.hipotecaId
+				Else
+					Me._hipotecaId = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("Hipoteca")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
 	End Sub
 End Class

@@ -52,9 +52,9 @@ Partial Class custodia
         Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAceptar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAceptar.ForeColor = System.Drawing.Color.White
-        Me.btnAceptar.Location = New System.Drawing.Point(179, 235)
+        Me.btnAceptar.Location = New System.Drawing.Point(147, 237)
         Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(155, 32)
+        Me.btnAceptar.Size = New System.Drawing.Size(155, 37)
         Me.btnAceptar.TabIndex = 7
         Me.btnAceptar.Text = "ACEPTAR"
         Me.btnAceptar.UseVisualStyleBackColor = False
@@ -63,7 +63,7 @@ Partial Class custodia
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(89, 86)
+        Me.Label1.Location = New System.Drawing.Point(57, 88)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(65, 16)
         Me.Label1.TabIndex = 6
@@ -73,7 +73,7 @@ Partial Class custodia
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(98, 132)
+        Me.Label2.Location = New System.Drawing.Point(66, 134)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(56, 16)
         Me.Label2.TabIndex = 9
@@ -83,7 +83,7 @@ Partial Class custodia
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(111, 181)
+        Me.Label3.Location = New System.Drawing.Point(79, 183)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(43, 16)
         Me.Label3.TabIndex = 11
@@ -125,7 +125,7 @@ Partial Class custodia
         '
         'txtMatricula
         '
-        Me.txtMatricula.Location = New System.Drawing.Point(179, 75)
+        Me.txtMatricula.Location = New System.Drawing.Point(147, 77)
         Me.txtMatricula.Name = "txtMatricula"
         Me.txtMatricula.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMatricula.Properties.Appearance.Options.UseFont = True
@@ -137,7 +137,7 @@ Partial Class custodia
         '
         'txtAsiento
         '
-        Me.txtAsiento.Location = New System.Drawing.Point(179, 121)
+        Me.txtAsiento.Location = New System.Drawing.Point(147, 123)
         Me.txtAsiento.Name = "txtAsiento"
         Me.txtAsiento.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 16.0!)
         Me.txtAsiento.Properties.Appearance.Options.UseFont = True
@@ -149,7 +149,7 @@ Partial Class custodia
         '
         'txtTomo
         '
-        Me.txtTomo.Location = New System.Drawing.Point(179, 170)
+        Me.txtTomo.Location = New System.Drawing.Point(147, 172)
         Me.txtTomo.Name = "txtTomo"
         Me.txtTomo.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 16.0!)
         Me.txtTomo.Properties.Appearance.Options.UseFont = True
@@ -163,7 +163,7 @@ Partial Class custodia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(439, 302)
+        Me.ClientSize = New System.Drawing.Size(422, 302)
         Me.Controls.Add(Me.txtTomo)
         Me.Controls.Add(Me.txtAsiento)
         Me.Controls.Add(Me.txtMatricula)
