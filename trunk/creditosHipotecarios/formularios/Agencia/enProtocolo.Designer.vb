@@ -22,9 +22,8 @@ Partial Class enProtocolo
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.DataSetCreditos = New creditosHipotecarios.DataSetCreditos()
-        Me.HipotecaEestadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.HipotecaEestadoBindingSource = New System.Windows.Forms.BindingSource()
         Me.HipotecaEestadoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEestadoTableAdapter()
         Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
         Me.HipotecaEestadoGridControl = New DevExpress.XtraGrid.GridControl()
@@ -36,9 +35,9 @@ Partial Class enProtocolo
         Me.colmonto = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coltasaInteres = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coldescripcion = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.HipotecaEstadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HipotecaEestadoBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSetCreditosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.HipotecaEstadoBindingSource = New System.Windows.Forms.BindingSource()
+        Me.HipotecaEestadoBindingSource1 = New System.Windows.Forms.BindingSource()
+        Me.DataSetCreditosBindingSource = New System.Windows.Forms.BindingSource()
         Me.HipotecaEstadoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEstadoTableAdapter()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HipotecaEestadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,6 +70,7 @@ Partial Class enProtocolo
         Me.TableAdapterManager.EventoTableAdapter = Nothing
         Me.TableAdapterManager.hipotecaEstadoTableAdapter = Nothing
         Me.TableAdapterManager.HipotecaTableAdapter = Nothing
+        Me.TableAdapterManager.MemoTableAdapter = Nothing
         Me.TableAdapterManager.prestamoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuarioTableAdapter = Nothing

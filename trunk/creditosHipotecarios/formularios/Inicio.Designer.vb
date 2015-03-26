@@ -11,23 +11,22 @@ Partial Class Inicio
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inicio))
-        Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
+        Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
+        Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.btnAddHipoteca = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
-        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip()
         Me.MODIFICARUSUARIOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.LabelDeparamento = New System.Windows.Forms.Label()
         Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip()
         Me.ESTADOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnListo = New System.Windows.Forms.Button()
         Me.btnSolicitudPago = New System.Windows.Forms.Button()
@@ -37,7 +36,7 @@ Partial Class Inicio
         Me.btnCustodio = New System.Windows.Forms.Button()
         Me.btnPresentacion = New System.Windows.Forms.Button()
         Me.DataSetCreditos = New creditosHipotecarios.DataSetCreditos()
-        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource()
         Me.UsuarioTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.UsuarioTableAdapter()
         Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,7 +69,7 @@ Partial Class Inicio
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControl1.Location = New System.Drawing.Point(0, 121)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(1435, 574)
+        Me.PanelControl1.Size = New System.Drawing.Size(1435, 642)
         Me.PanelControl1.TabIndex = 2
         '
         'BarButtonItem1
@@ -362,6 +361,7 @@ Partial Class Inicio
         Me.TableAdapterManager.EventoTableAdapter = Nothing
         Me.TableAdapterManager.hipotecaEstadoTableAdapter = Nothing
         Me.TableAdapterManager.HipotecaTableAdapter = Nothing
+        Me.TableAdapterManager.MemoTableAdapter = Nothing
         Me.TableAdapterManager.prestamoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuarioTableAdapter = Me.UsuarioTableAdapter
@@ -372,7 +372,7 @@ Partial Class Inicio
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1268, 712)
+        Me.ClientSize = New System.Drawing.Size(1268, 780)
         Me.Controls.Add(Me.PanelControl2)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.RibbonControl1)

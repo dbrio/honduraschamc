@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="memo" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+<xs:schema id="Remportmemo" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -35,10 +35,10 @@ WHERE memoId = @memoId</CommandText>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="memo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="memo" msprop:Generator_UserDSName="memo">
+  <xs:element name="Remportmemo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="Remportmemo" msprop:Generator_UserDSName="Remportmemo">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Memo" msprop:Generator_TableClassName="MemoDataTable" msprop:Generator_TableVarName="tableMemo" msprop:Generator_TablePropName="_Memo" msprop:Generator_RowDeletingName="MemoRowDeleting" msprop:Generator_RowChangingName="MemoRowChanging" msprop:Generator_RowEvHandlerName="MemoRowChangeEventHandler" msprop:Generator_RowDeletedName="MemoRowDeleted" msprop:Generator_UserTableName="Memo" msprop:Generator_RowChangedName="MemoRowChanged" msprop:Generator_RowEvArgName="MemoRowChangeEvent" msprop:Generator_RowClassName="MemoRow">
+        <xs:element name="Memo" msprop:Generator_TableClassName="MemoDataTable" msprop:Generator_TableVarName="tableMemo" msprop:Generator_TablePropName="Memo" msprop:Generator_RowDeletingName="MemoRowDeleting" msprop:Generator_RowChangingName="MemoRowChanging" msprop:Generator_RowEvHandlerName="MemoRowChangeEventHandler" msprop:Generator_RowDeletedName="MemoRowDeleted" msprop:Generator_UserTableName="Memo" msprop:Generator_RowChangedName="MemoRowChanged" msprop:Generator_RowEvArgName="MemoRowChangeEvent" msprop:Generator_RowClassName="MemoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="memoId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnmemoId" msprop:Generator_ColumnPropNameInRow="memoId" msprop:Generator_ColumnPropNameInTable="memoIdColumn" msprop:Generator_UserColumnName="memoId" type="xs:int" />
