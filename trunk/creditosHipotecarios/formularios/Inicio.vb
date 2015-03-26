@@ -23,6 +23,18 @@
             btnCustodio.Enabled = False
         End If
 
+        If UsuarioActivo.cargo = "GEFE DE AGENCIA" Then
+            btnFirmaCliente.Enabled = False
+            btnPresentacion.Enabled = False
+            btnFirmaGerencia.Enabled = False
+            btnCustodio.Enabled = False
+            btnSolicitudPago.Enabled = False
+            btnProtocolo.Enabled = False
+            btnListo.Enabled = False
+            ESTADOToolStripMenuItem.Visible = False
+            btnCustodio.Enabled = True
+        End If
+
 
     End Sub
 
@@ -177,7 +189,7 @@
   
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
 
-        If UsuarioActivo.cargo = "PROVEEDURIA" Or UsuarioActivo.cargo = "INFORMATICA" Then
+        If UsuarioActivo.cargo = "PROVEEDURIA" Or UsuarioActivo.cargo = "INFORMATICA" Or UsuarioActivo.cargo = "GEFE DE AGENCIA" Then
             With buscarHipoteca
                 .MdiParent = Me
                 .Show()
@@ -211,6 +223,7 @@
         Me.TableAdapterManager.UpdateAll(Me.DataSetCreditos)
 
     End Sub
+
 
 
   

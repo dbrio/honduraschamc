@@ -67,7 +67,7 @@ Public Class login
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
     End Sub
 
@@ -80,5 +80,16 @@ Public Class login
         End If
     End Sub
 
+
+    Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.BackColor = ColorTranslator.FromHtml("#29347B")
+        btnEnter.BackColor = ColorTranslator.FromHtml("#009D84")
+        btnSalir.BackColor = ColorTranslator.FromHtml("#FFC500")
+        'Panel1.BackColor = ColorTranslator.FromHtml("#323D44")
+        Label1.Text = "Crédigos Hipotecarios | AMC "
+
+    End Sub
+
+   
 
 End Class

@@ -166,6 +166,12 @@
     <Compile Include="formularios\Agencia\seguimiento.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="formularios\Agencia\SolicitudPago.Designer.vb">
+      <DependentUpon>SolicitudPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\Agencia\SolicitudPago.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formularios\creditoList.Designer.vb">
       <DependentUpon>creditoList.vb</DependentUpon>
     </Compile>
@@ -205,6 +211,16 @@
       <DependentUpon>login.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="memo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>memo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MemoPagar.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MemoPagar.xsd</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -225,8 +241,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>prueba.xsd</DependentUpon>
     </Compile>
+    <Compile Include="reportes\XtraReport1.Designer.vb">
+      <DependentUpon>XtraReport1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\XtraReport1.vb">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="reportes\XtraReport1.resx">
+      <DependentUpon>XtraReport1.vb</DependentUpon>
+    </EmbeddedResource>
     <None Include="dataSet\DataSetLinQ.dbml.layout">
       <DependentUpon>DataSetLinQ.dbml</DependentUpon>
     </None>
@@ -241,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\Agencia\seguimiento.resx">
       <DependentUpon>seguimiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Agencia\SolicitudPago.resx">
+      <DependentUpon>SolicitudPago.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\creditoList.resx">
       <DependentUpon>creditoList.vb</DependentUpon>
@@ -295,6 +323,28 @@
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataSetLinQ.designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
+    </None>
+    <None Include="memo.xsc">
+      <DependentUpon>memo.xsd</DependentUpon>
+    </None>
+    <None Include="memo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>memo.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="memo.xss">
+      <DependentUpon>memo.xsd</DependentUpon>
+    </None>
+    <None Include="MemoPagar.xsc">
+      <DependentUpon>MemoPagar.xsd</DependentUpon>
+    </None>
+    <None Include="MemoPagar.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MemoPagar.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MemoPagar.xss">
+      <DependentUpon>MemoPagar.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -377,6 +427,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logologin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

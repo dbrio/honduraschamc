@@ -372,7 +372,7 @@ Partial Class seguimiento
         UsuarioLabel.AutoSize = True
         UsuarioLabel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         UsuarioLabel.ForeColor = System.Drawing.Color.OrangeRed
-        UsuarioLabel.Location = New System.Drawing.Point(316, 44)
+        UsuarioLabel.Location = New System.Drawing.Point(316, 47)
         UsuarioLabel.Name = "UsuarioLabel"
         UsuarioLabel.Size = New System.Drawing.Size(24, 18)
         UsuarioLabel.TabIndex = 95
@@ -383,11 +383,23 @@ Partial Class seguimiento
         FechaLabel.AutoSize = True
         FechaLabel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         FechaLabel.ForeColor = System.Drawing.Color.OrangeRed
-        FechaLabel.Location = New System.Drawing.Point(16, 44)
+        FechaLabel.Location = New System.Drawing.Point(16, 46)
         FechaLabel.Name = "FechaLabel"
         FechaLabel.Size = New System.Drawing.Size(178, 18)
         FechaLabel.TabIndex = 94
         FechaLabel.Text = "Ultima Actualización por:"
+        '
+        'Label9
+        '
+        Label9.AutoSize = True
+        Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label9.ForeColor = System.Drawing.Color.White
+        Label9.Location = New System.Drawing.Point(986, 120)
+        Label9.Name = "Label9"
+        Label9.Size = New System.Drawing.Size(51, 13)
+        Label9.TabIndex = 98
+        Label9.Text = "PAGADA"
         '
         'DataSetCreditos
         '
@@ -692,7 +704,7 @@ Partial Class seguimiento
         Me.FechaLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "fecha", True))
         Me.FechaLabel1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FechaLabel1.ForeColor = System.Drawing.Color.OrangeRed
-        Me.FechaLabel1.Location = New System.Drawing.Point(346, 44)
+        Me.FechaLabel1.Location = New System.Drawing.Point(346, 47)
         Me.FechaLabel1.Name = "FechaLabel1"
         Me.FechaLabel1.Size = New System.Drawing.Size(106, 15)
         Me.FechaLabel1.TabIndex = 97
@@ -703,23 +715,11 @@ Partial Class seguimiento
         Me.UsuarioLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "usuario", True))
         Me.UsuarioLabel1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UsuarioLabel1.ForeColor = System.Drawing.Color.OrangeRed
-        Me.UsuarioLabel1.Location = New System.Drawing.Point(200, 44)
+        Me.UsuarioLabel1.Location = New System.Drawing.Point(200, 46)
         Me.UsuarioLabel1.Name = "UsuarioLabel1"
         Me.UsuarioLabel1.Size = New System.Drawing.Size(100, 23)
         Me.UsuarioLabel1.TabIndex = 96
         Me.UsuarioLabel1.Text = "Label9"
-        '
-        'Label9
-        '
-        Label9.AutoSize = True
-        Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label9.ForeColor = System.Drawing.Color.White
-        Label9.Location = New System.Drawing.Point(986, 120)
-        Label9.Name = "Label9"
-        Label9.Size = New System.Drawing.Size(51, 13)
-        Label9.TabIndex = 98
-        Label9.Text = "PAGADA"
         '
         'seguimiento
         '

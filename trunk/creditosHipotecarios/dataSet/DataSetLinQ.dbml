@@ -20,6 +20,7 @@
       <Column Name="tomo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="prestamoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Hipoteca_hipotecaEstado" Member="hipotecaEstado" ThisKey="hipotecaId" OtherKey="hipotecaId" Type="hipotecaEstado" />
+      <Association Name="Hipoteca_Memo" Member="Memo" ThisKey="hipotecaId" OtherKey="hipotecaId" Type="Memo" />
       <Association Name="prestamo_Hipoteca" Member="prestamo" ThisKey="prestamoId" OtherKey="prestamoId" Type="prestamo" IsForeignKey="true" />
     </Type>
   </Table>
@@ -40,6 +41,16 @@
       <Column Name="valorRemate" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Column Name="descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Association Name="prestamo_Hipoteca" Member="Hipoteca" ThisKey="prestamoId" OtherKey="prestamoId" Type="Hipoteca" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Memo" Member="Memo">
+    <Type Name="Memo">
+      <Column Name="memoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="gastos" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="honorarios" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="valorComisionAmc" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="hipotecaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Hipoteca_Memo" Member="Hipoteca" ThisKey="hipotecaId" OtherKey="hipotecaId" Type="Hipoteca" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
