@@ -20,12 +20,12 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("prueba"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("Remportmemo"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class prueba
+Partial Public Class Remportmemo
     Inherits Global.System.Data.DataSet
     
-    Private tableAgencia As AgenciaDataTable
+    Private tableMemo As MemoDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -56,8 +56,8 @@ Partial Public Class prueba
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("Agencia")) Is Nothing) Then
-                MyBase.Tables.Add(New AgenciaDataTable(ds.Tables("Agencia")))
+            If (Not (ds.Tables("Memo")) Is Nothing) Then
+                MyBase.Tables.Add(New MemoDataTable(ds.Tables("Memo")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -80,9 +80,9 @@ Partial Public Class prueba
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property Agencia() As AgenciaDataTable
+    Public ReadOnly Property Memo() As MemoDataTable
         Get
-            Return Me.tableAgencia
+            Return Me.tableMemo
         End Get
     End Property
     
@@ -128,7 +128,7 @@ Partial Public Class prueba
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As prueba = CType(MyBase.Clone,prueba)
+        Dim cln As Remportmemo = CType(MyBase.Clone,Remportmemo)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -153,8 +153,8 @@ Partial Public Class prueba
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("Agencia")) Is Nothing) Then
-                MyBase.Tables.Add(New AgenciaDataTable(ds.Tables("Agencia")))
+            If (Not (ds.Tables("Memo")) Is Nothing) Then
+                MyBase.Tables.Add(New MemoDataTable(ds.Tables("Memo")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -188,10 +188,10 @@ Partial Public Class prueba
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tableAgencia = CType(MyBase.Tables("Agencia"),AgenciaDataTable)
+        Me.tableMemo = CType(MyBase.Tables("Memo"),MemoDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableAgencia) Is Nothing) Then
-                Me.tableAgencia.InitVars
+            If (Not (Me.tableMemo) Is Nothing) Then
+                Me.tableMemo.InitVars
             End If
         End If
     End Sub
@@ -199,17 +199,17 @@ Partial Public Class prueba
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "prueba"
+        Me.DataSetName = "Remportmemo"
         Me.Prefix = ""
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tableAgencia = New AgenciaDataTable()
-        MyBase.Tables.Add(Me.tableAgencia)
+        Me.tableMemo = New MemoDataTable()
+        MyBase.Tables.Add(Me.tableMemo)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializeAgencia() As Boolean
+    Private Function ShouldSerializeMemo() As Boolean
         Return false
     End Function
     
@@ -224,7 +224,7 @@ Partial Public Class prueba
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As prueba = New prueba()
+        Dim ds As Remportmemo = New Remportmemo()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -272,25 +272,31 @@ Partial Public Class prueba
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub AgenciaRowChangeEventHandler(ByVal sender As Object, ByVal e As AgenciaRowChangeEvent)
+    Public Delegate Sub MemoRowChangeEventHandler(ByVal sender As Object, ByVal e As MemoRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class AgenciaDataTable
-        Inherits Global.System.Data.TypedTableBase(Of AgenciaRow)
+    Partial Public Class MemoDataTable
+        Inherits Global.System.Data.TypedTableBase(Of MemoRow)
         
-        Private columncodigoAgencia As Global.System.Data.DataColumn
+        Private columnmemoId As Global.System.Data.DataColumn
         
-        Private columnnombreAgencia As Global.System.Data.DataColumn
+        Private columngastos As Global.System.Data.DataColumn
+        
+        Private columnhonorarios As Global.System.Data.DataColumn
+        
+        Private columnvalorComisionAmc As Global.System.Data.DataColumn
+        
+        Private columnhipotecaId As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "Agencia"
+            Me.TableName = "Memo"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -323,17 +329,41 @@ Partial Public Class prueba
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property codigoAgenciaColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property memoIdColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columncodigoAgencia
+                Return Me.columnmemoId
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property nombreAgenciaColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property gastosColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnnombreAgencia
+                Return Me.columngastos
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property honorariosColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnhonorarios
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property valorComisionAmcColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnvalorComisionAmc
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property hipotecaIdColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnhipotecaId
             End Get
         End Property
         
@@ -348,50 +378,50 @@ Partial Public Class prueba
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As AgenciaRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As MemoRow
             Get
-                Return CType(Me.Rows(index),AgenciaRow)
+                Return CType(Me.Rows(index),MemoRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event AgenciaRowChanging As AgenciaRowChangeEventHandler
+        Public Event MemoRowChanging As MemoRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event AgenciaRowChanged As AgenciaRowChangeEventHandler
+        Public Event MemoRowChanged As MemoRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event AgenciaRowDeleting As AgenciaRowChangeEventHandler
+        Public Event MemoRowDeleting As MemoRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event AgenciaRowDeleted As AgenciaRowChangeEventHandler
+        Public Event MemoRowDeleted As MemoRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Sub AddAgenciaRow(ByVal row As AgenciaRow)
+        Public Overloads Sub AddMemoRow(ByVal row As MemoRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddAgenciaRow(ByVal codigoAgencia As String, ByVal nombreAgencia As String) As AgenciaRow
-            Dim rowAgenciaRow As AgenciaRow = CType(Me.NewRow,AgenciaRow)
-            Dim columnValuesArray() As Object = New Object() {codigoAgencia, nombreAgencia}
-            rowAgenciaRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowAgenciaRow)
-            Return rowAgenciaRow
+        Public Overloads Function AddMemoRow(ByVal gastos As Decimal, ByVal honorarios As Decimal, ByVal valorComisionAmc As Decimal, ByVal hipotecaId As Integer) As MemoRow
+            Dim rowMemoRow As MemoRow = CType(Me.NewRow,MemoRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, gastos, honorarios, valorComisionAmc, hipotecaId}
+            rowMemoRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowMemoRow)
+            Return rowMemoRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindBycodigoAgencia(ByVal codigoAgencia As String) As AgenciaRow
-            Return CType(Me.Rows.Find(New Object() {codigoAgencia}),AgenciaRow)
+        Public Function FindBymemoId(ByVal memoId As Integer) As MemoRow
+            Return CType(Me.Rows.Find(New Object() {memoId}),MemoRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As AgenciaDataTable = CType(MyBase.Clone,AgenciaDataTable)
+            Dim cln As MemoDataTable = CType(MyBase.Clone,MemoDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -399,55 +429,67 @@ Partial Public Class prueba
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New AgenciaDataTable()
+            Return New MemoDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columncodigoAgencia = MyBase.Columns("codigoAgencia")
-            Me.columnnombreAgencia = MyBase.Columns("nombreAgencia")
+            Me.columnmemoId = MyBase.Columns("memoId")
+            Me.columngastos = MyBase.Columns("gastos")
+            Me.columnhonorarios = MyBase.Columns("honorarios")
+            Me.columnvalorComisionAmc = MyBase.Columns("valorComisionAmc")
+            Me.columnhipotecaId = MyBase.Columns("hipotecaId")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columncodigoAgencia = New Global.System.Data.DataColumn("codigoAgencia", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columncodigoAgencia)
-            Me.columnnombreAgencia = New Global.System.Data.DataColumn("nombreAgencia", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnnombreAgencia)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columncodigoAgencia}, true))
-            Me.columncodigoAgencia.AllowDBNull = false
-            Me.columncodigoAgencia.Unique = true
-            Me.columncodigoAgencia.MaxLength = 10
-            Me.columnnombreAgencia.AllowDBNull = false
-            Me.columnnombreAgencia.MaxLength = 50
+            Me.columnmemoId = New Global.System.Data.DataColumn("memoId", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnmemoId)
+            Me.columngastos = New Global.System.Data.DataColumn("gastos", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columngastos)
+            Me.columnhonorarios = New Global.System.Data.DataColumn("honorarios", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnhonorarios)
+            Me.columnvalorComisionAmc = New Global.System.Data.DataColumn("valorComisionAmc", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnvalorComisionAmc)
+            Me.columnhipotecaId = New Global.System.Data.DataColumn("hipotecaId", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnhipotecaId)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnmemoId}, true))
+            Me.columnmemoId.AutoIncrement = true
+            Me.columnmemoId.AllowDBNull = false
+            Me.columnmemoId.ReadOnly = true
+            Me.columnmemoId.Unique = true
+            Me.columngastos.AllowDBNull = false
+            Me.columnhonorarios.AllowDBNull = false
+            Me.columnvalorComisionAmc.AllowDBNull = false
+            Me.columnhipotecaId.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function NewAgenciaRow() As AgenciaRow
-            Return CType(Me.NewRow,AgenciaRow)
+        Public Function NewMemoRow() As MemoRow
+            Return CType(Me.NewRow,MemoRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New AgenciaRow(builder)
+            Return New MemoRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(AgenciaRow)
+            Return GetType(MemoRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.AgenciaRowChangedEvent) Is Nothing) Then
-                RaiseEvent AgenciaRowChanged(Me, New AgenciaRowChangeEvent(CType(e.Row,AgenciaRow), e.Action))
+            If (Not (Me.MemoRowChangedEvent) Is Nothing) Then
+                RaiseEvent MemoRowChanged(Me, New MemoRowChangeEvent(CType(e.Row,MemoRow), e.Action))
             End If
         End Sub
         
@@ -455,8 +497,8 @@ Partial Public Class prueba
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.AgenciaRowChangingEvent) Is Nothing) Then
-                RaiseEvent AgenciaRowChanging(Me, New AgenciaRowChangeEvent(CType(e.Row,AgenciaRow), e.Action))
+            If (Not (Me.MemoRowChangingEvent) Is Nothing) Then
+                RaiseEvent MemoRowChanging(Me, New MemoRowChangeEvent(CType(e.Row,MemoRow), e.Action))
             End If
         End Sub
         
@@ -464,8 +506,8 @@ Partial Public Class prueba
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.AgenciaRowDeletedEvent) Is Nothing) Then
-                RaiseEvent AgenciaRowDeleted(Me, New AgenciaRowChangeEvent(CType(e.Row,AgenciaRow), e.Action))
+            If (Not (Me.MemoRowDeletedEvent) Is Nothing) Then
+                RaiseEvent MemoRowDeleted(Me, New MemoRowChangeEvent(CType(e.Row,MemoRow), e.Action))
             End If
         End Sub
         
@@ -473,14 +515,14 @@ Partial Public Class prueba
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.AgenciaRowDeletingEvent) Is Nothing) Then
-                RaiseEvent AgenciaRowDeleting(Me, New AgenciaRowChangeEvent(CType(e.Row,AgenciaRow), e.Action))
+            If (Not (Me.MemoRowDeletingEvent) Is Nothing) Then
+                RaiseEvent MemoRowDeleting(Me, New MemoRowChangeEvent(CType(e.Row,MemoRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub RemoveAgenciaRow(ByVal row As AgenciaRow)
+        Public Sub RemoveMemoRow(ByVal row As MemoRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -489,7 +531,7 @@ Partial Public Class prueba
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As prueba = New prueba()
+            Dim ds As Remportmemo = New Remportmemo()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -507,7 +549,7 @@ Partial Public Class prueba
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "AgenciaDataTable"
+            attribute2.FixedValue = "MemoDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -554,37 +596,70 @@ Partial Public Class prueba
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class AgenciaRow
+    Partial Public Class MemoRow
         Inherits Global.System.Data.DataRow
         
-        Private tableAgencia As AgenciaDataTable
+        Private tableMemo As MemoDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableAgencia = CType(Me.Table,AgenciaDataTable)
+            Me.tableMemo = CType(Me.Table,MemoDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property codigoAgencia() As String
+        Public Property memoId() As Integer
             Get
-                Return CType(Me(Me.tableAgencia.codigoAgenciaColumn),String)
+                Return CType(Me(Me.tableMemo.memoIdColumn),Integer)
             End Get
             Set
-                Me(Me.tableAgencia.codigoAgenciaColumn) = value
+                Me(Me.tableMemo.memoIdColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property nombreAgencia() As String
+        Public Property gastos() As Decimal
             Get
-                Return CType(Me(Me.tableAgencia.nombreAgenciaColumn),String)
+                Return CType(Me(Me.tableMemo.gastosColumn),Decimal)
             End Get
             Set
-                Me(Me.tableAgencia.nombreAgenciaColumn) = value
+                Me(Me.tableMemo.gastosColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property honorarios() As Decimal
+            Get
+                Return CType(Me(Me.tableMemo.honorariosColumn),Decimal)
+            End Get
+            Set
+                Me(Me.tableMemo.honorariosColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property valorComisionAmc() As Decimal
+            Get
+                Return CType(Me(Me.tableMemo.valorComisionAmcColumn),Decimal)
+            End Get
+            Set
+                Me(Me.tableMemo.valorComisionAmcColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property hipotecaId() As Integer
+            Get
+                Return CType(Me(Me.tableMemo.hipotecaIdColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableMemo.hipotecaIdColumn) = value
             End Set
         End Property
     End Class
@@ -593,16 +668,16 @@ Partial Public Class prueba
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Class AgenciaRowChangeEvent
+    Public Class MemoRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As AgenciaRow
+        Private eventRow As MemoRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New(ByVal row As AgenciaRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As MemoRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -610,7 +685,7 @@ Partial Public Class prueba
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Row() As AgenciaRow
+        Public ReadOnly Property Row() As MemoRow
             Get
                 Return Me.eventRow
             End Get
@@ -626,7 +701,7 @@ Partial Public Class prueba
     End Class
 End Class
 
-Namespace pruebaTableAdapters
+Namespace RemportmemoTableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -637,7 +712,7 @@ Namespace pruebaTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class AgenciaAdapter
+    Partial Public Class MemoAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -724,9 +799,12 @@ Namespace pruebaTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "Agencia"
-            tableMapping.ColumnMappings.Add("codigoAgencia", "codigoAgencia")
-            tableMapping.ColumnMappings.Add("nombreAgencia", "nombreAgencia")
+            tableMapping.DataSetTable = "Memo"
+            tableMapping.ColumnMappings.Add("memoId", "memoId")
+            tableMapping.ColumnMappings.Add("gastos", "gastos")
+            tableMapping.ColumnMappings.Add("honorarios", "honorarios")
+            tableMapping.ColumnMappings.Add("valorComisionAmc", "valorComisionAmc")
+            tableMapping.ColumnMappings.Add("hipotecaId", "hipotecaId")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -744,30 +822,34 @@ Namespace pruebaTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT codigoAgencia, nombreAgencia FROM dbo.Agencia"
+            Me._commandCollection(0).CommandText = "SELECT memoId, gastos, honorarios, valorComisionAmc, hipotecaId FROM dbo.Memo" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WH" & _
+                "ERE memoId = @memoId"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@memoId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "memoId", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As prueba.AgenciaDataTable) As Integer
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, True)> _
+        Public Overridable Overloads Function Fill(ByVal dataTable As Remportmemo.MemoDataTable, ByVal memoId As Integer) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(memoId, Integer)
+            If (Me.ClearBeforeFill = True) Then
+                dataTable.Clear()
             End If
             Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
             Return returnValue
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As prueba.AgenciaDataTable
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], True)> _
+        Public Overridable Overloads Function GetData(ByVal memoId As Integer) As Remportmemo.MemoDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As prueba.AgenciaDataTable = New prueba.AgenciaDataTable()
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(memoId, Integer)
+            Dim dataTable As Remportmemo.MemoDataTable = New Remportmemo.MemoDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function

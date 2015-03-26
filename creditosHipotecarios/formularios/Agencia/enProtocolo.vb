@@ -1,9 +1,12 @@
-﻿
+﻿Imports System.IO
+Imports DevExpress.XtraPrinting
+Imports DevExpress.XtraPrinting.Preview
+
 Public Class enProtocolo
-
-
+    Private stream As New MemoryStream
     Public idCargar As Integer
     Public titulo As String
+    Dim db As New DataSetLinQDataContext
 
 
     Private Sub enProtocolo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -85,6 +88,38 @@ Public Class enProtocolo
                     .estadioId = estadoId
                 End With
 
+            ElseIf Me.Text = "EFECTURAR PAGO" Then
+
+                Dim dict As Hashtable = obtenerDatos()
+                Dim estadoId As Integer = idCargar + 1
+
+                Dim hipotecaEstadoId As String = dict("hipotecaEstadoId")
+
+                Dim ps As New PrintingSystem
+                Dim preview As New PrintPreviewRibbonFormEx
+
+
+                Dim idPrest = (From m In db.Memo
+                               Where m.hipotecaId = hipotecaEstadoId
+                               Select m.memoId).FirstOrDefault
+
+
+
+                Dim reporte As New ReportMemo(idPrest)
+                reporte.CreateDocument()
+                reporte.PrintingSystem.SaveDocument(stream)
+
+                ps.LoadDocument(stream)
+
+                MsgBox(idPrest)
+
+                With preview
+                    .PrintingSystem = ps
+                    .Text = String.Format("Reporte, #{0}", idPrest)
+                    .MdiParent = Me.MdiParent
+                    .Show()
+                    End With
+
 
             Else
 
@@ -95,14 +130,14 @@ Public Class enProtocolo
 
                 If MsgBox("¿Actualizar el estado?", MsgBoxStyle.Question + vbYesNo) = vbYes Then
                     HipotecaEstadoTableAdapter.UpdateQuery(estadoId, DateTime.Now(), UsuarioActivo.usuario, hipotecaEstadoId)
-                End If
+                    End If
 
-                'CARGAR DATOS
+                    'CARGAR DATOS
                 cargarDatos()
 
                 With buscarHipoteca
                     .cargarDaos()
-                End With
+                    End With
 
             End If
 
@@ -113,4 +148,5 @@ Public Class enProtocolo
     End Sub
 
 
+  
 End Class
