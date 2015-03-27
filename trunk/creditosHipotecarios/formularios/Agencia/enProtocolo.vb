@@ -111,14 +111,20 @@ Public Class enProtocolo
 
                 ps.LoadDocument(stream)
 
-                MsgBox(idPrest)
+                If MsgBox("¿Actualizar el estado?", MsgBoxStyle.Question + vbYesNo) = vbYes Then
+                    HipotecaEstadoTableAdapter.UpdateQuery(estadoId, DateTime.Now(), UsuarioActivo.usuario, hipotecaEstadoId)
 
-                With preview
-                    .PrintingSystem = ps
-                    .Text = String.Format("Reporte, #{0}", idPrest)
-                    .MdiParent = Me.MdiParent
-                    .Show()
+                    With preview
+                        .PrintingSystem = ps
+                        .Text = String.Format("Reporte, #{0}", idPrest)
+                        .MdiParent = Me.MdiParent
+                        .Show()
                     End With
+
+                End If
+
+                'CARGAR DATOS
+                cargarDatos()
 
 
             Else

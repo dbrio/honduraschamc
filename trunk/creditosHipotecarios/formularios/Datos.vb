@@ -1,5 +1,4 @@
 ﻿Public Module Datos
-
     Public Structure SesionUser
         Public usuario As Integer
         Public cargo As String
