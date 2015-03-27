@@ -35,8 +35,8 @@ Partial Class login
         Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.CreditoTableAdapter1 = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.CreditoTableAdapter()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -139,6 +139,7 @@ Partial Class login
         Me.TableAdapterManager.EventoTableAdapter = Nothing
         Me.TableAdapterManager.hipotecaEstadoTableAdapter = Nothing
         Me.TableAdapterManager.HipotecaTableAdapter = Nothing
+        Me.TableAdapterManager.MemoTableAdapter = Nothing
         Me.TableAdapterManager.prestamoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuarioTableAdapter = Me.UsuarioTableAdapter
@@ -155,16 +156,6 @@ Partial Class login
         '
         Me.CreditoTableAdapter1.ClearBeforeFill = True
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.creditosHipotecarios.My.Resources.Resources.logologin
-        Me.PictureBox1.Location = New System.Drawing.Point(109, 28)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(166, 89)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 6
-        Me.PictureBox1.TabStop = False
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -175,6 +166,16 @@ Partial Class login
         Me.Label1.Size = New System.Drawing.Size(57, 20)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Label1"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.creditosHipotecarios.My.Resources.Resources.logologin
+        Me.PictureBox1.Location = New System.Drawing.Point(109, 28)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(166, 89)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 6
+        Me.PictureBox1.TabStop = False
         '
         'login
         '

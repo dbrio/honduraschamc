@@ -5,7 +5,7 @@
         'Me.UsuarioTableAdapter.Fill(Me.DataSetCreditos.Usuario)
         GestionarPanel()
 
-        LabelDeparamento.Text = UsuarioActivo.cargo
+        'LabelDeparamento.Text = UsuarioActivo.cargo
 
 
         If UsuarioActivo.cargo = "OPERATIVO" Then

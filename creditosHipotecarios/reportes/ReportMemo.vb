@@ -9,6 +9,7 @@
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         MemoAdapter1.Fill(Remportmemo1.Memo, NumFactura)
 
+       
 
     End Sub
 End Class

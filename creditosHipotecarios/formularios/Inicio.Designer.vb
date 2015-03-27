@@ -11,22 +11,21 @@ Partial Class Inicio
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inicio))
-        Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager()
+        Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel()
+        Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.btnAddHipoteca = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
-        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip()
+        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.MODIFICARUSUARIOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.LabelDeparamento = New System.Windows.Forms.Label()
         Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ESTADOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnListo = New System.Windows.Forms.Button()
         Me.btnSolicitudPago = New System.Windows.Forms.Button()
@@ -36,16 +35,18 @@ Partial Class Inicio
         Me.btnCustodio = New System.Windows.Forms.Button()
         Me.btnPresentacion = New System.Windows.Forms.Button()
         Me.DataSetCreditos = New creditosHipotecarios.DataSetCreditos()
-        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource()
+        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UsuarioTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.UsuarioTableAdapter()
         Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
+        Me.btnEfectuarPago = New System.Windows.Forms.Button()
+        Me.btnSolicitudDocumentos = New System.Windows.Forms.Button()
+        Me.btnEntregaDocumentos = New System.Windows.Forms.Button()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
         Me.ContextMenuStrip2.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,7 +70,7 @@ Partial Class Inicio
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControl1.Location = New System.Drawing.Point(0, 121)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(1435, 642)
+        Me.PanelControl1.Size = New System.Drawing.Size(1435, 635)
         Me.PanelControl1.TabIndex = 2
         '
         'BarButtonItem1
@@ -142,7 +143,9 @@ Partial Class Inicio
         Me.PanelControl2.Appearance.Options.UseBackColor = True
         Me.PanelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl2.ContextMenuStrip = Me.ContextMenuStrip2
-        Me.PanelControl2.Controls.Add(Me.GroupBox1)
+        Me.PanelControl2.Controls.Add(Me.btnEntregaDocumentos)
+        Me.PanelControl2.Controls.Add(Me.btnSolicitudDocumentos)
+        Me.PanelControl2.Controls.Add(Me.btnEfectuarPago)
         Me.PanelControl2.Controls.Add(Me.btnBuscar)
         Me.PanelControl2.Controls.Add(Me.btnListo)
         Me.PanelControl2.Controls.Add(Me.btnSolicitudPago)
@@ -167,29 +170,6 @@ Partial Class Inicio
         Me.MODIFICARUSUARIOSToolStripMenuItem.Name = "MODIFICARUSUARIOSToolStripMenuItem"
         Me.MODIFICARUSUARIOSToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
         Me.MODIFICARUSUARIOSToolStripMenuItem.Text = "MODIFICAR USUARIOS"
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.LabelDeparamento)
-        Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.GroupBox1.ForeColor = System.Drawing.Color.Gray
-        Me.GroupBox1.Location = New System.Drawing.Point(820, 21)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(431, 75)
-        Me.GroupBox1.TabIndex = 22
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "DEPARTAMENTO DE:"
-        '
-        'LabelDeparamento
-        '
-        Me.LabelDeparamento.AutoSize = True
-        Me.LabelDeparamento.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelDeparamento.ForeColor = System.Drawing.Color.DarkSeaGreen
-        Me.LabelDeparamento.Location = New System.Drawing.Point(6, 20)
-        Me.LabelDeparamento.Name = "LabelDeparamento"
-        Me.LabelDeparamento.Size = New System.Drawing.Size(111, 37)
-        Me.LabelDeparamento.TabIndex = 23
-        Me.LabelDeparamento.Text = "Label1"
         '
         'btnBuscar
         '
@@ -366,13 +346,64 @@ Partial Class Inicio
         Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuarioTableAdapter = Me.UsuarioTableAdapter
         '
+        'btnEfectuarPago
+        '
+        Me.btnEfectuarPago.BackColor = System.Drawing.Color.White
+        Me.btnEfectuarPago.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEfectuarPago.FlatAppearance.BorderSize = 0
+        Me.btnEfectuarPago.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.btnEfectuarPago.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnEfectuarPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEfectuarPago.Image = Global.creditosHipotecarios.My.Resources.Resources.pagar
+        Me.btnEfectuarPago.Location = New System.Drawing.Point(761, -55)
+        Me.btnEfectuarPago.Name = "btnEfectuarPago"
+        Me.btnEfectuarPago.Size = New System.Drawing.Size(92, 198)
+        Me.btnEfectuarPago.TabIndex = 22
+        Me.btnEfectuarPago.Text = "SOLICITAR DOCUMENTOS"
+        Me.btnEfectuarPago.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnEfectuarPago.UseVisualStyleBackColor = False
+        '
+        'btnSolicitudDocumentos
+        '
+        Me.btnSolicitudDocumentos.BackColor = System.Drawing.Color.White
+        Me.btnSolicitudDocumentos.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSolicitudDocumentos.FlatAppearance.BorderSize = 0
+        Me.btnSolicitudDocumentos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.btnSolicitudDocumentos.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnSolicitudDocumentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSolicitudDocumentos.Image = Global.creditosHipotecarios.My.Resources.Resources.pagar
+        Me.btnSolicitudDocumentos.Location = New System.Drawing.Point(873, -50)
+        Me.btnSolicitudDocumentos.Name = "btnSolicitudDocumentos"
+        Me.btnSolicitudDocumentos.Size = New System.Drawing.Size(87, 195)
+        Me.btnSolicitudDocumentos.TabIndex = 23
+        Me.btnSolicitudDocumentos.Text = "ENTREGA AL CLIENTE"
+        Me.btnSolicitudDocumentos.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSolicitudDocumentos.UseVisualStyleBackColor = False
+        '
+        'btnEntregaDocumentos
+        '
+        Me.btnEntregaDocumentos.BackColor = System.Drawing.Color.White
+        Me.btnEntregaDocumentos.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEntregaDocumentos.FlatAppearance.BorderSize = 0
+        Me.btnEntregaDocumentos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.btnEntregaDocumentos.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnEntregaDocumentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEntregaDocumentos.Image = Global.creditosHipotecarios.My.Resources.Resources.pagar
+        Me.btnEntregaDocumentos.Location = New System.Drawing.Point(978, -50)
+        Me.btnEntregaDocumentos.Name = "btnEntregaDocumentos"
+        Me.btnEntregaDocumentos.Size = New System.Drawing.Size(82, 195)
+        Me.btnEntregaDocumentos.TabIndex = 24
+        Me.btnEntregaDocumentos.Text = "ACTA CANCELADA"
+        Me.btnEntregaDocumentos.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnEntregaDocumentos.UseVisualStyleBackColor = False
+        '
         'Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1268, 780)
+        Me.ClientSize = New System.Drawing.Size(1268, 773)
         Me.Controls.Add(Me.PanelControl2)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.RibbonControl1)
@@ -387,8 +418,6 @@ Partial Class Inicio
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         Me.ContextMenuStrip2.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -421,6 +450,7 @@ Partial Class Inicio
     Friend WithEvents DataSetCreditos As creditosHipotecarios.DataSetCreditos
     Friend WithEvents UsuarioTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.UsuarioTableAdapter
     Friend WithEvents TableAdapterManager As creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents LabelDeparamento As System.Windows.Forms.Label
+    Friend WithEvents btnEntregaDocumentos As System.Windows.Forms.Button
+    Friend WithEvents btnSolicitudDocumentos As System.Windows.Forms.Button
+    Friend WithEvents btnEfectuarPago As System.Windows.Forms.Button
 End Class
