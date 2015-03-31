@@ -52,7 +52,7 @@ Public Class enProtocolo
            
             'SI SE VA ACTUALIZAR EL ESTADO DE IP DEBERA PERDIR UN NUMERO DE IP EN EL FORMULARIO IP
 
-            If Me.Text = "ESCRITURA AL IP" Then
+            If Me.Text = "PARA EN IP" Then
 
                 Dim dict As Hashtable = obtenerDatos()
                 Dim hipotecaEstadoId As String = dict("hipotecaEstadoId")
@@ -115,6 +115,7 @@ Public Class enProtocolo
                     HipotecaEstadoTableAdapter.UpdateQuery(estadoId, DateTime.Now(), UsuarioActivo.usuario, hipotecaEstadoId)
 
                     With preview
+
                         .PrintingSystem = ps
                         .Text = String.Format("Reporte, #{0}", idPrest)
                         .MdiParent = Me.MdiParent
@@ -136,14 +137,14 @@ Public Class enProtocolo
 
                 If MsgBox("¿Actualizar el estado?", MsgBoxStyle.Question + vbYesNo) = vbYes Then
                     HipotecaEstadoTableAdapter.UpdateQuery(estadoId, DateTime.Now(), UsuarioActivo.usuario, hipotecaEstadoId)
-                    End If
+                End If
 
-                    'CARGAR DATOS
+                'CARGAR DATOS
                 cargarDatos()
 
                 With buscarHipoteca
                     .cargarDaos()
-                    End With
+                End With
 
             End If
 

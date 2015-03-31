@@ -1,4 +1,5 @@
 ﻿Public Class ReportMemo
+    Public hipotecaEstado As Integer
 
 
     Public Sub New(ByRef NumFactura As Integer)

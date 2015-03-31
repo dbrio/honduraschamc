@@ -15,41 +15,60 @@ Partial Class Inicio
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inicio))
         Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ESTADOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
+        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.MODIFICARUSUARIOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DataSetCreditos = New creditosHipotecarios.DataSetCreditos()
+        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.UsuarioTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.UsuarioTableAdapter()
+        Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.btnAddHipoteca = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
-        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.MODIFICARUSUARIOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ESTADOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.btnListo = New System.Windows.Forms.Button()
-        Me.btnSolicitudPago = New System.Windows.Forms.Button()
-        Me.btnProtocolo = New System.Windows.Forms.Button()
-        Me.btnFirmaGerencia = New System.Windows.Forms.Button()
-        Me.btnFirmaCliente = New System.Windows.Forms.Button()
-        Me.btnCustodio = New System.Windows.Forms.Button()
-        Me.btnPresentacion = New System.Windows.Forms.Button()
-        Me.DataSetCreditos = New creditosHipotecarios.DataSetCreditos()
-        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.UsuarioTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.UsuarioTableAdapter()
-        Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
-        Me.btnEfectuarPago = New System.Windows.Forms.Button()
-        Me.btnSolicitudDocumentos = New System.Windows.Forms.Button()
-        Me.btnEntregaDocumentos = New System.Windows.Forms.Button()
+        Me.RibbonControl2 = New DevExpress.XtraBars.Ribbon.RibbonControl()
+        Me.btnBuscar = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnListo = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnProtocolo = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnFirmaCliente = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnFirmaGerente = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnPresentacion = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnCustodia = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnSolicitudPago = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnEfectuarPago = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem11 = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnSolicitudDocumentos = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnEntregaDocumentos = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnEstado = New DevExpress.XtraBars.BarButtonItem()
+        Me.RibEstado = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.pageBuscar = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.pageEstado = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.pageProtocoloListo = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.pageFirmaCliente = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.pageFirmaGerente = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.pageIP = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.pageEnviarCustodia = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.pageSolicitarPago = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.pageEfectuarPago = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.pageSolicitarDocumentos = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.pageEntregaCliente = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.pageCancelar = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibReportes = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.RibAdmin = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip1.SuspendLayout()
+        Me.ContextMenuStrip2.SuspendLayout()
+        CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
-        Me.ContextMenuStrip2.SuspendLayout()
-        Me.ContextMenuStrip1.SuspendLayout()
-        CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RibbonControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'XtraTabbedMdiManager1
@@ -70,8 +89,20 @@ Partial Class Inicio
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControl1.Location = New System.Drawing.Point(0, 121)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(1435, 635)
+        Me.PanelControl1.Size = New System.Drawing.Size(1435, 752)
         Me.PanelControl1.TabIndex = 2
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ESTADOToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(119, 26)
+        '
+        'ESTADOToolStripMenuItem
+        '
+        Me.ESTADOToolStripMenuItem.Name = "ESTADOToolStripMenuItem"
+        Me.ESTADOToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
+        Me.ESTADOToolStripMenuItem.Text = "ESTADO"
         '
         'BarButtonItem1
         '
@@ -93,6 +124,44 @@ Partial Class Inicio
         Me.BarButtonItem1.ItemInMenuAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
         Me.BarButtonItem1.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.add
         Me.BarButtonItem1.Name = "BarButtonItem1"
+        '
+        'ContextMenuStrip2
+        '
+        Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MODIFICARUSUARIOSToolStripMenuItem})
+        Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
+        Me.ContextMenuStrip2.Size = New System.Drawing.Size(196, 26)
+        '
+        'MODIFICARUSUARIOSToolStripMenuItem
+        '
+        Me.MODIFICARUSUARIOSToolStripMenuItem.Name = "MODIFICARUSUARIOSToolStripMenuItem"
+        Me.MODIFICARUSUARIOSToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
+        Me.MODIFICARUSUARIOSToolStripMenuItem.Text = "MODIFICAR USUARIOS"
+        '
+        'DataSetCreditos
+        '
+        Me.DataSetCreditos.DataSetName = "DataSetCreditos"
+        Me.DataSetCreditos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'UsuarioBindingSource
+        '
+        Me.UsuarioBindingSource.DataMember = "Usuario"
+        Me.UsuarioBindingSource.DataSource = Me.DataSetCreditos
+        '
+        'UsuarioTableAdapter
+        '
+        Me.UsuarioTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.AbogadoTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.EventoTableAdapter = Nothing
+        Me.TableAdapterManager.hipotecaEstadoTableAdapter = Nothing
+        Me.TableAdapterManager.HipotecaTableAdapter = Nothing
+        Me.TableAdapterManager.MemoTableAdapter = Nothing
+        Me.TableAdapterManager.prestamoTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UsuarioTableAdapter = Me.UsuarioTableAdapter
         '
         'RibbonPage1
         '
@@ -143,259 +212,269 @@ Partial Class Inicio
         Me.PanelControl2.Appearance.Options.UseBackColor = True
         Me.PanelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl2.ContextMenuStrip = Me.ContextMenuStrip2
-        Me.PanelControl2.Controls.Add(Me.btnEntregaDocumentos)
-        Me.PanelControl2.Controls.Add(Me.btnSolicitudDocumentos)
-        Me.PanelControl2.Controls.Add(Me.btnEfectuarPago)
-        Me.PanelControl2.Controls.Add(Me.btnBuscar)
-        Me.PanelControl2.Controls.Add(Me.btnListo)
-        Me.PanelControl2.Controls.Add(Me.btnSolicitudPago)
-        Me.PanelControl2.Controls.Add(Me.btnProtocolo)
-        Me.PanelControl2.Controls.Add(Me.btnFirmaGerencia)
-        Me.PanelControl2.Controls.Add(Me.btnFirmaCliente)
-        Me.PanelControl2.Controls.Add(Me.btnCustodio)
-        Me.PanelControl2.Controls.Add(Me.btnPresentacion)
+        Me.PanelControl2.Controls.Add(Me.RibbonControl2)
         Me.PanelControl2.Location = New System.Drawing.Point(0, -11)
         Me.PanelControl2.Name = "PanelControl2"
         Me.PanelControl2.Size = New System.Drawing.Size(1435, 153)
         Me.PanelControl2.TabIndex = 4
         '
-        'ContextMenuStrip2
+        'RibbonControl2
         '
-        Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MODIFICARUSUARIOSToolStripMenuItem})
-        Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
-        Me.ContextMenuStrip2.Size = New System.Drawing.Size(196, 26)
-        '
-        'MODIFICARUSUARIOSToolStripMenuItem
-        '
-        Me.MODIFICARUSUARIOSToolStripMenuItem.Name = "MODIFICARUSUARIOSToolStripMenuItem"
-        Me.MODIFICARUSUARIOSToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
-        Me.MODIFICARUSUARIOSToolStripMenuItem.Text = "MODIFICAR USUARIOS"
+        Me.RibbonControl2.ExpandCollapseItem.Id = 0
+        Me.RibbonControl2.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl2.ExpandCollapseItem, Me.btnBuscar, Me.btnListo, Me.btnProtocolo, Me.btnFirmaCliente, Me.btnFirmaGerente, Me.btnPresentacion, Me.btnCustodia, Me.btnSolicitudPago, Me.btnEfectuarPago, Me.BarButtonItem11, Me.btnSolicitudDocumentos, Me.btnEntregaDocumentos, Me.btnEstado})
+        Me.RibbonControl2.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonControl2.MaxItemId = 20
+        Me.RibbonControl2.Name = "RibbonControl2"
+        Me.RibbonControl2.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibEstado, Me.RibReportes, Me.RibAdmin})
+        Me.RibbonControl2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007
+        Me.RibbonControl2.Size = New System.Drawing.Size(1435, 47)
+        Me.RibbonControl2.TransparentEditors = True
         '
         'btnBuscar
         '
-        Me.btnBuscar.BackColor = System.Drawing.Color.White
-        Me.btnBuscar.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBuscar.FlatAppearance.BorderSize = 0
-        Me.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscar.Image = Global.creditosHipotecarios.My.Resources.Resources.buscar
-        Me.btnBuscar.Location = New System.Drawing.Point(4, -31)
+        Me.btnBuscar.Caption = "AGREGAR"
+        Me.btnBuscar.DropDownEnabled = False
+        Me.btnBuscar.Id = 2
+        Me.btnBuscar.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.add
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(79, 174)
-        Me.btnBuscar.TabIndex = 21
-        Me.btnBuscar.Text = "BUSCAR"
-        Me.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnBuscar.UseVisualStyleBackColor = False
-        '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ESTADOToolStripMenuItem})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(119, 26)
-        '
-        'ESTADOToolStripMenuItem
-        '
-        Me.ESTADOToolStripMenuItem.Name = "ESTADOToolStripMenuItem"
-        Me.ESTADOToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
-        Me.ESTADOToolStripMenuItem.Text = "ESTADO"
         '
         'btnListo
         '
-        Me.btnListo.BackColor = System.Drawing.Color.White
-        Me.btnListo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnListo.FlatAppearance.BorderSize = 0
-        Me.btnListo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.btnListo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnListo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnListo.Image = Global.creditosHipotecarios.My.Resources.Resources._1426294923_document
-        Me.btnListo.Location = New System.Drawing.Point(92, -51)
+        Me.btnListo.Caption = "PROTOCOLO LISTO"
+        Me.btnListo.Id = 3
+        Me.btnListo.ItemAppearance.Disabled.Options.UseTextOptions = True
+        Me.btnListo.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        Me.btnListo.ItemAppearance.Hovered.Options.UseTextOptions = True
+        Me.btnListo.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        Me.btnListo.ItemAppearance.Normal.Options.UseTextOptions = True
+        Me.btnListo.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
+        Me.btnListo.ItemAppearance.Pressed.Options.UseTextOptions = True
+        Me.btnListo.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        Me.btnListo.ItemInMenuAppearance.Hovered.Options.UseTextOptions = True
+        Me.btnListo.ItemInMenuAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
+        Me.btnListo.ItemInMenuAppearance.Normal.Options.UseTextOptions = True
+        Me.btnListo.ItemInMenuAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
+        Me.btnListo.ItemInMenuAppearance.Pressed.Options.UseTextOptions = True
+        Me.btnListo.ItemInMenuAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
+        Me.btnListo.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources._1426294923_document
         Me.btnListo.Name = "btnListo"
-        Me.btnListo.Size = New System.Drawing.Size(82, 196)
-        Me.btnListo.TabIndex = 20
-        Me.btnListo.Text = "PROTOCOLO LISTO"
-        Me.btnListo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnListo.UseVisualStyleBackColor = False
-        '
-        'btnSolicitudPago
-        '
-        Me.btnSolicitudPago.BackColor = System.Drawing.Color.White
-        Me.btnSolicitudPago.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSolicitudPago.FlatAppearance.BorderSize = 0
-        Me.btnSolicitudPago.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.btnSolicitudPago.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnSolicitudPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSolicitudPago.Image = Global.creditosHipotecarios.My.Resources.Resources.pagar
-        Me.btnSolicitudPago.Location = New System.Drawing.Point(664, -50)
-        Me.btnSolicitudPago.Name = "btnSolicitudPago"
-        Me.btnSolicitudPago.Size = New System.Drawing.Size(82, 195)
-        Me.btnSolicitudPago.TabIndex = 18
-        Me.btnSolicitudPago.Text = "EFECTURAR PAGO"
-        Me.btnSolicitudPago.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnSolicitudPago.UseVisualStyleBackColor = False
         '
         'btnProtocolo
         '
-        Me.btnProtocolo.BackColor = System.Drawing.Color.White
-        Me.btnProtocolo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnProtocolo.FlatAppearance.BorderSize = 0
-        Me.btnProtocolo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.btnProtocolo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnProtocolo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnProtocolo.Image = Global.creditosHipotecarios.My.Resources.Resources._1426295057_man
-        Me.btnProtocolo.Location = New System.Drawing.Point(187, -50)
+        Me.btnProtocolo.Caption = "PARA FIRMA DE CLIENTE"
+        Me.btnProtocolo.Id = 4
+        Me.btnProtocolo.ItemAppearance.Disabled.Options.UseTextOptions = True
+        Me.btnProtocolo.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        Me.btnProtocolo.ItemAppearance.Hovered.Options.UseTextOptions = True
+        Me.btnProtocolo.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        Me.btnProtocolo.ItemAppearance.Normal.Options.UseTextOptions = True
+        Me.btnProtocolo.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
+        Me.btnProtocolo.ItemInMenuAppearance.Disabled.Options.UseTextOptions = True
+        Me.btnProtocolo.ItemInMenuAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        Me.btnProtocolo.ItemInMenuAppearance.Hovered.Options.UseTextOptions = True
+        Me.btnProtocolo.ItemInMenuAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        Me.btnProtocolo.ItemInMenuAppearance.Normal.Options.UseTextOptions = True
+        Me.btnProtocolo.ItemInMenuAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        Me.btnProtocolo.ItemInMenuAppearance.Pressed.Options.UseTextOptions = True
+        Me.btnProtocolo.ItemInMenuAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        Me.btnProtocolo.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.cliente2
         Me.btnProtocolo.Name = "btnProtocolo"
-        Me.btnProtocolo.Size = New System.Drawing.Size(81, 196)
-        Me.btnProtocolo.TabIndex = 5
-        Me.btnProtocolo.Text = "PARA FIRMA CLIENTES"
-        Me.btnProtocolo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnProtocolo.UseVisualStyleBackColor = False
-        '
-        'btnFirmaGerencia
-        '
-        Me.btnFirmaGerencia.BackColor = System.Drawing.Color.White
-        Me.btnFirmaGerencia.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnFirmaGerencia.FlatAppearance.BorderSize = 0
-        Me.btnFirmaGerencia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.btnFirmaGerencia.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnFirmaGerencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnFirmaGerencia.Image = Global.creditosHipotecarios.My.Resources.Resources._1426294964_pencil_128
-        Me.btnFirmaGerencia.Location = New System.Drawing.Point(376, -48)
-        Me.btnFirmaGerencia.Name = "btnFirmaGerencia"
-        Me.btnFirmaGerencia.Size = New System.Drawing.Size(81, 195)
-        Me.btnFirmaGerencia.TabIndex = 16
-        Me.btnFirmaGerencia.Text = "ESCRITURA AL IP"
-        Me.btnFirmaGerencia.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnFirmaGerencia.UseVisualStyleBackColor = False
         '
         'btnFirmaCliente
         '
-        Me.btnFirmaCliente.BackColor = System.Drawing.Color.White
-        Me.btnFirmaCliente.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnFirmaCliente.FlatAppearance.BorderSize = 0
-        Me.btnFirmaCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.btnFirmaCliente.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnFirmaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnFirmaCliente.Image = Global.creditosHipotecarios.My.Resources.Resources.manager_01
-        Me.btnFirmaCliente.Location = New System.Drawing.Point(282, -48)
+        Me.btnFirmaCliente.Caption = "PARA FIRMA GERENCIA"
+        Me.btnFirmaCliente.Id = 5
+        Me.btnFirmaCliente.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.manager
         Me.btnFirmaCliente.Name = "btnFirmaCliente"
-        Me.btnFirmaCliente.Size = New System.Drawing.Size(80, 195)
-        Me.btnFirmaCliente.TabIndex = 7
-        Me.btnFirmaCliente.Text = "PARA FIRMA GERENCIA"
-        Me.btnFirmaCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnFirmaCliente.UseVisualStyleBackColor = False
         '
-        'btnCustodio
+        'btnFirmaGerente
         '
-        Me.btnCustodio.BackColor = System.Drawing.Color.White
-        Me.btnCustodio.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCustodio.FlatAppearance.BorderSize = 0
-        Me.btnCustodio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.btnCustodio.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnCustodio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCustodio.Image = Global.creditosHipotecarios.My.Resources.Resources._1426298110_Tag_128
-        Me.btnCustodio.Location = New System.Drawing.Point(567, -44)
-        Me.btnCustodio.Name = "btnCustodio"
-        Me.btnCustodio.Size = New System.Drawing.Size(81, 189)
-        Me.btnCustodio.TabIndex = 11
-        Me.btnCustodio.Text = "SOLICITAR PAGO"
-        Me.btnCustodio.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnCustodio.UseVisualStyleBackColor = False
+        Me.btnFirmaGerente.Caption = "PARA EN IP"
+        Me.btnFirmaGerente.Id = 6
+        Me.btnFirmaGerente.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources._1426294964_pencil_128
+        Me.btnFirmaGerente.Name = "btnFirmaGerente"
         '
         'btnPresentacion
         '
-        Me.btnPresentacion.BackColor = System.Drawing.Color.White
-        Me.btnPresentacion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnPresentacion.FlatAppearance.BorderSize = 0
-        Me.btnPresentacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.btnPresentacion.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnPresentacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPresentacion.Image = Global.creditosHipotecarios.My.Resources.Resources.custodia_01
-        Me.btnPresentacion.Location = New System.Drawing.Point(471, -52)
+        Me.btnPresentacion.Caption = "EVIAR A CUSTODIA"
+        Me.btnPresentacion.Id = 7
+        Me.btnPresentacion.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.custodia
         Me.btnPresentacion.Name = "btnPresentacion"
-        Me.btnPresentacion.Size = New System.Drawing.Size(81, 199)
-        Me.btnPresentacion.TabIndex = 9
-        Me.btnPresentacion.Text = "EVIAR A CUSTODIA"
-        Me.btnPresentacion.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnPresentacion.UseVisualStyleBackColor = False
         '
-        'DataSetCreditos
+        'btnCustodia
         '
-        Me.DataSetCreditos.DataSetName = "DataSetCreditos"
-        Me.DataSetCreditos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.btnCustodia.Caption = "SOLICITAR PAGO"
+        Me.btnCustodia.Id = 8
+        Me.btnCustodia.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.solicitudPago
+        Me.btnCustodia.Name = "btnCustodia"
         '
-        'UsuarioBindingSource
+        'btnSolicitudPago
         '
-        Me.UsuarioBindingSource.DataMember = "Usuario"
-        Me.UsuarioBindingSource.DataSource = Me.DataSetCreditos
-        '
-        'UsuarioTableAdapter
-        '
-        Me.UsuarioTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.AbogadoTableAdapter = Nothing
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.EventoTableAdapter = Nothing
-        Me.TableAdapterManager.hipotecaEstadoTableAdapter = Nothing
-        Me.TableAdapterManager.HipotecaTableAdapter = Nothing
-        Me.TableAdapterManager.MemoTableAdapter = Nothing
-        Me.TableAdapterManager.prestamoTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.UsuarioTableAdapter = Me.UsuarioTableAdapter
+        Me.btnSolicitudPago.Caption = "EFECTURAR PAGO"
+        Me.btnSolicitudPago.Id = 9
+        Me.btnSolicitudPago.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.pagar
+        Me.btnSolicitudPago.Name = "btnSolicitudPago"
         '
         'btnEfectuarPago
         '
-        Me.btnEfectuarPago.BackColor = System.Drawing.Color.White
-        Me.btnEfectuarPago.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnEfectuarPago.FlatAppearance.BorderSize = 0
-        Me.btnEfectuarPago.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.btnEfectuarPago.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnEfectuarPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEfectuarPago.Image = Global.creditosHipotecarios.My.Resources.Resources.pagar
-        Me.btnEfectuarPago.Location = New System.Drawing.Point(761, -55)
+        Me.btnEfectuarPago.Caption = "SOLICITAR DOCUMENTOS"
+        Me.btnEfectuarPago.Id = 10
+        Me.btnEfectuarPago.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.document2
         Me.btnEfectuarPago.Name = "btnEfectuarPago"
-        Me.btnEfectuarPago.Size = New System.Drawing.Size(92, 198)
-        Me.btnEfectuarPago.TabIndex = 22
-        Me.btnEfectuarPago.Text = "SOLICITAR DOCUMENTOS"
-        Me.btnEfectuarPago.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnEfectuarPago.UseVisualStyleBackColor = False
+        '
+        'BarButtonItem11
+        '
+        Me.BarButtonItem11.Caption = "ENTREGAR DOCUMENTOS AL CLIENTE"
+        Me.BarButtonItem11.Id = 11
+        Me.BarButtonItem11.Name = "BarButtonItem11"
         '
         'btnSolicitudDocumentos
         '
-        Me.btnSolicitudDocumentos.BackColor = System.Drawing.Color.White
-        Me.btnSolicitudDocumentos.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSolicitudDocumentos.FlatAppearance.BorderSize = 0
-        Me.btnSolicitudDocumentos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.btnSolicitudDocumentos.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnSolicitudDocumentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSolicitudDocumentos.Image = Global.creditosHipotecarios.My.Resources.Resources.pagar
-        Me.btnSolicitudDocumentos.Location = New System.Drawing.Point(873, -50)
+        Me.btnSolicitudDocumentos.Caption = "ENTREGA AL CLIENTE"
+        Me.btnSolicitudDocumentos.Id = 17
+        Me.btnSolicitudDocumentos.ItemAppearance.Disabled.Options.UseTextOptions = True
+        Me.btnSolicitudDocumentos.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
+        Me.btnSolicitudDocumentos.ItemAppearance.Hovered.Options.UseTextOptions = True
+        Me.btnSolicitudDocumentos.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
+        Me.btnSolicitudDocumentos.ItemAppearance.Normal.Options.UseTextOptions = True
+        Me.btnSolicitudDocumentos.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
+        Me.btnSolicitudDocumentos.ItemAppearance.Pressed.Options.UseTextOptions = True
+        Me.btnSolicitudDocumentos.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        Me.btnSolicitudDocumentos.ItemInMenuAppearance.Disabled.Options.UseTextOptions = True
+        Me.btnSolicitudDocumentos.ItemInMenuAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        Me.btnSolicitudDocumentos.ItemInMenuAppearance.Hovered.Options.UseTextOptions = True
+        Me.btnSolicitudDocumentos.ItemInMenuAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        Me.btnSolicitudDocumentos.ItemInMenuAppearance.Normal.Options.UseTextOptions = True
+        Me.btnSolicitudDocumentos.ItemInMenuAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        Me.btnSolicitudDocumentos.ItemInMenuAppearance.Pressed.Options.UseTextOptions = True
+        Me.btnSolicitudDocumentos.ItemInMenuAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        Me.btnSolicitudDocumentos.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.entregarc
         Me.btnSolicitudDocumentos.Name = "btnSolicitudDocumentos"
-        Me.btnSolicitudDocumentos.Size = New System.Drawing.Size(87, 195)
-        Me.btnSolicitudDocumentos.TabIndex = 23
-        Me.btnSolicitudDocumentos.Text = "ENTREGA AL CLIENTE"
-        Me.btnSolicitudDocumentos.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnSolicitudDocumentos.UseVisualStyleBackColor = False
         '
         'btnEntregaDocumentos
         '
-        Me.btnEntregaDocumentos.BackColor = System.Drawing.Color.White
-        Me.btnEntregaDocumentos.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnEntregaDocumentos.FlatAppearance.BorderSize = 0
-        Me.btnEntregaDocumentos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.btnEntregaDocumentos.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnEntregaDocumentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEntregaDocumentos.Image = Global.creditosHipotecarios.My.Resources.Resources.pagar
-        Me.btnEntregaDocumentos.Location = New System.Drawing.Point(978, -50)
+        Me.btnEntregaDocumentos.Caption = "CANCELACION DE ACTA"
+        Me.btnEntregaDocumentos.Id = 18
+        Me.btnEntregaDocumentos.ItemAppearance.Disabled.Options.UseTextOptions = True
+        Me.btnEntregaDocumentos.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        Me.btnEntregaDocumentos.ItemAppearance.Hovered.Options.UseTextOptions = True
+        Me.btnEntregaDocumentos.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        Me.btnEntregaDocumentos.ItemAppearance.Normal.Options.UseTextOptions = True
+        Me.btnEntregaDocumentos.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
+        Me.btnEntregaDocumentos.ItemAppearance.Pressed.Options.UseTextOptions = True
+        Me.btnEntregaDocumentos.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        Me.btnEntregaDocumentos.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.cancelar
         Me.btnEntregaDocumentos.Name = "btnEntregaDocumentos"
-        Me.btnEntregaDocumentos.Size = New System.Drawing.Size(82, 195)
-        Me.btnEntregaDocumentos.TabIndex = 24
-        Me.btnEntregaDocumentos.Text = "ACTA CANCELADA"
-        Me.btnEntregaDocumentos.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnEntregaDocumentos.UseVisualStyleBackColor = False
+        '
+        'btnEstado
+        '
+        Me.btnEstado.Caption = "ESTADO"
+        Me.btnEstado.Id = 19
+        Me.btnEstado.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.buscar
+        Me.btnEstado.Name = "btnEstado"
+        '
+        'RibEstado
+        '
+        Me.RibEstado.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.pageBuscar, Me.pageEstado, Me.pageProtocoloListo, Me.pageFirmaCliente, Me.pageFirmaGerente, Me.pageIP, Me.pageEnviarCustodia, Me.pageSolicitarPago, Me.pageEfectuarPago, Me.pageSolicitarDocumentos, Me.pageEntregaCliente, Me.pageCancelar})
+        Me.RibEstado.Name = "RibEstado"
+        Me.RibEstado.Text = "ESTADOS"
+        Me.RibEstado.Visible = False
+        '
+        'pageBuscar
+        '
+        Me.pageBuscar.ItemLinks.Add(Me.btnBuscar)
+        Me.pageBuscar.Name = "pageBuscar"
+        Me.pageBuscar.ShowCaptionButton = False
+        Me.pageBuscar.Visible = False
+        '
+        'pageEstado
+        '
+        Me.pageEstado.ItemLinks.Add(Me.btnEstado)
+        Me.pageEstado.Name = "pageEstado"
+        Me.pageEstado.ShowCaptionButton = False
+        Me.pageEstado.Visible = False
+        '
+        'pageProtocoloListo
+        '
+        Me.pageProtocoloListo.ItemLinks.Add(Me.btnListo)
+        Me.pageProtocoloListo.Name = "pageProtocoloListo"
+        Me.pageProtocoloListo.ShowCaptionButton = False
+        Me.pageProtocoloListo.Visible = False
+        '
+        'pageFirmaCliente
+        '
+        Me.pageFirmaCliente.ItemLinks.Add(Me.btnProtocolo)
+        Me.pageFirmaCliente.Name = "pageFirmaCliente"
+        Me.pageFirmaCliente.ShowCaptionButton = False
+        Me.pageFirmaCliente.Visible = False
+        '
+        'pageFirmaGerente
+        '
+        Me.pageFirmaGerente.ItemLinks.Add(Me.btnFirmaCliente)
+        Me.pageFirmaGerente.Name = "pageFirmaGerente"
+        Me.pageFirmaGerente.ShowCaptionButton = False
+        Me.pageFirmaGerente.Visible = False
+        '
+        'pageIP
+        '
+        Me.pageIP.ItemLinks.Add(Me.btnFirmaGerente)
+        Me.pageIP.Name = "pageIP"
+        Me.pageIP.ShowCaptionButton = False
+        Me.pageIP.Visible = False
+        '
+        'pageEnviarCustodia
+        '
+        Me.pageEnviarCustodia.ItemLinks.Add(Me.btnPresentacion)
+        Me.pageEnviarCustodia.Name = "pageEnviarCustodia"
+        Me.pageEnviarCustodia.ShowCaptionButton = False
+        Me.pageEnviarCustodia.Visible = False
+        '
+        'pageSolicitarPago
+        '
+        Me.pageSolicitarPago.ItemLinks.Add(Me.btnCustodia)
+        Me.pageSolicitarPago.Name = "pageSolicitarPago"
+        Me.pageSolicitarPago.ShowCaptionButton = False
+        Me.pageSolicitarPago.Visible = False
+        '
+        'pageEfectuarPago
+        '
+        Me.pageEfectuarPago.ItemLinks.Add(Me.btnSolicitudPago)
+        Me.pageEfectuarPago.Name = "pageEfectuarPago"
+        Me.pageEfectuarPago.ShowCaptionButton = False
+        Me.pageEfectuarPago.Visible = False
+        '
+        'pageSolicitarDocumentos
+        '
+        Me.pageSolicitarDocumentos.ItemLinks.Add(Me.btnEfectuarPago)
+        Me.pageSolicitarDocumentos.Name = "pageSolicitarDocumentos"
+        Me.pageSolicitarDocumentos.ShowCaptionButton = False
+        Me.pageSolicitarDocumentos.Visible = False
+        '
+        'pageEntregaCliente
+        '
+        Me.pageEntregaCliente.ItemLinks.Add(Me.btnSolicitudDocumentos)
+        Me.pageEntregaCliente.Name = "pageEntregaCliente"
+        Me.pageEntregaCliente.ShowCaptionButton = False
+        Me.pageEntregaCliente.Visible = False
+        '
+        'pageCancelar
+        '
+        Me.pageCancelar.ItemLinks.Add(Me.btnEntregaDocumentos)
+        Me.pageCancelar.Name = "pageCancelar"
+        Me.pageCancelar.ShowCaptionButton = False
+        Me.pageCancelar.Visible = False
+        '
+        'RibReportes
+        '
+        Me.RibReportes.Name = "RibReportes"
+        Me.RibReportes.Text = "REPORTES"
+        Me.RibReportes.Visible = False
+        '
+        'RibAdmin
+        '
+        Me.RibAdmin.Name = "RibAdmin"
+        Me.RibAdmin.Text = "ADMINISTRAR"
+        Me.RibAdmin.Visible = False
         '
         'Inicio
         '
@@ -403,7 +482,7 @@ Partial Class Inicio
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1268, 773)
+        Me.ClientSize = New System.Drawing.Size(1271, 890)
         Me.Controls.Add(Me.PanelControl2)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.RibbonControl1)
@@ -414,34 +493,21 @@ Partial Class Inicio
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
+        Me.ContextMenuStrip2.ResumeLayout(False)
+        CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
-        Me.ContextMenuStrip2.ResumeLayout(False)
-        Me.ContextMenuStrip1.ResumeLayout(False)
-        CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RibbonControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents XtraTabbedMdiManager1 As DevExpress.XtraTabbedMdi.XtraTabbedMdiManager
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents DefaultLookAndFeel1 As DevExpress.LookAndFeel.DefaultLookAndFeel
     Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnAddHipoteca As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonItem3 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
-    Friend WithEvents PanelControl2 As DevExpress.XtraEditors.PanelControl
-    Private WithEvents RibbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
-    Friend WithEvents btnProtocolo As System.Windows.Forms.Button
-    Friend WithEvents btnFirmaCliente As System.Windows.Forms.Button
-    Friend WithEvents btnPresentacion As System.Windows.Forms.Button
-    Friend WithEvents btnCustodio As System.Windows.Forms.Button
-    Friend WithEvents btnFirmaGerencia As System.Windows.Forms.Button
-    Friend WithEvents btnSolicitudPago As System.Windows.Forms.Button
-    Friend WithEvents btnListo As System.Windows.Forms.Button
-    Friend WithEvents btnBuscar As System.Windows.Forms.Button
     Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents ESTADOToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ContextMenuStrip2 As System.Windows.Forms.ContextMenuStrip
@@ -450,7 +516,39 @@ Partial Class Inicio
     Friend WithEvents DataSetCreditos As creditosHipotecarios.DataSetCreditos
     Friend WithEvents UsuarioTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.UsuarioTableAdapter
     Friend WithEvents TableAdapterManager As creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager
-    Friend WithEvents btnEntregaDocumentos As System.Windows.Forms.Button
-    Friend WithEvents btnSolicitudDocumentos As System.Windows.Forms.Button
-    Friend WithEvents btnEfectuarPago As System.Windows.Forms.Button
+    Private WithEvents RibbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
+    Friend WithEvents btnAddHipoteca As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem3 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
+    Friend WithEvents PanelControl2 As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents RibbonControl2 As DevExpress.XtraBars.Ribbon.RibbonControl
+    Friend WithEvents btnBuscar As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnListo As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnProtocolo As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnFirmaCliente As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnFirmaGerente As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnPresentacion As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnCustodia As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnSolicitudPago As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnEfectuarPago As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem11 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnSolicitudDocumentos As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnEntregaDocumentos As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibEstado As DevExpress.XtraBars.Ribbon.RibbonPage
+    Friend WithEvents pageBuscar As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents pageProtocoloListo As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents pageFirmaCliente As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents pageFirmaGerente As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents pageIP As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents pageEnviarCustodia As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents pageSolicitarPago As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents pageEfectuarPago As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents pageSolicitarDocumentos As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents pageEntregaCliente As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents pageCancelar As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents RibReportes As DevExpress.XtraBars.Ribbon.RibbonPage
+    Friend WithEvents DefaultLookAndFeel1 As DevExpress.LookAndFeel.DefaultLookAndFeel
+    Friend WithEvents RibAdmin As DevExpress.XtraBars.Ribbon.RibbonPage
+    Friend WithEvents btnEstado As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents pageEstado As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class
