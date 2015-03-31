@@ -10,13 +10,11 @@
     Private Sub seguimiento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargar()
         Inicio.Enabled = False
-        Dim progreso As Double = CInt(EstadoIdLabel1.Text) * 100 / 8
+        Dim progreso As Double = CInt(EstadoIdLabel1.Text) * 100 / 11
         ProgressBar1.Minimum = 0
         ProgressBar1.Maximum = 100
         ProgressBar1.Value = progreso
         Me.Controls.Add(ProgressBar1)
-
-
 
     End Sub
 

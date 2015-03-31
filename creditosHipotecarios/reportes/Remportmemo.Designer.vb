@@ -292,7 +292,11 @@ Partial Public Class Remportmemo
 
         Private columnAbogado As Global.System.Data.DataColumn
 
-        Private columntotal As Global.System.Data.DataColumn
+        Private columntotalAgogado As Global.System.Data.DataColumn
+
+        Private columnTotalCredito As Global.System.Data.DataColumn
+
+        Private columnautorizacdopor As Global.System.Data.DataColumn
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
@@ -371,9 +375,25 @@ Partial Public Class Remportmemo
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property totalColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property totalAgogadoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columntotal
+                Return Me.columntotalAgogado
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property TotalCreditoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTotalCredito
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property autorizacdoporColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnautorizacdopor
             End Get
         End Property
 
@@ -414,9 +434,9 @@ Partial Public Class Remportmemo
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddMemoRow(ByVal gastos As Decimal, ByVal honorarios As Decimal, ByVal valorComisionAmc As Decimal, ByVal nombreCliente As String, ByVal Abogado As String, ByVal total As Decimal) As MemoRow
+        Public Overloads Function AddMemoRow(ByVal gastos As Decimal, ByVal honorarios As Decimal, ByVal valorComisionAmc As Decimal, ByVal nombreCliente As String, ByVal Abogado As String, ByVal totalAgogado As Decimal, ByVal TotalCredito As Decimal, ByVal autorizacdopor As String) As MemoRow
             Dim rowMemoRow As MemoRow = CType(Me.NewRow, MemoRow)
-            Dim columnValuesArray() As Object = New Object() {gastos, honorarios, valorComisionAmc, nombreCliente, Abogado, total}
+            Dim columnValuesArray() As Object = New Object() {gastos, honorarios, valorComisionAmc, nombreCliente, Abogado, totalAgogado, TotalCredito, autorizacdopor}
             rowMemoRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowMemoRow)
             Return rowMemoRow
@@ -444,7 +464,9 @@ Partial Public Class Remportmemo
             Me.columnvalorComisionAmc = MyBase.Columns("valorComisionAmc")
             Me.columnnombreCliente = MyBase.Columns("nombreCliente")
             Me.columnAbogado = MyBase.Columns("Abogado")
-            Me.columntotal = MyBase.Columns("total")
+            Me.columntotalAgogado = MyBase.Columns("totalAgogado")
+            Me.columnTotalCredito = MyBase.Columns("TotalCredito")
+            Me.columnautorizacdopor = MyBase.Columns("autorizacdopor")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -460,8 +482,12 @@ Partial Public Class Remportmemo
             MyBase.Columns.Add(Me.columnnombreCliente)
             Me.columnAbogado = New Global.System.Data.DataColumn("Abogado", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnAbogado)
-            Me.columntotal = New Global.System.Data.DataColumn("total", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columntotal)
+            Me.columntotalAgogado = New Global.System.Data.DataColumn("totalAgogado", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotalAgogado)
+            Me.columnTotalCredito = New Global.System.Data.DataColumn("TotalCredito", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTotalCredito)
+            Me.columnautorizacdopor = New Global.System.Data.DataColumn("autorizacdopor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnautorizacdopor)
             Me.columngastos.AllowDBNull = False
             Me.columnhonorarios.AllowDBNull = False
             Me.columnvalorComisionAmc.AllowDBNull = False
@@ -469,7 +495,10 @@ Partial Public Class Remportmemo
             Me.columnnombreCliente.MaxLength = 100
             Me.columnAbogado.ReadOnly = True
             Me.columnAbogado.MaxLength = 101
-            Me.columntotal.ReadOnly = True
+            Me.columntotalAgogado.ReadOnly = True
+            Me.columnTotalCredito.ReadOnly = True
+            Me.columnautorizacdopor.ReadOnly = True
+            Me.columnautorizacdopor.MaxLength = 101
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -675,16 +704,46 @@ Partial Public Class Remportmemo
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property total() As Decimal
+        Public Property totalAgogado() As Decimal
             Get
                 Try
-                    Return CType(Me(Me.tableMemo.totalColumn), Decimal)
+                    Return CType(Me(Me.tableMemo.totalAgogadoColumn), Decimal)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'total' de la tabla 'Memo' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'totalAgogado' de la tabla 'Memo' es DBNull.", e)
                 End Try
             End Get
             Set(value As Decimal)
-                Me(Me.tableMemo.totalColumn) = value
+                Me(Me.tableMemo.totalAgogadoColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property TotalCredito() As Decimal
+            Get
+                Try
+                    Return CType(Me(Me.tableMemo.TotalCreditoColumn), Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'TotalCredito' de la tabla 'Memo' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Decimal)
+                Me(Me.tableMemo.TotalCreditoColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property autorizacdopor() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableMemo.autorizacdoporColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'autorizacdopor' de la tabla 'Memo' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableMemo.autorizacdoporColumn) = value
             End Set
         End Property
 
@@ -702,14 +761,38 @@ Partial Public Class Remportmemo
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Function IstotalNull() As Boolean
-            Return Me.IsNull(Me.tableMemo.totalColumn)
+        Public Function IstotalAgogadoNull() As Boolean
+            Return Me.IsNull(Me.tableMemo.totalAgogadoColumn)
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Sub SettotalNull()
-            Me(Me.tableMemo.totalColumn) = Global.System.Convert.DBNull
+        Public Sub SettotalAgogadoNull()
+            Me(Me.tableMemo.totalAgogadoColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsTotalCreditoNull() As Boolean
+            Return Me.IsNull(Me.tableMemo.TotalCreditoColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetTotalCreditoNull()
+            Me(Me.tableMemo.TotalCreditoColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsautorizacdoporNull() As Boolean
+            Return Me.IsNull(Me.tableMemo.autorizacdoporColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetautorizacdoporNull()
+            Me(Me.tableMemo.autorizacdoporColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
 
@@ -854,7 +937,9 @@ Namespace RemportmemoTableAdapters
             tableMapping.ColumnMappings.Add("valorComisionAmc", "valorComisionAmc")
             tableMapping.ColumnMappings.Add("nombreCliente", "nombreCliente")
             tableMapping.ColumnMappings.Add("Abogado", "Abogado")
-            tableMapping.ColumnMappings.Add("total", "total")
+            tableMapping.ColumnMappings.Add("totalAgogado", "totalAgogado")
+            tableMapping.ColumnMappings.Add("TotalCredito", "TotalCredito")
+            tableMapping.ColumnMappings.Add("autorizacdopor", "autorizacdopor")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
 
@@ -872,11 +957,15 @@ Namespace RemportmemoTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT a.nombres + '' + a.apellidos as Abogado, p.nombreCliente, m.gastos, m.hono" & _
-                "rarios, m.valorComisionAmc,(m.gastos + m.honorarios + m.valorComisionAmc) as tot" & _
-                "al FROM Memo m" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN Hipoteca h" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ON M.hipotecaId = h.hipotecaId" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOI" & _
-                "N prestamo p" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ON h.prestamoId = p.prestamoId" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN Abogado a" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ON h.abogado" & _
-                "Id = a.abogadoId" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE memoId = @memoId"
+            Me._commandCollection(0).CommandText = "SELECT perso.nombres + ' ' + perso.apellidos as autorizacdopor,   a.nombres + '' " & _
+                "+ a.apellidos as Abogado, p.nombreCliente, m.gastos, m.honorarios, m.valorComisi" & _
+                "onAmc,(m.gastos + m.honorarios)as totalAgogado, (m.gastos + m.honorarios + m.val" & _
+                "orComisionAmc) as TotalCredito FROM Memo m" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN Hipoteca h" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ON M.hipoteca" & _
+                "Id = h.hipotecaId" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN prestamo p" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ON h.prestamoId = p.prestamoId" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER " & _
+                "JOIN Abogado a" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ON h.abogadoId = a.abogadoId" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN Evento e" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ON h.hipoteca" & _
+                "Id = e.hipotecaId" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN Usuario u" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ON e.usuarioId = u.usuarioId" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOI" & _
+                "N Personal perso" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ON u.personalId = perso.personalId" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE memoId = @memoId AND" & _
+                " e.estadoId =7"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@memoId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "memoId", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
         End Sub

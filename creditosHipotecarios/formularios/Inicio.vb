@@ -9,31 +9,45 @@
 
 
         If UsuarioActivo.cargo = "OPERATIVO" Then
-            btnFirmaCliente.Enabled = False
-            btnPresentacion.Enabled = False
-            btnFirmaGerencia.Enabled = False
-            btnCustodio.Enabled = False
-            btnSolicitudPago.Enabled = False
+
+            pageBuscar.Visible = True
+            pageProtocoloListo.Visible = True
+            pageFirmaCliente.Visible = True
+            pageSolicitarDocumentos.Visible = True
+            RibEstado.Visible = True
+
 
         End If
         If UsuarioActivo.cargo = "PROVEEDURIA" Then
-            btnProtocolo.Enabled = False
-            btnListo.Enabled = False
-            ESTADOToolStripMenuItem.Visible = False
-            btnCustodio.Enabled = False
+            pageEstado.Visible = True
+            pageFirmaGerente.Visible = True
+            pageIP.Visible = True
+            pageEnviarCustodia.Visible = True
+            pageEfectuarPago.Visible = True
+            pageEntregaCliente.Visible = True
+            pageCancelar.Visible = True
+            RibEstado.Visible = True
+            RibReportes.Visible = True
+
+
+
         End If
 
-        If UsuarioActivo.cargo = "GEFE DE AGENCIA" Then
-            btnFirmaCliente.Enabled = False
-            btnPresentacion.Enabled = False
-            btnFirmaGerencia.Enabled = False
-            btnCustodio.Enabled = False
-            btnSolicitudPago.Enabled = False
-            btnProtocolo.Enabled = False
-            btnListo.Enabled = False
-            ESTADOToolStripMenuItem.Visible = False
-            btnCustodio.Enabled = True
+        If UsuarioActivo.cargo = "JEFE DE AGENCIA" Then
+            pageEstado.Visible = True
+            pageSolicitarPago.Visible = True
+            pageSolicitarDocumentos.Visible = True
+            RibEstado.Visible = True
         End If
+
+        If UsuarioActivo.cargo = "INFORMATICA" Then
+            pageEstado.Visible = True
+            RibEstado.Visible = True
+            RibAdmin.Visible = True
+
+        End If
+
+
 
 
     End Sub
@@ -59,153 +73,6 @@
         GestionarPanel()
     End Sub
 
-  
-    Private Sub btnListo_Click(sender As Object, e As EventArgs) Handles btnListo.Click
-        Try
-            With enProtocolo
-
-                .MdiParent = Me
-                .idCargar = 1
-                .Show()
-                .Focus()
-                .titulo = btnListo.Text
-                .cargarDatos()
-
-
-            End With
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-
-    End Sub
-    
-
- 
-   
-    Private Sub btnProtocolo_Click(sender As Object, e As EventArgs) Handles btnProtocolo.Click
-        Try
-            With enProtocolo
-
-                .MdiParent = Me
-                .idCargar = 2
-                .Show()
-                .Focus()
-                .titulo = btnProtocolo.Text
-                .cargarDatos()
-
-            End With
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub btnFirmaCliente_Click(sender As Object, e As EventArgs) Handles btnFirmaCliente.Click
-        Try
-            With enProtocolo
-
-                .MdiParent = Me
-                .idCargar = 3
-                .Show()
-                .Focus()
-                .titulo = btnFirmaCliente.Text
-                .cargarDatos()
-
-            End With
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub btnFirmaGerencia_Click(sender As Object, e As EventArgs) Handles btnFirmaGerencia.Click
-        Try
-            With enProtocolo
-
-                .MdiParent = Me
-                .idCargar = 4
-                .Show()
-                .Focus()
-                .titulo = btnFirmaGerencia.Text
-                .cargarDatos()
-
-            End With
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub btnPresentacion_Click(sender As Object, e As EventArgs) Handles btnPresentacion.Click
-        Try
-            With enProtocolo
-
-                .MdiParent = Me
-                .idCargar = 5
-                .Show()
-                .Focus()
-                .titulo = btnPresentacion.Text
-                .cargarDatos()
-
-            End With
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub btnCustodio_Click(sender As Object, e As EventArgs) Handles btnCustodio.Click
-        Try
-            With enProtocolo
-
-                .MdiParent = Me
-                .idCargar = 6
-                .Show()
-                .Focus()
-                .titulo = btnCustodio.Text
-                .cargarDatos()
-
-            End With
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub btnSolicitudPago_Click(sender As Object, e As EventArgs) Handles btnSolicitudPago.Click
-        Try
-            With enProtocolo
-
-                .MdiParent = Me
-                .idCargar = 7
-                .Show()
-                .Focus()
-                .titulo = btnSolicitudPago.Text
-                .cargarDatos()
-
-            End With
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-
- 
-  
-    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-
-        If UsuarioActivo.cargo = "PROVEEDURIA" Or UsuarioActivo.cargo = "INFORMATICA" Or UsuarioActivo.cargo = "GEFE DE AGENCIA" Then
-            With buscarHipoteca
-                .MdiParent = Me
-                .Show()
-                .Focus()
-                .cargarDaos()
-            End With
-
-        Else
-            With creditoList
-                .MdiParent = Me
-                .Show()
-                .Focus()
-            End With
-        End If
-
-    End Sub
 
     
     Private Sub ESTADOToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ESTADOToolStripMenuItem.Click
@@ -227,4 +94,197 @@
 
 
   
+   
+    Private Sub btnBuscar_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnBuscar.ItemClick
+      
+            With creditoList
+                .MdiParent = Me
+                .Show()
+                .Focus()
+            End With
+
+
+    End Sub
+
+    Private Sub btnListo_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnListo.ItemClick
+        Try
+            With enProtocolo
+
+                .MdiParent = Me
+                .idCargar = 1
+                .Show()
+                .Focus()
+                .titulo = btnListo.Caption
+                .cargarDatos()
+
+
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub btnProtocolo_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnProtocolo.ItemClick
+        Try
+            With enProtocolo
+
+                .MdiParent = Me
+                .idCargar = 2
+                .Show()
+                .Focus()
+                .titulo = btnProtocolo.Caption
+                .cargarDatos()
+
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub BarButtonItem5_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnFirmaCliente.ItemClick
+        Try
+            With enProtocolo
+
+                .MdiParent = Me
+                .idCargar = 3
+                .Show()
+                .Focus()
+                .titulo = btnFirmaCliente.Caption
+                .cargarDatos()
+
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnFirmaGerente_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnFirmaGerente.ItemClick
+        Try
+            With enProtocolo
+
+                .MdiParent = Me
+                .idCargar = 4
+                .Show()
+                .Focus()
+                .titulo = btnFirmaGerente.Caption
+                .cargarDatos()
+
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnPresentacion_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnPresentacion.ItemClick
+        Try
+            With enProtocolo
+
+                .MdiParent = Me
+                .idCargar = 5
+                .Show()
+                .Focus()
+                .titulo = btnPresentacion.Caption
+                .cargarDatos()
+
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnCustodia_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnCustodia.ItemClick
+        Try
+            With enProtocolo
+
+                .MdiParent = Me
+                .idCargar = 6
+                .Show()
+                .Focus()
+                .titulo = btnCustodia.Caption
+                .cargarDatos()
+
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnSolicitudPago_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnSolicitudPago.ItemClick
+        Try
+            With enProtocolo
+
+                .MdiParent = Me
+                .idCargar = 7
+                .Show()
+                .Focus()
+                .titulo = btnSolicitudPago.Caption
+                .cargarDatos()
+
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnEfectuarPago_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnEfectuarPago.ItemClick
+        Try
+            With enProtocolo
+
+                .MdiParent = Me
+                .idCargar = 8
+                .Show()
+                .Focus()
+                .titulo = btnEfectuarPago.Caption
+                .cargarDatos()
+
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnSolicitudDocumentos_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnSolicitudDocumentos.ItemClick
+        Try
+            With enProtocolo
+
+                .MdiParent = Me
+                .idCargar = 9
+                .Show()
+                .Focus()
+                .titulo = btnSolicitudDocumentos.Caption
+                .cargarDatos()
+
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnEntregaDocumentos_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnEntregaDocumentos.ItemClick
+        Try
+            With enProtocolo
+
+                .MdiParent = Me
+                .idCargar = 10
+                .Show()
+                .Focus()
+                .titulo = btnEntregaDocumentos.Caption
+                .cargarDatos()
+
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+ 
+    Private Sub btnEstado_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnEstado.ItemClick
+        With buscarHipoteca
+            .MdiParent = Me
+            .Show()
+            .Focus()
+            .cargarDaos()
+        End With
+    End Sub
 End Class
