@@ -57,8 +57,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SQLSERVER;Initial Catalog=amcApp;Persist Security Info=True;User ID=a"& _ 
-            "mc;Password=Choluteca1525")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DAVIDBRIONE3423\SQLEXPRESS;Initial Catalog=amcApp;Integrated Security"& _ 
+            "=True")>  _
         Public ReadOnly Property amcAppConnectionString() As String
             Get
                 Return CType(Me("amcAppConnectionString"),String)
@@ -68,8 +68,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SQLSERVER;Initial Catalog=AMC_PRODUCCION_3004;Persist Security Info=T"& _ 
-            "rue;User ID=amc;Password=Choluteca1525")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DAVIDBRIONE3423\SQLEXPRESS;Initial Catalog=AMC_PRODUCCION_3004;Integr"& _ 
+            "ated Security=True")>  _
         Public ReadOnly Property AMC_PRODUCCION_3004ConnectionString() As String
             Get
                 Return CType(Me("AMC_PRODUCCION_3004ConnectionString"),String)
