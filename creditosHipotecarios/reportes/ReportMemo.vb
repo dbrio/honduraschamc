@@ -1,16 +1,12 @@
 ﻿Public Class ReportMemo
-    Public hipotecaEstado As Integer
+    Public IDm As Integer
+   
+    Public Sub generarReporte()
+        Try
+            MemoAdapter1.Fill(Remportmemo1.Memo, IDm)
+        Catch ex As Exception
 
-
-    Public Sub New(ByRef NumFactura As Integer)
-
-        ' Llamada necesaria para el diseñador.
-        InitializeComponent()
-
-        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        MemoAdapter1.Fill(Remportmemo1.Memo, NumFactura)
-
-       
-
+        End Try
     End Sub
+
 End Class

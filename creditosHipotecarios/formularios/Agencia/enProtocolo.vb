@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 Imports DevExpress.XtraPrinting
 Imports DevExpress.XtraPrinting.Preview
+Imports DevExpress.XtraReports.UI
 
 Public Class enProtocolo
     Private stream As New MemoryStream
@@ -49,7 +50,7 @@ Public Class enProtocolo
     Private Sub GridView1_RowCellClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs) Handles GridView1.RowCellClick
         Try
 
-           
+
             'SI SE VA ACTUALIZAR EL ESTADO DE IP DEBERA PERDIR UN NUMERO DE IP EN EL FORMULARIO IP
 
             If Me.Text = "PARA EN IP" Then
@@ -95,34 +96,21 @@ Public Class enProtocolo
 
                 Dim hipotecaEstadoId As String = dict("hipotecaEstadoId")
 
-                Dim ps As New PrintingSystem
-                Dim preview As New PrintPreviewRibbonFormEx
 
+                HipotecaEstadoTableAdapter.UpdateQuery(estadoId, DateTime.Now(), UsuarioActivo.usuario, hipotecaEstadoId)
 
-                Dim idPrest = (From m In db.Memo
+                Dim idMemo = (From m In db.Memo
                                Where m.hipotecaId = hipotecaEstadoId
                                Select m.memoId).FirstOrDefault
 
+                Dim reporte As New ReportMemo() With {.IDm = idMemo}
+                reporte.generarReporte()
+
+                Dim printTool As New ReportPrintTool(reporte)
+                printTool.Report.CreateDocument(False)
+                printTool.ShowRibbonPreviewDialog()
 
 
-                Dim reporte As New ReportMemo(idPrest)
-                reporte.CreateDocument()
-                reporte.PrintingSystem.SaveDocument(stream)
-
-                ps.LoadDocument(stream)
-
-                If MsgBox("¿Actualizar el estado?", MsgBoxStyle.Question + vbYesNo) = vbYes Then
-                    HipotecaEstadoTableAdapter.UpdateQuery(estadoId, DateTime.Now(), UsuarioActivo.usuario, hipotecaEstadoId)
-
-                    With preview
-
-                        .PrintingSystem = ps
-                        .Text = String.Format("Reporte, #{0}", idPrest)
-                        .MdiParent = Me.MdiParent
-                        .Show()
-                    End With
-
-                End If
 
                 'CARGAR DATOS
                 cargarDatos()
@@ -155,5 +143,5 @@ Public Class enProtocolo
     End Sub
 
 
-  
+
 End Class

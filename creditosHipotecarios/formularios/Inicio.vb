@@ -1,5 +1,7 @@
-﻿Public Class Inicio
-   
+﻿Imports DevExpress.XtraReports.UI
+
+Public Class Inicio
+
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'DataSetCreditos.Usuario' Puede moverla o quitarla según sea necesario.
         'Me.UsuarioTableAdapter.Fill(Me.DataSetCreditos.Usuario)
@@ -41,10 +43,7 @@
         End If
 
         If UsuarioActivo.cargo = "INFORMATICA" Then
-            pageEstado.Visible = True
-            RibEstado.Visible = True
             RibAdmin.Visible = True
-
         End If
 
 
@@ -74,7 +73,7 @@
     End Sub
 
 
-    
+
     Private Sub ESTADOToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ESTADOToolStripMenuItem.Click
         With buscarHipoteca
             .MdiParent = Me
@@ -83,7 +82,7 @@
         End With
     End Sub
 
-    
+
     Private Sub UsuarioBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
         Me.Validate()
         Me.UsuarioBindingSource.EndEdit()
@@ -93,15 +92,15 @@
 
 
 
-  
-   
+
+
     Private Sub btnBuscar_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnBuscar.ItemClick
-      
-            With creditoList
-                .MdiParent = Me
-                .Show()
-                .Focus()
-            End With
+
+        With creditoList
+            .MdiParent = Me
+            .Show()
+            .Focus()
+        End With
 
 
     End Sub
@@ -278,7 +277,7 @@
         End Try
     End Sub
 
- 
+
     Private Sub btnEstado_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnEstado.ItemClick
         With buscarHipoteca
             .MdiParent = Me
@@ -286,5 +285,34 @@
             .Focus()
             .cargarDaos()
         End With
+    End Sub
+
+    Private Sub btnCustodia1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnCustodia1.ItemClick
+
+        Dim reporte As New ReporteCustodia() With {.IDc = 6}
+        reporte.generarReporte()
+
+        Dim printTool As New ReportPrintTool(reporte)
+        printTool.Report.CreateDocument(False)
+        printTool.ShowRibbonPreviewDialog()
+    End Sub
+
+    Private Sub BarButtonItem4_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem4.ItemClick
+
+        With addAbogado
+            .Show()
+
+        End With
+
+    End Sub
+
+    Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
+        With listAbogados
+            .MdiParent = Me
+            .Focus()
+            .Show()
+
+        End With
+
     End Sub
 End Class

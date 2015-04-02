@@ -43,6 +43,16 @@ Partial Class Inicio
         Me.btnSolicitudDocumentos = New DevExpress.XtraBars.BarButtonItem()
         Me.btnEntregaDocumentos = New DevExpress.XtraBars.BarButtonItem()
         Me.btnEstado = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnCustodia1 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarSubItem1 = New DevExpress.XtraBars.BarSubItem()
+        Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem4 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarSubItem2 = New DevExpress.XtraBars.BarSubItem()
+        Me.BarButtonItem5 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem6 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarSubItem3 = New DevExpress.XtraBars.BarSubItem()
+        Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem8 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibEstado = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.pageBuscar = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.pageEstado = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -57,7 +67,11 @@ Partial Class Inicio
         Me.pageEntregaCliente = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.pageCancelar = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibReportes = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibAdmin = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,7 +103,7 @@ Partial Class Inicio
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControl1.Location = New System.Drawing.Point(0, 121)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(1435, 752)
+        Me.PanelControl1.Size = New System.Drawing.Size(2000, 752)
         Me.PanelControl1.TabIndex = 2
         '
         'ContextMenuStrip1
@@ -203,7 +217,7 @@ Partial Class Inicio
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.ShowOnMultiplePages
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(1435, 121)
+        Me.RibbonControl1.Size = New System.Drawing.Size(2000, 121)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         '
         'PanelControl2
@@ -215,19 +229,19 @@ Partial Class Inicio
         Me.PanelControl2.Controls.Add(Me.RibbonControl2)
         Me.PanelControl2.Location = New System.Drawing.Point(0, -11)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(1435, 153)
+        Me.PanelControl2.Size = New System.Drawing.Size(2000, 153)
         Me.PanelControl2.TabIndex = 4
         '
         'RibbonControl2
         '
         Me.RibbonControl2.ExpandCollapseItem.Id = 0
-        Me.RibbonControl2.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl2.ExpandCollapseItem, Me.btnBuscar, Me.btnListo, Me.btnProtocolo, Me.btnFirmaCliente, Me.btnFirmaGerente, Me.btnPresentacion, Me.btnCustodia, Me.btnSolicitudPago, Me.btnEfectuarPago, Me.BarButtonItem11, Me.btnSolicitudDocumentos, Me.btnEntregaDocumentos, Me.btnEstado})
+        Me.RibbonControl2.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl2.ExpandCollapseItem, Me.btnBuscar, Me.btnListo, Me.btnProtocolo, Me.btnFirmaCliente, Me.btnFirmaGerente, Me.btnPresentacion, Me.btnCustodia, Me.btnSolicitudPago, Me.btnEfectuarPago, Me.BarButtonItem11, Me.btnSolicitudDocumentos, Me.btnEntregaDocumentos, Me.btnEstado, Me.btnCustodia1, Me.BarSubItem1, Me.BarButtonItem2, Me.BarButtonItem4, Me.BarSubItem2, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarSubItem3, Me.BarButtonItem7, Me.BarButtonItem8})
         Me.RibbonControl2.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl2.MaxItemId = 20
+        Me.RibbonControl2.MaxItemId = 33
         Me.RibbonControl2.Name = "RibbonControl2"
         Me.RibbonControl2.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibEstado, Me.RibReportes, Me.RibAdmin})
         Me.RibbonControl2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007
-        Me.RibbonControl2.Size = New System.Drawing.Size(1435, 47)
+        Me.RibbonControl2.Size = New System.Drawing.Size(2000, 47)
         Me.RibbonControl2.TransparentEditors = True
         '
         'btnBuscar
@@ -373,6 +387,70 @@ Partial Class Inicio
         Me.btnEstado.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.buscar
         Me.btnEstado.Name = "btnEstado"
         '
+        'btnCustodia1
+        '
+        Me.btnCustodia1.Caption = "EN CUSTODIA"
+        Me.btnCustodia1.Id = 20
+        Me.btnCustodia1.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.reporte
+        Me.btnCustodia1.Name = "btnCustodia1"
+        '
+        'BarSubItem1
+        '
+        Me.BarSubItem1.Caption = "ABOGADOS"
+        Me.BarSubItem1.Id = 22
+        Me.BarSubItem1.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem2), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem4)})
+        Me.BarSubItem1.Name = "BarSubItem1"
+        '
+        'BarButtonItem2
+        '
+        Me.BarButtonItem2.Caption = "EDITAR ABOGADO"
+        Me.BarButtonItem2.Id = 23
+        Me.BarButtonItem2.Name = "BarButtonItem2"
+        '
+        'BarButtonItem4
+        '
+        Me.BarButtonItem4.Caption = "AGREGAR ABOGADO"
+        Me.BarButtonItem4.Id = 24
+        Me.BarButtonItem4.Name = "BarButtonItem4"
+        '
+        'BarSubItem2
+        '
+        Me.BarSubItem2.Caption = "EMPLEADOS"
+        Me.BarSubItem2.Id = 26
+        Me.BarSubItem2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem5), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem6)})
+        Me.BarSubItem2.Name = "BarSubItem2"
+        '
+        'BarButtonItem5
+        '
+        Me.BarButtonItem5.Caption = "EDITAR EMPLEADO"
+        Me.BarButtonItem5.Id = 27
+        Me.BarButtonItem5.Name = "BarButtonItem5"
+        '
+        'BarButtonItem6
+        '
+        Me.BarButtonItem6.Caption = "AGREGAR EMPLEADO"
+        Me.BarButtonItem6.Id = 28
+        Me.BarButtonItem6.Name = "BarButtonItem6"
+        '
+        'BarSubItem3
+        '
+        Me.BarSubItem3.Caption = "USUARIOS"
+        Me.BarSubItem3.Id = 30
+        Me.BarSubItem3.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem7), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem8)})
+        Me.BarSubItem3.Name = "BarSubItem3"
+        '
+        'BarButtonItem7
+        '
+        Me.BarButtonItem7.Caption = "MODIFICAR USUARIO"
+        Me.BarButtonItem7.Id = 31
+        Me.BarButtonItem7.Name = "BarButtonItem7"
+        '
+        'BarButtonItem8
+        '
+        Me.BarButtonItem8.Caption = "AGREGAR USUARIO"
+        Me.BarButtonItem8.Id = 32
+        Me.BarButtonItem8.Name = "BarButtonItem8"
+        '
         'RibEstado
         '
         Me.RibEstado.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.pageBuscar, Me.pageEstado, Me.pageProtocoloListo, Me.pageFirmaCliente, Me.pageFirmaGerente, Me.pageIP, Me.pageEnviarCustodia, Me.pageSolicitarPago, Me.pageEfectuarPago, Me.pageSolicitarDocumentos, Me.pageEntregaCliente, Me.pageCancelar})
@@ -466,15 +544,41 @@ Partial Class Inicio
         '
         'RibReportes
         '
+        Me.RibReportes.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
         Me.RibReportes.Name = "RibReportes"
         Me.RibReportes.Text = "REPORTES"
         Me.RibReportes.Visible = False
         '
+        'RibbonPageGroup1
+        '
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.btnCustodia1)
+        Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
+        Me.RibbonPageGroup1.ShowCaptionButton = False
+        '
         'RibAdmin
         '
+        Me.RibAdmin.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup2, Me.RibbonPageGroup3, Me.RibbonPageGroup4})
         Me.RibAdmin.Name = "RibAdmin"
         Me.RibAdmin.Text = "ADMINISTRAR"
         Me.RibAdmin.Visible = False
+        '
+        'RibbonPageGroup2
+        '
+        Me.RibbonPageGroup2.ItemLinks.Add(Me.BarSubItem1)
+        Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
+        Me.RibbonPageGroup2.ShowCaptionButton = False
+        '
+        'RibbonPageGroup3
+        '
+        Me.RibbonPageGroup3.ItemLinks.Add(Me.BarSubItem2)
+        Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
+        Me.RibbonPageGroup3.ShowCaptionButton = False
+        '
+        'RibbonPageGroup4
+        '
+        Me.RibbonPageGroup4.ItemLinks.Add(Me.BarSubItem3)
+        Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
+        Me.RibbonPageGroup4.ShowCaptionButton = False
         '
         'Inicio
         '
@@ -551,4 +655,18 @@ Partial Class Inicio
     Friend WithEvents RibAdmin As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents btnEstado As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents pageEstado As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents btnCustodia1 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents BarSubItem1 As DevExpress.XtraBars.BarSubItem
+    Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem4 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarSubItem2 As DevExpress.XtraBars.BarSubItem
+    Friend WithEvents BarButtonItem5 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem6 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarSubItem3 As DevExpress.XtraBars.BarSubItem
+    Friend WithEvents BarButtonItem7 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem8 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup2 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents RibbonPageGroup3 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents RibbonPageGroup4 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class
