@@ -9,7 +9,8 @@
 
     Private Sub listAbogados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'DataSetCreditos.Abogado' Puede moverla o quitarla según sea necesario.
-        Me.AbogadoTableAdapter.Fill(Me.DataSetCreditos.Abogado)
+        cargarDatos()
+
 
     End Sub
 
@@ -32,4 +33,12 @@
             Return 0
         End Try
     End Function
+
+    Sub cargarDatos()
+        Try
+            Me.AbogadoTableAdapter.Fill(Me.DataSetCreditos.Abogado)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Class
