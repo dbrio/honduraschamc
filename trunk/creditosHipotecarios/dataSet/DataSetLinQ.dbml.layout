@@ -47,5 +47,11 @@
         <classShapeMoniker Id="b683f6c5-2466-40e2-8a5c-d274a436bd6a" />
       </nodes>
     </associationConnector>
+    <classShape Id="77d4236b-fb29-437c-9a44-6a8b78a5a556" absoluteBounds="4, 4.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataSetLinQDataContext/Usuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="83d2932b-5331-4353-a915-5bb6da929003" absoluteBounds="4.015, 4.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

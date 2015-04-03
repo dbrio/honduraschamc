@@ -23,17 +23,13 @@ Partial Class addAbogado
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim DireccionLabel1 As System.Windows.Forms.Label
         Dim CorreoLabel As System.Windows.Forms.Label
         Dim NombresLabel As System.Windows.Forms.Label
         Dim ApellidosLabel As System.Windows.Forms.Label
         Dim TelefonoLabel As System.Windows.Forms.Label
         Dim CodigoAbogadoLabel As System.Windows.Forms.Label
-        Me.AbogadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSetCreditos = New creditosHipotecarios.DataSetCreditos()
-        Me.AbogadoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.AbogadoTableAdapter()
-        Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
+        Dim EstadoLabel As System.Windows.Forms.Label
         Me.DataSetAMCProduccion1 = New creditosHipotecarios.DataSetAMCProduccion()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -44,14 +40,18 @@ Partial Class addAbogado
         Me.ApellidosTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.TelefonoTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.CodigoAbogadoTextEdit = New DevExpress.XtraEditors.TextEdit()
+        Me.AbogadoBindingSource = New System.Windows.Forms.BindingSource()
+        Me.DataSetCreditos = New creditosHipotecarios.DataSetCreditos()
+        Me.AbogadoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.AbogadoTableAdapter()
+        Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
+        Me.EstadoCheckEdit = New DevExpress.XtraEditors.CheckEdit()
         DireccionLabel1 = New System.Windows.Forms.Label()
         CorreoLabel = New System.Windows.Forms.Label()
         NombresLabel = New System.Windows.Forms.Label()
         ApellidosLabel = New System.Windows.Forms.Label()
         TelefonoLabel = New System.Windows.Forms.Label()
         CodigoAbogadoLabel = New System.Windows.Forms.Label()
-        CType(Me.AbogadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
+        EstadoLabel = New System.Windows.Forms.Label()
         CType(Me.DataSetAMCProduccion1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DireccionMemoEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,6 +60,9 @@ Partial Class addAbogado
         CType(Me.ApellidosTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TelefonoTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CodigoAbogadoTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AbogadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EstadoCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DireccionLabel1
@@ -122,32 +125,6 @@ Partial Class addAbogado
         CodigoAbogadoLabel.TabIndex = 22
         CodigoAbogadoLabel.Text = "Codigo Abogado:"
         '
-        'AbogadoBindingSource
-        '
-        Me.AbogadoBindingSource.DataMember = "Abogado"
-        Me.AbogadoBindingSource.DataSource = Me.DataSetCreditos
-        '
-        'DataSetCreditos
-        '
-        Me.DataSetCreditos.DataSetName = "DataSetCreditos"
-        Me.DataSetCreditos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'AbogadoTableAdapter
-        '
-        Me.AbogadoTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.AbogadoTableAdapter = Me.AbogadoTableAdapter
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.EventoTableAdapter = Nothing
-        Me.TableAdapterManager.hipotecaEstadoTableAdapter = Nothing
-        Me.TableAdapterManager.HipotecaTableAdapter = Nothing
-        Me.TableAdapterManager.MemoTableAdapter = Nothing
-        Me.TableAdapterManager.prestamoTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.UsuarioTableAdapter = Nothing
-        '
         'DataSetAMCProduccion1
         '
         Me.DataSetAMCProduccion1.DataSetName = "DataSetAMCProduccion"
@@ -155,6 +132,8 @@ Partial Class addAbogado
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(EstadoLabel)
+        Me.GroupBox1.Controls.Add(Me.EstadoCheckEdit)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(DireccionLabel1)
         Me.GroupBox1.Controls.Add(Me.DireccionMemoEdit)
@@ -171,7 +150,7 @@ Partial Class addAbogado
         Me.GroupBox1.Controls.Add(Me.CodigoAbogadoTextEdit)
         Me.GroupBox1.Location = New System.Drawing.Point(56, 63)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(498, 397)
+        Me.GroupBox1.Size = New System.Drawing.Size(498, 437)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
@@ -209,7 +188,7 @@ Partial Class addAbogado
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.ForeColor = System.Drawing.Color.White
-        Me.btnAgregar.Location = New System.Drawing.Point(120, 332)
+        Me.btnAgregar.Location = New System.Drawing.Point(120, 373)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(335, 44)
         Me.btnAgregar.TabIndex = 7
@@ -256,18 +235,63 @@ Partial Class addAbogado
         Me.CodigoAbogadoTextEdit.Size = New System.Drawing.Size(180, 26)
         Me.CodigoAbogadoTextEdit.TabIndex = 4
         '
+        'AbogadoBindingSource
+        '
+        Me.AbogadoBindingSource.DataMember = "Abogado"
+        Me.AbogadoBindingSource.DataSource = Me.DataSetCreditos
+        '
+        'DataSetCreditos
+        '
+        Me.DataSetCreditos.DataSetName = "DataSetCreditos"
+        Me.DataSetCreditos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'AbogadoTableAdapter
+        '
+        Me.AbogadoTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.AbogadoTableAdapter = Me.AbogadoTableAdapter
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.EventoTableAdapter = Nothing
+        Me.TableAdapterManager.hipotecaEstadoTableAdapter = Nothing
+        Me.TableAdapterManager.HipotecaTableAdapter = Nothing
+        Me.TableAdapterManager.MemoTableAdapter = Nothing
+        Me.TableAdapterManager.prestamoTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UsuarioTableAdapter = Nothing
+        '
+        'EstadoLabel
+        '
+        EstadoLabel.AutoSize = True
+        EstadoLabel.Font = New System.Drawing.Font("Arial", 10.0!)
+        EstadoLabel.Location = New System.Drawing.Point(48, 340)
+        EstadoLabel.Name = "EstadoLabel"
+        EstadoLabel.Size = New System.Drawing.Size(56, 16)
+        EstadoLabel.TabIndex = 27
+        EstadoLabel.Text = "Estado:"
+        '
+        'EstadoCheckEdit
+        '
+        Me.EstadoCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.AbogadoBindingSource, "estado", True))
+        Me.EstadoCheckEdit.Location = New System.Drawing.Point(118, 339)
+        Me.EstadoCheckEdit.Name = "EstadoCheckEdit"
+        Me.EstadoCheckEdit.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EstadoCheckEdit.Properties.Appearance.Options.UseFont = True
+        Me.EstadoCheckEdit.Properties.Caption = ""
+        Me.EstadoCheckEdit.Size = New System.Drawing.Size(75, 19)
+        Me.EstadoCheckEdit.TabIndex = 28
+        '
         'addAbogado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(608, 498)
+        Me.ClientSize = New System.Drawing.Size(608, 500)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "addAbogado"
         Me.Opacity = 1.0R
         Me.Text = "AGREGAR ABOGADO"
         Me.Controls.SetChildIndex(Me.GroupBox1, 0)
-        CType(Me.AbogadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSetAMCProduccion1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -277,6 +301,9 @@ Partial Class addAbogado
         CType(Me.ApellidosTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TelefonoTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CodigoAbogadoTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AbogadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EstadoCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -294,4 +321,5 @@ Partial Class addAbogado
     Friend WithEvents TelefonoTextEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents CodigoAbogadoTextEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents EstadoCheckEdit As DevExpress.XtraEditors.CheckEdit
 End Class

@@ -49,13 +49,30 @@
         End If
 
         Try
-            AbogadoTableAdapter.Insert(NombresTextEdit.Text, ApellidosTextEdit.Text, TelefonoTextEdit.Text, DireccionMemoEdit.Text, CodigoAbogadoTextEdit.Text, CorreoTextEdit.Text)
+            Dim estado As Integer
+
+            If EstadoCheckEdit.Checked = True Then
+                estado = 1
+            Else
+                estado = 0
+            End If
 
 
+            AbogadoTableAdapter.Insert(NombresTextEdit.Text, ApellidosTextEdit.Text, TelefonoTextEdit.Text, DireccionMemoEdit.Text, CodigoAbogadoTextEdit.Text, CorreoTextEdit.Text, estado)
 
             MsgBox("Abogado agregado ", MsgBoxStyle.Information)
 
+            With listAbogados
+
+                .MdiParent = Inicio
+                .cargarDatos()
+                .Show()
+
+            End With
+
             Me.Close()
+
+
 
 
         Catch ex As Exception

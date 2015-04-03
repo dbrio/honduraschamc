@@ -55,6 +55,12 @@ Partial Public Class DataSetLinQDataContext
     End Sub
   Partial Private Sub DeleteMemo(instance As Memo)
     End Sub
+  Partial Private Sub InsertUsuario(instance As Usuario)
+    End Sub
+  Partial Private Sub UpdateUsuario(instance As Usuario)
+    End Sub
+  Partial Private Sub DeleteUsuario(instance As Usuario)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -103,6 +109,12 @@ Partial Public Class DataSetLinQDataContext
 	Public ReadOnly Property Memo() As System.Data.Linq.Table(Of Memo)
 		Get
 			Return Me.GetTable(Of Memo)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Usuario() As System.Data.Linq.Table(Of Usuario)
+		Get
+			Return Me.GetTable(Of Usuario)
 		End Get
 	End Property
 End Class
@@ -1112,6 +1124,157 @@ Partial Public Class Memo
 					Me._hipotecaId = CType(Nothing, Integer)
 				End If
 				Me.SendPropertyChanged("Hipoteca")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Usuario")>  _
+Partial Public Class Usuario
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _usuarioId As Integer
+	
+	Private _usuario As String
+	
+	Private _contrasena As String
+	
+	Private _personalId As Integer
+	
+	Private _estado As System.Nullable(Of Boolean)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnusuarioIdChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnusuarioIdChanged()
+    End Sub
+    Partial Private Sub OnusuarioChanging(value As String)
+    End Sub
+    Partial Private Sub OnusuarioChanged()
+    End Sub
+    Partial Private Sub OncontrasenaChanging(value As String)
+    End Sub
+    Partial Private Sub OncontrasenaChanged()
+    End Sub
+    Partial Private Sub OnpersonalIdChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnpersonalIdChanged()
+    End Sub
+    Partial Private Sub OnestadoChanging(value As System.Nullable(Of Boolean))
+    End Sub
+    Partial Private Sub OnestadoChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_usuarioId", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property usuarioId() As Integer
+		Get
+			Return Me._usuarioId
+		End Get
+		Set
+			If ((Me._usuarioId = value)  _
+						= false) Then
+				Me.OnusuarioIdChanging(value)
+				Me.SendPropertyChanging
+				Me._usuarioId = value
+				Me.SendPropertyChanged("usuarioId")
+				Me.OnusuarioIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_usuario", DbType:="NVarChar(20) NOT NULL", CanBeNull:=false)>  _
+	Public Property usuario() As String
+		Get
+			Return Me._usuario
+		End Get
+		Set
+			If (String.Equals(Me._usuario, value) = false) Then
+				Me.OnusuarioChanging(value)
+				Me.SendPropertyChanging
+				Me._usuario = value
+				Me.SendPropertyChanged("usuario")
+				Me.OnusuarioChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_contrasena", DbType:="NVarChar(300) NOT NULL", CanBeNull:=false)>  _
+	Public Property contrasena() As String
+		Get
+			Return Me._contrasena
+		End Get
+		Set
+			If (String.Equals(Me._contrasena, value) = false) Then
+				Me.OncontrasenaChanging(value)
+				Me.SendPropertyChanging
+				Me._contrasena = value
+				Me.SendPropertyChanged("contrasena")
+				Me.OncontrasenaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_personalId", DbType:="Int NOT NULL")>  _
+	Public Property personalId() As Integer
+		Get
+			Return Me._personalId
+		End Get
+		Set
+			If ((Me._personalId = value)  _
+						= false) Then
+				Me.OnpersonalIdChanging(value)
+				Me.SendPropertyChanging
+				Me._personalId = value
+				Me.SendPropertyChanged("personalId")
+				Me.OnpersonalIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_estado", DbType:="Bit")>  _
+	Public Property estado() As System.Nullable(Of Boolean)
+		Get
+			Return Me._estado
+		End Get
+		Set
+			If (Me._estado.Equals(value) = false) Then
+				Me.OnestadoChanging(value)
+				Me.SendPropertyChanging
+				Me._estado = value
+				Me.SendPropertyChanged("estado")
+				Me.OnestadoChanged
 			End If
 		End Set
 	End Property

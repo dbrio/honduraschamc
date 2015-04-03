@@ -4,6 +4,7 @@ Imports System.Security.Cryptography
 
 
 Public Class login
+    Dim db As New DataSetLinQDataContext
 
     Private Sub btnEnter_Click(sender As Object, e As EventArgs) Handles btnEnter.Click
         Try
@@ -33,13 +34,19 @@ Public Class login
 
             'comprovar si el usuario existe en la base de datos
 
-            If login = 1 Then
+            Dim idUsuario As Integer = UsuarioTableAdapter.ScalarQuery(txtUser.Text, keyCryto)
+
+            Dim estadoUser = (From a In db.Usuario
+                          Where a.usuarioId = idUsuario
+                          Select a.estado).FirstOrDefault
+
+            If login = 1 And estadoUser = "True" Then
                 With Inicio
                     .Text = "Adel Microcréditos | Créditos Hipotecarios"
 
                 End With
 
-                Dim idUsuario As Integer = UsuarioTableAdapter.ScalarQuery(txtUser.Text, keyCryto)
+
 
                 UsuarioActivo.usuario = idUsuario
 

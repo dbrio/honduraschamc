@@ -23,31 +23,33 @@ Partial Class updateAgogado
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim NombresLabel As System.Windows.Forms.Label
         Dim ApellidosLabel As System.Windows.Forms.Label
         Dim TelefonoLabel As System.Windows.Forms.Label
         Dim DireccionLabel As System.Windows.Forms.Label
         Dim CodigoAbogadoLabel As System.Windows.Forms.Label
         Dim CorreoLabel As System.Windows.Forms.Label
+        Dim EstadoLabel As System.Windows.Forms.Label
         Me.DataSetCreditos = New creditosHipotecarios.DataSetCreditos()
-        Me.AbogadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AbogadoBindingSource = New System.Windows.Forms.BindingSource()
         Me.AbogadoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.AbogadoTableAdapter()
         Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnAgregar = New System.Windows.Forms.Button()
         Me.NombresTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.ApellidosTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.TelefonoTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.DireccionMemoEdit = New DevExpress.XtraEditors.MemoEdit()
         Me.CodigoAbogadoTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.CorreoTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.btnAgregar = New System.Windows.Forms.Button()
+        Me.EstadoCheckEdit = New DevExpress.XtraEditors.CheckEdit()
         NombresLabel = New System.Windows.Forms.Label()
         ApellidosLabel = New System.Windows.Forms.Label()
         TelefonoLabel = New System.Windows.Forms.Label()
         DireccionLabel = New System.Windows.Forms.Label()
         CodigoAbogadoLabel = New System.Windows.Forms.Label()
         CorreoLabel = New System.Windows.Forms.Label()
+        EstadoLabel = New System.Windows.Forms.Label()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AbogadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -57,7 +59,68 @@ Partial Class updateAgogado
         CType(Me.DireccionMemoEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CodigoAbogadoTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CorreoTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EstadoCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'NombresLabel
+        '
+        NombresLabel.AutoSize = True
+        NombresLabel.Font = New System.Drawing.Font("Arial", 10.0!)
+        NombresLabel.Location = New System.Drawing.Point(49, 41)
+        NombresLabel.Name = "NombresLabel"
+        NombresLabel.Size = New System.Drawing.Size(68, 16)
+        NombresLabel.TabIndex = 15
+        NombresLabel.Text = "Nombres:"
+        '
+        'ApellidosLabel
+        '
+        ApellidosLabel.AutoSize = True
+        ApellidosLabel.Font = New System.Drawing.Font("Arial", 10.0!)
+        ApellidosLabel.Location = New System.Drawing.Point(49, 83)
+        ApellidosLabel.Name = "ApellidosLabel"
+        ApellidosLabel.Size = New System.Drawing.Size(69, 16)
+        ApellidosLabel.TabIndex = 17
+        ApellidosLabel.Text = "Apellidos:"
+        '
+        'TelefonoLabel
+        '
+        TelefonoLabel.AutoSize = True
+        TelefonoLabel.Font = New System.Drawing.Font("Arial", 10.0!)
+        TelefonoLabel.Location = New System.Drawing.Point(56, 121)
+        TelefonoLabel.Name = "TelefonoLabel"
+        TelefonoLabel.Size = New System.Drawing.Size(66, 16)
+        TelefonoLabel.TabIndex = 19
+        TelefonoLabel.Text = "Telefono:"
+        '
+        'DireccionLabel
+        '
+        DireccionLabel.AutoSize = True
+        DireccionLabel.Font = New System.Drawing.Font("Arial", 10.0!)
+        DireccionLabel.Location = New System.Drawing.Point(49, 199)
+        DireccionLabel.Name = "DireccionLabel"
+        DireccionLabel.Size = New System.Drawing.Size(71, 16)
+        DireccionLabel.TabIndex = 21
+        DireccionLabel.Text = "Direccion:"
+        '
+        'CodigoAbogadoLabel
+        '
+        CodigoAbogadoLabel.AutoSize = True
+        CodigoAbogadoLabel.Font = New System.Drawing.Font("Arial", 10.0!)
+        CodigoAbogadoLabel.Location = New System.Drawing.Point(9, 260)
+        CodigoAbogadoLabel.Name = "CodigoAbogadoLabel"
+        CodigoAbogadoLabel.Size = New System.Drawing.Size(117, 16)
+        CodigoAbogadoLabel.TabIndex = 23
+        CodigoAbogadoLabel.Text = "Codigo Abogado:"
+        '
+        'CorreoLabel
+        '
+        CorreoLabel.AutoSize = True
+        CorreoLabel.Font = New System.Drawing.Font("Arial", 10.0!)
+        CorreoLabel.Location = New System.Drawing.Point(65, 295)
+        CorreoLabel.Name = "CorreoLabel"
+        CorreoLabel.Size = New System.Drawing.Size(56, 16)
+        CorreoLabel.TabIndex = 25
+        CorreoLabel.Text = "Correo:"
         '
         'DataSetCreditos
         '
@@ -87,6 +150,8 @@ Partial Class updateAgogado
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(EstadoLabel)
+        Me.GroupBox1.Controls.Add(Me.EstadoCheckEdit)
         Me.GroupBox1.Controls.Add(Me.btnAgregar)
         Me.GroupBox1.Controls.Add(NombresLabel)
         Me.GroupBox1.Controls.Add(Me.NombresTextEdit)
@@ -106,15 +171,18 @@ Partial Class updateAgogado
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         '
-        'NombresLabel
+        'btnAgregar
         '
-        NombresLabel.AutoSize = True
-        NombresLabel.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        NombresLabel.Location = New System.Drawing.Point(49, 41)
-        NombresLabel.Name = "NombresLabel"
-        NombresLabel.Size = New System.Drawing.Size(62, 16)
-        NombresLabel.TabIndex = 15
-        NombresLabel.Text = "nombres:"
+        Me.btnAgregar.BackColor = System.Drawing.Color.SeaGreen
+        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.ForeColor = System.Drawing.Color.White
+        Me.btnAgregar.Location = New System.Drawing.Point(149, 363)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(335, 44)
+        Me.btnAgregar.TabIndex = 27
+        Me.btnAgregar.Text = "AGREGAR"
+        Me.btnAgregar.UseVisualStyleBackColor = False
         '
         'NombresTextEdit
         '
@@ -126,16 +194,6 @@ Partial Class updateAgogado
         Me.NombresTextEdit.Size = New System.Drawing.Size(195, 26)
         Me.NombresTextEdit.TabIndex = 16
         '
-        'ApellidosLabel
-        '
-        ApellidosLabel.AutoSize = True
-        ApellidosLabel.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ApellidosLabel.Location = New System.Drawing.Point(49, 83)
-        ApellidosLabel.Name = "ApellidosLabel"
-        ApellidosLabel.Size = New System.Drawing.Size(63, 16)
-        ApellidosLabel.TabIndex = 17
-        ApellidosLabel.Text = "apellidos:"
-        '
         'ApellidosTextEdit
         '
         Me.ApellidosTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.AbogadoBindingSource, "apellidos", True))
@@ -145,16 +203,6 @@ Partial Class updateAgogado
         Me.ApellidosTextEdit.Properties.Appearance.Options.UseFont = True
         Me.ApellidosTextEdit.Size = New System.Drawing.Size(195, 26)
         Me.ApellidosTextEdit.TabIndex = 18
-        '
-        'TelefonoLabel
-        '
-        TelefonoLabel.AutoSize = True
-        TelefonoLabel.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        TelefonoLabel.Location = New System.Drawing.Point(56, 121)
-        TelefonoLabel.Name = "TelefonoLabel"
-        TelefonoLabel.Size = New System.Drawing.Size(57, 16)
-        TelefonoLabel.TabIndex = 19
-        TelefonoLabel.Text = "telefono:"
         '
         'TelefonoTextEdit
         '
@@ -166,16 +214,6 @@ Partial Class updateAgogado
         Me.TelefonoTextEdit.Size = New System.Drawing.Size(195, 26)
         Me.TelefonoTextEdit.TabIndex = 20
         '
-        'DireccionLabel
-        '
-        DireccionLabel.AutoSize = True
-        DireccionLabel.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DireccionLabel.Location = New System.Drawing.Point(49, 199)
-        DireccionLabel.Name = "DireccionLabel"
-        DireccionLabel.Size = New System.Drawing.Size(64, 16)
-        DireccionLabel.TabIndex = 21
-        DireccionLabel.Text = "direccion:"
-        '
         'DireccionMemoEdit
         '
         Me.DireccionMemoEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.AbogadoBindingSource, "direccion", True))
@@ -183,16 +221,6 @@ Partial Class updateAgogado
         Me.DireccionMemoEdit.Name = "DireccionMemoEdit"
         Me.DireccionMemoEdit.Size = New System.Drawing.Size(258, 91)
         Me.DireccionMemoEdit.TabIndex = 22
-        '
-        'CodigoAbogadoLabel
-        '
-        CodigoAbogadoLabel.AutoSize = True
-        CodigoAbogadoLabel.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        CodigoAbogadoLabel.Location = New System.Drawing.Point(9, 260)
-        CodigoAbogadoLabel.Name = "CodigoAbogadoLabel"
-        CodigoAbogadoLabel.Size = New System.Drawing.Size(104, 16)
-        CodigoAbogadoLabel.TabIndex = 23
-        CodigoAbogadoLabel.Text = "codigo Abogado:"
         '
         'CodigoAbogadoTextEdit
         '
@@ -204,16 +232,6 @@ Partial Class updateAgogado
         Me.CodigoAbogadoTextEdit.Size = New System.Drawing.Size(195, 26)
         Me.CodigoAbogadoTextEdit.TabIndex = 24
         '
-        'CorreoLabel
-        '
-        CorreoLabel.AutoSize = True
-        CorreoLabel.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        CorreoLabel.Location = New System.Drawing.Point(65, 295)
-        CorreoLabel.Name = "CorreoLabel"
-        CorreoLabel.Size = New System.Drawing.Size(48, 16)
-        CorreoLabel.TabIndex = 25
-        CorreoLabel.Text = "correo:"
-        '
         'CorreoTextEdit
         '
         Me.CorreoTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.AbogadoBindingSource, "correo", True))
@@ -224,18 +242,26 @@ Partial Class updateAgogado
         Me.CorreoTextEdit.Size = New System.Drawing.Size(195, 26)
         Me.CorreoTextEdit.TabIndex = 26
         '
-        'btnAgregar
+        'EstadoLabel
         '
-        Me.btnAgregar.BackColor = System.Drawing.Color.SeaGreen
-        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregar.ForeColor = System.Drawing.Color.White
-        Me.btnAgregar.Location = New System.Drawing.Point(147, 338)
-        Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(335, 44)
-        Me.btnAgregar.TabIndex = 27
-        Me.btnAgregar.Text = "AGREGAR"
-        Me.btnAgregar.UseVisualStyleBackColor = False
+        EstadoLabel.AutoSize = True
+        EstadoLabel.Font = New System.Drawing.Font("Arial", 10.0!)
+        EstadoLabel.Location = New System.Drawing.Point(80, 335)
+        EstadoLabel.Name = "EstadoLabel"
+        EstadoLabel.Size = New System.Drawing.Size(56, 16)
+        EstadoLabel.TabIndex = 29
+        EstadoLabel.Text = "Estado:"
+        '
+        'EstadoCheckEdit
+        '
+        Me.EstadoCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.AbogadoBindingSource, "estado", True))
+        Me.EstadoCheckEdit.Location = New System.Drawing.Point(149, 334)
+        Me.EstadoCheckEdit.Name = "EstadoCheckEdit"
+        Me.EstadoCheckEdit.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EstadoCheckEdit.Properties.Appearance.Options.UseFont = True
+        Me.EstadoCheckEdit.Properties.Caption = ""
+        Me.EstadoCheckEdit.Size = New System.Drawing.Size(75, 19)
+        Me.EstadoCheckEdit.TabIndex = 30
         '
         'updateAgogado
         '
@@ -256,6 +282,7 @@ Partial Class updateAgogado
         CType(Me.DireccionMemoEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CodigoAbogadoTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CorreoTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EstadoCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -271,4 +298,5 @@ Partial Class updateAgogado
     Friend WithEvents CodigoAbogadoTextEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents CorreoTextEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents btnAgregar As System.Windows.Forms.Button
+    Friend WithEvents EstadoCheckEdit As DevExpress.XtraEditors.CheckEdit
 End Class
