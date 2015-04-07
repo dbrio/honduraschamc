@@ -34,10 +34,10 @@ Public Class login
 
             'comprovar si el usuario existe en la base de datos
 
-            Dim idUsuario As Integer = UsuarioTableAdapter.ScalarQuery(txtUser.Text, keyCryto)
+
 
             Dim estadoUser = (From a In db.Usuario
-                          Where a.usuarioId = idUsuario
+                          Where a.usuario = txtUser.Text And a.contrasena = keyCryto
                           Select a.estado).FirstOrDefault
 
             If login = 1 And estadoUser = "True" Then
@@ -47,6 +47,7 @@ Public Class login
                 End With
 
 
+                Dim idUsuario As Integer = UsuarioTableAdapter.ScalarQuery(txtUser.Text, keyCryto)
 
                 UsuarioActivo.usuario = idUsuario
 

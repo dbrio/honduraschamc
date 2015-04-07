@@ -110,7 +110,6 @@ Partial Class addProtocolo
         'NombresAbogado
         '
         Me.NombresAbogado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AbogadoBindingSource, "nombres", True))
-        Me.NombresAbogado.DataBindings.Add(New System.Windows.Forms.Binding("SelectedItem", Me.AbogadoBindingSource1, "nombres", True))
         Me.NombresAbogado.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.AbogadoBindingSource1, "abogadoId", True))
         Me.NombresAbogado.DataSource = Me.AbogadoBindingSource
         Me.NombresAbogado.DisplayMember = "nombres"
@@ -273,9 +272,14 @@ Partial Class addProtocolo
         'TableAdapterManager
         '
         Me.TableAdapterManager.AbogadoTableAdapter = Me.AbogadoTableAdapter
+        Me.TableAdapterManager.AgenciaTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CargoTableAdapter = Nothing
         Me.TableAdapterManager.EventoTableAdapter = Nothing
+        Me.TableAdapterManager.hipotecaEstadoTableAdapter = Nothing
         Me.TableAdapterManager.HipotecaTableAdapter = Nothing
+        Me.TableAdapterManager.MemoTableAdapter = Nothing
+        Me.TableAdapterManager.PersonalTableAdapter = Nothing
         Me.TableAdapterManager.prestamoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuarioTableAdapter = Nothing

@@ -30,7 +30,7 @@ Public Class enProtocolo
     Sub cargarDatos()
         Try
             Me.Text = titulo
-            If UsuarioActivo.cargo = "Iformatica" Then
+            If UsuarioActivo.cargo = "PROVEEDURIA" Then
                 Me.HipotecaEestadoTableAdapter.FillInformatica(Me.DataSetCreditos.hipotecaEestado, idCargar)
 
             Else

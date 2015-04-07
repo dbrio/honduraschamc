@@ -23,6 +23,7 @@ Partial Class updateAgogado
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim NombresLabel As System.Windows.Forms.Label
         Dim ApellidosLabel As System.Windows.Forms.Label
         Dim TelefonoLabel As System.Windows.Forms.Label
@@ -31,10 +32,11 @@ Partial Class updateAgogado
         Dim CorreoLabel As System.Windows.Forms.Label
         Dim EstadoLabel As System.Windows.Forms.Label
         Me.DataSetCreditos = New creditosHipotecarios.DataSetCreditos()
-        Me.AbogadoBindingSource = New System.Windows.Forms.BindingSource()
+        Me.AbogadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AbogadoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.AbogadoTableAdapter()
         Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.EstadoCheckEdit = New DevExpress.XtraEditors.CheckEdit()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.NombresTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.ApellidosTextEdit = New DevExpress.XtraEditors.TextEdit()
@@ -42,7 +44,6 @@ Partial Class updateAgogado
         Me.DireccionMemoEdit = New DevExpress.XtraEditors.MemoEdit()
         Me.CodigoAbogadoTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.CorreoTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.EstadoCheckEdit = New DevExpress.XtraEditors.CheckEdit()
         NombresLabel = New System.Windows.Forms.Label()
         ApellidosLabel = New System.Windows.Forms.Label()
         TelefonoLabel = New System.Windows.Forms.Label()
@@ -53,13 +54,13 @@ Partial Class updateAgogado
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AbogadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.EstadoCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NombresTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ApellidosTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TelefonoTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DireccionMemoEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CodigoAbogadoTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CorreoTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EstadoCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NombresLabel
@@ -122,6 +123,16 @@ Partial Class updateAgogado
         CorreoLabel.TabIndex = 25
         CorreoLabel.Text = "Correo:"
         '
+        'EstadoLabel
+        '
+        EstadoLabel.AutoSize = True
+        EstadoLabel.Font = New System.Drawing.Font("Arial", 10.0!)
+        EstadoLabel.Location = New System.Drawing.Point(80, 335)
+        EstadoLabel.Name = "EstadoLabel"
+        EstadoLabel.Size = New System.Drawing.Size(56, 16)
+        EstadoLabel.TabIndex = 29
+        EstadoLabel.Text = "Estado:"
+        '
         'DataSetCreditos
         '
         Me.DataSetCreditos.DataSetName = "DataSetCreditos"
@@ -139,11 +150,14 @@ Partial Class updateAgogado
         'TableAdapterManager
         '
         Me.TableAdapterManager.AbogadoTableAdapter = Me.AbogadoTableAdapter
+        Me.TableAdapterManager.AgenciaTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CargoTableAdapter = Nothing
         Me.TableAdapterManager.EventoTableAdapter = Nothing
         Me.TableAdapterManager.hipotecaEstadoTableAdapter = Nothing
         Me.TableAdapterManager.HipotecaTableAdapter = Nothing
         Me.TableAdapterManager.MemoTableAdapter = Nothing
+        Me.TableAdapterManager.PersonalTableAdapter = Nothing
         Me.TableAdapterManager.prestamoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuarioTableAdapter = Nothing
@@ -171,6 +185,17 @@ Partial Class updateAgogado
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         '
+        'EstadoCheckEdit
+        '
+        Me.EstadoCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.AbogadoBindingSource, "estado", True))
+        Me.EstadoCheckEdit.Location = New System.Drawing.Point(149, 334)
+        Me.EstadoCheckEdit.Name = "EstadoCheckEdit"
+        Me.EstadoCheckEdit.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EstadoCheckEdit.Properties.Appearance.Options.UseFont = True
+        Me.EstadoCheckEdit.Properties.Caption = ""
+        Me.EstadoCheckEdit.Size = New System.Drawing.Size(75, 19)
+        Me.EstadoCheckEdit.TabIndex = 30
+        '
         'btnAgregar
         '
         Me.btnAgregar.BackColor = System.Drawing.Color.SeaGreen
@@ -179,9 +204,9 @@ Partial Class updateAgogado
         Me.btnAgregar.ForeColor = System.Drawing.Color.White
         Me.btnAgregar.Location = New System.Drawing.Point(149, 363)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(335, 44)
+        Me.btnAgregar.Size = New System.Drawing.Size(258, 44)
         Me.btnAgregar.TabIndex = 27
-        Me.btnAgregar.Text = "AGREGAR"
+        Me.btnAgregar.Text = "ACTUALIZAR"
         Me.btnAgregar.UseVisualStyleBackColor = False
         '
         'NombresTextEdit
@@ -242,27 +267,6 @@ Partial Class updateAgogado
         Me.CorreoTextEdit.Size = New System.Drawing.Size(195, 26)
         Me.CorreoTextEdit.TabIndex = 26
         '
-        'EstadoLabel
-        '
-        EstadoLabel.AutoSize = True
-        EstadoLabel.Font = New System.Drawing.Font("Arial", 10.0!)
-        EstadoLabel.Location = New System.Drawing.Point(80, 335)
-        EstadoLabel.Name = "EstadoLabel"
-        EstadoLabel.Size = New System.Drawing.Size(56, 16)
-        EstadoLabel.TabIndex = 29
-        EstadoLabel.Text = "Estado:"
-        '
-        'EstadoCheckEdit
-        '
-        Me.EstadoCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.AbogadoBindingSource, "estado", True))
-        Me.EstadoCheckEdit.Location = New System.Drawing.Point(149, 334)
-        Me.EstadoCheckEdit.Name = "EstadoCheckEdit"
-        Me.EstadoCheckEdit.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EstadoCheckEdit.Properties.Appearance.Options.UseFont = True
-        Me.EstadoCheckEdit.Properties.Caption = ""
-        Me.EstadoCheckEdit.Size = New System.Drawing.Size(75, 19)
-        Me.EstadoCheckEdit.TabIndex = 30
-        '
         'updateAgogado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
@@ -276,13 +280,13 @@ Partial Class updateAgogado
         CType(Me.AbogadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.EstadoCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NombresTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ApellidosTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TelefonoTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DireccionMemoEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CodigoAbogadoTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CorreoTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EstadoCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

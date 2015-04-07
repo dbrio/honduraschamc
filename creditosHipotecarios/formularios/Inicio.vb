@@ -289,12 +289,20 @@ Public Class Inicio
 
     Private Sub btnCustodia1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnCustodia1.ItemClick
 
-        Dim reporte As New ReporteCustodia() With {.IDc = 6}
-        reporte.generarReporte()
+        Try
+            With reportesGeneral
 
-        Dim printTool As New ReportPrintTool(reporte)
-        printTool.Report.CreateDocument(False)
-        printTool.ShowRibbonPreviewDialog()
+                .MdiParent = Me
+                .idCargar = 6
+                .Show()
+                .Focus()
+                .titulo = btnCustodia1.Caption
+                .cargarDatos()
+
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub BarButtonItem4_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem4.ItemClick
@@ -314,5 +322,39 @@ Public Class Inicio
 
         End With
 
+    End Sub
+
+ 
+    Private Sub BarButtonItem9_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem9.ItemClick
+        With addPersonal
+            .Show()
+        End With
+    End Sub
+
+   
+  
+    Private Sub BarButtonItem7_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem7.ItemClick
+        With listEmpleados
+            .MdiParent = Me
+            .Show()
+
+        End With
+    End Sub
+
+    Private Sub BarButtonItem8_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem8.ItemClick
+        Try
+            With reportesGeneral
+
+                .MdiParent = Me
+                .idCargar = 11
+                .Show()
+                .Focus()
+                .titulo = btnCustodia1.Caption
+                .cargarDatos()
+
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class
