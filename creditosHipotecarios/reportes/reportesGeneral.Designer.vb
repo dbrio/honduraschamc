@@ -24,48 +24,42 @@ Partial Class reportesGeneral
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.HipotecaEestadoGridControl = New DevExpress.XtraGrid.GridControl()
-        Me.HipotecaEestadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ReporteGeneralBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetCreditos = New creditosHipotecarios.DataSetCreditos()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.colAgencia = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colhipotecaEstadoId = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colprestamoId = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colnombreAgencia = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colnombreCliente = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colrnpCliente = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colmonto = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coltasaInteres = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colplazo = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coldescripcion = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.HipotecaEestadoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEestadoTableAdapter()
+        Me.ReporteGeneralTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.ReporteGeneralTableAdapter()
         Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
-        Me.HipotecaEstadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HipotecaEestadoBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSetCreditosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HipotecaEstadoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEstadoTableAdapter()
-        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         CType(Me.HipotecaEestadoGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.HipotecaEestadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ReporteGeneralBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.HipotecaEstadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.HipotecaEestadoBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSetCreditosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'HipotecaEestadoGridControl
         '
-        Me.HipotecaEestadoGridControl.DataSource = Me.HipotecaEestadoBindingSource
+        Me.HipotecaEestadoGridControl.DataSource = Me.ReporteGeneralBindingSource
         Me.HipotecaEestadoGridControl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.HipotecaEestadoGridControl.Location = New System.Drawing.Point(0, 0)
         Me.HipotecaEestadoGridControl.MainView = Me.GridView1
         Me.HipotecaEestadoGridControl.Name = "HipotecaEestadoGridControl"
         Me.HipotecaEestadoGridControl.Size = New System.Drawing.Size(786, 465)
         Me.HipotecaEestadoGridControl.TabIndex = 3
+        Me.HipotecaEestadoGridControl.UseEmbeddedNavigator = True
         Me.HipotecaEestadoGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
-        'HipotecaEestadoBindingSource
+        'ReporteGeneralBindingSource
         '
-        Me.HipotecaEestadoBindingSource.DataMember = "hipotecaEestado"
-        Me.HipotecaEestadoBindingSource.DataSource = Me.DataSetCreditos
+        Me.ReporteGeneralBindingSource.DataMember = "ReporteGeneral"
+        Me.ReporteGeneralBindingSource.DataSource = Me.DataSetCreditos
         '
         'DataSetCreditos
         '
@@ -114,7 +108,7 @@ Partial Class reportesGeneral
         Me.GridView1.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black
         Me.GridView1.Appearance.FocusedCell.Options.UseBackColor = True
         Me.GridView1.Appearance.FocusedCell.Options.UseForeColor = True
-        Me.GridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.GridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.LightSlateGray
         Me.GridView1.Appearance.FocusedRow.ForeColor = System.Drawing.Color.White
         Me.GridView1.Appearance.FocusedRow.Options.UseBackColor = True
         Me.GridView1.Appearance.FocusedRow.Options.UseForeColor = True
@@ -160,7 +154,7 @@ Partial Class reportesGeneral
         Me.GridView1.Appearance.HeaderPanel.Options.UseBackColor = True
         Me.GridView1.Appearance.HeaderPanel.Options.UseBorderColor = True
         Me.GridView1.Appearance.HeaderPanel.Options.UseForeColor = True
-        Me.GridView1.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(CType(CType(106, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(228, Byte), Integer))
+        Me.GridView1.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.LightSlateGray
         Me.GridView1.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.GridView1.Appearance.HideSelectionRow.Options.UseBackColor = True
         Me.GridView1.Appearance.HideSelectionRow.Options.UseForeColor = True
@@ -174,9 +168,12 @@ Partial Class reportesGeneral
         Me.GridView1.Appearance.Preview.ForeColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(185, Byte), Integer))
         Me.GridView1.Appearance.Preview.Options.UseBackColor = True
         Me.GridView1.Appearance.Preview.Options.UseForeColor = True
-        Me.GridView1.Appearance.Row.BackColor = System.Drawing.Color.White
+        Me.GridView1.Appearance.Row.BackColor = System.Drawing.Color.Transparent
+        Me.GridView1.Appearance.Row.BackColor2 = System.Drawing.Color.White
+        Me.GridView1.Appearance.Row.BorderColor = System.Drawing.Color.White
         Me.GridView1.Appearance.Row.ForeColor = System.Drawing.Color.Black
         Me.GridView1.Appearance.Row.Options.UseBackColor = True
+        Me.GridView1.Appearance.Row.Options.UseBorderColor = True
         Me.GridView1.Appearance.Row.Options.UseForeColor = True
         Me.GridView1.Appearance.RowSeparator.BackColor = System.Drawing.Color.White
         Me.GridView1.Appearance.RowSeparator.Options.UseBackColor = True
@@ -186,7 +183,7 @@ Partial Class reportesGeneral
         Me.GridView1.Appearance.SelectedRow.Options.UseForeColor = True
         Me.GridView1.Appearance.VertLine.BackColor = System.Drawing.Color.FromArgb(CType(CType(99, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(196, Byte), Integer))
         Me.GridView1.Appearance.VertLine.Options.UseBackColor = True
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colAgencia, Me.colhipotecaEstadoId, Me.colnombreCliente, Me.colrnpCliente, Me.colmonto, Me.coltasaInteres, Me.coldescripcion})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colprestamoId, Me.colnombreAgencia, Me.colnombreCliente, Me.colmonto, Me.coltasaInteres, Me.colplazo, Me.coldescripcion})
         Me.GridView1.FixedLineWidth = 1
         Me.GridView1.GridControl = Me.HipotecaEestadoGridControl
         Me.GridView1.GroupPanelText = "  "
@@ -197,45 +194,37 @@ Partial Class reportesGeneral
         Me.GridView1.OptionsCustomization.AllowGroup = False
         Me.GridView1.OptionsCustomization.AllowSort = False
         Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.GridView1.OptionsSelection.EnableAppearanceFocusedRow = False
+        Me.GridView1.OptionsSelection.MultiSelect = True
         Me.GridView1.PaintStyleName = "WindowsXP"
         Me.GridView1.RowHeight = 30
         '
-        'colAgencia
+        'colprestamoId
         '
-        Me.colAgencia.Caption = "AGE"
-        Me.colAgencia.FieldName = "codigoAgencia"
-        Me.colAgencia.Name = "colAgencia"
-        Me.colAgencia.Visible = True
-        Me.colAgencia.VisibleIndex = 0
-        Me.colAgencia.Width = 20
+        Me.colprestamoId.Caption = "PRESTAMOID"
+        Me.colprestamoId.FieldName = "prestamoId"
+        Me.colprestamoId.Name = "colprestamoId"
+        Me.colprestamoId.OptionsColumn.ReadOnly = True
+        Me.colprestamoId.Visible = True
+        Me.colprestamoId.VisibleIndex = 0
+        Me.colprestamoId.Width = 40
         '
-        'colhipotecaEstadoId
+        'colnombreAgencia
         '
-        Me.colhipotecaEstadoId.Caption = "Id"
-        Me.colhipotecaEstadoId.MinWidth = 10
-        Me.colhipotecaEstadoId.Name = "colhipotecaEstadoId"
-        Me.colhipotecaEstadoId.Visible = True
-        Me.colhipotecaEstadoId.VisibleIndex = 6
-        Me.colhipotecaEstadoId.Width = 16
+        Me.colnombreAgencia.Caption = "AGENCIA"
+        Me.colnombreAgencia.FieldName = "nombreAgencia"
+        Me.colnombreAgencia.Name = "colnombreAgencia"
+        Me.colnombreAgencia.Visible = True
+        Me.colnombreAgencia.VisibleIndex = 1
+        Me.colnombreAgencia.Width = 120
         '
         'colnombreCliente
         '
-        Me.colnombreCliente.Caption = "NOMBRE DEL CLIENTE"
+        Me.colnombreCliente.Caption = "NOMBRE"
         Me.colnombreCliente.FieldName = "nombreCliente"
         Me.colnombreCliente.Name = "colnombreCliente"
         Me.colnombreCliente.Visible = True
-        Me.colnombreCliente.VisibleIndex = 1
-        Me.colnombreCliente.Width = 176
-        '
-        'colrnpCliente
-        '
-        Me.colrnpCliente.Caption = "IDENTIDAD"
-        Me.colrnpCliente.FieldName = "rnpCliente"
-        Me.colrnpCliente.Name = "colrnpCliente"
-        Me.colrnpCliente.Visible = True
-        Me.colrnpCliente.VisibleIndex = 2
-        Me.colrnpCliente.Width = 91
+        Me.colnombreCliente.VisibleIndex = 2
+        Me.colnombreCliente.Width = 120
         '
         'colmonto
         '
@@ -244,16 +233,25 @@ Partial Class reportesGeneral
         Me.colmonto.Name = "colmonto"
         Me.colmonto.Visible = True
         Me.colmonto.VisibleIndex = 3
-        Me.colmonto.Width = 60
+        Me.colmonto.Width = 50
         '
         'coltasaInteres
         '
-        Me.coltasaInteres.Caption = "TASA DE INTERES"
+        Me.coltasaInteres.Caption = "INTERES"
         Me.coltasaInteres.FieldName = "tasaInteres"
         Me.coltasaInteres.Name = "coltasaInteres"
         Me.coltasaInteres.Visible = True
         Me.coltasaInteres.VisibleIndex = 4
-        Me.coltasaInteres.Width = 62
+        Me.coltasaInteres.Width = 50
+        '
+        'colplazo
+        '
+        Me.colplazo.Caption = "PLAZO"
+        Me.colplazo.FieldName = "plazo"
+        Me.colplazo.Name = "colplazo"
+        Me.colplazo.Visible = True
+        Me.colplazo.VisibleIndex = 5
+        Me.colplazo.Width = 50
         '
         'coldescripcion
         '
@@ -261,12 +259,12 @@ Partial Class reportesGeneral
         Me.coldescripcion.FieldName = "descripcion"
         Me.coldescripcion.Name = "coldescripcion"
         Me.coldescripcion.Visible = True
-        Me.coldescripcion.VisibleIndex = 5
-        Me.coldescripcion.Width = 417
+        Me.coldescripcion.VisibleIndex = 6
+        Me.coldescripcion.Width = 337
         '
-        'HipotecaEestadoTableAdapter
+        'ReporteGeneralTableAdapter
         '
-        Me.HipotecaEestadoTableAdapter.ClearBeforeFill = True
+        Me.ReporteGeneralTableAdapter.ClearBeforeFill = True
         '
         'TableAdapterManager
         '
@@ -284,24 +282,14 @@ Partial Class reportesGeneral
         Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuarioTableAdapter = Nothing
         '
-        'HipotecaEstadoBindingSource
+        'txtBuscar
         '
-        Me.HipotecaEstadoBindingSource.DataMember = "hipotecaEstado"
-        Me.HipotecaEstadoBindingSource.DataSource = Me.DataSetCreditos
-        '
-        'HipotecaEestadoBindingSource1
-        '
-        Me.HipotecaEestadoBindingSource1.DataMember = "hipotecaEestado"
-        Me.HipotecaEestadoBindingSource1.DataSource = Me.DataSetCreditos
-        '
-        'DataSetCreditosBindingSource
-        '
-        Me.DataSetCreditosBindingSource.DataSource = Me.DataSetCreditos
-        Me.DataSetCreditosBindingSource.Position = 0
-        '
-        'HipotecaEstadoTableAdapter
-        '
-        Me.HipotecaEstadoTableAdapter.ClearBeforeFill = True
+        Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.Location = New System.Drawing.Point(12, 24)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(344, 31)
+        Me.txtBuscar.TabIndex = 8
         '
         'btnBuscar
         '
@@ -317,15 +305,6 @@ Partial Class reportesGeneral
         Me.btnBuscar.Text = "BUSCAR"
         Me.btnBuscar.UseVisualStyleBackColor = False
         '
-        'txtBuscar
-        '
-        Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(12, 24)
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(344, 31)
-        Me.txtBuscar.TabIndex = 8
-        '
         'reportesGeneral
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -337,33 +316,26 @@ Partial Class reportesGeneral
         Me.Name = "reportesGeneral"
         Me.Text = "reportesGeneral"
         CType(Me.HipotecaEestadoGridControl, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.HipotecaEestadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ReporteGeneralBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.HipotecaEstadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.HipotecaEestadoBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSetCreditosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents HipotecaEestadoGridControl As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents colAgencia As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colhipotecaEstadoId As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents DataSetCreditos As creditosHipotecarios.DataSetCreditos
+    Friend WithEvents ReporteGeneralBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents ReporteGeneralTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.ReporteGeneralTableAdapter
+    Friend WithEvents TableAdapterManager As creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager
+    Friend WithEvents colprestamoId As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colnombreAgencia As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colnombreCliente As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colrnpCliente As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colmonto As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents coltasaInteres As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colplazo As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents coldescripcion As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents DataSetCreditos As creditosHipotecarios.DataSetCreditos
-    Friend WithEvents HipotecaEestadoBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents HipotecaEestadoTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEestadoTableAdapter
-    Friend WithEvents TableAdapterManager As creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager
-    Friend WithEvents HipotecaEstadoBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents HipotecaEestadoBindingSource1 As System.Windows.Forms.BindingSource
-    Friend WithEvents DataSetCreditosBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents HipotecaEstadoTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEstadoTableAdapter
-    Friend WithEvents btnBuscar As System.Windows.Forms.Button
     Friend WithEvents txtBuscar As System.Windows.Forms.TextBox
+    Friend WithEvents btnBuscar As System.Windows.Forms.Button
 End Class

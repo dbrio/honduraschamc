@@ -62,4 +62,12 @@
         End Try
 
     End Sub
+
+    Private Sub SolicitudPago_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        Inicio.Enabled = True
+    End Sub
+
+    Private Sub SolicitudPago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Inicio.Enabled = False
+    End Sub
 End Class

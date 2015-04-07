@@ -381,7 +381,7 @@ Partial Class seguimiento
         '
         UsuarioLabel.AutoSize = True
         UsuarioLabel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        UsuarioLabel.ForeColor = System.Drawing.Color.OrangeRed
+        UsuarioLabel.ForeColor = System.Drawing.Color.LightSlateGray
         UsuarioLabel.Location = New System.Drawing.Point(316, 47)
         UsuarioLabel.Name = "UsuarioLabel"
         UsuarioLabel.Size = New System.Drawing.Size(24, 18)
@@ -392,7 +392,7 @@ Partial Class seguimiento
         '
         FechaLabel.AutoSize = True
         FechaLabel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        FechaLabel.ForeColor = System.Drawing.Color.OrangeRed
+        FechaLabel.ForeColor = System.Drawing.Color.LightSlateGray
         FechaLabel.Location = New System.Drawing.Point(16, 46)
         FechaLabel.Name = "FechaLabel"
         FechaLabel.Size = New System.Drawing.Size(178, 18)
@@ -411,6 +411,45 @@ Partial Class seguimiento
         Label9.TabIndex = 98
         Label9.Text = "PAGADA"
         '
+        'Label10
+        '
+        Label10.AutoSize = True
+        Label10.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label10.ForeColor = System.Drawing.Color.White
+        Label10.Location = New System.Drawing.Point(776, 120)
+        Label10.Name = "Label10"
+        Label10.Size = New System.Drawing.Size(84, 26)
+        Label10.TabIndex = 99
+        Label10.Text = "SOLICITUD DE" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "DOCUMENTOS"
+        Label10.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label11
+        '
+        Label11.AutoSize = True
+        Label11.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label11.ForeColor = System.Drawing.Color.White
+        Label11.Location = New System.Drawing.Point(868, 120)
+        Label11.Name = "Label11"
+        Label11.Size = New System.Drawing.Size(84, 26)
+        Label11.TabIndex = 100
+        Label11.Text = "ENTREGA DE" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "DOCUMENTOS" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Label11.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label12
+        '
+        Label12.AutoSize = True
+        Label12.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label12.ForeColor = System.Drawing.Color.White
+        Label12.Location = New System.Drawing.Point(965, 120)
+        Label12.Name = "Label12"
+        Label12.Size = New System.Drawing.Size(82, 13)
+        Label12.TabIndex = 101
+        Label12.Text = "CANCELACION"
+        Label12.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'DataSetCreditos
         '
         Me.DataSetCreditos.DataSetName = "DataSetCreditos"
@@ -428,12 +467,15 @@ Partial Class seguimiento
         'TableAdapterManager
         '
         Me.TableAdapterManager.AbogadoTableAdapter = Nothing
+        Me.TableAdapterManager.AgenciaTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CargoTableAdapter = Nothing
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.EventoTableAdapter = Nothing
         Me.TableAdapterManager.hipotecaEstadoTableAdapter = Nothing
         Me.TableAdapterManager.HipotecaTableAdapter = Nothing
         Me.TableAdapterManager.MemoTableAdapter = Nothing
+        Me.TableAdapterManager.PersonalTableAdapter = Nothing
         Me.TableAdapterManager.prestamoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuarioTableAdapter = Nothing
@@ -714,7 +756,7 @@ Partial Class seguimiento
         '
         Me.FechaLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "fecha", True))
         Me.FechaLabel1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FechaLabel1.ForeColor = System.Drawing.Color.OrangeRed
+        Me.FechaLabel1.ForeColor = System.Drawing.Color.LightSlateGray
         Me.FechaLabel1.Location = New System.Drawing.Point(346, 47)
         Me.FechaLabel1.Name = "FechaLabel1"
         Me.FechaLabel1.Size = New System.Drawing.Size(106, 15)
@@ -725,51 +767,12 @@ Partial Class seguimiento
         '
         Me.UsuarioLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "usuario", True))
         Me.UsuarioLabel1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UsuarioLabel1.ForeColor = System.Drawing.Color.OrangeRed
+        Me.UsuarioLabel1.ForeColor = System.Drawing.Color.LightSlateGray
         Me.UsuarioLabel1.Location = New System.Drawing.Point(200, 46)
         Me.UsuarioLabel1.Name = "UsuarioLabel1"
         Me.UsuarioLabel1.Size = New System.Drawing.Size(100, 23)
         Me.UsuarioLabel1.TabIndex = 96
         Me.UsuarioLabel1.Text = "Label9"
-        '
-        'Label10
-        '
-        Label10.AutoSize = True
-        Label10.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label10.ForeColor = System.Drawing.Color.White
-        Label10.Location = New System.Drawing.Point(776, 120)
-        Label10.Name = "Label10"
-        Label10.Size = New System.Drawing.Size(84, 26)
-        Label10.TabIndex = 99
-        Label10.Text = "SOLICITUD DE" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "DOCUMENTOS"
-        Label10.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label11
-        '
-        Label11.AutoSize = True
-        Label11.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label11.ForeColor = System.Drawing.Color.White
-        Label11.Location = New System.Drawing.Point(868, 120)
-        Label11.Name = "Label11"
-        Label11.Size = New System.Drawing.Size(84, 26)
-        Label11.TabIndex = 100
-        Label11.Text = "ENTREGA DE" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "DOCUMENTOS" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        Label11.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label12
-        '
-        Label12.AutoSize = True
-        Label12.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label12.ForeColor = System.Drawing.Color.White
-        Label12.Location = New System.Drawing.Point(965, 120)
-        Label12.Name = "Label12"
-        Label12.Size = New System.Drawing.Size(82, 13)
-        Label12.TabIndex = 101
-        Label12.Text = "CANCELACION"
-        Label12.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'seguimiento
         '

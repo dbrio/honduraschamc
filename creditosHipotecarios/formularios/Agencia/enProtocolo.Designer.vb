@@ -22,8 +22,9 @@ Partial Class enProtocolo
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.DataSetCreditos = New creditosHipotecarios.DataSetCreditos()
-        Me.HipotecaEestadoBindingSource = New System.Windows.Forms.BindingSource()
+        Me.HipotecaEestadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.HipotecaEestadoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEestadoTableAdapter()
         Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
         Me.HipotecaEestadoGridControl = New DevExpress.XtraGrid.GridControl()
@@ -35,10 +36,11 @@ Partial Class enProtocolo
         Me.colmonto = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coltasaInteres = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coldescripcion = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.HipotecaEstadoBindingSource = New System.Windows.Forms.BindingSource()
-        Me.HipotecaEestadoBindingSource1 = New System.Windows.Forms.BindingSource()
-        Me.DataSetCreditosBindingSource = New System.Windows.Forms.BindingSource()
+        Me.HipotecaEstadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.HipotecaEestadoBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetCreditosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.HipotecaEstadoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEstadoTableAdapter()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HipotecaEestadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HipotecaEestadoGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,12 +67,15 @@ Partial Class enProtocolo
         'TableAdapterManager
         '
         Me.TableAdapterManager.AbogadoTableAdapter = Nothing
+        Me.TableAdapterManager.AgenciaTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CargoTableAdapter = Nothing
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.EventoTableAdapter = Nothing
         Me.TableAdapterManager.hipotecaEstadoTableAdapter = Nothing
         Me.TableAdapterManager.HipotecaTableAdapter = Nothing
         Me.TableAdapterManager.MemoTableAdapter = Nothing
+        Me.TableAdapterManager.PersonalTableAdapter = Nothing
         Me.TableAdapterManager.prestamoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuarioTableAdapter = Nothing
@@ -88,7 +93,9 @@ Partial Class enProtocolo
         '
         'GridView1
         '
+        Me.GridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.LightSlateGray
         Me.GridView1.Appearance.FocusedRow.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GridView1.Appearance.FocusedRow.Options.UseBackColor = True
         Me.GridView1.Appearance.FocusedRow.Options.UseFont = True
         Me.GridView1.Appearance.GroupRow.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GridView1.Appearance.GroupRow.Options.UseFont = True
@@ -96,7 +103,7 @@ Partial Class enProtocolo
         Me.GridView1.Appearance.Row.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.GridView1.Appearance.Row.Options.UseFont = True
         Me.GridView1.Appearance.Row.Options.UseForeColor = True
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colAgencia, Me.colhipotecaEstadoId, Me.colnombreCliente, Me.colrnpCliente, Me.colmonto, Me.coltasaInteres, Me.coldescripcion})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.colAgencia, Me.colhipotecaEstadoId, Me.colnombreCliente, Me.colrnpCliente, Me.colmonto, Me.coltasaInteres, Me.coldescripcion})
         Me.GridView1.FixedLineWidth = 1
         Me.GridView1.GridControl = Me.HipotecaEestadoGridControl
         Me.GridView1.GroupPanelText = "  "
@@ -107,7 +114,6 @@ Partial Class enProtocolo
         Me.GridView1.OptionsCustomization.AllowGroup = False
         Me.GridView1.OptionsCustomization.AllowSort = False
         Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.GridView1.OptionsSelection.EnableAppearanceFocusedRow = False
         Me.GridView1.OptionsView.ShowGroupPanel = False
         Me.GridView1.PaintStyleName = "WindowsXP"
         Me.GridView1.RowHeight = 30
@@ -118,8 +124,8 @@ Partial Class enProtocolo
         Me.colAgencia.FieldName = "codigoAgencia"
         Me.colAgencia.Name = "colAgencia"
         Me.colAgencia.Visible = True
-        Me.colAgencia.VisibleIndex = 0
-        Me.colAgencia.Width = 20
+        Me.colAgencia.VisibleIndex = 7
+        Me.colAgencia.Width = 29
         '
         'colhipotecaEstadoId
         '
@@ -194,6 +200,14 @@ Partial Class enProtocolo
         '
         Me.HipotecaEstadoTableAdapter.ClearBeforeFill = True
         '
+        'GridColumn1
+        '
+        Me.GridColumn1.Caption = "AGENCIA"
+        Me.GridColumn1.FieldName = "nombreAgencia"
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 0
+        '
         'enProtocolo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -229,4 +243,5 @@ Partial Class enProtocolo
     Friend WithEvents HipotecaEstadoBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents HipotecaEstadoTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEstadoTableAdapter
     Friend WithEvents colAgencia As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

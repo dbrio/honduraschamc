@@ -26,12 +26,12 @@
     <InstallUrl>http://www.dbriones.com/sitios/amc/</InstallUrl>
     <UpdateUrl>http://www.dbriones.com/sitios/amc/</UpdateUrl>
     <TargetCulture>es-HN</TargetCulture>
-    <ProductName>Seguimiento Créditos Hipotecarios</ProductName>
+    <ProductName>Seguimientos</ProductName>
     <PublisherName>David Briones</PublisherName>
     <SuiteName>amc</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.html</WebPage>
-    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -83,7 +83,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>1428021689_406783.ico</ApplicationIcon>
+    <ApplicationIcon>icono.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Charts.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -196,6 +196,12 @@
       <DependentUpon>updateAgogado.vb</DependentUpon>
     </Compile>
     <Compile Include="admin\updateAgogado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin\updatePassword.Designer.vb">
+      <DependentUpon>updatePassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="admin\updatePassword.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="admin\updateUser.Designer.vb">
@@ -367,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="admin\updateAgogado.resx">
       <DependentUpon>updateAgogado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\updatePassword.resx">
+      <DependentUpon>updatePassword.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="admin\updateUser.resx">
       <DependentUpon>updateUser.vb</DependentUpon>
@@ -1024,6 +1033,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1428021689_406783.ico" />
+    <Content Include="favi.ico" />
+    <Content Include="favicon.ico" />
+    <Content Include="icono.ico" />
+    <None Include="Resources\password.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -53,7 +53,7 @@ Public Class enProtocolo
 
             'SI SE VA ACTUALIZAR EL ESTADO DE IP DEBERA PERDIR UN NUMERO DE IP EN EL FORMULARIO IP
 
-            If Me.Text = "PARA EN IP" Then
+            If Me.Text = "NUMERO IP" Then
 
                 Dim dict As Hashtable = obtenerDatos()
                 Dim hipotecaEstadoId As String = dict("hipotecaEstadoId")
