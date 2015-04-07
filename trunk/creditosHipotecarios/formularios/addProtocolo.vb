@@ -116,6 +116,8 @@
 
             If txtIdPropietario.Text.Trim = "" Then
                 MsgBox("Debe de introducir la identidad del propietario", MsgBoxStyle.Critical)
+                txtIdPropietario.Show()
+
                 Exit Sub
             End If
 
@@ -124,6 +126,13 @@
 
 
             'INSERTAR PRESTAMO AL SISTEMA
+
+            If NombresAbogado.Text.Trim = "" Then
+                MsgBox("Debe de seleccionar un abogado", MsgBoxStyle.Critical)
+                NombresAbogado.Show()
+                Exit Sub
+            End If
+
             Me.PrestamoTableAdapter.Insert(codigoClinteGarantiaAdd, codigoAgenciaGarantiaAdd, nombreClienteGarantiaAdd, identidadGarantiaAdd, propietarioAdd, txtIdPropietario.Text, montoGarantiaAdd, plazoGaratniaAdd, tasaInteresGaratniaAdd, cuotaAdd, interesMoraGaratniaAdd, valorRemateAdd, descripcionAdd)
 
             Me.HipotecaTableAdapter.sp_Hipoteca(NombresAbogado.SelectedValue)
@@ -153,30 +162,34 @@
 
     Sub cargarDatos()
         'TODO: esta línea de código carga datos en la tabla 'DataSetCreditos.Evento' Puede moverla o quitarla según sea necesario.
-        Me.EventoTableAdapter.Fill(Me.DataSetCreditos.Evento)
-        'TODO: esta línea de código carga datos en la tabla 'DataSetCreditos.Hipoteca' Puede moverla o quitarla según sea necesario.
-        Me.HipotecaTableAdapter.Fill(Me.DataSetCreditos.Hipoteca)
-        'TODO: esta línea de código carga datos en la tabla 'DataSetCreditos.prestamo' Puede moverla o quitarla según sea necesario.
-        Me.PrestamoTableAdapter.Fill(Me.DataSetCreditos.prestamo)
+        Try
+            Me.EventoTableAdapter.Fill(Me.DataSetCreditos.Evento)
+            'TODO: esta línea de código carga datos en la tabla 'DataSetCreditos.Hipoteca' Puede moverla o quitarla según sea necesario.
+            Me.HipotecaTableAdapter.Fill(Me.DataSetCreditos.Hipoteca)
+            'TODO: esta línea de código carga datos en la tabla 'DataSetCreditos.prestamo' Puede moverla o quitarla según sea necesario.
+            Me.PrestamoTableAdapter.Fill(Me.DataSetCreditos.prestamo)
 
 
-        Me.AbogadoTableAdapter.Fill(Me.DataSetCreditos.Abogado)
+            Me.AbogadoTableAdapter.FillBy1(Me.DataSetCreditos.Abogado)
 
-        LabelNombre.Text = "NOMBRE:   " + Convert.ToString(nombreClienteGarantiaAdd)
-        LabelIdentidadCliente.Text = "IDENTIDAD:    " + Convert.ToString(identidadGarantiaAdd)
-        LabelPropietario.Text = "PROPIETARIO:    " + Convert.ToString(propietarioAdd)
-        LabelMonto.Text = "MONTO:   " + Convert.ToString(montoGarantiaAdd)
-        LabelPlazos.Text = "PLAZO CUOTAS:   " + Convert.ToString(plazoGaratniaAdd)
-        LabelInteres.Text = "TASA DE INTERES:   " + Convert.ToString(tasaInteresGaratniaAdd)
-        LabelCuota.Text = "CUOTA A PAGAR:   " + Convert.ToString(cuotaAdd)
-        LabelInteresMora.Text = "INTERES POR MORA:   " + Convert.ToString(interesMoraGaratniaAdd)
-        LabelValorRemate.Text = "VALOR REMATE:   " + CStr(valorRemateAdd)
+            LabelNombre.Text = "NOMBRE:   " + Convert.ToString(nombreClienteGarantiaAdd)
+            LabelIdentidadCliente.Text = "IDENTIDAD:    " + Convert.ToString(identidadGarantiaAdd)
+            LabelPropietario.Text = "PROPIETARIO:    " + Convert.ToString(propietarioAdd)
+            LabelMonto.Text = "MONTO:   " + Convert.ToString(montoGarantiaAdd)
+            LabelPlazos.Text = "PLAZO CUOTAS:   " + Convert.ToString(plazoGaratniaAdd)
+            LabelInteres.Text = "TASA DE INTERES:   " + Convert.ToString(tasaInteresGaratniaAdd)
+            LabelCuota.Text = "CUOTA A PAGAR:   " + Convert.ToString(cuotaAdd)
+            LabelInteresMora.Text = "INTERES POR MORA:   " + Convert.ToString(interesMoraGaratniaAdd)
+            LabelValorRemate.Text = "VALOR REMATE:   " + CStr(valorRemateAdd)
 
 
-        If nombreClienteGarantiaAdd = propietarioAdd Then
-            txtIdPropietario.Text = identidadGarantiaAdd
-        End If
+            If nombreClienteGarantiaAdd = propietarioAdd Then
+                txtIdPropietario.Text = identidadGarantiaAdd
+            End If
 
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
 

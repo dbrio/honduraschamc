@@ -24,14 +24,14 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>http://www.dbriones.com/sitios/amc/</InstallUrl>
-    <UpdateUrl>http://localhost/amc/</UpdateUrl>
+    <UpdateUrl>http://www.dbriones.com/sitios/amc/</UpdateUrl>
     <TargetCulture>es-HN</TargetCulture>
     <ProductName>Seguimiento Créditos Hipotecarios</ProductName>
     <PublisherName>David Briones</PublisherName>
     <SuiteName>amc</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.html</WebPage>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -162,16 +162,46 @@
     <Compile Include="admin\addAbogado.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="admin\addPersonal.Designer.vb">
+      <DependentUpon>addPersonal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="admin\addPersonal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin\addUser.Designer.vb">
+      <DependentUpon>addUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="admin\addUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="admin\listAbogados.Designer.vb">
       <DependentUpon>listAbogados.vb</DependentUpon>
     </Compile>
     <Compile Include="admin\listAbogados.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="admin\listEmpleados.Designer.vb">
+      <DependentUpon>listEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="admin\listEmpleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin\pudatePersonal.Designer.vb">
+      <DependentUpon>pudatePersonal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="admin\pudatePersonal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="admin\updateAgogado.Designer.vb">
       <DependentUpon>updateAgogado.vb</DependentUpon>
     </Compile>
     <Compile Include="admin\updateAgogado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin\updateUser.Designer.vb">
+      <DependentUpon>updateUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="admin\updateUser.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="dataSet\DataSetAMCProduccion.Designer.vb">
@@ -303,6 +333,12 @@
     <Compile Include="reportes\ReporteCustodia.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="reportes\reportesGeneral.Designer.vb">
+      <DependentUpon>reportesGeneral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\reportesGeneral.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="reportes\ReportMemo.Designer.vb">
       <DependentUpon>ReportMemo.vb</DependentUpon>
     </Compile>
@@ -314,14 +350,32 @@
     <EmbeddedResource Include="admin\addAbogado.resx">
       <DependentUpon>addAbogado.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="admin\addPersonal.resx">
+      <DependentUpon>addPersonal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\addUser.resx">
+      <DependentUpon>addUser.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="admin\listAbogados.resx">
       <DependentUpon>listAbogados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\listEmpleados.resx">
+      <DependentUpon>listEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\pudatePersonal.resx">
+      <DependentUpon>pudatePersonal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="admin\updateAgogado.resx">
       <DependentUpon>updateAgogado.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="admin\updateUser.resx">
+      <DependentUpon>updateUser.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="reportes\ReporteCustodia.resx">
       <DependentUpon>ReporteCustodia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\reportesGeneral.resx">
+      <DependentUpon>reportesGeneral.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reportes\ReportMemo.resx">
       <DependentUpon>ReportMemo.vb</DependentUpon>

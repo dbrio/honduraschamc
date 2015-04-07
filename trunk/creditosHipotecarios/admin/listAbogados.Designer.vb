@@ -37,6 +37,7 @@ Partial Class listAbogados
         Me.colcodigoAbogado = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colcorreo = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AbogadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AbogadoGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,11 +61,14 @@ Partial Class listAbogados
         'TableAdapterManager
         '
         Me.TableAdapterManager.AbogadoTableAdapter = Me.AbogadoTableAdapter
+        Me.TableAdapterManager.AgenciaTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CargoTableAdapter = Nothing
         Me.TableAdapterManager.EventoTableAdapter = Nothing
         Me.TableAdapterManager.hipotecaEstadoTableAdapter = Nothing
         Me.TableAdapterManager.HipotecaTableAdapter = Nothing
         Me.TableAdapterManager.MemoTableAdapter = Nothing
+        Me.TableAdapterManager.PersonalTableAdapter = Nothing
         Me.TableAdapterManager.prestamoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuarioTableAdapter = Nothing
@@ -88,7 +92,7 @@ Partial Class listAbogados
         Me.GridView1.Appearance.GroupPanel.Options.UseFont = True
         Me.GridView1.Appearance.Row.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GridView1.Appearance.Row.Options.UseFont = True
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colabogadoId, Me.colnombres, Me.colapellidos, Me.coltelefono, Me.coldireccion, Me.colcodigoAbogado, Me.colcorreo})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colabogadoId, Me.colnombres, Me.GridColumn1, Me.colapellidos, Me.coltelefono, Me.coldireccion, Me.colcodigoAbogado, Me.colcorreo})
         Me.GridView1.GridControl = Me.AbogadoGridControl
         Me.GridView1.GroupPanelText = " "
         Me.GridView1.Name = "GridView1"
@@ -109,7 +113,7 @@ Partial Class listAbogados
         Me.colabogadoId.OptionsColumn.ReadOnly = True
         Me.colabogadoId.Visible = True
         Me.colabogadoId.VisibleIndex = 0
-        Me.colabogadoId.Width = 50
+        Me.colabogadoId.Width = 45
         '
         'colnombres
         '
@@ -118,7 +122,7 @@ Partial Class listAbogados
         Me.colnombres.Name = "colnombres"
         Me.colnombres.Visible = True
         Me.colnombres.VisibleIndex = 1
-        Me.colnombres.Width = 104
+        Me.colnombres.Width = 93
         '
         'colapellidos
         '
@@ -126,8 +130,8 @@ Partial Class listAbogados
         Me.colapellidos.FieldName = "apellidos"
         Me.colapellidos.Name = "colapellidos"
         Me.colapellidos.Visible = True
-        Me.colapellidos.VisibleIndex = 2
-        Me.colapellidos.Width = 104
+        Me.colapellidos.VisibleIndex = 3
+        Me.colapellidos.Width = 102
         '
         'coltelefono
         '
@@ -135,8 +139,8 @@ Partial Class listAbogados
         Me.coltelefono.FieldName = "telefono"
         Me.coltelefono.Name = "coltelefono"
         Me.coltelefono.Visible = True
-        Me.coltelefono.VisibleIndex = 3
-        Me.coltelefono.Width = 104
+        Me.coltelefono.VisibleIndex = 4
+        Me.coltelefono.Width = 102
         '
         'coldireccion
         '
@@ -144,8 +148,8 @@ Partial Class listAbogados
         Me.coldireccion.FieldName = "direccion"
         Me.coldireccion.Name = "coldireccion"
         Me.coldireccion.Visible = True
-        Me.coldireccion.VisibleIndex = 4
-        Me.coldireccion.Width = 104
+        Me.coldireccion.VisibleIndex = 5
+        Me.coldireccion.Width = 102
         '
         'colcodigoAbogado
         '
@@ -153,8 +157,8 @@ Partial Class listAbogados
         Me.colcodigoAbogado.FieldName = "codigoAbogado"
         Me.colcodigoAbogado.Name = "colcodigoAbogado"
         Me.colcodigoAbogado.Visible = True
-        Me.colcodigoAbogado.VisibleIndex = 5
-        Me.colcodigoAbogado.Width = 104
+        Me.colcodigoAbogado.VisibleIndex = 6
+        Me.colcodigoAbogado.Width = 102
         '
         'colcorreo
         '
@@ -162,8 +166,8 @@ Partial Class listAbogados
         Me.colcorreo.FieldName = "correo"
         Me.colcorreo.Name = "colcorreo"
         Me.colcorreo.Visible = True
-        Me.colcorreo.VisibleIndex = 6
-        Me.colcorreo.Width = 109
+        Me.colcorreo.VisibleIndex = 7
+        Me.colcorreo.Width = 113
         '
         'Label1
         '
@@ -173,9 +177,18 @@ Partial Class listAbogados
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(12, 29)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(206, 24)
+        Me.Label1.Size = New System.Drawing.Size(318, 24)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "AGOGADOS ACTIVOS"
+        Me.Label1.Text = "LISTAS DE ABOGADO AGOGADOS"
+        '
+        'GridColumn1
+        '
+        Me.GridColumn1.Caption = "ESTADO"
+        Me.GridColumn1.FieldName = "estado"
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 2
+        Me.GridColumn1.Width = 35
         '
         'listAbogados
         '
@@ -208,4 +221,5 @@ Partial Class listAbogados
     Friend WithEvents colcodigoAbogado As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colcorreo As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
 End Class
