@@ -41,11 +41,18 @@
 
     End Sub
 
+    Private Sub IP_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        Inicio.Enabled = True
+
+    End Sub
+
 
 
 
     Private Sub IP_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'DataSetCreditos.hipotecaEstado' Puede moverla o quitarla según sea necesario.
+
+        Inicio.Enabled = False
         Me.HipotecaEstadoTableAdapter.Fill(Me.DataSetCreditos.hipotecaEstado)
 
     End Sub

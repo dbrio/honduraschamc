@@ -17,6 +17,7 @@ Public Class Inicio
             pageFirmaCliente.Visible = True
             pageSolicitarDocumentos.Visible = True
             RibEstado.Visible = True
+            RibPerfil.Visible = True
 
 
         End If
@@ -30,6 +31,7 @@ Public Class Inicio
             pageCancelar.Visible = True
             RibEstado.Visible = True
             RibReportes.Visible = True
+            RibPerfil.Visible = True
 
 
 
@@ -40,10 +42,12 @@ Public Class Inicio
             pageSolicitarPago.Visible = True
             pageSolicitarDocumentos.Visible = True
             RibEstado.Visible = True
+            RibPerfil.Visible = True
         End If
 
         If UsuarioActivo.cargo = "INFORMATICA" Then
             RibAdmin.Visible = True
+            RibPerfil.Visible = True
         End If
 
 
@@ -341,7 +345,7 @@ Public Class Inicio
         End With
     End Sub
 
-    Private Sub BarButtonItem8_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem8.ItemClick
+    Private Sub BarButtonItem8_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnCancelar1.ItemClick
         Try
             With reportesGeneral
 
@@ -349,12 +353,19 @@ Public Class Inicio
                 .idCargar = 11
                 .Show()
                 .Focus()
-                .titulo = btnCustodia1.Caption
+                .titulo = btnCancelar1.Caption
                 .cargarDatos()
 
             End With
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub btnContrsena_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnContrsena.ItemClick
+        With updatePassword
+            .Show()
+
+        End With
     End Sub
 End Class

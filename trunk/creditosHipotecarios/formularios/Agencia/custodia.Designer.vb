@@ -106,10 +106,14 @@ Partial Class custodia
         'TableAdapterManager
         '
         Me.TableAdapterManager.AbogadoTableAdapter = Nothing
+        Me.TableAdapterManager.AgenciaTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CargoTableAdapter = Nothing
         Me.TableAdapterManager.EventoTableAdapter = Nothing
         Me.TableAdapterManager.hipotecaEstadoTableAdapter = Nothing
         Me.TableAdapterManager.HipotecaTableAdapter = Me.HipotecaTableAdapter
+        Me.TableAdapterManager.MemoTableAdapter = Nothing
+        Me.TableAdapterManager.PersonalTableAdapter = Nothing
         Me.TableAdapterManager.prestamoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuarioTableAdapter = Nothing

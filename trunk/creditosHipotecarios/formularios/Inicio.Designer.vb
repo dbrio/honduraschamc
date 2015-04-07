@@ -53,7 +53,8 @@ Partial Class Inicio
         Me.BtnAgregarUser = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem9 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem8 = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnCancelar1 = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnContrsena = New DevExpress.XtraBars.BarButtonItem()
         Me.RibEstado = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.pageBuscar = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.pageEstado = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -74,6 +75,8 @@ Partial Class Inicio
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibPerfil = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.RibbonPageGroup6 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -105,7 +108,7 @@ Partial Class Inicio
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControl1.Location = New System.Drawing.Point(0, 121)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(2000, 661)
+        Me.PanelControl1.Size = New System.Drawing.Size(2000, 678)
         Me.PanelControl1.TabIndex = 2
         '
         'ContextMenuStrip1
@@ -228,13 +231,13 @@ Partial Class Inicio
         'RibbonControl2
         '
         Me.RibbonControl2.ExpandCollapseItem.Id = 0
-        Me.RibbonControl2.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl2.ExpandCollapseItem, Me.btnBuscar, Me.btnListo, Me.btnProtocolo, Me.btnFirmaCliente, Me.btnFirmaGerente, Me.btnPresentacion, Me.btnCustodia, Me.btnSolicitudPago, Me.btnEfectuarPago, Me.BarButtonItem11, Me.btnSolicitudDocumentos, Me.btnEntregaDocumentos, Me.btnEstado, Me.btnCustodia1, Me.BarSubItem1, Me.BarButtonItem2, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.btnModificarUser, Me.BtnAgregarUser, Me.BarButtonItem9, Me.BarButtonItem7, Me.BarButtonItem8})
+        Me.RibbonControl2.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl2.ExpandCollapseItem, Me.btnBuscar, Me.btnListo, Me.btnProtocolo, Me.btnFirmaCliente, Me.btnFirmaGerente, Me.btnPresentacion, Me.btnCustodia, Me.btnSolicitudPago, Me.btnEfectuarPago, Me.BarButtonItem11, Me.btnSolicitudDocumentos, Me.btnEntregaDocumentos, Me.btnEstado, Me.btnCustodia1, Me.BarSubItem1, Me.BarButtonItem2, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.btnModificarUser, Me.BtnAgregarUser, Me.BarButtonItem9, Me.BarButtonItem7, Me.btnCancelar1, Me.btnContrsena})
         Me.RibbonControl2.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl2.MaxItemId = 36
+        Me.RibbonControl2.MaxItemId = 37
         Me.RibbonControl2.Name = "RibbonControl2"
-        Me.RibbonControl2.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibEstado, Me.RibReportes, Me.RibAdmin})
+        Me.RibbonControl2.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibEstado, Me.RibReportes, Me.RibAdmin, Me.RibPerfil})
         Me.RibbonControl2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007
-        Me.RibbonControl2.Size = New System.Drawing.Size(2000, 47)
+        Me.RibbonControl2.Size = New System.Drawing.Size(2000, 142)
         Me.RibbonControl2.TransparentEditors = True
         '
         'btnBuscar
@@ -296,7 +299,7 @@ Partial Class Inicio
         '
         'btnFirmaGerente
         '
-        Me.btnFirmaGerente.Caption = "PARA EN IP"
+        Me.btnFirmaGerente.Caption = "NUMERO IP"
         Me.btnFirmaGerente.Id = 6
         Me.btnFirmaGerente.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources._1426294964_pencil_128
         Me.btnFirmaGerente.Name = "btnFirmaGerente"
@@ -442,12 +445,20 @@ Partial Class Inicio
         Me.BarButtonItem7.Id = 34
         Me.BarButtonItem7.Name = "BarButtonItem7"
         '
-        'BarButtonItem8
+        'btnCancelar1
         '
-        Me.BarButtonItem8.Caption = "CANCELADAS"
-        Me.BarButtonItem8.Id = 35
-        Me.BarButtonItem8.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.cancelar
-        Me.BarButtonItem8.Name = "BarButtonItem8"
+        Me.btnCancelar1.Caption = "CANCELADAS"
+        Me.btnCancelar1.Id = 35
+        Me.btnCancelar1.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.cancelar
+        Me.btnCancelar1.Name = "btnCancelar1"
+        '
+        'btnContrsena
+        '
+        Me.btnContrsena.Caption = "CAMBIAR CONTRASEÑA"
+        Me.btnContrsena.Id = 36
+        Me.btnContrsena.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.password
+        Me.btnContrsena.Name = "btnContrsena"
+        Me.btnContrsena.Tag = "NULL"
         '
         'RibEstado
         '
@@ -544,7 +555,7 @@ Partial Class Inicio
         '
         Me.RibReportes.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup5})
         Me.RibReportes.Name = "RibReportes"
-        Me.RibReportes.Text = "REPORTES"
+        Me.RibReportes.Text = "LUGARES"
         Me.RibReportes.Visible = False
         '
         'RibbonPageGroup1
@@ -555,7 +566,7 @@ Partial Class Inicio
         '
         'RibbonPageGroup5
         '
-        Me.RibbonPageGroup5.ItemLinks.Add(Me.BarButtonItem8)
+        Me.RibbonPageGroup5.ItemLinks.Add(Me.btnCancelar1)
         Me.RibbonPageGroup5.Name = "RibbonPageGroup5"
         Me.RibbonPageGroup5.ShowCaptionButton = False
         '
@@ -584,6 +595,18 @@ Partial Class Inicio
         Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
         Me.RibbonPageGroup4.ShowCaptionButton = False
         '
+        'RibPerfil
+        '
+        Me.RibPerfil.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup6})
+        Me.RibPerfil.Name = "RibPerfil"
+        Me.RibPerfil.Text = "PERFIL"
+        Me.RibPerfil.Visible = False
+        '
+        'RibbonPageGroup6
+        '
+        Me.RibbonPageGroup6.ItemLinks.Add(Me.btnContrsena)
+        Me.RibbonPageGroup6.Name = "RibbonPageGroup6"
+        '
         'PanelControl2
         '
         Me.PanelControl2.Appearance.BackColor = System.Drawing.Color.White
@@ -602,7 +625,7 @@ Partial Class Inicio
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1268, 799)
+        Me.ClientSize = New System.Drawing.Size(1268, 816)
         Me.Controls.Add(Me.PanelControl2)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.RibbonControl1)
@@ -685,6 +708,9 @@ Partial Class Inicio
     Friend WithEvents RibbonPageGroup4 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents BarButtonItem9 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem7 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonItem8 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnCancelar1 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPageGroup5 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents btnContrsena As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibPerfil As DevExpress.XtraBars.Ribbon.RibbonPage
+    Friend WithEvents RibbonPageGroup6 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class

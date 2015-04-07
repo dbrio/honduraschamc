@@ -9,7 +9,7 @@
         Try
             Me.Text = titulo
 
-            Me.HipotecaEestadoTableAdapter.FillInformatica(Me.DataSetCreditos.hipotecaEestado, idCargar)
+            ReporteGeneralTableAdapter.Fill(Me.DataSetCreditos.ReporteGeneral, idCargar)
 
 
         Catch ex As Exception
@@ -30,7 +30,7 @@
             Dim texto As String = txtBuscar.Text
             Dim buscar As String = "%" + texto + "%"
 
-            HipotecaEestadoTableAdapter.FillBy(DataSetCreditos.hipotecaEestado, idCargar, buscar)
+            ReporteGeneralTableAdapter.FillBy(Me.DataSetCreditos.ReporteGeneral, idCargar, buscar)
 
 
             txtBuscar.Text = ""
@@ -48,4 +48,5 @@
             btnBuscar_Click(sender, e)
         End If
     End Sub
+
 End Class
