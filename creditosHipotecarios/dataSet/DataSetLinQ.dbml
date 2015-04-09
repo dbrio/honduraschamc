@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="amcApp" Class="DataSetLinQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DAVIDBRIONE3423\SQLEXPRESS;Initial Catalog=amcApp;Integrated Security=True" SettingsObjectName="creditosHipotecarios.My.MySettings" SettingsPropertyName="amcAppConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SQLSERVER;Initial Catalog=amcApp;User ID=amc" SettingsObjectName="creditosHipotecarios.My.MySettings" SettingsPropertyName="amcAppConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.hipotecaEstado" Member="hipotecaEstado">
     <Type Name="hipotecaEstado">
       <Column Name="hipotecaEstadoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -60,6 +60,28 @@
       <Column Name="contrasena" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
       <Column Name="personalId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Personal_Usuario" Member="Personal" ThisKey="personalId" OtherKey="personalId" Type="Personal" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Personal" Member="Personal">
+    <Type Name="Personal">
+      <Column Name="personalId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RNP" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="nombres" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="apellidos" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="codigoAgencia" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="cargoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="telefono" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="direccion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Personal_Usuario" Member="Usuario" ThisKey="personalId" OtherKey="personalId" Type="Usuario" />
+      <Association Name="Agencia_Personal" Member="Agencia" ThisKey="codigoAgencia" OtherKey="codigoAgencia" Type="Agencia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Agencia" Member="Agencia">
+    <Type Name="Agencia">
+      <Column Name="codigoAgencia" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombreAgencia" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Agencia_Personal" Member="Personal" ThisKey="codigoAgencia" OtherKey="codigoAgencia" Type="Personal" />
     </Type>
   </Table>
 </Database>

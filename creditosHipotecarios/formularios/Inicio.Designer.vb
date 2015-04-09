@@ -78,6 +78,7 @@ Partial Class Inicio
         Me.RibPerfil = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup6 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -108,7 +109,7 @@ Partial Class Inicio
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControl1.Location = New System.Drawing.Point(0, 121)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(2000, 678)
+        Me.PanelControl1.Size = New System.Drawing.Size(2000, 635)
         Me.PanelControl1.TabIndex = 2
         '
         'ContextMenuStrip1
@@ -237,7 +238,7 @@ Partial Class Inicio
         Me.RibbonControl2.Name = "RibbonControl2"
         Me.RibbonControl2.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibEstado, Me.RibReportes, Me.RibAdmin, Me.RibPerfil})
         Me.RibbonControl2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007
-        Me.RibbonControl2.Size = New System.Drawing.Size(2000, 142)
+        Me.RibbonControl2.Size = New System.Drawing.Size(2000, 47)
         Me.RibbonControl2.TransparentEditors = True
         '
         'btnBuscar
@@ -619,13 +620,17 @@ Partial Class Inicio
         Me.PanelControl2.Size = New System.Drawing.Size(2000, 153)
         Me.PanelControl2.TabIndex = 4
         '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1000
+        '
         'Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1268, 816)
+        Me.ClientSize = New System.Drawing.Size(1268, 773)
         Me.Controls.Add(Me.PanelControl2)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.RibbonControl1)
@@ -713,4 +718,5 @@ Partial Class Inicio
     Friend WithEvents btnContrsena As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibPerfil As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents RibbonPageGroup6 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
 End Class

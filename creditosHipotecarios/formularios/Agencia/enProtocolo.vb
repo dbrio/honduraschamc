@@ -32,9 +32,10 @@ Public Class enProtocolo
             Me.Text = titulo
             If UsuarioActivo.cargo = "PROVEEDURIA" Then
                 Me.HipotecaEestadoTableAdapter.FillInformatica(Me.DataSetCreditos.hipotecaEestado, idCargar)
-
+                Inicio.cargarNumeros()
             Else
                 Me.HipotecaEestadoTableAdapter.Fill(Me.DataSetCreditos.hipotecaEestado, idCargar, UsuarioActivo.codigoAgencia)
+                Inicio.cargarNumeros()
 
             End If
 
