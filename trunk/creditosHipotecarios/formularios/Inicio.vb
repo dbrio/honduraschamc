@@ -1,11 +1,15 @@
 ﻿Imports DevExpress.XtraReports.UI
 
 Public Class Inicio
-
+    Dim db As New DataSetLinQDataContext
+    Dim tiempo As Integer
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'DataSetCreditos.Usuario' Puede moverla o quitarla según sea necesario.
         'Me.UsuarioTableAdapter.Fill(Me.DataSetCreditos.Usuario)
         GestionarPanel()
+
+        cargarNumeros()
+        Timer1.Start()
 
         'LabelDeparamento.Text = UsuarioActivo.cargo
 
@@ -54,6 +58,85 @@ Public Class Inicio
 
 
     End Sub
+
+    'Gestionar Panel formularios cargan en el panel1
+   
+    Sub cargarNumeros()
+
+        Try
+            If UsuarioActivo.cargo = "PROVEEDURIA" Then
+                For contar As Integer = 0 To 11
+                    Dim i As Integer = contar + 1
+
+                    Dim numeros = (From he In db.hipotecaEstado
+                                   Join h In db.Hipoteca On he.hipotecaId Equals h.hipotecaId
+                                   Join p In db.prestamo On h.prestamoId Equals p.prestamoId
+                                   Where he.estadoId = i
+                                   Select he.hipotecaId).Count
+                    If i = 1 Then
+                        pageProtocoloListo.Text = numeros
+                    ElseIf i = 2 Then
+                        pageFirmaCliente.Text = numeros
+                    ElseIf i = 3 Then
+                        pageFirmaGerente.Text = numeros
+                    ElseIf i = 4 Then
+                        pageIP.Text = numeros
+                    ElseIf i = 5 Then
+                        pageEnviarCustodia.Text = numeros
+                    ElseIf i = 6 Then
+                        pageSolicitarPago.Text = numeros
+                    ElseIf i = 7 Then
+                        pageEfectuarPago.Text = numeros
+                    ElseIf i = 8 Then
+                        pageSolicitarDocumentos.Text = numeros
+                    ElseIf i = 9 Then
+                        pageEntregaCliente.Text = numeros
+                    ElseIf i = 10 Then
+                        pageCancelar.Text = numeros
+                    End If
+                Next contar
+
+            Else
+
+                For contar As Integer = 0 To 11
+                    Dim i As Integer = contar + 1
+
+                    Dim numeros = (From he In db.hipotecaEstado
+                                   Join h In db.Hipoteca On he.hipotecaId Equals h.hipotecaId
+                                   Join p In db.prestamo On h.prestamoId Equals p.prestamoId
+                                   Where he.estadoId = i And p.codigoAgencia = UsuarioActivo.codigoAgencia
+                                   Select he.hipotecaId).Count
+                    If i = 1 Then
+                        pageProtocoloListo.Text = numeros
+                    ElseIf i = 2 Then
+                        pageFirmaCliente.Text = numeros
+                    ElseIf i = 3 Then
+                        pageFirmaGerente.Text = numeros
+                    ElseIf i = 4 Then
+                        pageIP.Text = numeros
+                    ElseIf i = 5 Then
+                        pageEnviarCustodia.Text = numeros
+                    ElseIf i = 6 Then
+                        pageSolicitarPago.Text = numeros
+                    ElseIf i = 7 Then
+                        pageEfectuarPago.Text = numeros
+                    ElseIf i = 8 Then
+                        pageSolicitarDocumentos.Text = numeros
+                    ElseIf i = 9 Then
+                        pageEntregaCliente.Text = numeros
+                    ElseIf i = 10 Then
+                        pageCancelar.Text = numeros
+                    End If
+                Next contar
+            End If
+
+        Catch ex As Exception
+            MsgBox("No hay conexión con el servidor pongase en contacto con el administrador", MsgBoxStyle.Information)
+        End Try
+
+    End Sub
+
+
 
     'Gestionar Panel formularios cargan en el panel1
     Sub GestionarPanel()
@@ -119,7 +202,6 @@ Public Class Inicio
                 .Focus()
                 .titulo = btnListo.Caption
                 .cargarDatos()
-
 
             End With
         Catch ex As Exception
@@ -367,5 +449,19 @@ Public Class Inicio
             .Show()
 
         End With
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+
+        If tiempo = 1800 Then
+            '// aqui se resetea el tiempo
+            tiempo = 0
+            '//coloque aqui lo que quiera, si desea mostrar el form nuevamente, entonces:
+            cargarNumeros()
+            enProtocolo.cargarDatos()
+
+        Else
+            tiempo = tiempo + 1
+        End If
     End Sub
 End Class

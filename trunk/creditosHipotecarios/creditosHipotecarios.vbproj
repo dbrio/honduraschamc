@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>creditosHipotecarios.My.MyApplication</StartupObject>
     <RootNamespace>creditosHipotecarios</RootNamespace>
-    <AssemblyName>creditosHipotecarios</AssemblyName>
+    <AssemblyName>AMC</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -45,7 +45,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>creditosHipotecarios.xml</DocumentationFile>
+    <DocumentationFile>AMC.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -55,7 +55,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>creditosHipotecarios.xml</DocumentationFile>
+    <DocumentationFile>AMC.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -160,6 +160,12 @@
       <DependentUpon>addAbogado.vb</DependentUpon>
     </Compile>
     <Compile Include="admin\addAbogado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin\addAgencia.Designer.vb">
+      <DependentUpon>addAgencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="admin\addAgencia.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="admin\addPersonal.Designer.vb">
@@ -355,6 +361,9 @@
   <ItemGroup>
     <EmbeddedResource Include="admin\addAbogado.resx">
       <DependentUpon>addAbogado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\addAgencia.resx">
+      <DependentUpon>addAgencia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="admin\addPersonal.resx">
       <DependentUpon>addPersonal.vb</DependentUpon>
