@@ -10,6 +10,7 @@ Public Class Inicio
 
         cargarNumeros()
         Timer1.Start()
+       
 
         'LabelDeparamento.Text = UsuarioActivo.cargo
 
@@ -453,7 +454,7 @@ Public Class Inicio
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
 
-        If tiempo = 1800 Then
+        If tiempo = 900 Then
             '// aqui se resetea el tiempo
             tiempo = 0
             '//coloque aqui lo que quiera, si desea mostrar el form nuevamente, entonces:
@@ -464,4 +465,15 @@ Public Class Inicio
             tiempo = tiempo + 1
         End If
     End Sub
+
+    Private Sub BarButtonItem8_ItemClick_1(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem8.ItemClick
+        With addAgencia
+            .Show()
+        End With
+    End Sub
+
+   
+
+
+   
 End Class
