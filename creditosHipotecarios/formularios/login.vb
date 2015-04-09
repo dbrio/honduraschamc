@@ -5,7 +5,7 @@ Imports System.Security.Cryptography
 
 Public Class login
     Dim db As New DataSetLinQDataContext
-
+    Public inactivdad As String
     Private Sub btnEnter_Click(sender As Object, e As EventArgs) Handles btnEnter.Click
         Try
             Dim key As String = txtPass.Text
