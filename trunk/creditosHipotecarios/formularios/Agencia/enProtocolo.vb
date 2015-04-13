@@ -13,6 +13,7 @@ Public Class enProtocolo
     Private Sub enProtocolo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'CAGAR DATOS
         cargarDatos()
+        Inicio.cargarNumeros()
 
     End Sub
 

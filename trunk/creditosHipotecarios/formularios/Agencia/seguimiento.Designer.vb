@@ -75,6 +75,17 @@ Partial Class seguimiento
         Me.NombrePropietarioLabel1 = New System.Windows.Forms.Label()
         Me.RnpPropietarioLabel1 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.DescripcionMemoEdit = New DevExpress.XtraEditors.MemoEdit()
         Me.MontoLabel1 = New System.Windows.Forms.Label()
         Me.PlazoLabel1 = New System.Windows.Forms.Label()
@@ -82,9 +93,9 @@ Partial Class seguimiento
         Me.CuotaPagarLabel1 = New System.Windows.Forms.Label()
         Me.InteresMoraLabel1 = New System.Windows.Forms.Label()
         Me.ValorRemateLabel1 = New System.Windows.Forms.Label()
+        Me.Remportmemo = New creditosHipotecarios.Remportmemo()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.NombresLabel1 = New System.Windows.Forms.Label()
-        Me.ApellidosLabel1 = New System.Windows.Forms.Label()
         Me.AsientoLabel1 = New System.Windows.Forms.Label()
         Me.MatriculaLabel1 = New System.Windows.Forms.Label()
         Me.NumeroIpLabel1 = New System.Windows.Forms.Label()
@@ -92,6 +103,8 @@ Partial Class seguimiento
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.FechaLabel1 = New System.Windows.Forms.Label()
         Me.UsuarioLabel1 = New System.Windows.Forms.Label()
+        Me.MemoSiguimientoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MemoSiguimientoTableAdapter = New creditosHipotecarios.RemportmemoTableAdapters.memoSiguimientoTableAdapter()
         NombreAgenciaLabel = New System.Windows.Forms.Label()
         NombreClienteLabel = New System.Windows.Forms.Label()
         NombrePropietarioLabel = New System.Windows.Forms.Label()
@@ -125,8 +138,11 @@ Partial Class seguimiento
         CType(Me.SeguimientoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         CType(Me.DescripcionMemoEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Remportmemo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.MemoSiguimientoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NombreAgenciaLabel
@@ -183,7 +199,7 @@ Partial Class seguimiento
         '
         PlazoLabel.AutoSize = True
         PlazoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        PlazoLabel.Location = New System.Drawing.Point(310, 29)
+        PlazoLabel.Location = New System.Drawing.Point(278, 32)
         PlazoLabel.Name = "PlazoLabel"
         PlazoLabel.Size = New System.Drawing.Size(45, 16)
         PlazoLabel.TabIndex = 82
@@ -203,7 +219,7 @@ Partial Class seguimiento
         '
         CuotaPagarLabel.AutoSize = True
         CuotaPagarLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        CuotaPagarLabel.Location = New System.Drawing.Point(310, 86)
+        CuotaPagarLabel.Location = New System.Drawing.Point(278, 89)
         CuotaPagarLabel.Name = "CuotaPagarLabel"
         CuotaPagarLabel.Size = New System.Drawing.Size(86, 16)
         CuotaPagarLabel.TabIndex = 86
@@ -223,7 +239,7 @@ Partial Class seguimiento
         '
         ValorRemateLabel.AutoSize = True
         ValorRemateLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ValorRemateLabel.Location = New System.Drawing.Point(310, 139)
+        ValorRemateLabel.Location = New System.Drawing.Point(278, 142)
         ValorRemateLabel.Name = "ValorRemateLabel"
         ValorRemateLabel.Size = New System.Drawing.Size(94, 16)
         ValorRemateLabel.TabIndex = 90
@@ -565,6 +581,7 @@ Partial Class seguimiento
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.GroupBox2)
         Me.GroupBox3.Controls.Add(Me.DescripcionMemoEdit)
         Me.GroupBox3.Controls.Add(MontoLabel)
         Me.GroupBox3.Controls.Add(Me.MontoLabel1)
@@ -584,6 +601,126 @@ Partial Class seguimiento
         Me.GroupBox3.TabIndex = 82
         Me.GroupBox3.TabStop = False
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.BackColor = System.Drawing.Color.Wheat
+        Me.GroupBox2.Controls.Add(Me.Label22)
+        Me.GroupBox2.Controls.Add(Me.Label21)
+        Me.GroupBox2.Controls.Add(Me.Label20)
+        Me.GroupBox2.Controls.Add(Me.Label19)
+        Me.GroupBox2.Controls.Add(Me.Label18)
+        Me.GroupBox2.Controls.Add(Me.Label17)
+        Me.GroupBox2.Controls.Add(Me.Label16)
+        Me.GroupBox2.Controls.Add(Me.Label15)
+        Me.GroupBox2.Controls.Add(Me.Label14)
+        Me.GroupBox2.Controls.Add(Me.Label13)
+        Me.GroupBox2.Location = New System.Drawing.Point(590, 19)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(421, 145)
+        Me.GroupBox2.TabIndex = 93
+        Me.GroupBox2.TabStop = False
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MemoSiguimientoBindingSource, "totalAMC", True))
+        Me.Label22.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(337, 120)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(51, 16)
+        Me.Label22.TabIndex = 9
+        Me.Label22.Text = "TOTAL:"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MemoSiguimientoBindingSource, "totaAbogado", True))
+        Me.Label21.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(337, 48)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(51, 16)
+        Me.Label21.TabIndex = 8
+        Me.Label21.Text = "TOTAL:"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(250, 48)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(43, 14)
+        Me.Label20.TabIndex = 7
+        Me.Label20.Text = "TOTAL:"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MemoSiguimientoBindingSource, "valorComisionAmc", True))
+        Me.Label19.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(144, 120)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(66, 16)
+        Me.Label19.TabIndex = 6
+        Me.Label19.Text = "GASTOS:"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MemoSiguimientoBindingSource, "honorarios", True))
+        Me.Label18.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(145, 48)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(66, 16)
+        Me.Label18.TabIndex = 5
+        Me.Label18.Text = "GASTOS:"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MemoSiguimientoBindingSource, "gastos", True))
+        Me.Label17.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(145, 18)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(66, 16)
+        Me.Label17.TabIndex = 4
+        Me.Label17.Text = "GASTOS:"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(250, 120)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(43, 14)
+        Me.Label16.TabIndex = 3
+        Me.Label16.Text = "TOTAL:"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(18, 120)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(84, 14)
+        Me.Label15.TabIndex = 2
+        Me.Label15.Text = "COMISIÓN AMC:"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(19, 48)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(79, 14)
+        Me.Label14.TabIndex = 1
+        Me.Label14.Text = "HONORARIOS:"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.ForeColor = System.Drawing.Color.Black
+        Me.Label13.Location = New System.Drawing.Point(19, 15)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(54, 14)
+        Me.Label13.TabIndex = 0
+        Me.Label13.Text = "GASTOS:"
+        '
         'DescripcionMemoEdit
         '
         Me.DescripcionMemoEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "descripcion", True))
@@ -598,7 +735,7 @@ Partial Class seguimiento
         Me.MontoLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "monto", True))
         Me.MontoLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MontoLabel1.ForeColor = System.Drawing.Color.DimGray
-        Me.MontoLabel1.Location = New System.Drawing.Point(171, 29)
+        Me.MontoLabel1.Location = New System.Drawing.Point(171, 37)
         Me.MontoLabel1.Name = "MontoLabel1"
         Me.MontoLabel1.Size = New System.Drawing.Size(100, 25)
         Me.MontoLabel1.TabIndex = 81
@@ -609,7 +746,7 @@ Partial Class seguimiento
         Me.PlazoLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "plazo", True))
         Me.PlazoLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PlazoLabel1.ForeColor = System.Drawing.Color.DimGray
-        Me.PlazoLabel1.Location = New System.Drawing.Point(474, 29)
+        Me.PlazoLabel1.Location = New System.Drawing.Point(408, 32)
         Me.PlazoLabel1.Name = "PlazoLabel1"
         Me.PlazoLabel1.Size = New System.Drawing.Size(100, 25)
         Me.PlazoLabel1.TabIndex = 83
@@ -631,7 +768,7 @@ Partial Class seguimiento
         Me.CuotaPagarLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "cuotaPagar", True))
         Me.CuotaPagarLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CuotaPagarLabel1.ForeColor = System.Drawing.Color.DimGray
-        Me.CuotaPagarLabel1.Location = New System.Drawing.Point(474, 86)
+        Me.CuotaPagarLabel1.Location = New System.Drawing.Point(408, 89)
         Me.CuotaPagarLabel1.Name = "CuotaPagarLabel1"
         Me.CuotaPagarLabel1.Size = New System.Drawing.Size(100, 25)
         Me.CuotaPagarLabel1.TabIndex = 87
@@ -653,11 +790,16 @@ Partial Class seguimiento
         Me.ValorRemateLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "valorRemate", True))
         Me.ValorRemateLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ValorRemateLabel1.ForeColor = System.Drawing.Color.DimGray
-        Me.ValorRemateLabel1.Location = New System.Drawing.Point(474, 139)
+        Me.ValorRemateLabel1.Location = New System.Drawing.Point(408, 142)
         Me.ValorRemateLabel1.Name = "ValorRemateLabel1"
         Me.ValorRemateLabel1.Size = New System.Drawing.Size(100, 25)
         Me.ValorRemateLabel1.TabIndex = 91
         Me.ValorRemateLabel1.Text = "Label1"
+        '
+        'Remportmemo
+        '
+        Me.Remportmemo.DataSetName = "Remportmemo"
+        Me.Remportmemo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Panel1
         '
@@ -665,7 +807,6 @@ Partial Class seguimiento
         Me.Panel1.Controls.Add(NumeroIpLabel)
         Me.Panel1.Controls.Add(NombresLabel)
         Me.Panel1.Controls.Add(Me.NombresLabel1)
-        Me.Panel1.Controls.Add(Me.ApellidosLabel1)
         Me.Panel1.Controls.Add(AsientoLabel)
         Me.Panel1.Controls.Add(Me.AsientoLabel1)
         Me.Panel1.Controls.Add(MatriculaLabel)
@@ -680,25 +821,14 @@ Partial Class seguimiento
         '
         'NombresLabel1
         '
-        Me.NombresLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "nombres", True))
+        Me.NombresLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "abogado", True))
         Me.NombresLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NombresLabel1.ForeColor = System.Drawing.Color.DimGray
-        Me.NombresLabel1.Location = New System.Drawing.Point(119, 10)
+        Me.NombresLabel1.Location = New System.Drawing.Point(101, 9)
         Me.NombresLabel1.Name = "NombresLabel1"
-        Me.NombresLabel1.Size = New System.Drawing.Size(83, 25)
+        Me.NombresLabel1.Size = New System.Drawing.Size(228, 25)
         Me.NombresLabel1.TabIndex = 79
         Me.NombresLabel1.Text = "Label1"
-        '
-        'ApellidosLabel1
-        '
-        Me.ApellidosLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SeguimientoBindingSource, "apellidos", True))
-        Me.ApellidosLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ApellidosLabel1.ForeColor = System.Drawing.Color.DimGray
-        Me.ApellidosLabel1.Location = New System.Drawing.Point(208, 10)
-        Me.ApellidosLabel1.Name = "ApellidosLabel1"
-        Me.ApellidosLabel1.Size = New System.Drawing.Size(100, 25)
-        Me.ApellidosLabel1.TabIndex = 80
-        Me.ApellidosLabel1.Text = "Label1"
         '
         'AsientoLabel1
         '
@@ -774,6 +904,15 @@ Partial Class seguimiento
         Me.UsuarioLabel1.TabIndex = 96
         Me.UsuarioLabel1.Text = "Label9"
         '
+        'MemoSiguimientoBindingSource
+        '
+        Me.MemoSiguimientoBindingSource.DataMember = "memoSiguimiento"
+        Me.MemoSiguimientoBindingSource.DataSource = Me.Remportmemo
+        '
+        'MemoSiguimientoTableAdapter
+        '
+        Me.MemoSiguimientoTableAdapter.ClearBeforeFill = True
+        '
         'seguimiento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
@@ -829,9 +968,13 @@ Partial Class seguimiento
         Me.GroupBox1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         CType(Me.DescripcionMemoEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Remportmemo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.MemoSiguimientoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -857,7 +1000,6 @@ Partial Class seguimiento
     Friend WithEvents DescripcionMemoEdit As DevExpress.XtraEditors.MemoEdit
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents NombresLabel1 As System.Windows.Forms.Label
-    Friend WithEvents ApellidosLabel1 As System.Windows.Forms.Label
     Friend WithEvents AsientoLabel1 As System.Windows.Forms.Label
     Friend WithEvents MatriculaLabel1 As System.Windows.Forms.Label
     Friend WithEvents NumeroIpLabel1 As System.Windows.Forms.Label
@@ -865,4 +1007,18 @@ Partial Class seguimiento
     Friend WithEvents ProgressBar1 As System.Windows.Forms.ProgressBar
     Friend WithEvents FechaLabel1 As System.Windows.Forms.Label
     Friend WithEvents UsuarioLabel1 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents Remportmemo As creditosHipotecarios.Remportmemo
+    Friend WithEvents Label22 As System.Windows.Forms.Label
+    Friend WithEvents Label21 As System.Windows.Forms.Label
+    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents MemoSiguimientoBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents MemoSiguimientoTableAdapter As creditosHipotecarios.RemportmemoTableAdapters.memoSiguimientoTableAdapter
 End Class

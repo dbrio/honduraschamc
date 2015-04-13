@@ -37,7 +37,6 @@ Partial Class login
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.CreditoTableAdapter1 = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.CreditoTableAdapter()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -159,7 +158,7 @@ Partial Class login
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.creditosHipotecarios.My.Resources.Resources.logologin
-        Me.PictureBox1.Location = New System.Drawing.Point(109, 28)
+        Me.PictureBox1.Location = New System.Drawing.Point(111, 28)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(166, 89)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -181,25 +180,12 @@ Partial Class login
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Label1"
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.Label2.Location = New System.Drawing.Point(91, 376)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(49, 16)
-        Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Label2"
-        Me.Label2.Visible = False
-        '
         'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(362, 476)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnSalir)
@@ -236,6 +222,5 @@ Partial Class login
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents CreditoTableAdapter1 As creditosHipotecarios.DataSetAMCProduccionTableAdapters.CreditoTableAdapter
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
 
 End Class

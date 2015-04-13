@@ -70,8 +70,8 @@ Partial Class Inicio
         Me.pageEntregaCliente = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.pageCancelar = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibReportes = New DevExpress.XtraBars.Ribbon.RibbonPage()
-        Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.pageCustodiaya = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibCanceladasya = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibAdmin = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup7 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -112,7 +112,7 @@ Partial Class Inicio
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControl1.Location = New System.Drawing.Point(0, 121)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(2000, 635)
+        Me.PanelControl1.Size = New System.Drawing.Size(2000, 644)
         Me.PanelControl1.TabIndex = 2
         '
         'ContextMenuStrip1
@@ -563,22 +563,22 @@ Partial Class Inicio
         '
         'RibReportes
         '
-        Me.RibReportes.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup5})
+        Me.RibReportes.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.pageCustodiaya, Me.RibCanceladasya})
         Me.RibReportes.Name = "RibReportes"
         Me.RibReportes.Text = "LUGARES"
         Me.RibReportes.Visible = False
         '
-        'RibbonPageGroup1
+        'pageCustodiaya
         '
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.btnCustodia1)
-        Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
-        Me.RibbonPageGroup1.ShowCaptionButton = False
+        Me.pageCustodiaya.ItemLinks.Add(Me.btnCustodia1)
+        Me.pageCustodiaya.Name = "pageCustodiaya"
+        Me.pageCustodiaya.ShowCaptionButton = False
         '
-        'RibbonPageGroup5
+        'RibCanceladasya
         '
-        Me.RibbonPageGroup5.ItemLinks.Add(Me.btnCancelar1)
-        Me.RibbonPageGroup5.Name = "RibbonPageGroup5"
-        Me.RibbonPageGroup5.ShowCaptionButton = False
+        Me.RibCanceladasya.ItemLinks.Add(Me.btnCancelar1)
+        Me.RibCanceladasya.Name = "RibCanceladasya"
+        Me.RibCanceladasya.ShowCaptionButton = False
         '
         'RibAdmin
         '
@@ -622,6 +622,7 @@ Partial Class Inicio
         '
         Me.RibbonPageGroup6.ItemLinks.Add(Me.btnContrsena)
         Me.RibbonPageGroup6.Name = "RibbonPageGroup6"
+        Me.RibbonPageGroup6.ShowCaptionButton = False
         '
         'PanelControl2
         '
@@ -649,7 +650,7 @@ Partial Class Inicio
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1268, 773)
+        Me.ClientSize = New System.Drawing.Size(1268, 782)
         Me.Controls.Add(Me.PanelControl2)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.RibbonControl1)
@@ -725,7 +726,7 @@ Partial Class Inicio
     Friend WithEvents pageEntregaCliente As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents pageCancelar As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents RibReportes As DevExpress.XtraBars.Ribbon.RibbonPage
-    Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents pageCustodiaya As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents RibAdmin As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents RibbonPageGroup2 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents RibbonPageGroup3 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
@@ -733,7 +734,7 @@ Partial Class Inicio
     Friend WithEvents BarButtonItem9 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem7 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnCancelar1 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents RibbonPageGroup5 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents RibCanceladasya As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents btnContrsena As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibPerfil As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents RibbonPageGroup6 As DevExpress.XtraBars.Ribbon.RibbonPageGroup

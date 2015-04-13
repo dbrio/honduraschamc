@@ -10,7 +10,7 @@ Public Class Inicio
 
         cargarNumeros()
         Timer1.Start()
-       
+
 
         'LabelDeparamento.Text = UsuarioActivo.cargo
 
@@ -74,26 +74,30 @@ Public Class Inicio
                                    Join p In db.prestamo On h.prestamoId Equals p.prestamoId
                                    Where he.estadoId = i
                                    Select he.hipotecaId).Count
-                    If i = 1 Then
-                        pageProtocoloListo.Text = numeros
-                    ElseIf i = 2 Then
-                        pageFirmaCliente.Text = numeros
-                    ElseIf i = 3 Then
+                    'If i = 1 Then
+                    '    pageProtocoloListo.Text = numeros
+                    'ElseIf i = 2 Then
+                    '    pageFirmaCliente.Text = numeros
+                    If i = 3 Then
                         pageFirmaGerente.Text = numeros
                     ElseIf i = 4 Then
                         pageIP.Text = numeros
                     ElseIf i = 5 Then
                         pageEnviarCustodia.Text = numeros
                     ElseIf i = 6 Then
-                        pageSolicitarPago.Text = numeros
+                        pageCustodiaya.Text = numeros
                     ElseIf i = 7 Then
                         pageEfectuarPago.Text = numeros
-                    ElseIf i = 8 Then
-                        pageSolicitarDocumentos.Text = numeros
+
+                        'ElseIf i = 8 Then
+                        '    pageSolicitarDocumentos.Text = numeros
                     ElseIf i = 9 Then
                         pageEntregaCliente.Text = numeros
                     ElseIf i = 10 Then
                         pageCancelar.Text = numeros
+
+                        'ElseIf i = 11 Then
+                        '    RibCanceladasya.Text = numeros
                     End If
                 Next contar
 
@@ -121,18 +125,22 @@ Public Class Inicio
                         pageSolicitarPago.Text = numeros
                     ElseIf i = 7 Then
                         pageEfectuarPago.Text = numeros
+
                     ElseIf i = 8 Then
                         pageSolicitarDocumentos.Text = numeros
                     ElseIf i = 9 Then
                         pageEntregaCliente.Text = numeros
                     ElseIf i = 10 Then
                         pageCancelar.Text = numeros
+
                     End If
+
+
                 Next contar
             End If
 
         Catch ex As Exception
-            MsgBox("No hay conexión con el servidor pongase en contacto con el administrador", MsgBoxStyle.Information)
+
         End Try
 
     End Sub
@@ -377,6 +385,7 @@ Public Class Inicio
     Private Sub btnCustodia1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnCustodia1.ItemClick
 
         Try
+            cargarNumeros()
             With reportesGeneral
 
                 .MdiParent = Me
@@ -430,6 +439,7 @@ Public Class Inicio
 
     Private Sub BarButtonItem8_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnCancelar1.ItemClick
         Try
+            cargarNumeros()
             With reportesGeneral
 
                 .MdiParent = Me
@@ -454,7 +464,7 @@ Public Class Inicio
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
 
-        If tiempo = 900 Then
+        If tiempo = 300 Then
             '// aqui se resetea el tiempo
             tiempo = 0
             '//coloque aqui lo que quiera, si desea mostrar el form nuevamente, entonces:
@@ -472,8 +482,5 @@ Public Class Inicio
         End With
     End Sub
 
-   
 
-
-   
 End Class

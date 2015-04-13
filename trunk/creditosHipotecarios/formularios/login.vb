@@ -42,7 +42,7 @@ Public Class login
 
             If login = 1 And estadoUser = "True" Then
                 With Inicio
-                    .Text = "Adel Microcréditos | Créditos Hipotecarios"
+                    .Text = "Adel Microcréditos"
 
                 End With
 
@@ -94,7 +94,7 @@ Public Class login
         btnEnter.BackColor = ColorTranslator.FromHtml("#009D84")
         btnSalir.BackColor = ColorTranslator.FromHtml("#FFC500")
         'Panel1.BackColor = ColorTranslator.FromHtml("#323D44")
-        Label1.Text = "Crédigos Hipotecarios | AMC "
+        Label1.Text = "Adel Microcréditos"
 
     End Sub
 
