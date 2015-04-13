@@ -56,34 +56,39 @@
 
   
     Private Sub GridView1_RowCellClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs) Handles GridView1.RowCellClick
-        With addProtocolo
+        Try
+            With addProtocolo
 
-            Dim dict As Hashtable = obtenerDatos()
-            Dim propietario As String = dict("propietario")
-            Dim descripcion As String = dict("descripcion")
-            Dim valorRemate As Decimal = dict("valorRemate")
+                Dim dict As Hashtable = obtenerDatos()
+                Dim propietario As String = dict("propietario")
+                Dim descripcion As String = dict("descripcion")
+                Dim valorRemate As Decimal = dict("valorRemate")
+
+                
+
+                Me.Close()
+                .propietarioAdd = propietario
+                .descripcionAdd = descripcion
+                .valorRemateAdd = valorRemate
+                .codigoClinteGarantiaAdd = codigoClinteGarantia
+                .nombreClienteGarantiaAdd = nombreClienteGarantia
+                .identidadGarantiaAdd = identidadGarantia
+                .codigoAgenciaGarantiaAdd = codigoAgenciaGarantia
+                .montoGarantiaAdd = montoGarantia
+                .plazoGaratniaAdd = plazoGaratnia
+                .tasaInteresGaratniaAdd = tasaInteresGaratnia
+                .cuotaAdd = cuotaGaratnia
+                .interesMoraGaratniaAdd = interesMoraGaratnia
+                .MdiParent = Inicio
+                .Show()
+                .cargarDatos()
+                .Focus()
 
 
-            Me.Close()
-            .propietarioAdd = propietario
-            .descripcionAdd = descripcion
-            .valorRemateAdd = valorRemate
-            .codigoClinteGarantiaAdd = codigoClinteGarantia
-            .nombreClienteGarantiaAdd = nombreClienteGarantia
-            .identidadGarantiaAdd = identidadGarantia
-            .codigoAgenciaGarantiaAdd = codigoAgenciaGarantia
-            .montoGarantiaAdd = montoGarantia
-            .plazoGaratniaAdd = plazoGaratnia
-            .tasaInteresGaratniaAdd = tasaInteresGaratnia
-            .cuotaAdd = cuotaGaratnia
-            .interesMoraGaratniaAdd = interesMoraGaratnia
-            .MdiParent = Inicio
-            .Show()
-            .cargarDatos()
-            .Focus()
-
-
-        End With
+            End With
+        Catch ex As Exception
+            MsgBox("El ítem seleccionado contiene datos vacios, seleccione otro ítem", MsgBoxStyle.Critical)
+        End Try
     End Sub
 
     

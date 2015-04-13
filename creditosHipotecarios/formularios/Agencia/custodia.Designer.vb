@@ -135,7 +135,6 @@ Partial Class custodia
         Me.txtMatricula.Properties.Appearance.Options.UseFont = True
         Me.txtMatricula.Properties.Mask.BeepOnError = True
         Me.txtMatricula.Properties.Mask.EditMask = "n0"
-        Me.txtMatricula.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
         Me.txtMatricula.Size = New System.Drawing.Size(155, 32)
         Me.txtMatricula.TabIndex = 12
         '
@@ -147,7 +146,6 @@ Partial Class custodia
         Me.txtAsiento.Properties.Appearance.Options.UseFont = True
         Me.txtAsiento.Properties.Mask.BeepOnError = True
         Me.txtAsiento.Properties.Mask.EditMask = "n0"
-        Me.txtAsiento.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
         Me.txtAsiento.Size = New System.Drawing.Size(155, 32)
         Me.txtAsiento.TabIndex = 13
         '
@@ -159,7 +157,6 @@ Partial Class custodia
         Me.txtTomo.Properties.Appearance.Options.UseFont = True
         Me.txtTomo.Properties.Mask.BeepOnError = True
         Me.txtTomo.Properties.Mask.EditMask = "n0"
-        Me.txtTomo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
         Me.txtTomo.Size = New System.Drawing.Size(155, 32)
         Me.txtTomo.TabIndex = 14
         '

@@ -4048,10 +4048,6 @@ Partial Public Class DataSetCreditos
         
         Private columndescripcion As Global.System.Data.DataColumn
         
-        Private columnnombres As Global.System.Data.DataColumn
-        
-        Private columnapellidos As Global.System.Data.DataColumn
-        
         Private columnasiento As Global.System.Data.DataColumn
         
         Private columnmatricula As Global.System.Data.DataColumn
@@ -4063,6 +4059,8 @@ Partial Public Class DataSetCreditos
         Private columnfecha As Global.System.Data.DataColumn
         
         Private columnusuario As Global.System.Data.DataColumn
+        
+        Private columnabogado As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -4213,22 +4211,6 @@ Partial Public Class DataSetCreditos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property nombresColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnnombres
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property apellidosColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnapellidos
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property asientoColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnasiento
@@ -4272,6 +4254,14 @@ Partial Public Class DataSetCreditos
         Public ReadOnly Property usuarioColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnusuario
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property abogadoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnabogado
             End Get
         End Property
         
@@ -4325,16 +4315,15 @@ Partial Public Class DataSetCreditos
                     ByVal interesMora As Decimal,  _
                     ByVal valorRemate As Decimal,  _
                     ByVal descripcion As String,  _
-                    ByVal nombres As String,  _
-                    ByVal apellidos As String,  _
                     ByVal asiento As String,  _
                     ByVal matricula As String,  _
                     ByVal numeroIp As String,  _
                     ByVal tomo As String,  _
                     ByVal fecha As Date,  _
-                    ByVal usuario As String) As seguimientoRow
+                    ByVal usuario As String,  _
+                    ByVal abogado As String) As seguimientoRow
             Dim rowseguimientoRow As seguimientoRow = CType(Me.NewRow,seguimientoRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, nombreAgencia, nombreCliente, rnpCliente, nombrePropietario, rnpPropietario, monto, plazo, tasaInteres, cuotaPagar, interesMora, valorRemate, descripcion, nombres, apellidos, asiento, matricula, numeroIp, tomo, fecha, usuario}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, nombreAgencia, nombreCliente, rnpCliente, nombrePropietario, rnpPropietario, monto, plazo, tasaInteres, cuotaPagar, interesMora, valorRemate, descripcion, asiento, matricula, numeroIp, tomo, fecha, usuario, abogado}
             rowseguimientoRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowseguimientoRow)
             Return rowseguimientoRow
@@ -4371,14 +4360,13 @@ Partial Public Class DataSetCreditos
             Me.columninteresMora = MyBase.Columns("interesMora")
             Me.columnvalorRemate = MyBase.Columns("valorRemate")
             Me.columndescripcion = MyBase.Columns("descripcion")
-            Me.columnnombres = MyBase.Columns("nombres")
-            Me.columnapellidos = MyBase.Columns("apellidos")
             Me.columnasiento = MyBase.Columns("asiento")
             Me.columnmatricula = MyBase.Columns("matricula")
             Me.columnnumeroIp = MyBase.Columns("numeroIp")
             Me.columntomo = MyBase.Columns("tomo")
             Me.columnfecha = MyBase.Columns("fecha")
             Me.columnusuario = MyBase.Columns("usuario")
+            Me.columnabogado = MyBase.Columns("abogado")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4412,10 +4400,6 @@ Partial Public Class DataSetCreditos
             MyBase.Columns.Add(Me.columnvalorRemate)
             Me.columndescripcion = New Global.System.Data.DataColumn("descripcion", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columndescripcion)
-            Me.columnnombres = New Global.System.Data.DataColumn("nombres", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnnombres)
-            Me.columnapellidos = New Global.System.Data.DataColumn("apellidos", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnapellidos)
             Me.columnasiento = New Global.System.Data.DataColumn("asiento", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnasiento)
             Me.columnmatricula = New Global.System.Data.DataColumn("matricula", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -4428,6 +4412,8 @@ Partial Public Class DataSetCreditos
             MyBase.Columns.Add(Me.columnfecha)
             Me.columnusuario = New Global.System.Data.DataColumn("usuario", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnusuario)
+            Me.columnabogado = New Global.System.Data.DataColumn("abogado", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnabogado)
             Me.columnprestamoId.AutoIncrement = true
             Me.columnprestamoId.AutoIncrementSeed = -1
             Me.columnprestamoId.AutoIncrementStep = -1
@@ -4446,6 +4432,7 @@ Partial Public Class DataSetCreditos
             Me.columnrnpCliente.MaxLength = 30
             Me.columnnombrePropietario.AllowDBNull = false
             Me.columnnombrePropietario.MaxLength = 100
+            Me.columnrnpPropietario.AllowDBNull = false
             Me.columnrnpPropietario.MaxLength = 30
             Me.columnmonto.AllowDBNull = false
             Me.columnplazo.AllowDBNull = false
@@ -4453,10 +4440,6 @@ Partial Public Class DataSetCreditos
             Me.columncuotaPagar.AllowDBNull = false
             Me.columnvalorRemate.AllowDBNull = false
             Me.columndescripcion.MaxLength = 2147483647
-            Me.columnnombres.AllowDBNull = false
-            Me.columnnombres.MaxLength = 50
-            Me.columnapellidos.AllowDBNull = false
-            Me.columnapellidos.MaxLength = 50
             Me.columnasiento.MaxLength = 20
             Me.columnmatricula.MaxLength = 100
             Me.columnnumeroIp.MaxLength = 20
@@ -4464,6 +4447,8 @@ Partial Public Class DataSetCreditos
             Me.columnfecha.AllowDBNull = false
             Me.columnusuario.AllowDBNull = false
             Me.columnusuario.MaxLength = 20
+            Me.columnabogado.ReadOnly = true
+            Me.columnabogado.MaxLength = 51
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8122,11 +8107,7 @@ Partial Public Class DataSetCreditos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property rnpPropietario() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableseguimiento.rnpPropietarioColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'rnpPropietario' de la tabla 'seguimiento' es DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableseguimiento.rnpPropietarioColumn),String)
             End Get
             Set
                 Me(Me.tableseguimiento.rnpPropietarioColumn) = value
@@ -8220,28 +8201,6 @@ Partial Public Class DataSetCreditos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property nombres() As String
-            Get
-                Return CType(Me(Me.tableseguimiento.nombresColumn),String)
-            End Get
-            Set
-                Me(Me.tableseguimiento.nombresColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property apellidos() As String
-            Get
-                Return CType(Me(Me.tableseguimiento.apellidosColumn),String)
-            End Get
-            Set
-                Me(Me.tableseguimiento.apellidosColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property asiento() As String
             Get
                 Try 
@@ -8324,15 +8283,18 @@ Partial Public Class DataSetCreditos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsrnpPropietarioNull() As Boolean
-            Return Me.IsNull(Me.tableseguimiento.rnpPropietarioColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetrnpPropietarioNull()
-            Me(Me.tableseguimiento.rnpPropietarioColumn) = Global.System.Convert.DBNull
-        End Sub
+        Public Property abogado() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableseguimiento.abogadoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'abogado' de la tabla 'seguimiento' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableseguimiento.abogadoColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -8404,6 +8366,18 @@ Partial Public Class DataSetCreditos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SettomoNull()
             Me(Me.tableseguimiento.tomoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsabogadoNull() As Boolean
+            Return Me.IsNull(Me.tableseguimiento.abogadoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetabogadoNull()
+            Me(Me.tableseguimiento.abogadoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -13004,10 +12978,10 @@ Namespace DataSetCreditosTableAdapters
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nombreCliente", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "nombreCliente", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT e.hipotecaEstadoId, ag.codigoAgencia,ag.nombreAgencia,  p.nombreCliente, p" & _
-                ".rnpCliente, p.monto, p.tasaInteres, p.descripcion FROM prestamo AS p" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOI" & _
-                "N Hipoteca AS h" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ON p.prestamoId = h.prestamoId" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN hipotecaEstado AS e" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ON h.hipotecaId = e.hipotecaId" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN Agencia ag" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ON p.codigoAgencia = ag." & _
-                "codigoAgencia" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE e.estadoId = @id" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ORDER BY e.hipotecaEstadoId DESC; " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+            Me._commandCollection(2).CommandText = "SELECT e.hipotecaEstadoId, ag.codigoAgencia,ag.nombreAgencia,  p.nombreCliente, p"& _ 
+                ".rnpCliente, p.monto, p.tasaInteres, p.descripcion FROM prestamo AS p"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INNER JOI"& _ 
+                "N Hipoteca AS h"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON p.prestamoId = h.prestamoId"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INNER JOIN hipotecaEstado AS e"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON h.hipotecaId = e.hipotecaId"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INNER JOIN Agencia ag"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON p.codigoAgencia = ag."& _ 
+                "codigoAgencia"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE e.estadoId = @id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY e.hipotecaEstadoId DESC; "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "estadoId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -13843,14 +13817,13 @@ Namespace DataSetCreditosTableAdapters
             tableMapping.ColumnMappings.Add("interesMora", "interesMora")
             tableMapping.ColumnMappings.Add("valorRemate", "valorRemate")
             tableMapping.ColumnMappings.Add("descripcion", "descripcion")
-            tableMapping.ColumnMappings.Add("nombres", "nombres")
-            tableMapping.ColumnMappings.Add("apellidos", "apellidos")
             tableMapping.ColumnMappings.Add("asiento", "asiento")
             tableMapping.ColumnMappings.Add("matricula", "matricula")
             tableMapping.ColumnMappings.Add("numeroIp", "numeroIp")
             tableMapping.ColumnMappings.Add("tomo", "tomo")
             tableMapping.ColumnMappings.Add("fecha", "fecha")
             tableMapping.ColumnMappings.Add("usuario", "usuario")
+            tableMapping.ColumnMappings.Add("abogado", "abogado")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -13870,13 +13843,13 @@ Namespace DataSetCreditosTableAdapters
             Me._commandCollection(0).CommandText = "SELECT TOP 10 he.fecha, u.usuario, p.prestamoId, e.estadoId, ag.nombreAgencia, p."& _ 
                 "nombreCliente, p.rnpCliente, p.nombrePropietario, p.rnpPropietario, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"p.monto, p"& _ 
                 ".plazo, p.tasaInteres, p.cuotaPagar, p.interesMora, p.valorRemate, p.descripcion"& _ 
-                ", a.nombres, a.apellidos, h.asiento, h.matricula, h.numeroIp, h.tomo"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM prest"& _ 
-                "amo p"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INNER JOIN Hipoteca h"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON p.prestamoId = h.prestamoId"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INNER JOIN hipotec"& _ 
-                "aEstado he"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON h.hipotecaId = he.hipotecaId"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INNER JOIN Estado e"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON he.estadoId"& _ 
-                " = e.estadoId"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INNER JOIN Agencia ag"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON p.codigoAgencia = ag.codigoAgencia"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INN"& _ 
-                "ER JOIN Abogado a"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON h.abogadoId = a.abogadoId"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INNER JOIN Usuario u"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON he.usu"& _ 
-                "arioId = u.usuarioId"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE p.prestamoId = @idPrestamo"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY  he.fecha  DESC"& _ 
-                ""
+                ", a.nombres + ' ' + a.apellidos AS abogado, h.asiento, h.matricula, h.numeroIp, "& _ 
+                "h.tomo"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM prestamo p"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INNER JOIN Hipoteca h"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON p.prestamoId = h.prestamoId"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                "INNER JOIN hipotecaEstado he"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON h.hipotecaId = he.hipotecaId"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INNER JOIN Estado"& _ 
+                " e"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON he.estadoId = e.estadoId"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INNER JOIN Agencia ag"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON p.codigoAgencia = ag."& _ 
+                "codigoAgencia"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INNER JOIN Abogado a"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON h.abogadoId = a.abogadoId"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INNER JOIN Us"& _ 
+                "uario u"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON he.usuarioId = u.usuarioId"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE p.prestamoId = @idPrestamo"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER "& _ 
+                "BY  he.fecha  DESC"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idPrestamo", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "prestamoId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -15950,45 +15923,46 @@ Namespace DataSetCreditosTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT p.prestamoId, a.nombreAgencia, p.nombreCliente, p.monto,p.tasaInteres, p.p"& _ 
-                "lazo,p.descripcion  FROM Evento e"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INNER JOIN Hipoteca h"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON e.hipotecaId = h.hi"& _ 
-                "potecaId"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INNER JOIN prestamo p"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON h.prestamoId = p.prestamoId"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INNER JOIN Agen"& _ 
-                "cia a"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON p.codigoAgencia = a.codigoAgencia"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE e.estadoId = @estadoId"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+            Me._commandCollection(0).CommandText = "SELECT p.prestamoId, a.nombreAgencia, p.nombreCliente, p.monto,p.tasaInteres, p.p" & _
+                "lazo,p.descripcion  FROM hipotecaEstado e" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN Hipoteca h" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ON e.hipotecaI" & _
+                "d = h.hipotecaId" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN prestamo p" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ON h.prestamoId = p.prestamoId" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER J" & _
+                "OIN Agencia a" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ON p.codigoAgencia = a.codigoAgencia" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE e.estadoId = @idEstad" & _
+                "o" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@estadoId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "estadoId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idEstado", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "estadoId", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT p.prestamoId, a.nombreAgencia, p.nombreCliente, p.monto,p.tasaInteres, p.p"& _ 
-                "lazo,p.descripcion  FROM Evento e"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INNER JOIN Hipoteca h"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON e.hipotecaId = h.hi"& _ 
-                "potecaId"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INNER JOIN prestamo p"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON h.prestamoId = p.prestamoId"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INNER JOIN Agen"& _ 
-                "cia a"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ON p.codigoAgencia = a.codigoAgencia"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE e.estadoId = @estadoId AND p."& _ 
-                "nombreCliente LIKE @nombre"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+            Me._commandCollection(1).CommandText = "SELECT p.prestamoId, a.nombreAgencia, p.nombreCliente, p.monto,p.tasaInteres, p.p" & _
+                "lazo,p.descripcion  FROM Evento e" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN Hipoteca h" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ON e.hipotecaId = h.hi" & _
+                "potecaId" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN prestamo p" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ON h.prestamoId = p.prestamoId" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN Agen" & _
+                "cia a" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ON p.codigoAgencia = a.codigoAgencia" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE e.estadoId = @estadoId AND p." & _
+                "nombreCliente LIKE @nombre" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@estadoId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "estadoId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nombre", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "nombreCliente", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@estadoId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "estadoId", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nombre", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "nombreCliente", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetCreditos.ReporteGeneralDataTable, ByVal estadoId As Integer) As Integer
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, True)> _
+        Public Overridable Overloads Function Fill(ByVal dataTable As DataSetCreditos.ReporteGeneralDataTable, ByVal idEstado As Integer) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(estadoId,Integer)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(idEstado, Integer)
+            If (Me.ClearBeforeFill = True) Then
+                dataTable.Clear()
             End If
             Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
             Return returnValue
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal estadoId As Integer) As DataSetCreditos.ReporteGeneralDataTable
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], True)> _
+        Public Overridable Overloads Function GetData(ByVal idEstado As Integer) As DataSetCreditos.ReporteGeneralDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(estadoId,Integer)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(idEstado, Integer)
             Dim dataTable As DataSetCreditos.ReporteGeneralDataTable = New DataSetCreditos.ReporteGeneralDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable

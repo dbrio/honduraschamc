@@ -111,16 +111,6 @@
               <BindableControlInfo Name="MemoEdit" Type="DevExpress.XtraEditors.MemoEdit" AssemblyName="DevExpress.XtraEditors.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Frameworks=".NETFramework,Version=v4.0;.NETFramework,Version=v4.5" />
             </ControlSetting></ControlSettings>
         </ColumnUISetting>
-        <ColumnUISetting Name="nombres">
-          <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-              <BindableControlInfo Name="Label" Type="System.Windows.Forms.Label" AssemblyName="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            </ControlSetting></ControlSettings>
-        </ColumnUISetting>
-        <ColumnUISetting Name="apellidos">
-          <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-              <BindableControlInfo Name="Label" Type="System.Windows.Forms.Label" AssemblyName="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            </ControlSetting></ControlSettings>
-        </ColumnUISetting>
         <ColumnUISetting Name="asiento">
           <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
               <BindableControlInfo Name="Label" Type="System.Windows.Forms.Label" AssemblyName="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
