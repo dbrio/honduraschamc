@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="amcApp" Class="DataSetLinQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=SQLSERVER;Initial Catalog=amcApp;User ID=amc" SettingsObjectName="creditosHipotecarios.My.MySettings" SettingsPropertyName="amcAppConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SQLSERVER;Initial Catalog=amcApp;Persist Security Info=True;User ID=amc" SettingsObjectName="creditosHipotecarios.My.MySettings" SettingsPropertyName="amcAppConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.hipotecaEstado" Member="hipotecaEstado">
     <Type Name="hipotecaEstado">
       <Column Name="hipotecaEstadoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -21,6 +21,7 @@
       <Column Name="prestamoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Hipoteca_hipotecaEstado" Member="hipotecaEstado" ThisKey="hipotecaId" OtherKey="hipotecaId" Type="hipotecaEstado" />
       <Association Name="Hipoteca_Memo" Member="Memo" ThisKey="hipotecaId" OtherKey="hipotecaId" Type="Memo" />
+      <Association Name="Hipoteca_Evento" Member="Evento" ThisKey="hipotecaId" OtherKey="hipotecaId" Type="Evento" />
       <Association Name="prestamo_Hipoteca" Member="prestamo" ThisKey="prestamoId" OtherKey="prestamoId" Type="prestamo" IsForeignKey="true" />
     </Type>
   </Table>
@@ -60,6 +61,7 @@
       <Column Name="contrasena" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
       <Column Name="personalId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Usuario_Evento" Member="Evento" ThisKey="usuarioId" OtherKey="usuarioId" Type="Evento" />
       <Association Name="Personal_Usuario" Member="Personal" ThisKey="personalId" OtherKey="personalId" Type="Personal" IsForeignKey="true" />
     </Type>
   </Table>
@@ -82,6 +84,18 @@
       <Column Name="codigoAgencia" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="nombreAgencia" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="Agencia_Personal" Member="Personal" ThisKey="codigoAgencia" OtherKey="codigoAgencia" Type="Personal" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Evento" Member="Evento">
+    <Type Name="Evento">
+      <Column Name="eventoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="hipotecaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estadoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="usuarioId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Hipoteca_Evento" Member="Hipoteca" ThisKey="hipotecaId" OtherKey="hipotecaId" Type="Hipoteca" IsForeignKey="true" />
+      <Association Name="Usuario_Evento" Member="Usuario" ThisKey="usuarioId" OtherKey="usuarioId" Type="Usuario" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

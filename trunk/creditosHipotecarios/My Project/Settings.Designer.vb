@@ -57,7 +57,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SQLSERVER;Initial Catalog=amcApp;User ID=amc;Password=Choluteca1525")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.20.202;Initial Catalog=amcApp;User ID=amc;Password=Choluteca1"& _ 
+            "525")>  _
         Public ReadOnly Property amcAppConnectionString() As String
             Get
                 Return CType(Me("amcAppConnectionString"),String)
@@ -67,11 +68,22 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SQLSERVER;Initial Catalog=AMC_PRODUCCION_3004;User ID=amc;Password=Ch"& _ 
-            "oluteca1525")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.20.202;Initial Catalog=AMC_PRODUCCION_3004;User ID=amc;Passwo"& _ 
+            "rd=Choluteca1525")>  _
         Public ReadOnly Property AMC_PRODUCCION_3004ConnectionString() As String
             Get
                 Return CType(Me("AMC_PRODUCCION_3004ConnectionString"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SQLSERVER;Initial Catalog=amcApp;Persist Security Info=True;User ID=a"& _ 
+            "mc;Password=Choluteca1525")>  _
+        Public ReadOnly Property amcAppConnectionString1() As String
+            Get
+                Return CType(Me("amcAppConnectionString1"),String)
             End Get
         End Property
     End Class
