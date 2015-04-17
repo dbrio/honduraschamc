@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 Imports System.Text
 Imports System.Security.Cryptography
+Imports DevExpress.XtraReports.UI
 
 
 Public Class login
@@ -80,7 +81,7 @@ Public Class login
     End Sub
 
 
- 
+
 
     Private Sub txtPass_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPass.KeyPress
         If e.KeyChar = ChrW(13) Then
@@ -98,6 +99,9 @@ Public Class login
 
     End Sub
 
-   
+
+
+ 
+
 
 End Class

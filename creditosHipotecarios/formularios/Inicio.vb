@@ -20,9 +20,10 @@ Public Class Inicio
             pageBuscar.Visible = True
             pageProtocoloListo.Visible = True
             pageFirmaCliente.Visible = True
-            pageSolicitarDocumentos.Visible = True
+            pageSolicitarDocumentos.Visible = False
             RibEstado.Visible = True
             RibPerfil.Visible = True
+            RibbonFECHA.Visible = True
 
 
         End If
@@ -37,6 +38,7 @@ Public Class Inicio
             RibEstado.Visible = True
             RibReportes.Visible = True
             RibPerfil.Visible = True
+            RibbonFECHA.Visible = True
 
 
 
@@ -48,11 +50,13 @@ Public Class Inicio
             pageSolicitarDocumentos.Visible = True
             RibEstado.Visible = True
             RibPerfil.Visible = True
+            RibbonFECHA.Visible = True
         End If
 
         If UsuarioActivo.cargo = "INFORMATICA" Then
             RibAdmin.Visible = True
             RibPerfil.Visible = True
+            RibbonFECHA.Visible = True
         End If
 
 
@@ -483,4 +487,7 @@ Public Class Inicio
     End Sub
 
 
+    Private Sub BarButtonItem10_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem10.ItemClick
+        fechas.Show()
+    End Sub
 End Class

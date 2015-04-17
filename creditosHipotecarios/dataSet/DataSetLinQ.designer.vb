@@ -73,10 +73,16 @@ Partial Public Class DataSetLinQDataContext
     End Sub
   Partial Private Sub DeleteAgencia(instance As Agencia)
     End Sub
+  Partial Private Sub InsertEvento(instance As Evento)
+    End Sub
+  Partial Private Sub UpdateEvento(instance As Evento)
+    End Sub
+  Partial Private Sub DeleteEvento(instance As Evento)
+    End Sub
   #End Region
 	
 	Public Sub New()
-		MyBase.New(Global.creditosHipotecarios.My.MySettings.Default.amcAppConnectionString, mappingSource)
+		MyBase.New(Global.creditosHipotecarios.My.MySettings.Default.amcAppConnectionString1, mappingSource)
 		OnCreated
 	End Sub
 	
@@ -139,6 +145,12 @@ Partial Public Class DataSetLinQDataContext
 	Public ReadOnly Property Agencia() As System.Data.Linq.Table(Of Agencia)
 		Get
 			Return Me.GetTable(Of Agencia)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Evento() As System.Data.Linq.Table(Of Evento)
+		Get
+			Return Me.GetTable(Of Evento)
 		End Get
 	End Property
 End Class
@@ -355,6 +367,8 @@ Partial Public Class Hipoteca
 	
 	Private _Memo As EntitySet(Of Memo)
 	
+	Private _Evento As EntitySet(Of Evento)
+	
 	Private _prestamo As EntityRef(Of prestamo)
 	
     #Region "Definiciones de métodos de extensibilidad"
@@ -398,6 +412,7 @@ Partial Public Class Hipoteca
 		MyBase.New
 		Me._hipotecaEstado = New EntitySet(Of hipotecaEstado)(AddressOf Me.attach_hipotecaEstado, AddressOf Me.detach_hipotecaEstado)
 		Me._Memo = New EntitySet(Of Memo)(AddressOf Me.attach_Memo, AddressOf Me.detach_Memo)
+		Me._Evento = New EntitySet(Of Evento)(AddressOf Me.attach_Evento, AddressOf Me.detach_Evento)
 		Me._prestamo = CType(Nothing, EntityRef(Of prestamo))
 		OnCreated
 	End Sub
@@ -540,6 +555,16 @@ Partial Public Class Hipoteca
 		End Set
 	End Property
 	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Hipoteca_Evento", Storage:="_Evento", ThisKey:="hipotecaId", OtherKey:="hipotecaId")>  _
+	Public Property Evento() As EntitySet(Of Evento)
+		Get
+			Return Me._Evento
+		End Get
+		Set
+			Me._Evento.Assign(value)
+		End Set
+	End Property
+	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="prestamo_Hipoteca", Storage:="_prestamo", ThisKey:="prestamoId", OtherKey:="prestamoId", IsForeignKey:=true)>  _
 	Public Property prestamo() As prestamo
 		Get
@@ -602,6 +627,16 @@ Partial Public Class Hipoteca
 	End Sub
 	
 	Private Sub detach_Memo(ByVal entity As Memo)
+		Me.SendPropertyChanging
+		entity.Hipoteca = Nothing
+	End Sub
+	
+	Private Sub attach_Evento(ByVal entity As Evento)
+		Me.SendPropertyChanging
+		entity.Hipoteca = Me
+	End Sub
+	
+	Private Sub detach_Evento(ByVal entity As Evento)
 		Me.SendPropertyChanging
 		entity.Hipoteca = Nothing
 	End Sub
@@ -1187,6 +1222,8 @@ Partial Public Class Usuario
 	
 	Private _estado As System.Nullable(Of Boolean)
 	
+	Private _Evento As EntitySet(Of Evento)
+	
 	Private _Personal As EntityRef(Of Personal)
 	
     #Region "Definiciones de métodos de extensibilidad"
@@ -1220,6 +1257,7 @@ Partial Public Class Usuario
 	
 	Public Sub New()
 		MyBase.New
+		Me._Evento = New EntitySet(Of Evento)(AddressOf Me.attach_Evento, AddressOf Me.detach_Evento)
 		Me._Personal = CType(Nothing, EntityRef(Of Personal))
 		OnCreated
 	End Sub
@@ -1309,6 +1347,16 @@ Partial Public Class Usuario
 		End Set
 	End Property
 	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Usuario_Evento", Storage:="_Evento", ThisKey:="usuarioId", OtherKey:="usuarioId")>  _
+	Public Property Evento() As EntitySet(Of Evento)
+		Get
+			Return Me._Evento
+		End Get
+		Set
+			Me._Evento.Assign(value)
+		End Set
+	End Property
+	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Personal_Usuario", Storage:="_Personal", ThisKey:="personalId", OtherKey:="personalId", IsForeignKey:=true)>  _
 	Public Property Personal() As Personal
 		Get
@@ -1353,6 +1401,16 @@ Partial Public Class Usuario
 					= false) Then
 			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
 		End If
+	End Sub
+	
+	Private Sub attach_Evento(ByVal entity As Evento)
+		Me.SendPropertyChanging
+		entity.Usuario = Me
+	End Sub
+	
+	Private Sub detach_Evento(ByVal entity As Evento)
+		Me.SendPropertyChanging
+		entity.Usuario = Nothing
 	End Sub
 End Class
 
@@ -1733,5 +1791,249 @@ Partial Public Class Agencia
 	Private Sub detach_Personal(ByVal entity As Personal)
 		Me.SendPropertyChanging
 		entity.Agencia = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Evento")>  _
+Partial Public Class Evento
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _eventoId As Integer
+	
+	Private _hipotecaId As Integer
+	
+	Private _estadoId As Integer
+	
+	Private _fecha As Date
+	
+	Private _usuarioId As Integer
+	
+	Private _descripcion As String
+	
+	Private _Hipoteca As EntityRef(Of Hipoteca)
+	
+	Private _Usuario As EntityRef(Of Usuario)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OneventoIdChanging(value As Integer)
+    End Sub
+    Partial Private Sub OneventoIdChanged()
+    End Sub
+    Partial Private Sub OnhipotecaIdChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnhipotecaIdChanged()
+    End Sub
+    Partial Private Sub OnestadoIdChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnestadoIdChanged()
+    End Sub
+    Partial Private Sub OnfechaChanging(value As Date)
+    End Sub
+    Partial Private Sub OnfechaChanged()
+    End Sub
+    Partial Private Sub OnusuarioIdChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnusuarioIdChanged()
+    End Sub
+    Partial Private Sub OndescripcionChanging(value As String)
+    End Sub
+    Partial Private Sub OndescripcionChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._Hipoteca = CType(Nothing, EntityRef(Of Hipoteca))
+		Me._Usuario = CType(Nothing, EntityRef(Of Usuario))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_eventoId", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property eventoId() As Integer
+		Get
+			Return Me._eventoId
+		End Get
+		Set
+			If ((Me._eventoId = value)  _
+						= false) Then
+				Me.OneventoIdChanging(value)
+				Me.SendPropertyChanging
+				Me._eventoId = value
+				Me.SendPropertyChanged("eventoId")
+				Me.OneventoIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_hipotecaId", DbType:="Int NOT NULL")>  _
+	Public Property hipotecaId() As Integer
+		Get
+			Return Me._hipotecaId
+		End Get
+		Set
+			If ((Me._hipotecaId = value)  _
+						= false) Then
+				If Me._Hipoteca.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnhipotecaIdChanging(value)
+				Me.SendPropertyChanging
+				Me._hipotecaId = value
+				Me.SendPropertyChanged("hipotecaId")
+				Me.OnhipotecaIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_estadoId", DbType:="Int NOT NULL")>  _
+	Public Property estadoId() As Integer
+		Get
+			Return Me._estadoId
+		End Get
+		Set
+			If ((Me._estadoId = value)  _
+						= false) Then
+				Me.OnestadoIdChanging(value)
+				Me.SendPropertyChanging
+				Me._estadoId = value
+				Me.SendPropertyChanged("estadoId")
+				Me.OnestadoIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_fecha", DbType:="Date NOT NULL")>  _
+	Public Property fecha() As Date
+		Get
+			Return Me._fecha
+		End Get
+		Set
+			If ((Me._fecha = value)  _
+						= false) Then
+				Me.OnfechaChanging(value)
+				Me.SendPropertyChanging
+				Me._fecha = value
+				Me.SendPropertyChanged("fecha")
+				Me.OnfechaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_usuarioId", DbType:="Int NOT NULL")>  _
+	Public Property usuarioId() As Integer
+		Get
+			Return Me._usuarioId
+		End Get
+		Set
+			If ((Me._usuarioId = value)  _
+						= false) Then
+				If Me._Usuario.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnusuarioIdChanging(value)
+				Me.SendPropertyChanging
+				Me._usuarioId = value
+				Me.SendPropertyChanged("usuarioId")
+				Me.OnusuarioIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_descripcion", DbType:="Text", UpdateCheck:=UpdateCheck.Never)>  _
+	Public Property descripcion() As String
+		Get
+			Return Me._descripcion
+		End Get
+		Set
+			If (String.Equals(Me._descripcion, value) = false) Then
+				Me.OndescripcionChanging(value)
+				Me.SendPropertyChanging
+				Me._descripcion = value
+				Me.SendPropertyChanged("descripcion")
+				Me.OndescripcionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Hipoteca_Evento", Storage:="_Hipoteca", ThisKey:="hipotecaId", OtherKey:="hipotecaId", IsForeignKey:=true)>  _
+	Public Property Hipoteca() As Hipoteca
+		Get
+			Return Me._Hipoteca.Entity
+		End Get
+		Set
+			Dim previousValue As Hipoteca = Me._Hipoteca.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._Hipoteca.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._Hipoteca.Entity = Nothing
+					previousValue.Evento.Remove(Me)
+				End If
+				Me._Hipoteca.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.Evento.Add(Me)
+					Me._hipotecaId = value.hipotecaId
+				Else
+					Me._hipotecaId = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("Hipoteca")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Usuario_Evento", Storage:="_Usuario", ThisKey:="usuarioId", OtherKey:="usuarioId", IsForeignKey:=true)>  _
+	Public Property Usuario() As Usuario
+		Get
+			Return Me._Usuario.Entity
+		End Get
+		Set
+			Dim previousValue As Usuario = Me._Usuario.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._Usuario.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._Usuario.Entity = Nothing
+					previousValue.Evento.Remove(Me)
+				End If
+				Me._Usuario.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.Evento.Add(Me)
+					Me._usuarioId = value.usuarioId
+				Else
+					Me._usuarioId = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("Usuario")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
 	End Sub
 End Class
