@@ -85,6 +85,8 @@ Partial Class Inicio
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.HipotecaEstadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.HipotecaEstadoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEstadoTableAdapter()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -95,6 +97,7 @@ Partial Class Inicio
         CType(Me.RibbonControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
+        CType(Me.HipotecaEstadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'XtraTabbedMdiManager1
@@ -115,7 +118,7 @@ Partial Class Inicio
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControl1.Location = New System.Drawing.Point(0, 121)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(2000, 652)
+        Me.PanelControl1.Size = New System.Drawing.Size(2000, 627)
         Me.PanelControl1.TabIndex = 2
         '
         'ContextMenuStrip1
@@ -666,13 +669,22 @@ Partial Class Inicio
         '
         Me.Timer2.Interval = 1000
         '
+        'HipotecaEstadoBindingSource
+        '
+        Me.HipotecaEstadoBindingSource.DataMember = "hipotecaEstado"
+        Me.HipotecaEstadoBindingSource.DataSource = Me.DataSetCreditos
+        '
+        'HipotecaEstadoTableAdapter
+        '
+        Me.HipotecaEstadoTableAdapter.ClearBeforeFill = True
+        '
         'Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1268, 790)
+        Me.ClientSize = New System.Drawing.Size(1268, 765)
         Me.Controls.Add(Me.PanelControl2)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.RibbonControl1)
@@ -691,6 +703,7 @@ Partial Class Inicio
         CType(Me.RibbonControl2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
+        CType(Me.HipotecaEstadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -767,4 +780,6 @@ Partial Class Inicio
     Friend WithEvents RibbonFECHA As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents BarButtonItem10 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents HipotecaEstadoBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents HipotecaEstadoTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEstadoTableAdapter
 End Class

@@ -31,11 +31,7 @@ Public Class login
                 Exit Sub
             End If
 
-
-
             'comprovar si el usuario existe en la base de datos
-
-
 
             Dim estadoUser = (From a In db.Usuario
                           Where a.usuario = txtUser.Text And a.contrasena = keyCryto

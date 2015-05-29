@@ -30,7 +30,7 @@
 
 
             'CONFIGURACION DEL STMP
-            _SMTP.Credentials = New System.Net.NetworkCredential("opamcmovil@gmail.com", "Amcmovil")
+            _SMTP.Credentials = New System.Net.NetworkCredential("adelmicrocreditos@gmail.com", "AmcHondura")
             _SMTP.Host = "smtp.gmail.com"
             _SMTP.Port = 587
             _SMTP.EnableSsl = False
@@ -38,7 +38,7 @@
 
             ' CONFIGURACION DEL MENSAJE
             _Message.[To].Add(correoAbogado) 'Cuenta de Correo al que se le quiere enviar el e-mail
-            _Message.From = New System.Net.Mail.MailAddress("dbrio2011@gmail.com", "AMC | HONDURAS", System.Text.Encoding.UTF8) 'Quien lo envía
+            _Message.From = New System.Net.Mail.MailAddress("adelmicrocreditos@gmail.com", "AMC | HONDURAS", System.Text.Encoding.UTF8) 'Quien lo envía
             _Message.Subject = "PROTOCOLO" 'Sujeto del e-mail
             _Message.SubjectEncoding = System.Text.Encoding.UTF8 'Codificacion
             _Message.Body = "'<!DOCTYPE html>'" +

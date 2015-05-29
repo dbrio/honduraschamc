@@ -3,7 +3,7 @@
    
     Public Sub generarReporte()
         Try
-            MemoAdapter1.Fill(Remportmemo1.Memo, IDm)
+            MemoReportTableAdapter.Fill(DataSetCreditos1.MemoReport, IDm)
         Catch ex As Exception
 
         End Try
