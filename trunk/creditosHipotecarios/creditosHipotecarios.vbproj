@@ -31,7 +31,7 @@
     <SuiteName>amc</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.html</WebPage>
-    <ApplicationRevision>16</ApplicationRevision>
+    <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -260,6 +260,12 @@
     <Compile Include="formularios\Agencia\buscarHipoteca.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="formularios\Agencia\observacion.Designer.vb">
+      <DependentUpon>observacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\Agencia\observacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formularios\Agencia\seguimiento.Designer.vb">
       <DependentUpon>seguimiento.vb</DependentUpon>
     </Compile>
@@ -340,11 +346,6 @@
     <Compile Include="reportes\fechas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="reportes\Remportmemo.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Remportmemo.xsd</DependentUpon>
-    </Compile>
     <Compile Include="reportes\ReporteCustodia.Designer.vb">
       <DependentUpon>ReporteCustodia.vb</DependentUpon>
     </Compile>
@@ -400,6 +401,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="admin\updateUser.resx">
       <DependentUpon>updateUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Agencia\observacion.resx">
+      <DependentUpon>observacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reportes\fechas.resx">
       <DependentUpon>fechas.vb</DependentUpon>
@@ -511,17 +515,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="reportes\Remportmemo.xsc">
-      <DependentUpon>Remportmemo.xsd</DependentUpon>
-    </None>
-    <None Include="reportes\Remportmemo.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Remportmemo.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="reportes\Remportmemo.xss">
-      <DependentUpon>Remportmemo.xsd</DependentUpon>
-    </None>
     <None Include="Resources\login.png" />
   </ItemGroup>
   <ItemGroup>

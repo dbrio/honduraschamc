@@ -25,11 +25,15 @@ Public Class fechas
             Exit Sub
         End If
 
-        Dim reporte As New ReportFECHA() With {.fechaInicio = TextInicio.Text, .fechaFinal = TextFinal.Text}
-        reporte.generarReporte()
+        Try
+            Dim reporte As New ReportFECHA() With {.fechaInicio = TextInicio.Text, .fechaFinal = TextFinal.Text}
+            reporte.generarReporte()
 
-        Dim printTool As New ReportPrintTool(reporte)
-        printTool.Report.CreateDocument(False)
-        printTool.ShowRibbonPreviewDialog()
+            Dim printTool As New ReportPrintTool(reporte)
+            printTool.Report.CreateDocument(False)
+            printTool.ShowRibbonPreviewDialog()
+        Catch ex As Exception
+            MsgBox("No existen datos en estas fechas", MsgBoxStyle.Information)
+        End Try
     End Sub
 End Class

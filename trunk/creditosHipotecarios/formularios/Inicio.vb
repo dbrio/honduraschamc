@@ -1,14 +1,25 @@
 ﻿Imports DevExpress.XtraReports.UI
+Imports System.Threading
 
 Public Class Inicio
+    Dim _Message As New System.Net.Mail.MailMessage()
+    Dim _SMTP As New System.Net.Mail.SmtpClient
+    Dim oHilo As Thread
     Dim db As New DataSetLinQDataContext
     Dim tiempo As Integer
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'DataSetCreditos.Usuario' Puede moverla o quitarla según sea necesario.
-        'Me.UsuarioTableAdapter.Fill(Me.DataSetCreditos.Usuario)
+
+
         GestionarPanel()
 
         cargarNumeros()
+
+
+        'crear objeto y asignarlo al sub que queremos ejecutar
+        oHilo = New Thread(AddressOf enviarCorreos)
+        'lanzar el hilo
+        oHilo.Start()
+
         Timer1.Start()
 
 
@@ -22,8 +33,9 @@ Public Class Inicio
             pageFirmaCliente.Visible = True
             pageSolicitarDocumentos.Visible = False
             RibEstado.Visible = True
-            RibPerfil.Visible = True
             RibbonFECHA.Visible = True
+            RibPerfil.Visible = True
+
 
 
         End If
@@ -37,8 +49,9 @@ Public Class Inicio
             pageCancelar.Visible = True
             RibEstado.Visible = True
             RibReportes.Visible = True
-            RibPerfil.Visible = True
             RibbonFECHA.Visible = True
+            RibPerfil.Visible = True
+
 
 
 
@@ -49,14 +62,16 @@ Public Class Inicio
             pageSolicitarPago.Visible = True
             pageSolicitarDocumentos.Visible = True
             RibEstado.Visible = True
-            RibPerfil.Visible = True
             RibbonFECHA.Visible = True
+            RibPerfil.Visible = True
+
         End If
 
         If UsuarioActivo.cargo = "INFORMATICA" Then
             RibAdmin.Visible = True
-            RibPerfil.Visible = True
             RibbonFECHA.Visible = True
+            RibPerfil.Visible = True
+
         End If
 
 
@@ -65,7 +80,7 @@ Public Class Inicio
     End Sub
 
     'Gestionar Panel formularios cargan en el panel1
-   
+
     Sub cargarNumeros()
 
         Try
@@ -424,15 +439,15 @@ Public Class Inicio
 
     End Sub
 
- 
+
     Private Sub BarButtonItem9_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem9.ItemClick
         With addPersonal
             .Show()
         End With
     End Sub
 
-   
-  
+
+
     Private Sub BarButtonItem7_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem7.ItemClick
         With listEmpleados
             .MdiParent = Me
@@ -490,4 +505,62 @@ Public Class Inicio
     Private Sub BarButtonItem10_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem10.ItemClick
         fechas.Show()
     End Sub
+
+    Sub enviarCorreos()
+        Try
+            'envia correo si tiene 20 dias en IP
+
+            Dim comprobarSesion = (From c In db.sesion
+                                  Where c.id = 1
+                                  Select c.fecha).FirstOrDefault
+
+            If comprobarSesion <> Date.Now.Date Then
+                'CONFIGURACION DEL STMP
+                _SMTP.Credentials = New System.Net.NetworkCredential("adelmicrocreditos@gmail.com", "AmcHondura")
+                _SMTP.Host = "smtp.gmail.com"
+                _SMTP.Port = 587
+                _SMTP.EnableSsl = False
+                _SMTP.EnableSsl = True
+
+                Dim nombres = From u In db.hipotecaEstado
+                           Where (DateTime.Now.Date - u.fecha).TotalDays = 30 And u.estadoId = 5
+                           Join h In db.Hipoteca On u.hipotecaId Equals h.hipotecaId
+                           Join p In db.prestamo On h.prestamoId Equals p.prestamoId
+                           Select p.nombreCliente
+
+                For Each nombre As String In nombres
+                    Dim i As Integer = i + 1
+
+                    _Message.[To].Add("proveeduriahn@amc.com.hn") 'Cuenta de Correo de proveeduria 
+                    _Message.From = New System.Net.Mail.MailAddress("adelmicrocreditos@gmail.com", "AMC | HONDURAS", System.Text.Encoding.UTF8) 'Quien lo envía
+                    _Message.Subject = "AVISO" 'Sujeto del e-mail
+                    _Message.SubjectEncoding = System.Text.Encoding.UTF8 'Codificacion
+                    _Message.Body = "Las siguiente cliente necesita ser revisado en el IP" & " ---- " & nombre
+                    _Message.BodyEncoding = System.Text.Encoding.UTF8
+                    _Message.Priority = System.Net.Mail.MailPriority.Normal
+                    _Message.IsBodyHtml = False
+
+                    _SMTP.Send(_Message)
+
+                Next nombre
+
+
+            End If
+
+
+            Dim sesion = (From s In db.sesion
+                            Where s.id = 1
+                            Select s).First
+
+            sesion.fecha = Date.Now()
+
+            db.SubmitChanges()
+
+            oHilo.Abort()
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
 End Class

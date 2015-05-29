@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="amcApp" Class="DataSetLinQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=SQLSERVER;Initial Catalog=amcApp;Persist Security Info=True;User ID=amc" SettingsObjectName="creditosHipotecarios.My.MySettings" SettingsPropertyName="amcAppConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DAVIDBRIONE3423\SQLEXPRESS;Initial Catalog=amcApp;Integrated Security=True" SettingsObjectName="creditosHipotecarios.My.MySettings" SettingsPropertyName="amcAppConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.hipotecaEstado" Member="hipotecaEstado">
     <Type Name="hipotecaEstado">
       <Column Name="hipotecaEstadoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -96,6 +96,12 @@
       <Column Name="descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Association Name="Hipoteca_Evento" Member="Hipoteca" ThisKey="hipotecaId" OtherKey="hipotecaId" Type="Hipoteca" IsForeignKey="true" />
       <Association Name="Usuario_Evento" Member="Usuario" ThisKey="usuarioId" OtherKey="usuarioId" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sesion" Member="sesion">
+    <Type Name="sesion">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

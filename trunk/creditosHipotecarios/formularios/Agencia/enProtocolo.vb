@@ -146,4 +146,20 @@ Public Class enProtocolo
 
 
 
+    Private Sub AGREGARNOTAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AGREGARNOTAToolStripMenuItem.Click
+        Dim dict As Hashtable = obtenerDatos()
+        Dim hipotecaEstadoId As String = dict("hipotecaEstadoId")
+
+        If hipotecaEstadoId = Nothing Then
+            MsgBox("Seleccione un valor")
+        Else
+            With observacion
+                .hiptecaEstadoId = hipotecaEstadoId
+                .Show()
+
+            End With
+        End If
+
+       
+    End Sub
 End Class

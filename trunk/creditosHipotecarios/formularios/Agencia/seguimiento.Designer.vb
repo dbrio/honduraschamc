@@ -63,6 +63,7 @@ Partial Class seguimiento
         Dim Label10 As System.Windows.Forms.Label
         Dim Label11 As System.Windows.Forms.Label
         Dim Label12 As System.Windows.Forms.Label
+        Dim Label23 As System.Windows.Forms.Label
         Me.DataSetCreditos = New creditosHipotecarios.DataSetCreditos()
         Me.SeguimientoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SeguimientoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.seguimientoTableAdapter()
@@ -77,6 +78,8 @@ Partial Class seguimiento
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label22 = New System.Windows.Forms.Label()
+        Me.MemoSiguimientoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        'Me.Remportmemo = New creditosHipotecarios.Remportmemo()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -93,7 +96,6 @@ Partial Class seguimiento
         Me.CuotaPagarLabel1 = New System.Windows.Forms.Label()
         Me.InteresMoraLabel1 = New System.Windows.Forms.Label()
         Me.ValorRemateLabel1 = New System.Windows.Forms.Label()
-        Me.Remportmemo = New creditosHipotecarios.Remportmemo()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.NombresLabel1 = New System.Windows.Forms.Label()
         Me.AsientoLabel1 = New System.Windows.Forms.Label()
@@ -103,8 +105,9 @@ Partial Class seguimiento
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.FechaLabel1 = New System.Windows.Forms.Label()
         Me.UsuarioLabel1 = New System.Windows.Forms.Label()
-        Me.MemoSiguimientoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MemoSiguimientoTableAdapter = New creditosHipotecarios.RemportmemoTableAdapters.memoSiguimientoTableAdapter()
+        'Me.MemoSiguimientoTableAdapter = New creditosHipotecarios.RemportmemoTableAdapters.memoSiguimientoTableAdapter()
+        Me.MemoSeguimientoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MemoSeguimientoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.memoSeguimientoTableAdapter()
         NombreAgenciaLabel = New System.Windows.Forms.Label()
         NombreClienteLabel = New System.Windows.Forms.Label()
         NombrePropietarioLabel = New System.Windows.Forms.Label()
@@ -134,15 +137,17 @@ Partial Class seguimiento
         Label10 = New System.Windows.Forms.Label()
         Label11 = New System.Windows.Forms.Label()
         Label12 = New System.Windows.Forms.Label()
+        Label23 = New System.Windows.Forms.Label()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SeguimientoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.DescripcionMemoEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Remportmemo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         CType(Me.MemoSiguimientoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        'CType(Me.Remportmemo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DescripcionMemoEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        CType(Me.MemoSeguimientoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NombreAgenciaLabel
@@ -466,6 +471,16 @@ Partial Class seguimiento
         Label12.Text = "CANCELACION"
         Label12.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
+        'Label23
+        '
+        Label23.AutoSize = True
+        Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label23.Location = New System.Drawing.Point(34, 193)
+        Label23.Name = "Label23"
+        Label23.Size = New System.Drawing.Size(108, 16)
+        Label23.TabIndex = 94
+        Label23.Text = "OBSERVACION:"
+        '
         'DataSetCreditos
         '
         Me.DataSetCreditos.DataSetName = "DataSetCreditos"
@@ -581,6 +596,7 @@ Partial Class seguimiento
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Label23)
         Me.GroupBox3.Controls.Add(Me.GroupBox2)
         Me.GroupBox3.Controls.Add(Me.DescripcionMemoEdit)
         Me.GroupBox3.Controls.Add(MontoLabel)
@@ -623,7 +639,7 @@ Partial Class seguimiento
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MemoSiguimientoBindingSource, "totalAMC", True))
+        Me.Label22.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MemoSeguimientoBindingSource, "totalAMC", True))
         Me.Label22.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.Location = New System.Drawing.Point(337, 120)
         Me.Label22.Name = "Label22"
@@ -631,10 +647,20 @@ Partial Class seguimiento
         Me.Label22.TabIndex = 9
         Me.Label22.Text = "TOTAL:"
         '
+        'MemoSiguimientoBindingSource
+        '
+        Me.MemoSiguimientoBindingSource.DataMember = "memoSiguimiento"
+        'Me.MemoSiguimientoBindingSource.DataSource = Me.Remportmemo
+        '
+        'Remportmemo
+        '
+        'Me.Remportmemo.DataSetName = "Remportmemo"
+        'Me.Remportmemo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MemoSiguimientoBindingSource, "totaAbogado", True))
+        Me.Label21.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MemoSeguimientoBindingSource, "totaAbogado", True))
         Me.Label21.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.Location = New System.Drawing.Point(337, 48)
         Me.Label21.Name = "Label21"
@@ -654,7 +680,7 @@ Partial Class seguimiento
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MemoSiguimientoBindingSource, "valorComisionAmc", True))
+        Me.Label19.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MemoSeguimientoBindingSource, "valorComisionAmc", True))
         Me.Label19.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.Location = New System.Drawing.Point(144, 120)
         Me.Label19.Name = "Label19"
@@ -665,7 +691,7 @@ Partial Class seguimiento
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MemoSiguimientoBindingSource, "honorarios", True))
+        Me.Label18.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MemoSeguimientoBindingSource, "honorarios", True))
         Me.Label18.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.Location = New System.Drawing.Point(145, 48)
         Me.Label18.Name = "Label18"
@@ -676,7 +702,7 @@ Partial Class seguimiento
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MemoSiguimientoBindingSource, "gastos", True))
+        Me.Label17.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MemoSeguimientoBindingSource, "gastos", True))
         Me.Label17.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.Location = New System.Drawing.Point(145, 18)
         Me.Label17.Name = "Label17"
@@ -723,11 +749,13 @@ Partial Class seguimiento
         '
         'DescripcionMemoEdit
         '
-        Me.DescripcionMemoEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "descripcion", True))
+        Me.DescripcionMemoEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SeguimientoBindingSource, "Observacion", True))
         Me.DescripcionMemoEdit.Enabled = False
-        Me.DescripcionMemoEdit.Location = New System.Drawing.Point(35, 173)
+        Me.DescripcionMemoEdit.Location = New System.Drawing.Point(35, 212)
         Me.DescripcionMemoEdit.Name = "DescripcionMemoEdit"
-        Me.DescripcionMemoEdit.Size = New System.Drawing.Size(976, 127)
+        Me.DescripcionMemoEdit.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DescripcionMemoEdit.Properties.Appearance.Options.UseFont = True
+        Me.DescripcionMemoEdit.Size = New System.Drawing.Size(976, 88)
         Me.DescripcionMemoEdit.TabIndex = 92
         '
         'MontoLabel1
@@ -795,11 +823,6 @@ Partial Class seguimiento
         Me.ValorRemateLabel1.Size = New System.Drawing.Size(100, 25)
         Me.ValorRemateLabel1.TabIndex = 91
         Me.ValorRemateLabel1.Text = "Label1"
-        '
-        'Remportmemo
-        '
-        Me.Remportmemo.DataSetName = "Remportmemo"
-        Me.Remportmemo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Panel1
         '
@@ -904,14 +927,18 @@ Partial Class seguimiento
         Me.UsuarioLabel1.TabIndex = 96
         Me.UsuarioLabel1.Text = "Label9"
         '
-        'MemoSiguimientoBindingSource
-        '
-        Me.MemoSiguimientoBindingSource.DataMember = "memoSiguimiento"
-        Me.MemoSiguimientoBindingSource.DataSource = Me.Remportmemo
-        '
         'MemoSiguimientoTableAdapter
         '
-        Me.MemoSiguimientoTableAdapter.ClearBeforeFill = True
+        'Me.MemoSiguimientoTableAdapter.ClearBeforeFill = True
+        '
+        'MemoSeguimientoBindingSource
+        '
+        Me.MemoSeguimientoBindingSource.DataMember = "memoSeguimiento"
+        Me.MemoSeguimientoBindingSource.DataSource = Me.DataSetCreditos
+        '
+        'MemoSeguimientoTableAdapter
+        '
+        Me.MemoSeguimientoTableAdapter.ClearBeforeFill = True
         '
         'seguimiento
         '
@@ -970,11 +997,12 @@ Partial Class seguimiento
         Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.MemoSiguimientoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        'CType(Me.Remportmemo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DescripcionMemoEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Remportmemo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.MemoSiguimientoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MemoSeguimientoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1015,10 +1043,12 @@ Partial Class seguimiento
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents Remportmemo As creditosHipotecarios.Remportmemo
+    'Friend WithEvents Remportmemo As creditosHipotecarios.Remportmemo
     Friend WithEvents Label22 As System.Windows.Forms.Label
     Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents MemoSiguimientoBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents MemoSiguimientoTableAdapter As creditosHipotecarios.RemportmemoTableAdapters.memoSiguimientoTableAdapter
+    'Friend WithEvents MemoSiguimientoTableAdapter As creditosHipotecarios.RemportmemoTableAdapters.memoSiguimientoTableAdapter
+    Friend WithEvents MemoSeguimientoBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents MemoSeguimientoTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.memoSeguimientoTableAdapter
 End Class

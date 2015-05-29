@@ -11,7 +11,7 @@
         'TODO: esta línea de código carga datos en la tabla 'Remportmemo.Memo' Puede moverla o quitarla según sea necesario.
 
         Try
-            MemoSiguimientoTableAdapter.Fill(Remportmemo.memoSiguimiento, idPrestamo)
+            MemoSeguimientoTableAdapter.Fill(DataSetCreditos.memoSeguimiento, idPrestamo)
             cargar()
             Inicio.Enabled = False
             Dim progreso As Double = CInt(EstadoIdLabel1.Text) * 100 / 11
@@ -23,11 +23,11 @@
             MsgBox(ex.Message)
         End Try
 
-      
+
 
     End Sub
 
-  
+
 
     Sub cargar()
         Try
