@@ -16,6 +16,8 @@
     Public valorRemateAdd As Decimal
     Public Usser As Integer
 
+    Dim db As New DataSetLinQDataContext
+
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
 
@@ -133,7 +135,7 @@
                 Exit Sub
             End If
 
-            Me.PrestamoTableAdapter.Insert(codigoClinteGarantiaAdd, codigoAgenciaGarantiaAdd, nombreClienteGarantiaAdd, identidadGarantiaAdd, propietarioAdd, txtIdPropietario.Text, montoGarantiaAdd, plazoGaratniaAdd, tasaInteresGaratniaAdd, cuotaAdd, interesMoraGaratniaAdd, valorRemateAdd, descripcionAdd)
+            Me.PrestamoTableAdapter.Insert(codigoClinteGarantiaAdd, codigoAgenciaGarantiaAdd, nombreClienteGarantiaAdd, identidadGarantiaAdd, propietarioAdd, txtIdPropietario.Text, montoGarantiaAdd, plazoGaratniaAdd, tasaInteresGaratniaAdd, cuotaAdd, interesMoraGaratniaAdd, valorRemateAdd, descripcionAdd, UsuarioActivo.UsuarioNombre, Date.Now(), "", Date.Now())
 
             Me.HipotecaTableAdapter.sp_Hipoteca(NombresAbogado.SelectedValue)
 
@@ -185,6 +187,10 @@
 
             If nombreClienteGarantiaAdd = propietarioAdd Then
                 txtIdPropietario.Text = identidadGarantiaAdd
+            End If
+
+            If propietarioAdd = "" Then
+                txtIdPropietario.Text = "0000-0000-00000"
             End If
 
         Catch ex As Exception

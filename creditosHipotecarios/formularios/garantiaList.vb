@@ -56,15 +56,21 @@
 
   
     Private Sub GridView1_RowCellClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs) Handles GridView1.RowCellClick
+        
+
         Try
             With addProtocolo
 
                 Dim dict As Hashtable = obtenerDatos()
+                If IsDBNull(dict("propietario")) Then
+                    dict("propietario") = ""
+                End If
+
                 Dim propietario As String = dict("propietario")
                 Dim descripcion As String = dict("descripcion")
                 Dim valorRemate As Decimal = dict("valorRemate")
 
-                
+
 
                 Me.Close()
                 .propietarioAdd = propietario

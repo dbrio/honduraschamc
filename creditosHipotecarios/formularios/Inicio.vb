@@ -24,7 +24,29 @@ Public Class Inicio
 
 
         'LabelDeparamento.Text = UsuarioActivo.cargo
+        If UsuarioActivo.cargo = "INVENTARIO" Then
+            pageBuscar.Visible = True
+            pageProtocoloListo.Visible = True
+            pageFirmaCliente.Visible = True
+            pageSolicitarDocumentos.Visible = False
+            pageProtocoloListo.Visible = True
+            pageFirmaCliente.Visible = True
+            pageSolicitarDocumentos.Visible = False
+            pageFirmaGerente.Visible = True
+            pageIP.Visible = True
+            pageEnviarCustodia.Visible = True
+            pageEfectuarPago.Visible = True
+            pageEntregaCliente.Visible = True
+            pageCancelar.Visible = True
+            pageSolicitarPago.Visible = True
+            pageSolicitarDocumentos.Visible = True
+            pageEstado.Visible = True
 
+            RibEstado.Visible = True
+            'RibbonFECHA.Visible = True
+            'RibPerfil.Visible = True
+
+        End If
 
         If UsuarioActivo.cargo = "OPERATIVO" Then
 
@@ -39,7 +61,7 @@ Public Class Inicio
 
 
         End If
-        If UsuarioActivo.cargo = "PROVEEDURIA" Then
+        If UsuarioActivo.cargo = "ARCHIVO" Then
             pageEstado.Visible = True
             pageFirmaGerente.Visible = True
             pageIP.Visible = True
@@ -72,6 +94,26 @@ Public Class Inicio
             RibbonFECHA.Visible = True
             RibPerfil.Visible = True
 
+
+            'pageBuscar.Visible = True
+            pageProtocoloListo.Visible = True
+            pageFirmaCliente.Visible = True
+            pageSolicitarDocumentos.Visible = False
+            pageProtocoloListo.Visible = True
+            pageFirmaCliente.Visible = True
+            pageSolicitarDocumentos.Visible = False
+            pageFirmaGerente.Visible = True
+            pageIP.Visible = True
+            pageEnviarCustodia.Visible = True
+            pageEfectuarPago.Visible = True
+            pageEntregaCliente.Visible = True
+            pageCancelar.Visible = True
+            pageSolicitarPago.Visible = True
+            pageSolicitarDocumentos.Visible = True
+            pageEstado.Visible = True
+
+            RibEstado.Visible = True
+
         End If
 
 
@@ -84,7 +126,7 @@ Public Class Inicio
     Sub cargarNumeros()
 
         Try
-            If UsuarioActivo.cargo = "PROVEEDURIA" Then
+            If UsuarioActivo.cargo = "ARCHIVO" Or UsuarioActivo.cargo = "INFORMATICA" Then
                 For contar As Integer = 0 To 11
                     Dim i As Integer = contar + 1
 
@@ -93,30 +135,28 @@ Public Class Inicio
                                    Join p In db.prestamo On h.prestamoId Equals p.prestamoId
                                    Where he.estadoId = i
                                    Select he.hipotecaId).Count
-                    'If i = 1 Then
-                    '    pageProtocoloListo.Text = numeros
-                    'ElseIf i = 2 Then
-                    '    pageFirmaCliente.Text = numeros
-                    If i = 3 Then
+                    If i = 1 Then
+                        pageProtocoloListo.Text = numeros
+                    ElseIf i = 2 Then
+                        pageFirmaCliente.Text = numeros
+                    ElseIf i = 3 Then
                         pageFirmaGerente.Text = numeros
                     ElseIf i = 4 Then
                         pageIP.Text = numeros
                     ElseIf i = 5 Then
                         pageEnviarCustodia.Text = numeros
                     ElseIf i = 6 Then
-                        pageCustodiaya.Text = numeros
+                        pageSolicitarPago.Text = numeros
                     ElseIf i = 7 Then
                         pageEfectuarPago.Text = numeros
 
-                        'ElseIf i = 8 Then
-                        '    pageSolicitarDocumentos.Text = numeros
+                    ElseIf i = 8 Then
+                        pageSolicitarDocumentos.Text = numeros
                     ElseIf i = 9 Then
                         pageEntregaCliente.Text = numeros
                     ElseIf i = 10 Then
                         pageCancelar.Text = numeros
 
-                        'ElseIf i = 11 Then
-                        '    RibCanceladasya.Text = numeros
                     End If
                 Next contar
 
@@ -531,7 +571,7 @@ Public Class Inicio
                 For Each nombre As String In nombres
                     Dim i As Integer = i + 1
 
-                    _Message.[To].Add("proveeduriahn@amc.com.hn") 'Cuenta de Correo de proveeduria 
+                    _Message.[To].Add("rrhh@amc.com.hn") 'Cuenta de Correo de proveeduria 
                     _Message.From = New System.Net.Mail.MailAddress("adelmicrocreditos@gmail.com", "AMC | HONDURAS", System.Text.Encoding.UTF8) 'Quien lo envía
                     _Message.Subject = "AVISO" 'Sujeto del e-mail
                     _Message.SubjectEncoding = System.Text.Encoding.UTF8 'Codificacion

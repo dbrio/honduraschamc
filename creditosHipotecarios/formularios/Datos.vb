@@ -4,6 +4,7 @@
         Public usuario As Integer
         Public cargo As String
         Public codigoAgencia As String
+        Public UsuarioNombre As String
     End Structure
 
     Public UsuarioActivo As SesionUser

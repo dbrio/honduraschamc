@@ -120,6 +120,7 @@ Partial Class addProtocolo
         Me.NombresAbogado.Name = "NombresAbogado"
         Me.NombresAbogado.Size = New System.Drawing.Size(179, 24)
         Me.NombresAbogado.TabIndex = 11
+        Me.NombresAbogado.Text = " "
         Me.NombresAbogado.ValueMember = "abogadoId"
         '
         'AbogadoBindingSource

@@ -11,7 +11,17 @@ Public Class enProtocolo
 
 
     Private Sub enProtocolo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'DataSetCreditos.prestamo' Puede moverla o quitarla según sea necesario.
+        'Me.PrestamoTableAdapter.Fill(Me.DataSetCreditos.prestamo)
         'CAGAR DATOS
+
+        TextBoxBuscar.Focus()
+
+
+        If UsuarioActivo.cargo = "INFORMATICA" Then
+            RegresarToolStripMenuItem.Visible = True
+
+        End If
         cargarDatos()
         Inicio.cargarNumeros()
 
@@ -31,7 +41,7 @@ Public Class enProtocolo
     Sub cargarDatos()
         Try
             Me.Text = titulo
-            If UsuarioActivo.cargo = "PROVEEDURIA" Then
+            If UsuarioActivo.cargo = "ARCHIVO" Or UsuarioActivo.cargo = "INFORMATICA" Then
                 Me.HipotecaEestadoTableAdapter.FillInformatica(Me.DataSetCreditos.hipotecaEestado, idCargar)
                 Inicio.cargarNumeros()
             Else
@@ -49,7 +59,54 @@ Public Class enProtocolo
 
 
 
-    Private Sub GridView1_RowCellClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs) Handles GridView1.RowCellClick
+
+
+
+
+    Private Sub AGREGARNOTAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AGREGARNOTAToolStripMenuItem.Click
+        Dim dict As Hashtable = obtenerDatos()
+        Dim hipotecaEstadoId As String = dict("hipotecaEstadoId")
+
+        If hipotecaEstadoId = Nothing Then
+            MsgBox("Seleccione un valor")
+        Else
+            With observacion
+                .hiptecaEstadoId = hipotecaEstadoId
+                .Show()
+
+            End With
+        End If
+
+       
+    End Sub
+
+    Private Sub RegresarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegresarToolStripMenuItem.Click
+        Dim dict As Hashtable = obtenerDatos()
+        Dim hipotecaEstadoId As String = dict("hipotecaEstadoId")
+
+        Try
+            Dim estadoActual As Integer = HipotecaEstadoTableAdapter.obtenerEstado(hipotecaEstadoId)
+            Dim estadoId As Integer = estadoActual - 1
+            If MsgBox("¿Actualizar el estado?", MsgBoxStyle.Question + vbYesNo) = vbYes Then
+                HipotecaEstadoTableAdapter.UpdateQuery(estadoId, DateTime.Now(), UsuarioActivo.usuario, hipotecaEstadoId)
+                cargarDatos()
+            End If
+
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+
+
+  
+
+    Private Sub TextBoxBuscar_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub GridView1_RowCellClick_1(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs) Handles GridView1.RowCellClick
         Try
 
 
@@ -119,14 +176,22 @@ Public Class enProtocolo
 
 
             Else
-
                 Dim dict As Hashtable = obtenerDatos()
-                Dim hipotecaEstadoId As String = dict("hipotecaEstadoId")
                 Dim estadoId As Integer = idCargar + 1
 
+                Dim hipotecaEstadoId As String = dict("hipotecaEstadoId")
 
-                If MsgBox("¿Actualizar el estado?", MsgBoxStyle.Question + vbYesNo) = vbYes Then
+                Dim eestado As Integer = idCargar + 2
+
+                Dim estadoActualizar As String = HipotecaEestadoTableAdapter.actualizarAestado(eestado)
+
+
+                If MsgBox("¿Actualizar el estado a:  " + estadoActualizar + " ?", MsgBoxStyle.Question + vbYesNo) = vbYes Then
                     HipotecaEstadoTableAdapter.UpdateQuery(estadoId, DateTime.Now(), UsuarioActivo.usuario, hipotecaEstadoId)
+
+                    Dim prestamoId As Integer = PrestamoTableAdapter.ScalarPrestamoId(hipotecaEstadoId)
+
+                    PrestamoTableAdapter.UpdatePrestamo(UsuarioActivo.UsuarioNombre, Date.Now(), prestamoId)
                 End If
 
                 'CARGAR DATOS
@@ -144,22 +209,40 @@ Public Class enProtocolo
         End Try
     End Sub
 
+   
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Try
+            If TextBoxBuscar.Text.Trim = "" Then
+                cargarDatos()
+
+                TextBoxBuscar.Focus()
+            End If
 
 
-    Private Sub AGREGARNOTAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AGREGARNOTAToolStripMenuItem.Click
-        Dim dict As Hashtable = obtenerDatos()
-        Dim hipotecaEstadoId As String = dict("hipotecaEstadoId")
+            Dim texto As String = TextBoxBuscar.Text
+            Dim buscar As String = "%" + texto + "%"
+            If UsuarioActivo.cargo = "INFORMATICA" Or UsuarioActivo.cargo = "ARCHIVO" Then
+                Me.HipotecaEestadoTableAdapter.buscarConCargo(Me.DataSetCreditos.hipotecaEestado, idCargar, buscar)
 
-        If hipotecaEstadoId = Nothing Then
-            MsgBox("Seleccione un valor")
-        Else
-            With observacion
-                .hiptecaEstadoId = hipotecaEstadoId
-                .Show()
+            Else
+                Me.HipotecaEestadoTableAdapter.BuscarConAgencia(Me.DataSetCreditos.hipotecaEestado, idCargar, buscar, UsuarioActivo.codigoAgencia)
+            End If
+            TextBoxBuscar.Text = ""
+            TextBoxBuscar.Focus()
 
-            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub TextBoxBuscar_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxBuscar.KeyPress
+        If e.KeyChar = ChrW(13) Then
+            Button1_Click(sender, e)
         End If
+    End Sub
 
-       
+    Private Sub TextBoxBuscar_TextChanged_1(sender As Object, e As EventArgs) Handles TextBoxBuscar.TextChanged
+
     End Sub
 End Class

@@ -14,7 +14,7 @@
         <elementListCompartment Id="38428601-a638-456f-9208-16617ac90621" absoluteBounds="0.51500000000000012, 1.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.5 : 2.45274983723958); (2.54166666666667 : 2.45274983723958 : JumpStart); (2.70833333333333 : 2.45274983723958 : JumpEnd); (2.76041666666667 : 2.45274983723958 : JumpStart); (2.92708333333333 : 2.45274983723958 : JumpEnd); (3 : 2.45274983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.5 : 2.45274983723958); (2.54166666666667 : 2.45274983723958 : JumpStart); (2.70833333333333 : 2.45274983723958 : JumpEnd); (2.76041666666667 : 2.45274983723958 : JumpStart); (2.92708333333333 : 2.45274983723958 : JumpEnd); (3 : 2.45274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataSetLinQDataContext/Hipoteca/Hipoteca_hipotecaEstado" />
       <nodes>
         <classShapeMoniker Id="e8d66881-fc9a-4ce4-94ad-6d8576665164" />
@@ -85,7 +85,7 @@
         <elementListCompartment Id="43ffb3ea-91bf-46c8-a9e9-c071564c9683" absoluteBounds="4.515, 7.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(1.25000025 : 2.78049967447917); (1.25000025 : 3.25); (1.79166629166667 : 3.25 : JumpStart); (1.95833295833333 : 3.25 : JumpEnd); (2.75 : 3.25); (2.75 : 5.375); (2.76041666666667 : 5.375 : JumpStart); (2.92708333333333 : 5.375 : JumpEnd); (3.75 : 5.375); (3.75 : 6.52089680989583); (3.875 : 6.52089680989583); (3.875 : 8.10659912109375); (4.5 : 8.10659912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(1.25000025 : 2.78049967447917); (1.25000025 : 3.25); (1.79166629166667 : 3.25 : JumpStart); (1.95833295833333 : 3.25 : JumpEnd); (2.75 : 3.25); (2.75 : 5.375); (2.76041666666667 : 5.375 : JumpStart); (2.92708333333333 : 5.375 : JumpEnd); (3.75 : 5.375); (3.75 : 6.52089680989583); (3.875 : 6.52089680989583); (3.875 : 8.10659912109375); (4.5 : 8.10659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataSetLinQDataContext/Hipoteca/Hipoteca_Evento" />
       <nodes>
         <classShapeMoniker Id="e8d66881-fc9a-4ce4-94ad-6d8576665164" />
@@ -105,5 +105,18 @@
         <elementListCompartment Id="b389a9e6-45eb-40d8-b9d2-71a72554e0b6" absoluteBounds="5.515, 3.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="2d26ba03-aee4-4954-a86f-bab25bc72d1f" absoluteBounds="6.75, 5.625, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DataSetLinQDataContext/Estado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b57570a2-113c-44bf-ab9a-85f61c818758" absoluteBounds="6.765, 6.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.75 : 6.22199625651042); (6.015625 : 6.22199625651042); (6.015625 : 4.484375); (4 : 4.484375); (4 : 3.89589680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataSetLinQDataContext/Estado/Estado_hipotecaEstado" />
+      <nodes>
+        <classShapeMoniker Id="2d26ba03-aee4-4954-a86f-bab25bc72d1f" />
+        <classShapeMoniker Id="1c5c8371-f27b-4d8c-ae61-fdabfc10b779" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

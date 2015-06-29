@@ -152,7 +152,6 @@ Partial Class pudatePersonal
         '
         Me.CodigoAgenciaComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AgenciaBindingSource, "nombreAgencia", True))
         Me.CodigoAgenciaComboBox.DataBindings.Add(New System.Windows.Forms.Binding("SelectedItem", Me.PersonalBindingSource, "codigoAgencia", True))
-        Me.CodigoAgenciaComboBox.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.PersonalBindingSource, "codigoAgencia", True))
         Me.CodigoAgenciaComboBox.DataSource = Me.AgenciaBindingSource
         Me.CodigoAgenciaComboBox.DisplayMember = "nombreAgencia"
         Me.CodigoAgenciaComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -172,7 +171,6 @@ Partial Class pudatePersonal
         'CargoIdComboBox
         '
         Me.CargoIdComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CargoBindingSource, "Cargo", True))
-        Me.CargoIdComboBox.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.PersonalBindingSource, "cargoId", True))
         Me.CargoIdComboBox.DataSource = Me.CargoBindingSource
         Me.CargoIdComboBox.DisplayMember = "Cargo"
         Me.CargoIdComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
