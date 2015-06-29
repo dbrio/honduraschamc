@@ -27,9 +27,19 @@ Partial Class enProtocolo
         Me.HipotecaEestadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.HipotecaEestadoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEestadoTableAdapter()
         Me.TableAdapterManager = New creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager()
-        Me.HipotecaEestadoGridControl = New DevExpress.XtraGrid.GridControl()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.AGREGARNOTAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegresarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PrestamoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.HipotecaEstadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.HipotecaEestadoBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetCreditosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.HipotecaEstadoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEstadoTableAdapter()
+        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.PrestamoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.prestamoTableAdapter()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBoxBuscar = New System.Windows.Forms.TextBox()
+        Me.HipotecaEestadoGridControl = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colAgencia = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -39,18 +49,15 @@ Partial Class enProtocolo
         Me.colmonto = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coltasaInteres = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coldescripcion = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.HipotecaEstadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HipotecaEestadoBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSetCreditosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HipotecaEstadoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEstadoTableAdapter()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HipotecaEestadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.HipotecaEestadoGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PrestamoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HipotecaEstadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HipotecaEestadoBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetCreditosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.HipotecaEestadoGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataSetCreditos
@@ -83,6 +90,75 @@ Partial Class enProtocolo
         Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuarioTableAdapter = Nothing
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AGREGARNOTAToolStripMenuItem, Me.RegresarToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(163, 48)
+        '
+        'AGREGARNOTAToolStripMenuItem
+        '
+        Me.AGREGARNOTAToolStripMenuItem.Name = "AGREGARNOTAToolStripMenuItem"
+        Me.AGREGARNOTAToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.AGREGARNOTAToolStripMenuItem.Text = "AGREGAR NOTA"
+        '
+        'RegresarToolStripMenuItem
+        '
+        Me.RegresarToolStripMenuItem.Name = "RegresarToolStripMenuItem"
+        Me.RegresarToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.RegresarToolStripMenuItem.Text = "REGRESAR"
+        Me.RegresarToolStripMenuItem.Visible = False
+        '
+        'PrestamoBindingSource
+        '
+        Me.PrestamoBindingSource.DataMember = "prestamo"
+        Me.PrestamoBindingSource.DataSource = Me.DataSetCreditos
+        '
+        'HipotecaEstadoBindingSource
+        '
+        Me.HipotecaEstadoBindingSource.DataMember = "hipotecaEstado"
+        Me.HipotecaEstadoBindingSource.DataSource = Me.DataSetCreditos
+        '
+        'HipotecaEestadoBindingSource1
+        '
+        Me.HipotecaEestadoBindingSource1.DataMember = "hipotecaEestado"
+        Me.HipotecaEestadoBindingSource1.DataSource = Me.DataSetCreditos
+        '
+        'DataSetCreditosBindingSource
+        '
+        Me.DataSetCreditosBindingSource.DataSource = Me.DataSetCreditos
+        Me.DataSetCreditosBindingSource.Position = 0
+        '
+        'HipotecaEstadoTableAdapter
+        '
+        Me.HipotecaEstadoTableAdapter.ClearBeforeFill = True
+        '
+        'ContextMenuStrip2
+        '
+        Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
+        Me.ContextMenuStrip2.Size = New System.Drawing.Size(61, 4)
+        '
+        'PrestamoTableAdapter
+        '
+        Me.PrestamoTableAdapter.ClearBeforeFill = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(273, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 7
+        Me.Button1.Text = "BUSCAR"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'TextBoxBuscar
+        '
+        Me.TextBoxBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxBuscar.Location = New System.Drawing.Point(12, 9)
+        Me.TextBoxBuscar.Name = "TextBoxBuscar"
+        Me.TextBoxBuscar.Size = New System.Drawing.Size(241, 26)
+        Me.TextBoxBuscar.TabIndex = 6
+        '
         'HipotecaEestadoGridControl
         '
         Me.HipotecaEestadoGridControl.ContextMenuStrip = Me.ContextMenuStrip1
@@ -92,20 +168,9 @@ Partial Class enProtocolo
         Me.HipotecaEestadoGridControl.MainView = Me.GridView1
         Me.HipotecaEestadoGridControl.Name = "HipotecaEestadoGridControl"
         Me.HipotecaEestadoGridControl.Size = New System.Drawing.Size(861, 489)
-        Me.HipotecaEestadoGridControl.TabIndex = 2
+        Me.HipotecaEestadoGridControl.TabIndex = 5
+        Me.HipotecaEestadoGridControl.UseEmbeddedNavigator = True
         Me.HipotecaEestadoGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
-        '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AGREGARNOTAToolStripMenuItem})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(163, 26)
-        '
-        'AGREGARNOTAToolStripMenuItem
-        '
-        Me.AGREGARNOTAToolStripMenuItem.Name = "AGREGARNOTAToolStripMenuItem"
-        Me.AGREGARNOTAToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
-        Me.AGREGARNOTAToolStripMenuItem.Text = "AGREGAR NOTA"
         '
         'GridView1
         '
@@ -113,6 +178,8 @@ Partial Class enProtocolo
         Me.GridView1.Appearance.FocusedRow.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GridView1.Appearance.FocusedRow.Options.UseBackColor = True
         Me.GridView1.Appearance.FocusedRow.Options.UseFont = True
+        Me.GridView1.Appearance.GroupPanel.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GridView1.Appearance.GroupPanel.Options.UseFont = True
         Me.GridView1.Appearance.GroupRow.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GridView1.Appearance.GroupRow.Options.UseFont = True
         Me.GridView1.Appearance.Row.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -130,7 +197,6 @@ Partial Class enProtocolo
         Me.GridView1.OptionsCustomization.AllowGroup = False
         Me.GridView1.OptionsCustomization.AllowSort = False
         Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.GridView1.OptionsView.ShowGroupPanel = False
         Me.GridView1.PaintStyleName = "WindowsXP"
         Me.GridView1.RowHeight = 30
         '
@@ -205,62 +271,53 @@ Partial Class enProtocolo
         Me.coldescripcion.VisibleIndex = 5
         Me.coldescripcion.Width = 417
         '
-        'HipotecaEstadoBindingSource
-        '
-        Me.HipotecaEstadoBindingSource.DataMember = "hipotecaEstado"
-        Me.HipotecaEstadoBindingSource.DataSource = Me.DataSetCreditos
-        '
-        'HipotecaEestadoBindingSource1
-        '
-        Me.HipotecaEestadoBindingSource1.DataMember = "hipotecaEestado"
-        Me.HipotecaEestadoBindingSource1.DataSource = Me.DataSetCreditos
-        '
-        'DataSetCreditosBindingSource
-        '
-        Me.DataSetCreditosBindingSource.DataSource = Me.DataSetCreditos
-        Me.DataSetCreditosBindingSource.Position = 0
-        '
-        'HipotecaEstadoTableAdapter
-        '
-        Me.HipotecaEstadoTableAdapter.ClearBeforeFill = True
-        '
         'enProtocolo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(861, 489)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.TextBoxBuscar)
         Me.Controls.Add(Me.HipotecaEestadoGridControl)
         Me.Name = "enProtocolo"
         Me.Text = "Protocolo"
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HipotecaEestadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.HipotecaEestadoGridControl, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuStrip1.ResumeLayout(False)
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PrestamoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HipotecaEstadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HipotecaEestadoBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSetCreditosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.HipotecaEestadoGridControl, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents DataSetCreditos As creditosHipotecarios.DataSetCreditos
     Friend WithEvents HipotecaEestadoBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents HipotecaEestadoTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEestadoTableAdapter
     Friend WithEvents TableAdapterManager As creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager
+    Friend WithEvents DataSetCreditosBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents HipotecaEestadoBindingSource1 As System.Windows.Forms.BindingSource
+    Friend WithEvents HipotecaEstadoBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents HipotecaEstadoTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEstadoTableAdapter
+    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents AGREGARNOTAToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents RegresarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ContextMenuStrip2 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents PrestamoBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents PrestamoTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.prestamoTableAdapter
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents TextBoxBuscar As System.Windows.Forms.TextBox
     Friend WithEvents HipotecaEestadoGridControl As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colAgencia As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colhipotecaEstadoId As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colnombreCliente As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colrnpCliente As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colmonto As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents coltasaInteres As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents coldescripcion As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colhipotecaEstadoId As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents DataSetCreditosBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents HipotecaEestadoBindingSource1 As System.Windows.Forms.BindingSource
-    Friend WithEvents HipotecaEstadoBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents HipotecaEstadoTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEstadoTableAdapter
-    Friend WithEvents colAgencia As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
-    Friend WithEvents AGREGARNOTAToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

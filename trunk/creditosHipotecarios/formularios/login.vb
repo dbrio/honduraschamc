@@ -48,6 +48,14 @@ Public Class login
 
                 UsuarioActivo.usuario = idUsuario
 
+
+                Dim usuarioN = (From m In db.Usuario
+                              Where m.usuarioId = idUsuario
+                              Select m.usuario).FirstOrDefault
+
+                UsuarioActivo.UsuarioNombre = usuarioN
+
+
                 Dim cargo As String = UsuarioTableAdapter.ObtenerCargo(idUsuario)
 
                 Dim codigoAgencia As String = UsuarioTableAdapter.obtenerAgencia(idUsuario)

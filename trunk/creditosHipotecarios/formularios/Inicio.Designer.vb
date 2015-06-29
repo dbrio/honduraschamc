@@ -114,11 +114,11 @@ Partial Class Inicio
         Me.PanelControl1.AutoSize = True
         Me.PanelControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControl1.ContentImage = Global.creditosHipotecarios.My.Resources.Resources.AMC_Logo_sin_fondo
+        Me.PanelControl1.ContentImage = CType(resources.GetObject("PanelControl1.ContentImage"), System.Drawing.Image)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControl1.Location = New System.Drawing.Point(0, 121)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(2000, 627)
+        Me.PanelControl1.Size = New System.Drawing.Size(2000, 644)
         Me.PanelControl1.TabIndex = 2
         '
         'ContextMenuStrip1
@@ -151,7 +151,7 @@ Partial Class Inicio
         Me.BarButtonItem1.ItemInMenuAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
         Me.BarButtonItem1.ItemInMenuAppearance.Pressed.Options.UseTextOptions = True
         Me.BarButtonItem1.ItemInMenuAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
-        Me.BarButtonItem1.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.add
+        Me.BarButtonItem1.LargeGlyph = CType(resources.GetObject("BarButtonItem1.LargeGlyph"), System.Drawing.Image)
         Me.BarButtonItem1.Name = "BarButtonItem1"
         '
         'ContextMenuStrip2
@@ -212,7 +212,7 @@ Partial Class Inicio
         Me.btnAddHipoteca.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
         Me.btnAddHipoteca.ItemAppearance.Pressed.Options.UseTextOptions = True
         Me.btnAddHipoteca.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
-        Me.btnAddHipoteca.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.add
+        Me.btnAddHipoteca.LargeGlyph = CType(resources.GetObject("btnAddHipoteca.LargeGlyph"), System.Drawing.Image)
         Me.btnAddHipoteca.Name = "btnAddHipoteca"
         '
         'BarButtonItem3
@@ -255,7 +255,7 @@ Partial Class Inicio
         Me.btnBuscar.Caption = "AGREGAR"
         Me.btnBuscar.DropDownEnabled = False
         Me.btnBuscar.Id = 2
-        Me.btnBuscar.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.add
+        Me.btnBuscar.LargeGlyph = CType(resources.GetObject("btnBuscar.LargeGlyph"), System.Drawing.Image)
         Me.btnBuscar.Name = "btnBuscar"
         '
         'btnListo
@@ -276,7 +276,7 @@ Partial Class Inicio
         Me.btnListo.ItemInMenuAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
         Me.btnListo.ItemInMenuAppearance.Pressed.Options.UseTextOptions = True
         Me.btnListo.ItemInMenuAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
-        Me.btnListo.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources._1426294923_document
+        Me.btnListo.LargeGlyph = CType(resources.GetObject("btnListo.LargeGlyph"), System.Drawing.Image)
         Me.btnListo.Name = "btnListo"
         '
         'btnProtocolo
@@ -297,49 +297,49 @@ Partial Class Inicio
         Me.btnProtocolo.ItemInMenuAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
         Me.btnProtocolo.ItemInMenuAppearance.Pressed.Options.UseTextOptions = True
         Me.btnProtocolo.ItemInMenuAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
-        Me.btnProtocolo.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.cliente2
+        Me.btnProtocolo.LargeGlyph = CType(resources.GetObject("btnProtocolo.LargeGlyph"), System.Drawing.Image)
         Me.btnProtocolo.Name = "btnProtocolo"
         '
         'btnFirmaCliente
         '
         Me.btnFirmaCliente.Caption = "PARA FIRMA GERENCIA"
         Me.btnFirmaCliente.Id = 5
-        Me.btnFirmaCliente.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.manager
+        Me.btnFirmaCliente.LargeGlyph = CType(resources.GetObject("btnFirmaCliente.LargeGlyph"), System.Drawing.Image)
         Me.btnFirmaCliente.Name = "btnFirmaCliente"
         '
         'btnFirmaGerente
         '
         Me.btnFirmaGerente.Caption = "NUMERO IP"
         Me.btnFirmaGerente.Id = 6
-        Me.btnFirmaGerente.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources._1426294964_pencil_128
+        Me.btnFirmaGerente.LargeGlyph = CType(resources.GetObject("btnFirmaGerente.LargeGlyph"), System.Drawing.Image)
         Me.btnFirmaGerente.Name = "btnFirmaGerente"
         '
         'btnPresentacion
         '
         Me.btnPresentacion.Caption = "EVIAR A CUSTODIA"
         Me.btnPresentacion.Id = 7
-        Me.btnPresentacion.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.custodia
+        Me.btnPresentacion.LargeGlyph = CType(resources.GetObject("btnPresentacion.LargeGlyph"), System.Drawing.Image)
         Me.btnPresentacion.Name = "btnPresentacion"
         '
         'btnCustodia
         '
         Me.btnCustodia.Caption = "SOLICITAR PAGO"
         Me.btnCustodia.Id = 8
-        Me.btnCustodia.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.solicitudPago
+        Me.btnCustodia.LargeGlyph = CType(resources.GetObject("btnCustodia.LargeGlyph"), System.Drawing.Image)
         Me.btnCustodia.Name = "btnCustodia"
         '
         'btnSolicitudPago
         '
         Me.btnSolicitudPago.Caption = "EFECTURAR PAGO"
         Me.btnSolicitudPago.Id = 9
-        Me.btnSolicitudPago.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.pagar
+        Me.btnSolicitudPago.LargeGlyph = CType(resources.GetObject("btnSolicitudPago.LargeGlyph"), System.Drawing.Image)
         Me.btnSolicitudPago.Name = "btnSolicitudPago"
         '
         'btnEfectuarPago
         '
         Me.btnEfectuarPago.Caption = "SOLICITAR DOCUMENTOS"
         Me.btnEfectuarPago.Id = 10
-        Me.btnEfectuarPago.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.document2
+        Me.btnEfectuarPago.LargeGlyph = CType(resources.GetObject("btnEfectuarPago.LargeGlyph"), System.Drawing.Image)
         Me.btnEfectuarPago.Name = "btnEfectuarPago"
         '
         'BarButtonItem11
@@ -368,7 +368,7 @@ Partial Class Inicio
         Me.btnSolicitudDocumentos.ItemInMenuAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
         Me.btnSolicitudDocumentos.ItemInMenuAppearance.Pressed.Options.UseTextOptions = True
         Me.btnSolicitudDocumentos.ItemInMenuAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
-        Me.btnSolicitudDocumentos.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.entregarc
+        Me.btnSolicitudDocumentos.LargeGlyph = CType(resources.GetObject("btnSolicitudDocumentos.LargeGlyph"), System.Drawing.Image)
         Me.btnSolicitudDocumentos.Name = "btnSolicitudDocumentos"
         '
         'btnEntregaDocumentos
@@ -383,21 +383,21 @@ Partial Class Inicio
         Me.btnEntregaDocumentos.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
         Me.btnEntregaDocumentos.ItemAppearance.Pressed.Options.UseTextOptions = True
         Me.btnEntregaDocumentos.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
-        Me.btnEntregaDocumentos.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.cancelar
+        Me.btnEntregaDocumentos.LargeGlyph = CType(resources.GetObject("btnEntregaDocumentos.LargeGlyph"), System.Drawing.Image)
         Me.btnEntregaDocumentos.Name = "btnEntregaDocumentos"
         '
         'btnEstado
         '
         Me.btnEstado.Caption = "ESTADO"
         Me.btnEstado.Id = 19
-        Me.btnEstado.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.buscar
+        Me.btnEstado.LargeGlyph = CType(resources.GetObject("btnEstado.LargeGlyph"), System.Drawing.Image)
         Me.btnEstado.Name = "btnEstado"
         '
         'btnCustodia1
         '
         Me.btnCustodia1.Caption = "EN CUSTODIA"
         Me.btnCustodia1.Id = 20
-        Me.btnCustodia1.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.reporte
+        Me.btnCustodia1.LargeGlyph = CType(resources.GetObject("btnCustodia1.LargeGlyph"), System.Drawing.Image)
         Me.btnCustodia1.Name = "btnCustodia1"
         '
         'BarSubItem1
@@ -459,14 +459,14 @@ Partial Class Inicio
         '
         Me.btnCancelar1.Caption = "CANCELADAS"
         Me.btnCancelar1.Id = 35
-        Me.btnCancelar1.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.cancelar
+        Me.btnCancelar1.LargeGlyph = CType(resources.GetObject("btnCancelar1.LargeGlyph"), System.Drawing.Image)
         Me.btnCancelar1.Name = "btnCancelar1"
         '
         'btnContrsena
         '
         Me.btnContrsena.Caption = "CAMBIAR CONTRASEÑA"
         Me.btnContrsena.Id = 36
-        Me.btnContrsena.LargeGlyph = Global.creditosHipotecarios.My.Resources.Resources.password
+        Me.btnContrsena.LargeGlyph = CType(resources.GetObject("btnContrsena.LargeGlyph"), System.Drawing.Image)
         Me.btnContrsena.Name = "btnContrsena"
         Me.btnContrsena.Tag = "NULL"
         '
@@ -656,9 +656,9 @@ Partial Class Inicio
         Me.PanelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl2.ContextMenuStrip = Me.ContextMenuStrip2
         Me.PanelControl2.Controls.Add(Me.RibbonControl2)
-        Me.PanelControl2.Location = New System.Drawing.Point(0, -11)
+        Me.PanelControl2.Location = New System.Drawing.Point(0, 0)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(2000, 153)
+        Me.PanelControl2.Size = New System.Drawing.Size(2000, 146)
         Me.PanelControl2.TabIndex = 4
         '
         'Timer1
@@ -684,7 +684,7 @@ Partial Class Inicio
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1268, 765)
+        Me.ClientSize = New System.Drawing.Size(1268, 782)
         Me.Controls.Add(Me.PanelControl2)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.RibbonControl1)

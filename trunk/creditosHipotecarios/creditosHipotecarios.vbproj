@@ -12,10 +12,10 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>\\psf\Home\Documents\AMC\app\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>\\192.168.20.91\publico\app-final\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
+    <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Background</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -23,15 +23,15 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://www.dbriones.com/sitios/amc/</InstallUrl>
-    <UpdateUrl>http://www.dbriones.com/sitios/amc/</UpdateUrl>
+    <InstallUrl>\\192.168.20.91\publico\app-final\</InstallUrl>
+    <UpdateUrl>\\192.168.20.91\publico\app-final\</UpdateUrl>
     <TargetCulture>es-HN</TargetCulture>
     <ProductName>Seguimientos</ProductName>
     <PublisherName>David Briones</PublisherName>
     <SuiteName>amc</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.html</WebPage>
-    <ApplicationRevision>18</ApplicationRevision>
+    <ApplicationRevision>35</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -225,6 +225,11 @@
       <DependentUpon>DataSetAMCProduccion.xsd</DependentUpon>
     </Compile>
     <Compile Include="dataSet\DataSetAMCProduccion1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetAMCProduccion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataSet\DataSetAMCProduccion2.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetAMCProduccion.xsd</DependentUpon>
@@ -472,6 +477,7 @@
     <None Include="dataSet\DataSetAMCProduccion.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetAMCProduccion2.Designer.vb</LastGenOutput>
     </None>
     <None Include="dataSet\DataSetAMCProduccion.xss">
       <DependentUpon>DataSetAMCProduccion.xsd</DependentUpon>
