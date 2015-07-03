@@ -50,6 +50,10 @@ Partial Class addProtocolo
         Me.HipotecaTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.HipotecaTableAdapter()
         Me.EventoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EventoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.EventoTableAdapter()
+        Me.DataSetAMCProduccion = New creditosHipotecarios.DataSetAMCProduccion()
+        Me.GrantiaHipotecariaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GrantiaHipotecariaTableAdapter = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.GrantiaHipotecariaTableAdapter()
+        Me.TableAdapterManager1 = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager()
         Me.Panel1.SuspendLayout()
         CType(Me.AbogadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,6 +62,8 @@ Partial Class addProtocolo
         CType(Me.PrestamoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HipotecaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EventoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GrantiaHipotecariaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelNombre
@@ -85,7 +91,7 @@ Partial Class addProtocolo
         Me.Panel1.ForeColor = System.Drawing.Color.SlateGray
         Me.Panel1.Location = New System.Drawing.Point(104, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(834, 538)
+        Me.Panel1.Size = New System.Drawing.Size(888, 542)
         Me.Panel1.TabIndex = 0
         Me.Panel1.Tag = ""
         '
@@ -120,7 +126,6 @@ Partial Class addProtocolo
         Me.NombresAbogado.Name = "NombresAbogado"
         Me.NombresAbogado.Size = New System.Drawing.Size(179, 24)
         Me.NombresAbogado.TabIndex = 11
-        Me.NombresAbogado.Text = " "
         Me.NombresAbogado.ValueMember = "abogadoId"
         '
         'AbogadoBindingSource
@@ -312,6 +317,28 @@ Partial Class addProtocolo
         '
         Me.EventoTableAdapter.ClearBeforeFill = True
         '
+        'DataSetAMCProduccion
+        '
+        Me.DataSetAMCProduccion.DataSetName = "DataSetAMCProduccion"
+        Me.DataSetAMCProduccion.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'GrantiaHipotecariaBindingSource
+        '
+        Me.GrantiaHipotecariaBindingSource.DataMember = "GrantiaHipotecaria"
+        Me.GrantiaHipotecariaBindingSource.DataSource = Me.DataSetAMCProduccion
+        '
+        'GrantiaHipotecariaTableAdapter
+        '
+        Me.GrantiaHipotecariaTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.CreditoTableAdapter = Nothing
+        Me.TableAdapterManager1.GastosTableAdapter = Nothing
+        Me.TableAdapterManager1.GrantiaHipotecariaTableAdapter = Me.GrantiaHipotecariaTableAdapter
+        Me.TableAdapterManager1.UpdateOrder = creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'addProtocolo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -331,6 +358,8 @@ Partial Class addProtocolo
         CType(Me.PrestamoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HipotecaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EventoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GrantiaHipotecariaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -361,4 +390,8 @@ Partial Class addProtocolo
     Friend WithEvents HipotecaTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.HipotecaTableAdapter
     Friend WithEvents EventoBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents EventoTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.EventoTableAdapter
+    Friend WithEvents DataSetAMCProduccion As creditosHipotecarios.DataSetAMCProduccion
+    Friend WithEvents GrantiaHipotecariaBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents GrantiaHipotecariaTableAdapter As creditosHipotecarios.DataSetAMCProduccionTableAdapters.GrantiaHipotecariaTableAdapter
+    Friend WithEvents TableAdapterManager1 As creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager
 End Class

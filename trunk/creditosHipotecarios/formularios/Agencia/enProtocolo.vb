@@ -10,6 +10,8 @@ Public Class enProtocolo
     Dim db As New DataSetLinQDataContext
 
 
+
+
     Private Sub enProtocolo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'DataSetCreditos.prestamo' Puede moverla o quitarla según sea necesario.
         'Me.PrestamoTableAdapter.Fill(Me.DataSetCreditos.prestamo)
@@ -33,6 +35,9 @@ Public Class enProtocolo
         Dim diccionario As New Hashtable
 
         diccionario("hipotecaEstadoId") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "hipotecaEstadoId")
+        diccionario("numreferen") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "numreferen")
+
+
         Return diccionario
 
     End Function
@@ -84,12 +89,32 @@ Public Class enProtocolo
         Dim dict As Hashtable = obtenerDatos()
         Dim hipotecaEstadoId As String = dict("hipotecaEstadoId")
 
+        Dim numeroReferencia As String
+        Dim estadoActual As Integer = HipotecaEstadoTableAdapter.obtenerEstado(hipotecaEstadoId)
+        Dim estadoId As Integer = estadoActual - 1
+
+        Dim estadoActualizarProduccion As String
+
+        If IsDBNull(dict("numreferen")) Then
+            numeroReferencia = ""
+            estadoActualizarProduccion = ""
+
+        Else
+            numeroReferencia = dict("numreferen")
+            estadoActualizarProduccion = HipotecaEestadoTableAdapter.actualizarAestado(estadoId)
+        End If
+
         Try
-            Dim estadoActual As Integer = HipotecaEstadoTableAdapter.obtenerEstado(hipotecaEstadoId)
-            Dim estadoId As Integer = estadoActual - 1
-            If MsgBox("¿Actualizar el estado?", MsgBoxStyle.Question + vbYesNo) = vbYes Then
+
+            Dim eestado As Integer = idCargar
+
+            Dim estadoActualizar As String = HipotecaEestadoTableAdapter.actualizarAestado(eestado)
+
+            If MsgBox("¿Actualizar el estado " + estadoActualizar + " ?", MsgBoxStyle.Question + vbYesNo) = vbYes Then
                 HipotecaEstadoTableAdapter.UpdateQuery(estadoId, DateTime.Now(), UsuarioActivo.usuario, hipotecaEstadoId)
+                GrantiaHipotecariaTableAdapter.UpdateGaranHipo(estadoActualizarProduccion, numeroReferencia)
                 cargarDatos()
+
             End If
 
 
@@ -116,11 +141,25 @@ Public Class enProtocolo
 
                 Dim dict As Hashtable = obtenerDatos()
                 Dim hipotecaEstadoId As String = dict("hipotecaEstadoId")
+                Dim numeroReferencia As String
+                Dim estadoActualizarProduccion As String
                 Dim estadoId As Integer = idCargar + 1
+
+                If IsDBNull(dict("numreferen")) Then
+                    numeroReferencia = ""
+                    estadoActualizarProduccion = ""
+
+                Else
+                    numeroReferencia = dict("numreferen")
+                    estadoActualizarProduccion = HipotecaEestadoTableAdapter.actualizarAestado(estadoId)
+                End If
+
 
                 With IP
                     .Show()
+                    .numreferen = numeroReferencia
                     .hipotecaEstadoId = hipotecaEstadoId
+                    .estadoActualizadoProduccion = estadoActualizarProduccion
                     .estadoId = estadoId
                 End With
 
@@ -128,35 +167,79 @@ Public Class enProtocolo
             ElseIf Me.Text = "EVIAR A CUSTODIA" Then
                 Dim dict As Hashtable = obtenerDatos()
                 Dim hipotecaEstadoId As String = dict("hipotecaEstadoId")
+                Dim numeroReferencia As String
+
+                Dim estadoActualizarProduccion As String
                 Dim estadoId As Integer = idCargar + 1
+
+                If IsDBNull(dict("numreferen")) Then
+                    numeroReferencia = ""
+                    estadoActualizarProduccion = ""
+
+                Else
+                    numeroReferencia = dict("numreferen")
+                    estadoActualizarProduccion = HipotecaEestadoTableAdapter.actualizarAestado(estadoId)
+                End If
 
                 With custodia
                     .Show()
                     .hipotecaEstadoId = hipotecaEstadoId
                     .estadoId = estadoId
+                    .numreferen = numeroReferencia
+                    .estadoActualizadoProduccion = estadoActualizarProduccion
                 End With
 
             ElseIf Me.Text = "SOLICITAR PAGO" Then
                 Dim dict As Hashtable = obtenerDatos()
-                Dim estadoId As Integer = idCargar + 1
 
                 Dim hipotecaEstadoId As String = dict("hipotecaEstadoId")
+                Dim numeroReferencia As String
+                Dim estadoActualizarProduccion As String
+                Dim estadoId As Integer = idCargar + 1
+
+                If IsDBNull(dict("numreferen")) Then
+                    numeroReferencia = ""
+                    estadoActualizarProduccion = ""
+
+                Else
+                    numeroReferencia = dict("numreferen")
+                    estadoActualizarProduccion = HipotecaEestadoTableAdapter.actualizarAestado(estadoId)
+                End If
+
+
 
                 With SolicitudPago
                     .Show()
                     .hipotecaEstadoId = hipotecaEstadoId
                     .estadioId = estadoId
+                    .numreferen = numeroReferencia
+                    .estadoActualizadoProduccion = estadoActualizarProduccion
                 End With
 
             ElseIf Me.Text = "EFECTURAR PAGO" Then
 
                 Dim dict As Hashtable = obtenerDatos()
+                Dim numeroReferencia As String
+                Dim estadoActualizarProduccion As String
                 Dim estadoId As Integer = idCargar + 1
+
+                If IsDBNull(dict("numreferen")) Then
+                    numeroReferencia = ""
+                    estadoActualizarProduccion = ""
+
+                Else
+                    numeroReferencia = dict("numreferen")
+                    estadoActualizarProduccion = HipotecaEestadoTableAdapter.actualizarAestado(estadoId)
+                End If
+
+
 
                 Dim hipotecaEstadoId As String = dict("hipotecaEstadoId")
 
 
                 HipotecaEstadoTableAdapter.UpdateQuery(estadoId, DateTime.Now(), UsuarioActivo.usuario, hipotecaEstadoId)
+                GrantiaHipotecariaTableAdapter.UpdateGaranHipo(estadoActualizarProduccion, numeroReferencia)
+
 
                 Dim idMemo = (From m In db.Memo
                                Where m.hipotecaId = hipotecaEstadoId
@@ -180,18 +263,37 @@ Public Class enProtocolo
                 Dim estadoId As Integer = idCargar + 1
 
                 Dim hipotecaEstadoId As String = dict("hipotecaEstadoId")
+                Dim numeroReferencia As String
+
+                Dim estadoActualizarProduccion As String
+
+                If IsDBNull(dict("numreferen")) Then
+                    numeroReferencia = ""
+                    estadoActualizarProduccion = ""
+
+                Else
+                    numeroReferencia = dict("numreferen")
+                    estadoActualizarProduccion = HipotecaEestadoTableAdapter.actualizarAestado(estadoId)
+                End If
 
                 Dim eestado As Integer = idCargar + 2
+                Dim eestadoProduccion As Integer = idCargar + 1
+
+
 
                 Dim estadoActualizar As String = HipotecaEestadoTableAdapter.actualizarAestado(eestado)
 
 
-                If MsgBox("¿Actualizar el estado a:  " + estadoActualizar + " ?", MsgBoxStyle.Question + vbYesNo) = vbYes Then
+                If MsgBox("¿Actualizar el estado a " + estadoActualizar + " ?", MsgBoxStyle.Question + vbYesNo) = vbYes Then
                     HipotecaEstadoTableAdapter.UpdateQuery(estadoId, DateTime.Now(), UsuarioActivo.usuario, hipotecaEstadoId)
 
                     Dim prestamoId As Integer = PrestamoTableAdapter.ScalarPrestamoId(hipotecaEstadoId)
 
                     PrestamoTableAdapter.UpdatePrestamo(UsuarioActivo.UsuarioNombre, Date.Now(), prestamoId)
+
+                    GrantiaHipotecariaTableAdapter.UpdateGaranHipo(estadoActualizarProduccion, numeroReferencia)
+
+
                 End If
 
                 'CARGAR DATOS
@@ -245,4 +347,6 @@ Public Class enProtocolo
     Private Sub TextBoxBuscar_TextChanged_1(sender As Object, e As EventArgs) Handles TextBoxBuscar.TextChanged
 
     End Sub
+
+   
 End Class

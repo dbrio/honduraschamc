@@ -39,6 +39,8 @@ Partial Class enProtocolo
         Me.PrestamoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.prestamoTableAdapter()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBoxBuscar = New System.Windows.Forms.TextBox()
+        Me.GrantiaHipotecariaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetAMCProduccion = New creditosHipotecarios.DataSetAMCProduccion()
         Me.HipotecaEestadoGridControl = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -49,6 +51,8 @@ Partial Class enProtocolo
         Me.colmonto = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coltasaInteres = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coldescripcion = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GrantiaHipotecariaTableAdapter = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.GrantiaHipotecariaTableAdapter()
+        Me.TableAdapterManager1 = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HipotecaEestadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -56,6 +60,8 @@ Partial Class enProtocolo
         CType(Me.HipotecaEstadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HipotecaEestadoBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetCreditosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GrantiaHipotecariaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HipotecaEestadoGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -153,11 +159,22 @@ Partial Class enProtocolo
         '
         'TextBoxBuscar
         '
+        Me.TextBoxBuscar.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.GrantiaHipotecariaBindingSource, "valpericia", True))
         Me.TextBoxBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxBuscar.Location = New System.Drawing.Point(12, 9)
         Me.TextBoxBuscar.Name = "TextBoxBuscar"
         Me.TextBoxBuscar.Size = New System.Drawing.Size(241, 26)
         Me.TextBoxBuscar.TabIndex = 6
+        '
+        'GrantiaHipotecariaBindingSource
+        '
+        Me.GrantiaHipotecariaBindingSource.DataMember = "GrantiaHipotecaria"
+        Me.GrantiaHipotecariaBindingSource.DataSource = Me.DataSetAMCProduccion
+        '
+        'DataSetAMCProduccion
+        '
+        Me.DataSetAMCProduccion.DataSetName = "DataSetAMCProduccion"
+        Me.DataSetAMCProduccion.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'HipotecaEestadoGridControl
         '
@@ -237,12 +254,12 @@ Partial Class enProtocolo
         '
         'colrnpCliente
         '
-        Me.colrnpCliente.Caption = "IDENTIDAD"
-        Me.colrnpCliente.FieldName = "rnpCliente"
+        Me.colrnpCliente.Caption = "PRESTAMO"
+        Me.colrnpCliente.FieldName = "numreferen"
         Me.colrnpCliente.Name = "colrnpCliente"
         Me.colrnpCliente.Visible = True
         Me.colrnpCliente.VisibleIndex = 2
-        Me.colrnpCliente.Width = 91
+        Me.colrnpCliente.Width = 105
         '
         'colmonto
         '
@@ -271,6 +288,18 @@ Partial Class enProtocolo
         Me.coldescripcion.VisibleIndex = 5
         Me.coldescripcion.Width = 417
         '
+        'GrantiaHipotecariaTableAdapter
+        '
+        Me.GrantiaHipotecariaTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.CreditoTableAdapter = Nothing
+        Me.TableAdapterManager1.GastosTableAdapter = Nothing
+        Me.TableAdapterManager1.GrantiaHipotecariaTableAdapter = Me.GrantiaHipotecariaTableAdapter
+        Me.TableAdapterManager1.UpdateOrder = creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'enProtocolo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -288,6 +317,8 @@ Partial Class enProtocolo
         CType(Me.HipotecaEstadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HipotecaEestadoBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSetCreditosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GrantiaHipotecariaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HipotecaEestadoGridControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -320,4 +351,8 @@ Partial Class enProtocolo
     Friend WithEvents colmonto As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents coltasaInteres As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents coldescripcion As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents DataSetAMCProduccion As creditosHipotecarios.DataSetAMCProduccion
+    Friend WithEvents GrantiaHipotecariaBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents GrantiaHipotecariaTableAdapter As creditosHipotecarios.DataSetAMCProduccionTableAdapters.GrantiaHipotecariaTableAdapter
+    Friend WithEvents TableAdapterManager1 As creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager
 End Class

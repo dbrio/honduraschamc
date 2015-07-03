@@ -41,6 +41,7 @@
         diccionario("interes") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "ntasint")
         diccionario("cuota") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "nmoncuo")
         diccionario("interesMora") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "nMora_int")
+        diccionario("numeroPrestamo") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "ccodcta")
 
 
 
@@ -66,6 +67,7 @@
         Dim interes As Decimal = dict("interes")
         Dim cuota As Decimal = dict("cuota")
         Dim interesMora As Decimal = IsDBNull(dict("interesMora"))
+        Dim numeroPrestamo As String = dict("numeroPrestamo")
 
         If interesMora = -1 Or interesMora = Nothing Then
             interesMora = 0.0
@@ -83,6 +85,8 @@
             .cuotaGaratnia = cuota
             .interesMoraGaratnia = interesMora
             .codigoAgenciaGarantia = codigoAgencia
+            .numeroPrestamo = numeroPrestamo
+
 
             .Show()
             .Focus()

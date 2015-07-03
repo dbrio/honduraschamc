@@ -227,7 +227,7 @@ Partial Class creditoList
         Me.colccodofi.Name = "colccodofi"
         Me.colccodofi.Visible = True
         Me.colccodofi.VisibleIndex = 0
-        Me.colccodofi.Width = 30
+        Me.colccodofi.Width = 35
         '
         'colcnomcli
         '
@@ -236,7 +236,7 @@ Partial Class creditoList
         Me.colcnomcli.Name = "colcnomcli"
         Me.colcnomcli.Visible = True
         Me.colcnomcli.VisibleIndex = 1
-        Me.colcnomcli.Width = 180
+        Me.colcnomcli.Width = 211
         '
         'colcnudoci
         '
@@ -245,7 +245,7 @@ Partial Class creditoList
         Me.colcnudoci.Name = "colcnudoci"
         Me.colcnudoci.Visible = True
         Me.colcnudoci.VisibleIndex = 2
-        Me.colcnudoci.Width = 79
+        Me.colcnudoci.Width = 92
         '
         'colccodcta
         '
@@ -254,7 +254,7 @@ Partial Class creditoList
         Me.colccodcta.Name = "colccodcta"
         Me.colccodcta.Visible = True
         Me.colccodcta.VisibleIndex = 3
-        Me.colccodcta.Width = 79
+        Me.colccodcta.Width = 120
         '
         'colnmonsug
         '
@@ -263,7 +263,7 @@ Partial Class creditoList
         Me.colnmonsug.Name = "colnmonsug"
         Me.colnmonsug.Visible = True
         Me.colnmonsug.VisibleIndex = 4
-        Me.colnmonsug.Width = 79
+        Me.colnmonsug.Width = 92
         '
         'colncuosug
         '
@@ -272,7 +272,7 @@ Partial Class creditoList
         Me.colncuosug.Name = "colncuosug"
         Me.colncuosug.Visible = True
         Me.colncuosug.VisibleIndex = 5
-        Me.colncuosug.Width = 79
+        Me.colncuosug.Width = 92
         '
         'colntasint
         '
@@ -281,7 +281,7 @@ Partial Class creditoList
         Me.colntasint.Name = "colntasint"
         Me.colntasint.Visible = True
         Me.colntasint.VisibleIndex = 6
-        Me.colntasint.Width = 79
+        Me.colntasint.Width = 92
         '
         'colnmoncuo
         '
@@ -290,7 +290,7 @@ Partial Class creditoList
         Me.colnmoncuo.Name = "colnmoncuo"
         Me.colnmoncuo.Visible = True
         Me.colnmoncuo.VisibleIndex = 7
-        Me.colnmoncuo.Width = 79
+        Me.colnmoncuo.Width = 92
         '
         'colnMora_int
         '
@@ -299,7 +299,7 @@ Partial Class creditoList
         Me.colnMora_int.Name = "colnMora_int"
         Me.colnMora_int.Visible = True
         Me.colnMora_int.VisibleIndex = 8
-        Me.colnMora_int.Width = 79
+        Me.colnMora_int.Width = 92
         '
         'coldfecsol
         '
@@ -308,7 +308,7 @@ Partial Class creditoList
         Me.coldfecsol.Name = "coldfecsol"
         Me.coldfecsol.Visible = True
         Me.coldfecsol.VisibleIndex = 9
-        Me.coldfecsol.Width = 79
+        Me.coldfecsol.Width = 92
         '
         'colccodcli
         '
@@ -317,7 +317,7 @@ Partial Class creditoList
         Me.colccodcli.Name = "colccodcli"
         Me.colccodcli.Visible = True
         Me.colccodcli.VisibleIndex = 10
-        Me.colccodcli.Width = 95
+        Me.colccodcli.Width = 121
         '
         'btnBuscar
         '

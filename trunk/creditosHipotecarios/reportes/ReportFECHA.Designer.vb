@@ -42,6 +42,8 @@ Partial Public Class ReportFECHA
         Me.PageFooter = New DevExpress.XtraReports.UI.PageFooterBand()
         Me.xrLine2 = New DevExpress.XtraReports.UI.XRLine()
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
+        Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrUsuario = New DevExpress.XtraReports.UI.XRLabel()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
         Me.xrTable2 = New DevExpress.XtraReports.UI.XRTable()
         Me.GroupFooter1 = New DevExpress.XtraReports.UI.GroupFooterBand()
@@ -49,7 +51,8 @@ Partial Public Class ReportFECHA
         Me.DataSetCreditos1 = New creditosHipotecarios.DataSetCreditos()
         Me.UsuarioTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.UsuarioTableAdapter()
         Me._ReporteFechaTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters._ReporteFechaTableAdapter()
-        Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrFecha = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
         CType(Me.xrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.xrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetCreditos1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -124,7 +127,7 @@ Partial Public Class ReportFECHA
         Me.xrTableCell7.StylePriority.UseTextAlignment = False
         Me.xrTableCell7.Text = "ACTUALIZADO"
         Me.xrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.xrTableCell7.Weight = 0.70573982737032481R
+        Me.xrTableCell7.Weight = 0.71053993661752435R
         '
         'xrTableCell3
         '
@@ -134,7 +137,7 @@ Partial Public Class ReportFECHA
         Me.xrTableCell3.StylePriority.UseTextAlignment = False
         Me.xrTableCell3.Text = "NOTA"
         Me.xrTableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.xrTableCell3.Weight = 0.59033975335342592R
+        Me.xrTableCell3.Weight = 0.58553964410622639R
         '
         'Header
         '
@@ -232,16 +235,36 @@ Partial Public Class ReportFECHA
         '
         'TopMargin
         '
-        Me.TopMargin.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel2, Me.xrLabel1})
+        Me.TopMargin.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel3, Me.XrFecha, Me.XrLabel2, Me.XrUsuario, Me.xrLabel1})
         Me.TopMargin.HeightF = 86.12504!
         Me.TopMargin.Name = "TopMargin"
         Me.TopMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
         '
+        'XrLabel2
+        '
+        Me.XrLabel2.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(28.12503!, 63.12504!)
+        Me.XrLabel2.Name = "XrLabel2"
+        Me.XrLabel2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel2.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
+        Me.XrLabel2.StylePriority.UseFont = False
+        Me.XrLabel2.Text = "Usuario: "
+        '
+        'XrUsuario
+        '
+        Me.XrUsuario.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrUsuario.LocationFloat = New DevExpress.Utils.PointFloat(136.4584!, 63.12504!)
+        Me.XrUsuario.Name = "XrUsuario"
+        Me.XrUsuario.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrUsuario.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
+        Me.XrUsuario.StylePriority.UseFont = False
+        Me.XrUsuario.Text = "XrUsuario"
+        '
         'Detail
         '
         Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrTable2})
-        Me.Detail.HeightF = 16.66667!
+        Me.Detail.HeightF = 28.125!
         Me.Detail.Name = "Detail"
         Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
@@ -281,13 +304,25 @@ Partial Public Class ReportFECHA
         '
         Me._ReporteFechaTableAdapter.ClearBeforeFill = True
         '
-        'XrLabel2
+        'XrFecha
         '
-        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(210.4167!, 63.12504!)
-        Me.XrLabel2.Name = "XrLabel2"
-        Me.XrLabel2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
-        Me.XrLabel2.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
-        Me.XrLabel2.Text = "XrLabel2"
+        Me.XrFecha.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrFecha.LocationFloat = New DevExpress.Utils.PointFloat(489.5833!, 63.12502!)
+        Me.XrFecha.Name = "XrFecha"
+        Me.XrFecha.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
+        Me.XrFecha.SizeF = New System.Drawing.SizeF(131.25!, 23.0!)
+        Me.XrFecha.StylePriority.UseFont = False
+        Me.XrFecha.Text = "XrFecha"
+        '
+        'XrLabel3
+        '
+        Me.XrLabel3.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(368.75!, 63.12502!)
+        Me.XrLabel3.Name = "XrLabel3"
+        Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel3.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
+        Me.XrLabel3.StylePriority.UseFont = False
+        Me.XrLabel3.Text = "Fecha:"
         '
         'ReportFECHA
         '
@@ -334,6 +369,9 @@ End Sub
     Friend WithEvents DataSetCreditos1 As creditosHipotecarios.DataSetCreditos
     Friend WithEvents UsuarioTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.UsuarioTableAdapter
     Friend WithEvents _ReporteFechaTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters._ReporteFechaTableAdapter
+    Friend WithEvents XrUsuario As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel2 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrFecha As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel3 As DevExpress.XtraReports.UI.XRLabel
     'Friend WithEvents ReporteFechaTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.ReporteFechaTableAdapter
 End Class

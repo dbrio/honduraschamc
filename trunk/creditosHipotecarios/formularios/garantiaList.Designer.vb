@@ -36,6 +36,8 @@ Partial Class garantiaList
         Me.colowngarant = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.LabelNombre = New System.Windows.Forms.Label()
         Me.LabelCodigo = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.prestamoNumero = New System.Windows.Forms.Label()
         CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GrantiaHipotecariaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GrantiaHipotecariaGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -250,11 +252,11 @@ Partial Class garantiaList
         '
         Me.LabelNombre.AutoSize = True
         Me.LabelNombre.BackColor = System.Drawing.Color.SlateGray
-        Me.LabelNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelNombre.ForeColor = System.Drawing.Color.White
-        Me.LabelNombre.Location = New System.Drawing.Point(12, 57)
+        Me.LabelNombre.Location = New System.Drawing.Point(25, 101)
         Me.LabelNombre.Name = "LabelNombre"
-        Me.LabelNombre.Size = New System.Drawing.Size(119, 29)
+        Me.LabelNombre.Size = New System.Drawing.Size(93, 24)
         Me.LabelNombre.TabIndex = 3
         Me.LabelNombre.Text = "NOMBRE"
         '
@@ -262,13 +264,37 @@ Partial Class garantiaList
         '
         Me.LabelCodigo.AutoSize = True
         Me.LabelCodigo.BackColor = System.Drawing.Color.SlateGray
-        Me.LabelCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelCodigo.ForeColor = System.Drawing.Color.White
-        Me.LabelCodigo.Location = New System.Drawing.Point(772, 57)
+        Me.LabelCodigo.Location = New System.Drawing.Point(692, 101)
         Me.LabelCodigo.Name = "LabelCodigo"
-        Me.LabelCodigo.Size = New System.Drawing.Size(109, 29)
+        Me.LabelCodigo.Size = New System.Drawing.Size(89, 24)
         Me.LabelCodigo.TabIndex = 4
-        Me.LabelCodigo.Text = "CODIGO"
+        Me.LabelCodigo.Text = "CLIENTE"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.SlateGray
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(275, 55)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(191, 29)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "PRESTAMO N# "
+        '
+        'prestamoNumero
+        '
+        Me.prestamoNumero.AutoSize = True
+        Me.prestamoNumero.BackColor = System.Drawing.Color.SlateGray
+        Me.prestamoNumero.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.prestamoNumero.ForeColor = System.Drawing.Color.PaleGoldenrod
+        Me.prestamoNumero.Location = New System.Drawing.Point(476, 50)
+        Me.prestamoNumero.Name = "prestamoNumero"
+        Me.prestamoNumero.Size = New System.Drawing.Size(169, 39)
+        Me.prestamoNumero.TabIndex = 6
+        Me.prestamoNumero.Text = "NOMBRE"
         '
         'garantiaList
         '
@@ -276,6 +302,8 @@ Partial Class garantiaList
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(1128, 471)
+        Me.Controls.Add(Me.prestamoNumero)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.LabelCodigo)
         Me.Controls.Add(Me.LabelNombre)
         Me.Controls.Add(Me.GrantiaHipotecariaGridControl)
@@ -284,6 +312,8 @@ Partial Class garantiaList
         Me.Controls.SetChildIndex(Me.GrantiaHipotecariaGridControl, 0)
         Me.Controls.SetChildIndex(Me.LabelNombre, 0)
         Me.Controls.SetChildIndex(Me.LabelCodigo, 0)
+        Me.Controls.SetChildIndex(Me.Label1, 0)
+        Me.Controls.SetChildIndex(Me.prestamoNumero, 0)
         CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GrantiaHipotecariaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GrantiaHipotecariaGridControl, System.ComponentModel.ISupportInitialize).EndInit()
@@ -305,4 +335,6 @@ Partial Class garantiaList
     Friend WithEvents colowngarant As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents LabelNombre As System.Windows.Forms.Label
     Friend WithEvents LabelCodigo As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents prestamoNumero As System.Windows.Forms.Label
 End Class

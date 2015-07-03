@@ -1,6 +1,8 @@
 ﻿Public Class IP
     Public hipotecaEstadoId As Integer
     Public estadoId As Integer
+    Public numreferen As String
+    Public estadoActualizadoProduccion As String
 
     Dim db As New DataSetLinQDataContext
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
@@ -21,6 +23,7 @@
 
 
             HipotecaEstadoTableAdapter.UpdateQuery(estadoId, DateTime.Now(), UsuarioActivo.usuario, hipotecaEstadoId)
+            GrantiaHipotecariaTableAdapter.UpdateGaranHipo(estadoActualizadoProduccion, numreferen)
 
             HipotecaTableAdapter.UpdateIP(CInt(txtIP.Text), idPrest)
 
@@ -56,4 +59,6 @@
         Me.HipotecaEstadoTableAdapter.Fill(Me.DataSetCreditos.hipotecaEstado)
 
     End Sub
+
+  
 End Class

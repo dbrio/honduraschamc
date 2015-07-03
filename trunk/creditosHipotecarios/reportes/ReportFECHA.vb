@@ -5,7 +5,8 @@
     Public Sub generarReporte()
         Try
             _ReporteFechaTableAdapter.Fill(DataSetCreditos1._ReporteFecha, fechaInicio, fechaFinal)
-            XrLabel3.Text = Now.Date()
+            XrUsuario.Text = UsuarioActivo.UsuarioNombre
+            XrFecha.Text = Date.Now()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
