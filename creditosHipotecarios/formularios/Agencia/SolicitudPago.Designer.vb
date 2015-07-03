@@ -23,6 +23,7 @@ Partial Class SolicitudPago
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.txtGastos = New DevExpress.XtraEditors.TextEdit()
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -31,9 +32,15 @@ Partial Class SolicitudPago
         Me.txtComision = New DevExpress.XtraEditors.TextEdit()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.HipotecaEstadoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEstadoTableAdapter()
+        Me.DataSetAMCProduccion = New creditosHipotecarios.DataSetAMCProduccion()
+        Me.GrantiaHipotecariaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GrantiaHipotecariaTableAdapter = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.GrantiaHipotecariaTableAdapter()
+        Me.TableAdapterManager = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager()
         CType(Me.txtGastos.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtHonorario.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtComision.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GrantiaHipotecariaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtGastos
@@ -119,6 +126,28 @@ Partial Class SolicitudPago
         '
         Me.HipotecaEstadoTableAdapter.ClearBeforeFill = True
         '
+        'DataSetAMCProduccion
+        '
+        Me.DataSetAMCProduccion.DataSetName = "DataSetAMCProduccion"
+        Me.DataSetAMCProduccion.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'GrantiaHipotecariaBindingSource
+        '
+        Me.GrantiaHipotecariaBindingSource.DataMember = "GrantiaHipotecaria"
+        Me.GrantiaHipotecariaBindingSource.DataSource = Me.DataSetAMCProduccion
+        '
+        'GrantiaHipotecariaTableAdapter
+        '
+        Me.GrantiaHipotecariaTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CreditoTableAdapter = Nothing
+        Me.TableAdapterManager.GastosTableAdapter = Nothing
+        Me.TableAdapterManager.GrantiaHipotecariaTableAdapter = Me.GrantiaHipotecariaTableAdapter
+        Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'SolicitudPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
@@ -143,6 +172,8 @@ Partial Class SolicitudPago
         CType(Me.txtGastos.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtHonorario.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtComision.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GrantiaHipotecariaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -155,4 +186,8 @@ Partial Class SolicitudPago
     Friend WithEvents txtComision As DevExpress.XtraEditors.TextEdit
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents HipotecaEstadoTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEstadoTableAdapter
+    Friend WithEvents DataSetAMCProduccion As creditosHipotecarios.DataSetAMCProduccion
+    Friend WithEvents GrantiaHipotecariaBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents GrantiaHipotecariaTableAdapter As creditosHipotecarios.DataSetAMCProduccionTableAdapters.GrantiaHipotecariaTableAdapter
+    Friend WithEvents TableAdapterManager As creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager
 End Class

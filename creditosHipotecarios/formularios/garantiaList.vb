@@ -8,6 +8,7 @@
     Public tasaInteresGaratnia As Decimal
     Public cuotaGaratnia As Decimal
     Public interesMoraGaratnia As Decimal
+    Public numeroPrestamo As String
 
    
 
@@ -39,12 +40,12 @@
 
     Private Sub garantiaList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
+        prestamoNumero.Text = numeroPrestamo
         Inicio.Enabled = False
         Try
             Me.GrantiaHipotecariaTableAdapter.Fill(Me.DataSetAMCProduccion.GrantiaHipotecaria, codigoClinteGarantia)
             LabelNombre.Text = "NOMBRE: " + nombreClienteGarantia
-            LabelCodigo.Text = "CODIGO: " + codigoClinteGarantia
+            LabelCodigo.Text = "CODIGO DE CLIENTE: " + codigoClinteGarantia
         Catch ex As Exception
             MsgBox("Debe de seleccionar un valor")
         End Try
@@ -85,6 +86,7 @@
                 .tasaInteresGaratniaAdd = tasaInteresGaratnia
                 .cuotaAdd = cuotaGaratnia
                 .interesMoraGaratniaAdd = interesMoraGaratnia
+                .numreferen = numeroPrestamo
                 .MdiParent = Inicio
                 .Show()
                 .cargarDatos()

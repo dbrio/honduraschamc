@@ -33,10 +33,16 @@ Partial Class IP
         Me.HipotecaEstadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.HipotecaEstadoTableAdapter = New creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEstadoTableAdapter()
         Me.txtIP = New DevExpress.XtraEditors.TextEdit()
+        Me.DataSetAMCProduccion = New creditosHipotecarios.DataSetAMCProduccion()
+        Me.GrantiaHipotecariaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GrantiaHipotecariaTableAdapter = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.GrantiaHipotecariaTableAdapter()
+        Me.TableAdapterManager1 = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HipotecaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HipotecaEstadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtIP.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GrantiaHipotecariaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -79,10 +85,14 @@ Partial Class IP
         'TableAdapterManager
         '
         Me.TableAdapterManager.AbogadoTableAdapter = Nothing
+        Me.TableAdapterManager.AgenciaTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CargoTableAdapter = Nothing
         Me.TableAdapterManager.EventoTableAdapter = Nothing
         Me.TableAdapterManager.hipotecaEstadoTableAdapter = Nothing
         Me.TableAdapterManager.HipotecaTableAdapter = Me.HipotecaTableAdapter
+        Me.TableAdapterManager.MemoTableAdapter = Nothing
+        Me.TableAdapterManager.PersonalTableAdapter = Nothing
         Me.TableAdapterManager.prestamoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = creditosHipotecarios.DataSetCreditosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuarioTableAdapter = Nothing
@@ -108,6 +118,28 @@ Partial Class IP
         Me.txtIP.Size = New System.Drawing.Size(153, 32)
         Me.txtIP.TabIndex = 5
         '
+        'DataSetAMCProduccion
+        '
+        Me.DataSetAMCProduccion.DataSetName = "DataSetAMCProduccion"
+        Me.DataSetAMCProduccion.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'GrantiaHipotecariaBindingSource
+        '
+        Me.GrantiaHipotecariaBindingSource.DataMember = "GrantiaHipotecaria"
+        Me.GrantiaHipotecariaBindingSource.DataSource = Me.DataSetAMCProduccion
+        '
+        'GrantiaHipotecariaTableAdapter
+        '
+        Me.GrantiaHipotecariaTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.CreditoTableAdapter = Nothing
+        Me.TableAdapterManager1.GastosTableAdapter = Nothing
+        Me.TableAdapterManager1.GrantiaHipotecariaTableAdapter = Me.GrantiaHipotecariaTableAdapter
+        Me.TableAdapterManager1.UpdateOrder = creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'IP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
@@ -126,6 +158,8 @@ Partial Class IP
         CType(Me.HipotecaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HipotecaEstadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtIP.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GrantiaHipotecariaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -139,4 +173,8 @@ Partial Class IP
     Friend WithEvents HipotecaEstadoBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents HipotecaEstadoTableAdapter As creditosHipotecarios.DataSetCreditosTableAdapters.hipotecaEstadoTableAdapter
     Friend WithEvents txtIP As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents DataSetAMCProduccion As creditosHipotecarios.DataSetAMCProduccion
+    Friend WithEvents GrantiaHipotecariaBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents GrantiaHipotecariaTableAdapter As creditosHipotecarios.DataSetAMCProduccionTableAdapters.GrantiaHipotecariaTableAdapter
+    Friend WithEvents TableAdapterManager1 As creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager
 End Class

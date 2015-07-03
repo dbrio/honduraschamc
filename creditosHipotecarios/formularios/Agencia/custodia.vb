@@ -2,6 +2,8 @@
     Public hipotecaEstadoId As Integer
     Public estadoId As Integer
     Dim db As New DataSetLinQDataContext
+    Public numreferen As String
+    Public estadoActualizadoProduccion As String
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
 
@@ -43,6 +45,9 @@
 
             HipotecaTableAdapter.UpdateCustodia(txtMatricula.Text, txtAsiento.Text, txtTomo.Text, idPrest)
 
+            GrantiaHipotecariaTableAdapter.UpdateGaranHipo(estadoActualizadoProduccion, numreferen)
+
+
             With enProtocolo
                 .MdiParent = Inicio
                 .Show()
@@ -68,4 +73,6 @@
     Private Sub custodia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Inicio.Enabled = False
     End Sub
+
+   
 End Class

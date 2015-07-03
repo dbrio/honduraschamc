@@ -15,6 +15,7 @@
     Public descripcionAdd As String
     Public valorRemateAdd As Decimal
     Public Usser As Integer
+    Public numreferen As String
 
     Dim db As New DataSetLinQDataContext
 
@@ -135,7 +136,9 @@
                 Exit Sub
             End If
 
-            Me.PrestamoTableAdapter.Insert(codigoClinteGarantiaAdd, codigoAgenciaGarantiaAdd, nombreClienteGarantiaAdd, identidadGarantiaAdd, propietarioAdd, txtIdPropietario.Text, montoGarantiaAdd, plazoGaratniaAdd, tasaInteresGaratniaAdd, cuotaAdd, interesMoraGaratniaAdd, valorRemateAdd, descripcionAdd, UsuarioActivo.UsuarioNombre, Date.Now(), "", Date.Now())
+            Me.PrestamoTableAdapter.Insert(codigoClinteGarantiaAdd, codigoAgenciaGarantiaAdd, nombreClienteGarantiaAdd, identidadGarantiaAdd, propietarioAdd, txtIdPropietario.Text, montoGarantiaAdd, plazoGaratniaAdd, tasaInteresGaratniaAdd, cuotaAdd, interesMoraGaratniaAdd, valorRemateAdd, descripcionAdd, UsuarioActivo.UsuarioNombre, Date.Now(), "", Date.Now(), numreferen)
+
+            GrantiaHipotecariaTableAdapter.UpdateGaranHipo("Autorización de protocolo", numreferen)
 
             Me.HipotecaTableAdapter.sp_Hipoteca(NombresAbogado.SelectedValue)
 
@@ -159,6 +162,7 @@
     End Sub
 
     Private Sub addProtocolo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         cargarDatos()
     End Sub
 
@@ -199,4 +203,10 @@
     End Sub
 
 
+    Private Sub FillToolStripButton_Click(sender As Object, e As EventArgs)
+       
+
+    End Sub
+
+   
 End Class

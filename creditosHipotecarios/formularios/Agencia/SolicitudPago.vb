@@ -2,6 +2,8 @@
     Public hipotecaEstadoId As Integer
     Public estadioId As Integer
     Dim db As New DataSetLinQDataContext
+    Public numreferen As String
+    Public estadoActualizadoProduccion As String
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
 
@@ -48,6 +50,7 @@
             db.SubmitChanges()
 
             HipotecaEstadoTableAdapter.UpdateQuery(estadioId, DateTime.Now(), UsuarioActivo.usuario, hipotecaEstadoId)
+            GrantiaHipotecariaTableAdapter.UpdateGaranHipo(estadoActualizadoProduccion, numreferen)
 
 
          With enProtocolo
@@ -70,4 +73,13 @@
     Private Sub SolicitudPago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Inicio.Enabled = False
     End Sub
+
+    Private Sub GrantiaHipotecariaBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
+        Me.Validate()
+        Me.GrantiaHipotecariaBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.DataSetAMCProduccion)
+
+    End Sub
+
+   
 End Class

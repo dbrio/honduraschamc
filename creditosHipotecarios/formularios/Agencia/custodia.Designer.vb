@@ -38,12 +38,18 @@ Partial Class custodia
         Me.txtMatricula = New DevExpress.XtraEditors.TextEdit()
         Me.txtAsiento = New DevExpress.XtraEditors.TextEdit()
         Me.txtTomo = New DevExpress.XtraEditors.TextEdit()
+        Me.DataSetAMCProduccion = New creditosHipotecarios.DataSetAMCProduccion()
+        Me.GrantiaHipotecariaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GrantiaHipotecariaTableAdapter = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.GrantiaHipotecariaTableAdapter()
+        Me.TableAdapterManager1 = New creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager()
         CType(Me.DataSetCreditos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HipotecaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HipotecaEstadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtMatricula.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtAsiento.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTomo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GrantiaHipotecariaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnAceptar
@@ -160,6 +166,28 @@ Partial Class custodia
         Me.txtTomo.Size = New System.Drawing.Size(155, 32)
         Me.txtTomo.TabIndex = 14
         '
+        'DataSetAMCProduccion
+        '
+        Me.DataSetAMCProduccion.DataSetName = "DataSetAMCProduccion"
+        Me.DataSetAMCProduccion.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'GrantiaHipotecariaBindingSource
+        '
+        Me.GrantiaHipotecariaBindingSource.DataMember = "GrantiaHipotecaria"
+        Me.GrantiaHipotecariaBindingSource.DataSource = Me.DataSetAMCProduccion
+        '
+        'GrantiaHipotecariaTableAdapter
+        '
+        Me.GrantiaHipotecariaTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.CreditoTableAdapter = Nothing
+        Me.TableAdapterManager1.GastosTableAdapter = Nothing
+        Me.TableAdapterManager1.GrantiaHipotecariaTableAdapter = Me.GrantiaHipotecariaTableAdapter
+        Me.TableAdapterManager1.UpdateOrder = creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'custodia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
@@ -188,6 +216,8 @@ Partial Class custodia
         CType(Me.txtMatricula.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtAsiento.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTomo.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetAMCProduccion, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GrantiaHipotecariaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -205,4 +235,8 @@ Partial Class custodia
     Friend WithEvents txtMatricula As DevExpress.XtraEditors.TextEdit
     Friend WithEvents txtAsiento As DevExpress.XtraEditors.TextEdit
     Friend WithEvents txtTomo As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents DataSetAMCProduccion As creditosHipotecarios.DataSetAMCProduccion
+    Friend WithEvents GrantiaHipotecariaBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents GrantiaHipotecariaTableAdapter As creditosHipotecarios.DataSetAMCProduccionTableAdapters.GrantiaHipotecariaTableAdapter
+    Friend WithEvents TableAdapterManager1 As creditosHipotecarios.DataSetAMCProduccionTableAdapters.TableAdapterManager
 End Class
